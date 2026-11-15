@@ -313,14 +313,67 @@ button {
   z-index: 2;
 }
 
-/* Light Mode Blueprint Grid Mesh */
+/* Light Mode Blueprint Grid Mesh & Designed Atmosphere */
 [data-theme="light"] .grid-mesh {
   background-image: 
-    radial-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px),
-    linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
-  background-size: 24px 24px, 72px 72px, 72px 72px;
-  opacity: 0.85;
+    radial-gradient(rgba(15, 23, 42, 0.12) 1.5px, transparent 1.5px),
+    linear-gradient(rgba(0, 98, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 98, 255, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px, 84px 84px, 84px 84px;
+  opacity: 0.95 !important;
+}
+
+[data-theme="light"] body {
+  background-color: #F8FAFC !important;
+  background-image: 
+    radial-gradient(circle at 10% 12%, rgba(0, 98, 255, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 90% 28%, rgba(56, 189, 248, 0.10) 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 90%, rgba(255, 102, 0, 0.06) 0%, transparent 45%) !important;
+  background-attachment: fixed !important;
+}
+
+[data-theme="light"][data-accent="orange"] body {
+  background-color: #FFF9F5 !important;
+  background-image: 
+    radial-gradient(circle at 10% 12%, rgba(255, 102, 0, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 90% 28%, rgba(245, 158, 11, 0.10) 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(234, 88, 12, 0.08) 0%, transparent 50%) !important;
+}
+
+[data-theme="light"][data-accent="purple"] body {
+  background-color: #FAF5FF !important;
+  background-image: 
+    radial-gradient(circle at 10% 12%, rgba(168, 85, 247, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 90% 28%, rgba(236, 72, 153, 0.10) 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%) !important;
+}
+
+[data-theme="light"][data-accent="emerald"] body {
+  background-color: #F0FDF4 !important;
+  background-image: 
+    radial-gradient(circle at 10% 12%, rgba(16, 185, 129, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 90% 28%, rgba(6, 182, 212, 0.10) 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(5, 150, 105, 0.08) 0%, transparent 50%) !important;
+}
+
+[data-theme="light"] .aurora-bg {
+  opacity: 0.9 !important;
+}
+
+[data-theme="light"] .blob-1 {
+  background: radial-gradient(circle, rgba(0, 98, 255, 0.18) 0%, rgba(99, 102, 241, 0.06) 70%, transparent 100%) !important;
+  filter: blur(80px) !important;
+}
+
+[data-theme="light"] .blob-2 {
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.16) 0%, rgba(14, 165, 233, 0.05) 70%, transparent 100%) !important;
+  filter: blur(85px) !important;
+}
+
+[data-theme="light"] .blob-3 {
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.14) 0%, rgba(236, 72, 153, 0.04) 70%, transparent 100%) !important;
+  filter: blur(80px) !important;
 }
 
 /* Relative content wrapper */
@@ -491,11 +544,15 @@ h1, h2, h3, h4, h5, h6 {
   padding: 8px 0;
 }
 
-.nav-wrap {
+.navbar .container,
+.nav-wrap,
+.nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  max-width: 1400px;
+  gap: 16px;
 }
 
 .brand-logo-wrap {
@@ -530,13 +587,13 @@ h1, h2, h3, h4, h5, h6 {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   list-style: none;
   flex-wrap: nowrap !important;
 }
 
 .nav-link {
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   font-weight: 600;
   color: var(--text-muted);
   position: relative;

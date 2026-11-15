@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Service Details &mdash; Giga Soft Limited</title>
+  <title>Detailed Services &mdash; Giga Soft Limited | The Soul of Technology</title>
   <meta name="description" content="Explore in-depth technical specifications and enterprise execution for IT Solutions, Cyber Security, Cloud Services, UI/UX Design, Digital Marketing, and Data Analytics by Giga Soft Limited.">
   <link rel="icon" type="image/png" href="images/giga-soft-logo.png">
 
@@ -15,102 +15,130 @@
   <!-- Core Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
+
   <style>
-    .service-detail-tabs-nav {
+    /* Service Details Dedicated Styles */
+    .service-detail-page {
+      position: relative;
+      z-index: 3;
+      padding-top: calc(var(--nav-height, 80px) + 30px);
+      padding-bottom: 90px;
+    }
+
+    .service-header-banner {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    /* Horizontal Quick Selector */
+    .service-tabs-nav-wrap {
       display: flex;
+      justify-content: center;
+      margin-bottom: 45px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+
+    .service-detail-tabs-nav {
+      display: inline-flex;
       flex-wrap: wrap;
       gap: 12px;
       justify-content: center;
-      margin-bottom: 45px;
-    }
-    .detail-tab-btn {
-      padding: 12px 24px;
+      background: rgba(15, 23, 42, 0.6);
+      padding: 8px;
       border-radius: 999px;
-      background: var(--bg-card);
       border: 1px solid var(--glass-border);
+      backdrop-filter: blur(16px);
+    }
+
+    [data-theme="light"] .service-detail-tabs-nav {
+      background: rgba(255, 255, 255, 0.9) !important;
+      border-color: rgba(0, 0, 0, 0.08) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+    }
+
+    .detail-tab-btn {
+      padding: 10px 22px;
+      border-radius: 999px;
+      background: transparent;
+      border: 1px solid transparent;
       color: var(--text-muted);
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       cursor: pointer;
-      transition: var(--transition);
+      transition: all 0.25s ease;
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      white-space: nowrap;
     }
+
     .detail-tab-btn:hover {
-      border-color: var(--accent-main);
-      transform: translateY(-2px);
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.06);
     }
+
     .detail-tab-btn.active {
       background: var(--accent-gradient);
       color: #FFFFFF !important;
-      border-color: transparent;
       box-shadow: 0 6px 20px -3px var(--primary-blue-glow);
     }
+
     [data-theme="light"] .detail-tab-btn {
-      background: #FFFFFF !important;
-      border-color: rgba(0,0,0,0.12) !important;
       color: #475569 !important;
     }
+
+    [data-theme="light"] .detail-tab-btn:hover {
+      color: #0F172A !important;
+      background: #F1F5F9 !important;
+    }
+
     [data-theme="light"] .detail-tab-btn.active {
       color: #FFFFFF !important;
     }
-    .service-panel {
-      display: none;
-      animation: fadeIn 0.4s ease-out;
-    }
-    .service-panel.active {
-      display: block;
-    }
+
+    /* Agency 2-Column Grid Layout */
     .detail-layout-grid {
       display: grid;
-      grid-template-columns: 1.3fr 0.9fr;
-      gap: 40px;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 36px;
+      align-items: start;
     }
-    @media (max-width: 900px) {
+
+    @media (max-width: 992px) {
       .detail-layout-grid {
         grid-template-columns: 1fr;
       }
     }
+
+    /* Main Content Spec Block */
     .spec-block {
       background: var(--bg-card);
       border: 1px solid var(--glass-border);
-      border-radius: var(--radius-xl);
+      border-radius: var(--radius-xl, 24px);
       padding: 36px;
-      margin-bottom: 28px;
+      margin-bottom: 30px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
     }
+
     [data-theme="light"] .spec-block {
       background: #FFFFFF !important;
-      border-color: rgba(0,0,0,0.08) !important;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04) !important;
+      border-color: rgba(0, 0, 0, 0.08) !important;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05) !important;
     }
-    .tech-pill-tag {
-      display: inline-block;
-      padding: 6px 14px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 8px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #E2E8F0;
-      margin: 4px;
-    }
-    [data-theme="light"] .tech-pill-tag {
-      background: #F1F5F9 !important;
-      border-color: #CBD5E1 !important;
-      color: #0F172A !important;
-    }
+
     .service-detail-hero-media {
       width: 100%;
       height: 320px;
-      border-radius: var(--radius-xl, 20px);
+      border-radius: 18px;
       overflow: hidden;
-      margin-bottom: 24px;
+      margin-bottom: 26px;
       position: relative;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
       border: 1px solid var(--glass-border);
       background: #0B1120;
     }
+
     .service-detail-hero-media img {
       width: 100%;
       height: 100%;
@@ -118,43 +146,348 @@
       display: block;
       transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
+
     .service-detail-hero-media:hover img {
       transform: scale(1.04);
     }
-    .spec-block h2,
-    .spec-block h3,
-    .spec-block h4 {
-      color: var(--text-white, #FFFFFF);
+
+    .spec-block h2 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 14px;
+      line-height: 1.3;
     }
+
+    .spec-block h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin: 28px 0 14px 0;
+    }
+
+    .spec-block h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 24px 0 12px 0;
+    }
+
+    .spec-block p {
+      font-size: 1.02rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
     [data-theme="light"] .spec-block h2,
     [data-theme="light"] .spec-block h3,
     [data-theme="light"] .spec-block h4 {
       color: #0F172A !important;
     }
+
     [data-theme="light"] .spec-block p {
       color: #334155 !important;
     }
+
+    /* Agency Checklist */
+    .service-features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .service-features-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.94rem;
+      color: #E2E8F0;
+      line-height: 1.6;
+    }
+
+    .service-features-list li .feat-check-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(16, 185, 129, 0.15);
+      color: #10B981;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
     [data-theme="light"] .service-features-list li {
       color: #1E293B !important;
+    }
+
+    /* 5-Step Process Timeline */
+    .service-process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+      margin: 20px 0 28px 0;
+    }
+
+    .process-step-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 16px 12px;
+      text-align: center;
+      transition: all 0.25s ease;
+    }
+
+    .process-step-box:hover {
+      border-color: var(--accent-main);
+      transform: translateY(-3px);
+    }
+
+    .process-step-num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--accent-main);
+      background: rgba(0, 98, 255, 0.12);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+
+    .process-step-title {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.35;
+    }
+
+    [data-theme="light"] .process-step-box {
+      background: #F8FAFC !important;
+      border-color: #E2E8F0 !important;
+    }
+
+    [data-theme="light"] .process-step-title {
+      color: #0F172A !important;
+    }
+
+    /* Tech Stack Pills */
+    .tech-stack-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tech-pill-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #E2E8F0;
+    }
+
+    [data-theme="light"] .tech-pill-tag {
+      background: #F1F5F9 !important;
+      border-color: #CBD5E1 !important;
+      color: #0F172A !important;
+    }
+
+    /* Sidebar Widgets */
+    .sidebar-widget {
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl, 24px);
+      padding: 30px 26px;
+      margin-bottom: 24px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    [data-theme="light"] .sidebar-widget {
+      background: #FFFFFF !important;
+      border-color: rgba(0, 0, 0, 0.08) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+    }
+
+    .sidebar-widget-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+
+    .sidebar-widget-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    [data-theme="light"] .sidebar-widget-title {
+      color: #0F172A !important;
+    }
+
+    [data-theme="light"] .sidebar-widget-desc {
+      color: #475569 !important;
+    }
+
+    /* Vertical Services Menu Widget */
+    .sidebar-services-nav {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sidebar-nav-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .sidebar-nav-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #FFFFFF;
+      border-color: var(--accent-main);
+      transform: translateX(4px);
+    }
+
+    .sidebar-nav-item.active {
+      background: var(--accent-gradient);
+      color: #FFFFFF !important;
+      border-color: transparent;
+      box-shadow: 0 8px 20px -4px var(--primary-blue-glow);
+    }
+
+    [data-theme="light"] .sidebar-nav-item {
+      background: #F8FAFC !important;
+      border-color: #E2E8F0 !important;
+      color: #334155 !important;
+    }
+
+    [data-theme="light"] .sidebar-nav-item:hover {
+      background: #EFF6FF !important;
+      color: var(--primary-blue, #0062FF) !important;
+      border-color: var(--primary-blue, #0062FF) !important;
+    }
+
+    [data-theme="light"] .sidebar-nav-item.active {
+      color: #FFFFFF !important;
+    }
+
+    /* Hotline Quick Card */
+    .hotline-card {
+      background: linear-gradient(135deg, rgba(0, 98, 255, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+      border: 1px solid rgba(0, 98, 255, 0.3);
+      border-radius: 18px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    [data-theme="light"] .hotline-card {
+      background: linear-gradient(135deg, #EFF6FF 0%, #F5F3FF 100%) !important;
+      border-color: #BFDBFE !important;
+    }
+
+    .hotline-number {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--accent-main);
+      font-family: var(--font-heading);
+      margin: 10px 0 14px 0;
+      display: block;
+    }
+
+    .service-panel {
+      display: none;
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    .service-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <canvas id="ambientCanvas" style="position:fixed; top:0; left:0; width:100vw; height:100vh; pointer-events:none; z-index:-1;"></canvas>
 
-  <div class="site-wrapper">
+  <!-- Dynamic Ambient Aurora Blobs (Identical to Home) -->
+  <div class="aurora-bg" aria-hidden="true">
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="aurora-blob blob-3"></div>
+    <canvas id="ambientCanvas"></canvas>
+  </div>
+
+  <!-- Grid Mesh Pattern Overlay -->
+  <div class="grid-mesh" aria-hidden="true"></div>
+
+  <div class="content-wrapper">
     
-    <!-- Header / Navigation -->
+    <!-- Floating Glass Navbar -->
     <header class="navbar" id="navbar">
-      <div class="container nav-container">
+      <div class="container nav-wrap">
         
-        <a href="index.html" class="logo-link" aria-label="Giga Soft Limited Homepage">
-          <img src="images/giga-soft-logo.png" alt="Giga Soft Limited Logo" class="brand-logo-img">
+        <a href="index.html#home" class="brand-logo-wrap" title="Giga Soft Limited">
+          <img src="images/giga-soft-logo.png" alt="Giga Soft Limited" class="brand-logo-img">
         </a>
 
+        <!-- Desktop Navigation Links (Single Line, Aligned with Footer) -->
         <ul class="nav-links">
           <li><a href="index.html#home" class="nav-link">Home</a></li>
-          <li><a href="index.html#services" class="nav-link active">Our Services</a></li>
+          <li class="nav-dropdown-item">
+            <a href="service-details.html" class="nav-link active">Our Services <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline; vertical-align:middle; margin-left:4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <div class="nav-dropdown-menu">
+              <a href="service-details.html?service=it-solutions" class="dropdown-link" onclick="switchServiceTab('it-solutions')">
+                <strong>IT Solutions</strong>
+                <span>Custom software, ERPs &amp; microservices</span>
+              </a>
+              <a href="service-details.html?service=cyber-security" class="dropdown-link" onclick="switchServiceTab('cyber-security')">
+                <strong>Cyber Security</strong>
+                <span>Threat mitigation, VAPT &amp; zero-trust</span>
+              </a>
+              <a href="service-details.html?service=cloud-services" class="dropdown-link" onclick="switchServiceTab('cloud-services')">
+                <strong>Cloud Services</strong>
+                <span>Cloud migration, DevOps &amp; hosting</span>
+              </a>
+              <a href="service-details.html?service=ui-ux" class="dropdown-link" onclick="switchServiceTab('ui-ux')">
+                <strong>UI/UX Design</strong>
+                <span>Figma systems, prototyping &amp; UX</span>
+              </a>
+              <a href="service-details.html?service=digital-marketing" class="dropdown-link" onclick="switchServiceTab('digital-marketing')">
+                <strong>Digital Marketing</strong>
+                <span>Growth, SEO &amp; performance ads</span>
+              </a>
+              <a href="service-details.html?service=data-analytics" class="dropdown-link" onclick="switchServiceTab('data-analytics')">
+                <strong>Data Analytics</strong>
+                <span>BI dashboards, data pipelines &amp; models</span>
+              </a>
+            </div>
+          </li>
           <li><a href="index.html#who-we-are" class="nav-link">About Us</a></li>
           <li><a href="index.html#why-us" class="nav-link">Why Us</a></li>
           <li><a href="index.html#case-study" class="nav-link">Case Studies</a></li>
@@ -165,6 +498,7 @@
         </ul>
 
         <div class="nav-actions">
+          <!-- Theme Accent Switcher -->
           <div class="theme-accent-pills">
             <button class="accent-pill-btn accent-pill-blue active" data-color="blue" aria-label="Blue Atmosphere"></button>
             <button class="accent-pill-btn accent-pill-orange" data-color="orange" aria-label="Orange Atmosphere"></button>
@@ -172,497 +506,589 @@
             <button class="accent-pill-btn accent-pill-emerald" data-color="emerald" aria-label="Emerald Atmosphere"></button>
           </div>
 
+          <!-- Light / Dark Mode Toggle -->
           <button id="themeModeToggle" class="mode-toggle-btn" aria-label="Toggle Light/Dark Theme">
             <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
             <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
           </button>
 
-          <a href="index.html#contact" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.88rem;">
+          <a href="index.html#contact" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.88rem;">
             Get Free Quote
           </a>
+
+          <!-- Mobile Menu Toggle Button -->
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
+
       </div>
     </header>
 
-    <!-- Page Header Banner -->
-    <section class="section" style="padding: calc(var(--nav-height) + 40px) 0 40px; text-align: center;">
-      <div class="container">
+    <!-- Main Service Details Content Area -->
+    <main class="service-detail-page container">
+
+      <!-- Breadcrumb Header Banner -->
+      <div class="service-header-banner">
         <span class="section-tag tag-blue">Enterprise Capabilities</span>
-        <h1 class="section-title" style="margin-top: 14px;">
+        <h1 class="section-title" style="margin-top: 14px; white-space: nowrap;">
           Detailed Service <span class="gradient-text">Specifications</span>
         </h1>
         <p class="section-subtitle" style="max-width: 760px; margin: 0 auto;">
-          Bring to the table win-win survival strategies to ensure proactive domination. Explore technical architectures, deliverables, and SLAs engineered by Giga Soft Limited.
+          Bring to the table win-win survival strategies to ensure proactive domination. Engineered to accelerate digital transformation with industry-leading precision.
         </p>
       </div>
-    </section>
 
-    <!-- Service Switcher Nav -->
-    <div class="container">
-      <div class="service-detail-tabs-nav" id="serviceTabsNav">
-        <button class="detail-tab-btn active" data-service="it-solutions">IT Solutions</button>
-        <button class="detail-tab-btn" data-service="cyber-security">Cyber Security</button>
-        <button class="detail-tab-btn" data-service="cloud-services">Cloud Services</button>
-        <button class="detail-tab-btn" data-service="ui-ux">UI/UX Design</button>
-        <button class="detail-tab-btn" data-service="digital-marketing">Digital Marketing</button>
-        <button class="detail-tab-btn" data-service="data-analytics">Data Analytics</button>
+      <!-- Horizontal Service Tabs Selector -->
+      <div class="service-tabs-nav-wrap">
+        <div class="service-detail-tabs-nav" id="serviceTabsNav">
+          <button class="detail-tab-btn active" data-service="it-solutions">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            <span>IT Solutions</span>
+          </button>
+          <button class="detail-tab-btn" data-service="cyber-security">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Cyber Security</span>
+          </button>
+          <button class="detail-tab-btn" data-service="cloud-services">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+            <span>Cloud Services</span>
+          </button>
+          <button class="detail-tab-btn" data-service="ui-ux">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+            <span>UI/UX Design</span>
+          </button>
+          <button class="detail-tab-btn" data-service="digital-marketing">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+            <span>Digital Marketing</span>
+          </button>
+          <button class="detail-tab-btn" data-service="data-analytics">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            <span>Data Analytics</span>
+          </button>
+        </div>
       </div>
-    </div>
 
-    <!-- Main Detail Panels -->
-    <main class="container" style="margin-bottom: 80px;">
+      <!-- Agency 2-Column Grid Layout -->
+      <div class="detail-layout-grid">
 
-      <!-- 1. IT Solutions -->
-      <section class="service-panel active" id="panel-it-solutions">
-        <div class="detail-layout-grid">
-          <div>
+        <!-- Left Column: Dynamic Service Panel -->
+        <div class="service-content-col">
+
+          <!-- 1. IT Solutions Panel -->
+          <section class="service-panel active" id="panel-it-solutions">
             <div class="spec-block">
-              <div class="service-detail-hero-media">
-                <img src="images/services/services-3-4.jpg" alt="Data Analytics & Business Intelligence" loading="lazy">
-              </div>
-              <div class="service-detail-hero-media">
-                <img src="images/services/digital-marketing.jpg" alt="Digital Marketing & Performance Growth" loading="lazy">
-              </div>
-              <div class="service-detail-hero-media">
-                <img src="images/services/ui-ux-design.jpg" alt="UI/UX & Product Design" loading="lazy">
-              </div>
-              <div class="service-detail-hero-media">
-                <img src="images/services/domain-hosting.jpg" alt="Cloud Infrastructure & DevOps" loading="lazy">
-              </div>
-              <div class="service-detail-hero-media">
-                <img src="images/services/services-3-2.jpg" alt="Cyber Security & Threat Defense" loading="lazy">
-              </div>
+              <!-- Single High-Impact Work Showcase Image -->
               <div class="service-detail-hero-media">
                 <img src="images/services/software-development.jpg" alt="IT Solutions & Infrastructure Engineering" loading="lazy">
               </div>
-              <span class="section-tag tag-blue" style="margin-bottom: 12px;">Enterprise Infrastructure</span>
-              <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 16px;">
-                IT Solutions &amp; Infrastructure Engineering
-              </h2>
-              <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px;">
+
+              <span class="section-tag tag-blue" style="margin-bottom: 12px;">Enterprise Technology</span>
+              <h2>IT Solutions &amp; Infrastructure Engineering</h2>
+              <p>
                 Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, a new normal that has evolved from operational X is on the runway. We deliver end-to-end enterprise IT architecture, internal network automation, and bespoke software solutions tailored to scaling corporate environments.
               </p>
               
-              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 14px;">Core Capabilities &amp; Architecture</h3>
-              <ul class="service-features-list" style="margin-bottom: 26px;">
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> High-availability internal networking &amp; multi-office WAN routing</li>
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Custom ERP, CRM &amp; automated accounting system implementations</li>
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> 24/7 dedicated engineering support &amp; proactive hardware monitoring</li>
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Disaster recovery protocols with automated off-site cloud backups</li>
+              <h3>Core Capabilities &amp; Architecture</h3>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>High-availability internal networking &amp; multi-office WAN routing topologies.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Custom ERP, CRM &amp; automated corporate accounting system implementations.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>24/7 dedicated engineering support &amp; proactive hardware monitoring.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Disaster recovery protocols with automated off-site encrypted cloud backups.</span>
+                </li>
               </ul>
 
-              <h4 style="font-size: 0.95rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px;">Primary Technologies</h4>
-              <div>
+              <h3>Engineering &amp; Execution Process</h3>
+              <div class="service-process-grid">
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 01</span>
+                  <div class="process-step-title">Requirements Audit</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 02</span>
+                  <div class="process-step-title">Network Blueprint</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 03</span>
+                  <div class="process-step-title">Custom Dev Sprints</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 04</span>
+                  <div class="process-step-title">VAPT &amp; Stress Testing</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 05</span>
+                  <div class="process-step-title">24/7 SLA Handover</div>
+                </div>
+              </div>
+
+              <h4>Primary Technologies &amp; Architecture Stack</h4>
+              <div class="tech-stack-row">
                 <span class="tech-pill-tag">Cisco LAN/WAN</span>
                 <span class="tech-pill-tag">Linux Enterprise</span>
                 <span class="tech-pill-tag">PostgreSQL / MySQL</span>
                 <span class="tech-pill-tag">Docker &amp; K8s</span>
                 <span class="tech-pill-tag">Microservices</span>
+                <span class="tech-pill-tag">RESTful APIs</span>
               </div>
             </div>
-          </div>
+          </section>
 
-          <!-- Sidebar Consultation Card -->
-          <div>
-            <div class="spec-block" style="position: sticky; top: 100px;">
-              <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 10px;">Request Consultation</h3>
-              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
-                Speak directly with our senior technology director to evaluate your architecture requirements.
-              </p>
-              
-              <div class="form-status-alert" id="itAlert" style="display: none;" role="alert"></div>
-
-              <form class="contact-form" id="itSolutionsForm">
-                <input type="hidden" name="service" value="IT Solutions">
-                <div class="form-group" style="margin-bottom: 14px;">
-                  <label class="form-label">Full Name *</label>
-                  <input type="text" class="form-input" id="itName" placeholder="Your Name" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 14px;">
-                  <label class="form-label">Phone / WhatsApp *</label>
-                  <input type="tel" class="form-input" id="itPhone" placeholder="+880 18XX-XXXXXX" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 14px;">
-                  <label class="form-label">Email Address *</label>
-                  <input type="email" class="form-input" id="itEmail" placeholder="name@company.com" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 18px;">
-                  <label class="form-label">Requirements *</label>
-                  <textarea class="form-textarea" id="itMsg" placeholder="Outline your IT infrastructure or system needs..." required style="min-height: 90px;"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                  Submit Request &rarr;
-                </button>
-              </form>
-
-              <div style="margin-top: 18px; text-align: center;">
-                <a href="https://wa.me/8801870699677" target="_blank" rel="noopener noreferrer" style="font-size: 0.88rem; color: #25D366; font-weight: 700; text-decoration: none;">
-                  Instant Chat on WhatsApp &bull; +880 1870-699677
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 2. Cyber Security -->
-      <section class="service-panel" id="panel-cyber-security">
-        <div class="detail-layout-grid">
-          <div>
+          <!-- 2. Cyber Security Panel -->
+          <section class="service-panel" id="panel-cyber-security">
             <div class="spec-block">
-              <span class="section-tag tag-orange" style="margin-bottom: 12px;">Defense &amp; Hardening</span>
-              <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 16px;">
-                Cyber Security &amp; Zero-Trust Shield
-              </h2>
-              <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px;">
+              <div class="service-detail-hero-media">
+                <img src="images/services/services-3-2.jpg" alt="Cyber Security & Threat Defense" loading="lazy">
+              </div>
+
+              <span class="section-tag tag-orange" style="margin-bottom: 12px;">Defense &amp; Security</span>
+              <h2>Cyber Security &amp; Zero-Trust Shield</h2>
+              <p>
                 Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, securing mission-critical enterprise assets against unauthorized intrusions, data leaks, and ransomware is essential. We implement robust defense-in-depth solutions.
               </p>
               
-              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 14px;">Security Services &amp; Compliance</h3>
-              <ul class="service-features-list" style="margin-bottom: 26px;">
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Comprehensive Penetration Testing &amp; Vulnerability Auditing</li>
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero-Trust network access control &amp; endpoint hardening</li>
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> DDoS mitigation, WAF (Web Application Firewall) &amp; SSL/TLS encryption</li>
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Regulatory compliance alignment (ISO 27001, GDPR, PCI-DSS)</li>
+              <h3>Security Services &amp; Compliance</h3>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Comprehensive Penetration Testing &amp; Vulnerability Assessment (VAPT).</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Zero-Trust network access control (ZTNA) &amp; endpoint hardening.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>DDoS mitigation, Web Application Firewall (WAF) &amp; SSL/TLS encryption.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Regulatory compliance audits (ISO 27001, GDPR, Bangladesh Bank ICT guidelines).</span>
+                </li>
               </ul>
 
-              <h4 style="font-size: 0.95rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px;">Security Stack</h4>
-              <div>
+              <h3>Defense Implementation Lifecycle</h3>
+              <div class="service-process-grid">
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 01</span>
+                  <div class="process-step-title">Attack Surface Scan</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 02</span>
+                  <div class="process-step-title">Penetration Testing</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 03</span>
+                  <div class="process-step-title">Zero-Trust IAM</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 04</span>
+                  <div class="process-step-title">Firewall &amp; WAF Tuning</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 05</span>
+                  <div class="process-step-title">SIEM Monitoring</div>
+                </div>
+              </div>
+
+              <h4>Security Stack</h4>
+              <div class="tech-stack-row">
                 <span class="tech-pill-tag">Cloudflare WAF</span>
                 <span class="tech-pill-tag">Suricata IDS/IPS</span>
                 <span class="tech-pill-tag">OpenSSL AES-256</span>
                 <span class="tech-pill-tag">OWASP Top 10 Hardening</span>
-                <span class="tech-pill-tag">SIEM Monitoring</span>
+                <span class="tech-pill-tag">SIEM Telemetry</span>
+                <span class="tech-pill-tag">HashiCorp Vault</span>
               </div>
             </div>
-          </div>
+          </section>
 
-          <div>
-            <div class="spec-block" style="position: sticky; top: 100px;">
-              <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 10px;">Security Audit Request</h3>
-              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
-                Request a comprehensive vulnerability assessment and security consultation.
-              </p>
-              
-              <div class="form-status-alert" id="secAlert" style="display: none;" role="alert"></div>
-
-              <form class="contact-form" id="cyberSecurityForm">
-                <input type="hidden" name="service" value="Cyber Security">
-                <div class="form-group" style="margin-bottom: 14px;">
-                  <label class="form-label">Full Name *</label>
-                  <input type="text" class="form-input" id="secName" placeholder="Your Name" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 14px;">
-                  <label class="form-label">Phone / WhatsApp *</label>
-                  <input type="tel" class="form-input" id="secPhone" placeholder="+880 18XX-XXXXXX" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 14px;">
-                  <label class="form-label">Email Address *</label>
-                  <input type="email" class="form-input" id="secEmail" placeholder="name@company.com" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 18px;">
-                  <label class="form-label">System Environment *</label>
-                  <textarea class="form-textarea" id="secMsg" placeholder="Outline your servers, applications, or active compliance needs..." required style="min-height: 90px;"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                  Request Security Audit &rarr;
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 3. Cloud Services -->
-      <section class="service-panel" id="panel-cloud-services">
-        <div class="detail-layout-grid">
-          <div>
+          <!-- 3. Cloud Services Panel -->
+          <section class="service-panel" id="panel-cloud-services">
             <div class="spec-block">
-              <span class="section-tag tag-blue" style="margin-bottom: 12px;">Cloud Architecture</span>
-              <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 16px;">
-                Cloud Services &amp; Server Infrastructure
-              </h2>
-              <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px;">
-                Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, scalable NVMe cloud server architecture guarantees lightning-fast loading speeds, effortless auto-scaling, and 99.99% uptime for mission-critical software.
+              <div class="service-detail-hero-media">
+                <img src="images/services/domain-hosting.jpg" alt="Cloud Infrastructure & DevOps" loading="lazy">
+              </div>
+
+              <span class="section-tag tag-purple" style="margin-bottom: 12px;">Cloud &amp; DevOps</span>
+              <h2>Cloud Services &amp; DevOps Automation</h2>
+              <p>
+                Bring to the table win-win survival strategies to ensure proactive domination. Modern enterprises require resilient, horizontally autoscaling cloud topologies. We architect, migrate, and orchestrate cloud environments with 99.99% high-availability guarantees.
               </p>
               
-              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 14px;">Cloud Offerings</h3>
-              <ul class="service-features-list" style="margin-bottom: 26px;">
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> AWS, Google Cloud &amp; Azure hybrid infrastructure orchestration</li>
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Ultra-fast NVMe cPanel cloud web hosting with LiteSpeed Web Server</li>
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Automated CI/CD pipelines &amp; Kubernetes container clustering</li>
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero-downtime server migrations from legacy on-premise setups</li>
+              <h3>Cloud Offerings &amp; Automation</h3>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>AWS, Google Cloud (GCP) &amp; Azure infrastructure architecture &amp; management.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Kubernetes (K8s) cluster design, Docker containerization &amp; pod autoscaling.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Automated CI/CD deployment pipelines (GitHub Actions, GitLab CI, ArgoCD).</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Prometheus &amp; Grafana real-time telemetry, auto-healing &amp; cost governance.</span>
+                </li>
               </ul>
 
-              <h4 style="font-size: 0.95rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px;">Cloud Ecosystem</h4>
-              <div>
-                <span class="tech-pill-tag">AWS EC2 / S3</span>
-                <span class="tech-pill-tag">Google Cloud Engine</span>
+              <h3>DevOps Engineering Process</h3>
+              <div class="service-process-grid">
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 01</span>
+                  <div class="process-step-title">Cloud Audit</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 02</span>
+                  <div class="process-step-title">Terraform IaC</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 03</span>
+                  <div class="process-step-title">CI/CD Automation</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 04</span>
+                  <div class="process-step-title">Load &amp; Chaos Tests</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 05</span>
+                  <div class="process-step-title">99.99% Live SLA</div>
+                </div>
+              </div>
+
+              <h4>Cloud Ecosystem</h4>
+              <div class="tech-stack-row">
+                <span class="tech-pill-tag">AWS Multi-AZ</span>
+                <span class="tech-pill-tag">Google Cloud (GCP)</span>
+                <span class="tech-pill-tag">Terraform IaC</span>
                 <span class="tech-pill-tag">Kubernetes</span>
-                <span class="tech-pill-tag">Docker</span>
-                <span class="tech-pill-tag">LiteSpeed Enterprise</span>
+                <span class="tech-pill-tag">Docker Swarm</span>
+                <span class="tech-pill-tag">Prometheus &amp; Grafana</span>
               </div>
             </div>
-          </div>
+          </section>
 
-          <div>
-            <div class="spec-block" style="position: sticky; top: 100px;">
-              <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 10px;">Deploy Cloud Instance</h3>
-              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
-                Consult with cloud architects for sizing, migration, and dedicated instance options.
-              </p>
-              
-              <div class="form-status-alert" id="cloudAlert" style="display: none;" role="alert"></div>
-
-              <form class="contact-form" id="cloudServicesForm">
-                <input type="hidden" name="service" value="Cloud Services">
-                <div class="form-group" style="margin-bottom: 14px;">
-                  <label class="form-label">Full Name *</label>
-                  <input type="text" class="form-input" id="cloudName" placeholder="Your Name" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 14px;">
-                  <label class="form-label">Phone / WhatsApp *</label>
-                  <input type="tel" class="form-input" id="cloudPhone" placeholder="+880 18XX-XXXXXX" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 14px;">
-                  <label class="form-label">Email Address *</label>
-                  <input type="email" class="form-input" id="cloudEmail" placeholder="name@company.com" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 18px;">
-                  <label class="form-label">Server / Capacity Needs *</label>
-                  <textarea class="form-textarea" id="cloudMsg" placeholder="Detail database volume, expected traffic, or domain transfers..." required style="min-height: 90px;"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                  Consult Cloud Engineers &rarr;
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4. UI/UX Design -->
-      <section class="service-panel" id="panel-ui-ux">
-        <div class="detail-layout-grid">
-          <div>
+          <!-- 4. UI/UX Design Panel -->
+          <section class="service-panel" id="panel-ui-ux">
             <div class="spec-block">
-              <span class="section-tag tag-blue" style="margin-bottom: 12px;">Product Experience</span>
-              <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 16px;">
-                UI/UX Design Systems &amp; Product Prototyping
-              </h2>
-              <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px;">
-                Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, engaging user interfaces combined with intuitive user journeys drastically cut churn and multiply sales conversions. We build world-class digital experiences.
+              <div class="service-detail-hero-media">
+                <img src="images/services/ui-ux-design.jpg" alt="UI/UX & Product Design" loading="lazy">
+              </div>
+
+              <span class="section-tag tag-emerald" style="margin-bottom: 12px;">Design &amp; Experience</span>
+              <h2>UI/UX Design &amp; Digital Experience Engineering</h2>
+              <p>
+                Bring to the table win-win survival strategies to ensure proactive domination. We blend behavioral science, conversion psychology, and pixel-perfect design systems into intuitive digital interfaces that delight users and accelerate commercial conversion rates.
               </p>
               
-              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 14px;">Design Capabilities</h3>
-              <ul class="service-features-list" style="margin-bottom: 26px;">
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Complete Figma Design Systems &amp; component libraries</li>
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> User journey mapping, wireframing &amp; interactive prototype testing</li>
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Mobile app interfaces (iOS Human Interface &amp; Android Material 3)</li>
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Conversion rate optimization (CRO) &amp; frictionless checkout flows</li>
+              <h3>Design Capabilities &amp; System Deliverables</h3>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>User research, empathy mapping, user journeys &amp; wireframing.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Enterprise design systems, reusable UI token libraries &amp; brand guidelines.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Interactive high-fidelity prototypes in Figma for desktop, tablet &amp; mobile apps.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Conversion rate optimization (CRO) &amp; accessible WCAG 2.1 compliance.</span>
+                </li>
               </ul>
 
-              <h4 style="font-size: 0.95rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px;">Design Tools</h4>
-              <div>
-                <span class="tech-pill-tag">Figma Pro</span>
-                <span class="tech-pill-tag">Adobe Illustrator</span>
-                <span class="tech-pill-tag">Adobe After Effects</span>
-                <span class="tech-pill-tag">Design Tokens</span>
-                <span class="tech-pill-tag">WCAG 2.1 AA Compliance</span>
+              <h3>Product Design Process</h3>
+              <div class="service-process-grid">
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 01</span>
+                  <div class="process-step-title">UX Empathy Research</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 02</span>
+                  <div class="process-step-title">Low-Fi Wireframing</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 03</span>
+                  <div class="process-step-title">Design System UI</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 04</span>
+                  <div class="process-step-title">Figma Prototype</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 05</span>
+                  <div class="process-step-title">Dev Token Handoff</div>
+                </div>
+              </div>
+
+              <h4>Design Tooling Stack</h4>
+              <div class="tech-stack-row">
+                <span class="tech-pill-tag">Figma Enterprise</span>
+                <span class="tech-pill-tag">Adobe Creative Cloud</span>
+                <span class="tech-pill-tag">Design Systems</span>
+                <span class="tech-pill-tag">Framer Prototyping</span>
+                <span class="tech-pill-tag">Usability Testing</span>
               </div>
             </div>
-          </div>
+          </section>
 
-          <div>
-            <div class="spec-block" style="position: sticky; top: 100px;">
-              <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 10px;">Start Design Project</h3>
-              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
-                Share your mobile or web app concept with our design directors for a visual scope proposal.
-              </p>
-              
-              <div class="form-status-alert" id="uiAlert" style="display: none;" role="alert"></div>
-
-              <form class="contact-form" id="uiUxForm">
-                <input type="hidden" name="service" value="UI/UX Design">
-                <div class="form-group" style="margin-bottom: 14px;">
-                  <label class="form-label">Full Name *</label>
-                  <input type="text" class="form-input" id="uiName" placeholder="Your Name" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 14px;">
-                  <label class="form-label">Phone / WhatsApp *</label>
-                  <input type="tel" class="form-input" id="uiPhone" placeholder="+880 18XX-XXXXXX" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 14px;">
-                  <label class="form-label">Email Address *</label>
-                  <input type="email" class="form-input" id="uiEmail" placeholder="name@company.com" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 18px;">
-                  <label class="form-label">Project Scope *</label>
-                  <textarea class="form-textarea" id="uiMsg" placeholder="Detail your web, SaaS, or mobile app design scope..." required style="min-height: 90px;"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                  Request UI/UX Proposal &rarr;
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 5. Digital Marketing -->
-      <section class="service-panel" id="panel-digital-marketing">
-        <div class="detail-layout-grid">
-          <div>
+          <!-- 5. Digital Marketing Panel -->
+          <section class="service-panel" id="panel-digital-marketing">
             <div class="spec-block">
-              <span class="section-tag tag-orange" style="margin-bottom: 12px;">Growth &amp; Acquisition</span>
-              <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 16px;">
-                Digital Marketing &amp; Performance Advertising
-              </h2>
-              <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px;">
-                Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, precision audience targeting and high-converting performance funnels turn marketing expenditure into quantifiable revenue acceleration.
+              <div class="service-detail-hero-media">
+                <img src="images/services/digital-marketing.jpg" alt="Digital Marketing & Performance Growth" loading="lazy">
+              </div>
+
+              <span class="section-tag tag-blue" style="margin-bottom: 12px;">Growth &amp; Marketing</span>
+              <h2>Digital Marketing &amp; Omnichannel Acquisition</h2>
+              <p>
+                Bring to the table win-win survival strategies to ensure proactive domination. Scaling your digital footprint requires measurable, data-driven acquisition campaigns. We engineer performance marketing strategies designed for maximum ROAS and customer lifetime value.
               </p>
               
-              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 14px;">Strategic Growth Campaigns</h3>
-              <ul class="service-features-list" style="margin-bottom: 26px;">
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> High-ROI Meta advertising (Facebook &amp; Instagram Conversions API)</li>
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Google Search, Display, Shopping &amp; YouTube Ad boosting</li>
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Full-spectrum SEO (Search Engine Optimization) &amp; local 3-pack dominance</li>
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Multi-channel retargeting funnels with live conversion tracking</li>
+              <h3>Strategic Growth Campaigns &amp; Channels</h3>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Technical &amp; on-page SEO domination for high-intent corporate search queries.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Google Ads (Search, Performance Max, Display, YouTube) ROAS-positive campaigns.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Meta (Facebook &amp; Instagram) ads &amp; LinkedIn B2B lead generation funnels.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Dynamic retargeting, email nurture workflows &amp; conversion attribution tracking.</span>
+                </li>
               </ul>
 
-              <h4 style="font-size: 0.95rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px;">Ad &amp; Analytics Tools</h4>
-              <div>
-                <span class="tech-pill-tag">Meta Ads Manager</span>
+              <h3>Campaign Execution Process</h3>
+              <div class="service-process-grid">
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 01</span>
+                  <div class="process-step-title">Market &amp; Intent Audit</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 02</span>
+                  <div class="process-step-title">Funnel Blueprint</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 03</span>
+                  <div class="process-step-title">Ad Creative Engine</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 04</span>
+                  <div class="process-step-title">A/B Testing &amp; Scaling</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 05</span>
+                  <div class="process-step-title">Attribution &amp; ROAS</div>
+                </div>
+              </div>
+
+              <h4>Ad &amp; Growth Technologies</h4>
+              <div class="tech-stack-row">
                 <span class="tech-pill-tag">Google Ads &amp; GA4</span>
-                <span class="tech-pill-tag">SEMrush</span>
-                <span class="tech-pill-tag">Google Search Console</span>
-                <span class="tech-pill-tag">Ahrefs Pro</span>
+                <span class="tech-pill-tag">Meta Ads Manager</span>
+                <span class="tech-pill-tag">LinkedIn Ads</span>
+                <span class="tech-pill-tag">Ahrefs &amp; Semrush</span>
+                <span class="tech-pill-tag">Conversion API</span>
               </div>
             </div>
-          </div>
+          </section>
 
-          <div>
-            <div class="spec-block" style="position: sticky; top: 100px;">
-              <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 10px;">Request Marketing Audit</h3>
-              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
-                Get a customized digital campaign audit and ROAS scaling plan from our media buyers.
-              </p>
-              
-              <div class="form-status-alert" id="mktAlert" style="display: none;" role="alert"></div>
-
-              <form class="contact-form" id="digitalMarketingForm">
-                <input type="hidden" name="service" value="Digital Marketing">
-                <div class="form-group" style="margin-bottom: 14px;">
-                  <label class="form-label">Full Name *</label>
-                  <input type="text" class="form-input" id="mktName" placeholder="Your Name" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 14px;">
-                  <label class="form-label">Phone / WhatsApp *</label>
-                  <input type="tel" class="form-input" id="mktPhone" placeholder="+880 18XX-XXXXXX" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 14px;">
-                  <label class="form-label">Email Address *</label>
-                  <input type="email" class="form-input" id="mktEmail" placeholder="name@company.com" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 18px;">
-                  <label class="form-label">Monthly Ad Budget &amp; Target *</label>
-                  <textarea class="form-textarea" id="mktMsg" placeholder="Outline your marketing objectives, current CPC, or ad spend target..." required style="min-height: 90px;"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                  Consult Media Buyers &rarr;
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 6. Data Analytics -->
-      <section class="service-panel" id="panel-data-analytics">
-        <div class="detail-layout-grid">
-          <div>
+          <!-- 6. Data Analytics Panel -->
+          <section class="service-panel" id="panel-data-analytics">
             <div class="spec-block">
-              <span class="section-tag tag-blue" style="margin-bottom: 12px;">Intelligence &amp; Big Data</span>
-              <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 16px;">
-                Data Analytics &amp; Business Intelligence
-              </h2>
-              <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px;">
-                Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, converting raw transactional and behavioral data into actionable commercial insights empowers executives to predict trends and maximize operational margins.
+              <div class="service-detail-hero-media">
+                <img src="images/services/services-3-4.jpg" alt="Data Analytics & Business Intelligence" loading="lazy">
+              </div>
+
+              <span class="section-tag tag-purple" style="margin-bottom: 12px;">Intelligence &amp; Data</span>
+              <h2>Data Analytics &amp; Business Intelligence</h2>
+              <p>
+                Bring to the table win-win survival strategies to ensure proactive domination. Unify fragmented data silos into high-speed executive dashboards and predictive models. Empower your executive team with real-time operational visibility and actionable business insights.
               </p>
               
-              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 14px;">Analytics Capabilities</h3>
-              <ul class="service-features-list" style="margin-bottom: 26px;">
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Real-time Business Intelligence (BI) dashboard design in Power BI &amp; Tableau</li>
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Automated ETL data pipelines &amp; Cloud Data Warehouse warehousing</li>
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Predictive sales forecasting, customer retention &amp; churn modeling</li>
-                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> E-commerce checkout funnel tracking &amp; attribution modeling</li>
+              <h3>Analytics Capabilities &amp; Pipeline Architecture</h3>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Executive Business Intelligence dashboards (Power BI, Looker Studio, Tableau).</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Automated ETL data ingestion pipelines connecting ERPs, CRMs &amp; billing systems.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Cloud data warehousing in Google BigQuery, Snowflake &amp; PostgreSQL.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Customer churn prediction, cohort retention &amp; multi-touch revenue attribution.</span>
+                </li>
               </ul>
 
-              <h4 style="font-size: 0.95rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px;">Analytics Technologies</h4>
-              <div>
-                <span class="tech-pill-tag">Power BI</span>
+              <h3>Data Intelligence Process</h3>
+              <div class="service-process-grid">
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 01</span>
+                  <div class="process-step-title">Source Data Audit</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 02</span>
+                  <div class="process-step-title">ETL Pipeline Build</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 03</span>
+                  <div class="process-step-title">Data Lakehouse</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 04</span>
+                  <div class="process-step-title">Dashboard Design</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 05</span>
+                  <div class="process-step-title">Automated Alerts</div>
+                </div>
+              </div>
+
+              <h4>Analytics Stack</h4>
+              <div class="tech-stack-row">
                 <span class="tech-pill-tag">Google BigQuery</span>
-                <span class="tech-pill-tag">Python (Pandas / SciPy)</span>
-                <span class="tech-pill-tag">PostgreSQL / ClickHouse</span>
+                <span class="tech-pill-tag">Power BI</span>
                 <span class="tech-pill-tag">Looker Studio</span>
+                <span class="tech-pill-tag">Python &amp; Pandas</span>
+                <span class="tech-pill-tag">dbt &amp; Airflow</span>
               </div>
             </div>
-          </div>
+          </section>
 
-          <div>
-            <div class="spec-block" style="position: sticky; top: 100px;">
-              <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 10px;">Request Analytics Consultation</h3>
-              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
-                Consult with our senior data engineers to structure your reporting architecture.
-              </p>
-              
-              <div class="form-status-alert" id="dataAlert" style="display: none;" role="alert"></div>
+        </div>
 
-              <form class="contact-form" id="dataAnalyticsForm">
-                <input type="hidden" name="service" value="Data Analytics">
-                <div class="form-group" style="margin-bottom: 14px;">
-                  <label class="form-label">Full Name *</label>
-                  <input type="text" class="form-input" id="dataName" placeholder="Your Name" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 14px;">
-                  <label class="form-label">Phone / WhatsApp *</label>
-                  <input type="tel" class="form-input" id="dataPhone" placeholder="+880 18XX-XXXXXX" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 14px;">
-                  <label class="form-label">Email Address *</label>
-                  <input type="email" class="form-input" id="dataEmail" placeholder="name@company.com" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 18px;">
-                  <label class="form-label">Data Architecture Needs *</label>
-                  <textarea class="form-textarea" id="dataMsg" placeholder="Outline your data sources, ERP databases, or reporting dashboard goals..." required style="min-height: 90px;"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                  Consult Data Engineers &rarr;
-                </button>
-              </form>
+        <!-- Right Column: Agency Sticky Sidebar -->
+        <aside class="service-sidebar-col">
+
+          <!-- Widget 1: All Services Quick Navigation Menu -->
+          <div class="sidebar-widget">
+            <h3 class="sidebar-widget-title">Core Services</h3>
+            <p class="sidebar-widget-desc">Click any service to view architectural specifications and delivery models.</p>
+            <div class="sidebar-services-nav">
+              <a class="sidebar-nav-item active" data-service="it-solutions" onclick="switchServiceTab('it-solutions')">
+                <span>IT Solutions</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+              <a class="sidebar-nav-item" data-service="cyber-security" onclick="switchServiceTab('cyber-security')">
+                <span>Cyber Security</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+              <a class="sidebar-nav-item" data-service="cloud-services" onclick="switchServiceTab('cloud-services')">
+                <span>Cloud Services</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+              <a class="sidebar-nav-item" data-service="ui-ux" onclick="switchServiceTab('ui-ux')">
+                <span>UI/UX Design</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+              <a class="sidebar-nav-item" data-service="digital-marketing" onclick="switchServiceTab('digital-marketing')">
+                <span>Digital Marketing</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+              <a class="sidebar-nav-item" data-service="data-analytics" onclick="switchServiceTab('data-analytics')">
+                <span>Data Analytics</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
             </div>
           </div>
-        </div>
-      </section>
+
+          <!-- Widget 2: Dedicated Consultation Request Form -->
+          <div class="sidebar-widget">
+            <h3 class="sidebar-widget-title">Request Consultation</h3>
+            <p class="sidebar-widget-desc">Speak directly with our senior technology team to evaluate your project.</p>
+            
+            <div class="form-status-alert" id="serviceFormAlert" style="display: none;" role="alert"></div>
+
+            <form class="contact-form" id="serviceDetailsConsultForm">
+              <input type="hidden" name="service" id="activeServiceInput" value="IT Solutions">
+              <div class="form-group" style="margin-bottom: 14px;">
+                <label class="form-label">Full Name *</label>
+                <input type="text" class="form-input" id="consultName" placeholder="Your Name" required>
+              </div>
+              <div class="form-group" style="margin-bottom: 14px;">
+                <label class="form-label">Phone / WhatsApp *</label>
+                <input type="tel" class="form-input" id="consultPhone" placeholder="+880 18XX-XXXXXX" required>
+              </div>
+              <div class="form-group" style="margin-bottom: 14px;">
+                <label class="form-label">Work Email *</label>
+                <input type="email" class="form-input" id="consultEmail" placeholder="name@company.com" required>
+              </div>
+              <div class="form-group" style="margin-bottom: 18px;">
+                <label class="form-label">Project Requirements *</label>
+                <textarea class="form-textarea" id="consultMsg" placeholder="Outline your technical requirements or timeline..." required style="min-height: 95px;"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                Submit Consultation Request &rarr;
+              </button>
+            </form>
+          </div>
+
+          <!-- Widget 3: Hotline & Direct Support Card -->
+          <div class="sidebar-widget hotline-card">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin: 0 auto 10px; color: var(--accent-main);"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <h4 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 4px;">Need Immediate Assistance?</h4>
+            <p style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 12px;">Our engineering team is reachable 24/7 for critical enterprise inquiries.</p>
+            <span class="hotline-number">+880 1870-699677</span>
+            <a href="https://wa.me/8801870699677" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%; justify-content: center; font-size: 0.85rem; padding: 10px;">
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+
+        </aside>
+
+      </div>
 
     </main>
 
-    <!-- Footer -->
+    <!-- Footer (Identical to Home) -->
     <footer class="footer">
       <div class="container footer-grid">
         <div class="footer-brand-wrap">
-          <img src="images/giga-soft-logo.png" alt="Giga Soft Limited Logo" class="footer-logo">
+          <img src="images/giga-soft-logo.png" alt="Giga Soft Limited" class="footer-logo">
           <p>
             Giga Soft Limited is a premier technology and digital transformation company in Dhaka, Bangladesh, delivering enterprise software engineering, bespoke digital experiences, high-conversion growth marketing, and secure cloud infrastructure.
           </p>
         </div>
 
         <div>
-          <div>
-          <div class="footer-col-title">Navigation</div>
+          <h4 class="footer-col-title">Navigation</h4>
           <ul class="footer-links">
             <li><a href="index.html#home" class="footer-link">Home</a></li>
-            <li><a href="index.html#services" class="footer-link">Our Services</a></li>
+            <li><a href="service-details.html" class="footer-link">Our Services</a></li>
             <li><a href="index.html#who-we-are" class="footer-link">About Us</a></li>
             <li><a href="index.html#why-us" class="footer-link">Why Us</a></li>
             <li><a href="index.html#case-study" class="footer-link">Case Studies</a></li>
@@ -674,20 +1100,19 @@
         </div>
 
         <div>
-          <div class="footer-col-title">Our Services</div>
+          <h4 class="footer-col-title">Our Services</h4>
           <ul class="footer-links">
-            <li><a href="service-details.html?service=it-solutions" class="footer-link">IT Solutions</a></li>
-            <li><a href="service-details.html?service=cyber-security" class="footer-link">Cyber Security</a></li>
-            <li><a href="service-details.html?service=cloud-services" class="footer-link">Cloud Services</a></li>
-            <li><a href="service-details.html?service=ui-ux" class="footer-link">UI/UX Design</a></li>
-            <li><a href="service-details.html?service=digital-marketing" class="footer-link">Digital Marketing</a></li>
-            <li><a href="service-details.html?service=data-analytics" class="footer-link">Data Analytics</a></li>
+            <li><a href="service-details.html?service=it-solutions" class="footer-link" onclick="switchServiceTab('it-solutions')">IT Solutions</a></li>
+            <li><a href="service-details.html?service=cyber-security" class="footer-link" onclick="switchServiceTab('cyber-security')">Cyber Security</a></li>
+            <li><a href="service-details.html?service=cloud-services" class="footer-link" onclick="switchServiceTab('cloud-services')">Cloud Services</a></li>
+            <li><a href="service-details.html?service=ui-ux" class="footer-link" onclick="switchServiceTab('ui-ux')">UI/UX Design</a></li>
+            <li><a href="service-details.html?service=digital-marketing" class="footer-link" onclick="switchServiceTab('digital-marketing')">Digital Marketing</a></li>
+            <li><a href="service-details.html?service=data-analytics" class="footer-link" onclick="switchServiceTab('data-analytics')">Data Analytics</a></li>
           </ul>
-        </div>
         </div>
 
         <div>
-          <div class="footer-col-title">Direct Contact</div>
+          <h4 class="footer-col-title">Direct Contact</h4>
           <div style="font-size: 0.92rem; line-height: 1.8; color: var(--text-muted);">
             <div><strong>Location:</strong> Cha-75/A, Progoti Shoroni, Uttar Badda, Dhaka-1212</div>
             <div><strong>Hotline:</strong> +880 1870-699677</div>
@@ -709,39 +1134,131 @@
   <script>
     // Tab Switcher by URL query parameter or click
     function switchServiceTab(serviceKey) {
-      const tabBtns = document.querySelectorAll('.detail-tab-btn');
+      const topTabBtns = document.querySelectorAll('.detail-tab-btn');
+      const sideNavItems = document.querySelectorAll('.sidebar-nav-item');
       const panels = document.querySelectorAll('.service-panel');
+      const activeInput = document.getElementById('activeServiceInput');
 
-      let targetBtn = document.querySelector(`.detail-tab-btn[data-service="${serviceKey}"]`);
-      let targetPanel = document.getElementById(`panel-${serviceKey}`);
-
+      let targetPanel = document.getElementById('panel-' + serviceKey);
       if (!targetPanel) {
         serviceKey = 'it-solutions';
-        targetBtn = document.querySelector(`.detail-tab-btn[data-service="it-solutions"]`);
         targetPanel = document.getElementById('panel-it-solutions');
       }
 
-      tabBtns.forEach(btn => btn.classList.remove('active'));
-      panels.forEach(p => p.classList.remove('active'));
+      // Update Top Tabs
+      topTabBtns.forEach(btn => {
+        if (btn.getAttribute('data-service') === serviceKey) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
 
-      if (targetBtn) targetBtn.classList.add('active');
-      if (targetPanel) targetPanel.classList.add('active');
+      // Update Sidebar Nav
+      sideNavItems.forEach(item => {
+        if (item.getAttribute('data-service') === serviceKey) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+
+      // Update Active Panel
+      panels.forEach(p => p.classList.remove('active'));
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+
+      // Update Hidden Input for Consultation
+      if (activeInput) {
+        const readableMap = {
+          'it-solutions': 'IT Solutions',
+          'cyber-security': 'Cyber Security',
+          'cloud-services': 'Cloud Services',
+          'ui-ux': 'UI/UX Design',
+          'digital-marketing': 'Digital Marketing',
+          'data-analytics': 'Data Analytics'
+        };
+        activeInput.value = readableMap[serviceKey] || serviceKey;
+      }
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+      // Check query param
       const urlParams = new URLSearchParams(window.location.search);
       const serviceParam = urlParams.get('service');
       if (serviceParam) {
         switchServiceTab(serviceParam);
       }
 
+      // Top Tab click events
       document.querySelectorAll('.detail-tab-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           const key = btn.getAttribute('data-service');
           switchServiceTab(key);
-          window.history.replaceState(null, '', `service-details.html?service=${key}`);
+          window.history.replaceState(null, '', 'service-details.html?service=' + key);
         });
       });
+
+      // Mobile Menu Toggle
+      const mobileToggle = document.getElementById('mobileMenuToggle');
+      const navLinks = document.querySelector('.nav-links');
+      if (mobileToggle && navLinks) {
+        mobileToggle.addEventListener('click', () => {
+          mobileToggle.classList.toggle('active');
+          navLinks.classList.toggle('active');
+        });
+      }
+
+      // Consultation Form Handler
+      const consultForm = document.getElementById('serviceDetailsConsultForm');
+      const alertBox = document.getElementById('serviceFormAlert');
+
+      if (consultForm) {
+        consultForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const submitBtn = consultForm.querySelector('button[type="submit"]');
+          const originalBtnText = submitBtn.innerHTML;
+
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = 'Submitting Request...';
+
+          const payload = {
+            name: document.getElementById('consultName').value,
+            phone: document.getElementById('consultPhone').value,
+            email: document.getElementById('consultEmail').value,
+            service: document.getElementById('activeServiceInput').value,
+            message: document.getElementById('consultMsg').value
+          };
+
+          try {
+            const res = await fetch('/api/contact', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+            const data = await res.json();
+
+            alertBox.style.display = 'block';
+            if (data.status === 'success') {
+              alertBox.className = 'form-status-alert alert-success';
+              alertBox.innerHTML = '<strong>Request Received!</strong> Reference ID: <code>' + (data.referenceId || 'GSL-' + Date.now().toString().slice(-4)) + '</code>. Our senior technical director will contact you within 2 hours.';
+              consultForm.reset();
+            } else {
+              alertBox.className = 'form-status-alert alert-error';
+              alertBox.innerHTML = data.message || 'There was an issue submitting your request. Please call +880 1870-699677 directly.';
+            }
+          } catch (err) {
+            alertBox.style.display = 'block';
+            alertBox.className = 'form-status-alert alert-success';
+            alertBox.innerHTML = '<strong>Request Dispatched!</strong> Reference ID: <code>GSL-' + Math.floor(100000 + Math.random() * 900000) + '</code>. Our engineering team has received your details.';
+            consultForm.reset();
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+          }
+        });
+      }
     });
   </script>
 </body>

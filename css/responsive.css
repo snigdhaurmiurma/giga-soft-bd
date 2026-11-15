@@ -83,8 +83,8 @@
   }
 }
 
-/* Mobile Devices (max-width: 768px) */
-@media (max-width: 768px) {
+/* Navigation Breakpoint for Tablets, Small Laptops & Mobile (max-width: 1080px) */
+@media (max-width: 1080px) {
   :root {
     --nav-height: 72px;
   }
@@ -100,7 +100,7 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     flex-direction: column;
     padding: 30px 24px;
-    gap: 20px;
+    gap: 16px;
     transform: translateY(-150%);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 998;
@@ -127,12 +127,22 @@
     background: #0F172A !important;
   }
 
+  .mobile-menu-toggle {
+    display: block !important;
+  }
+
+  .nav-actions .btn {
+    display: none;
+  }
+
   /* Mega Dropdown on Mobile */
-  .nav-dropdown-wrap {
+  .nav-dropdown-wrap,
+  .nav-dropdown-item {
     width: 100%;
     text-align: center;
   }
 
+  .nav-dropdown-menu,
   .mega-dropdown-menu {
     position: static;
     transform: none !important;
@@ -163,14 +173,6 @@
     grid-template-columns: 1fr;
     max-width: 380px;
     margin: 0 auto;
-  }
-
-  .mobile-menu-toggle {
-    display: block;
-  }
-
-  .nav-actions .btn {
-    display: none;
   }
 
   .services-grid {
