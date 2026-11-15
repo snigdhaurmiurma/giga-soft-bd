@@ -4017,3 +4017,355 @@ h1, h2, h3, h4, h5, h6 {
 [data-theme="light"] .blog-excerpt {
   color: #334155 !important;
 }
+
+/* =============================================================================
+   COMPREHENSIVE FIXES: LIGHT MODE VISIBILITY, FORM TYPING CONTRAST,
+   SERVICES DROPDOWN, ZERO STARS & DYNAMIC SECTION TRANSITIONS
+   ============================================================================= */
+
+/* 1. Header & Navigation Visibility in Light Mode */
+[data-theme="light"] .navbar {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .nav-link {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .nav-link:hover,
+[data-theme="light"] .nav-link.active {
+  color: #0F172A !important;
+  font-weight: 700 !important;
+}
+
+/* 2. Navigation Services Dropdown (Supports both .nav-dropdown-item and .nav-dropdown-wrap) */
+.nav-dropdown-item,
+.nav-dropdown-wrap {
+  position: relative;
+}
+
+.nav-dropdown-menu,
+.mega-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 320px;
+  background: var(--bg-surface-elevated, #0B1120);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.nav-dropdown-item:hover .nav-dropdown-menu,
+.nav-dropdown-item:focus-within .nav-dropdown-menu,
+.nav-dropdown-wrap:hover .nav-dropdown-menu,
+.nav-dropdown-wrap:focus-within .nav-dropdown-menu,
+.nav-dropdown-wrap:hover .mega-dropdown-menu,
+.nav-dropdown-wrap:focus-within .mega-dropdown-menu {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(4px) !important;
+  pointer-events: auto !important;
+}
+
+.dropdown-link {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.dropdown-link strong {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-white, #FFFFFF);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown-link span {
+  font-size: 0.78rem;
+  color: var(--text-muted, #94A3B8);
+  margin-top: 2px;
+}
+
+.dropdown-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(4px);
+}
+
+.dropdown-link:hover strong {
+  color: var(--accent-main, #38BDF8);
+}
+
+[data-theme="light"] .nav-dropdown-menu,
+[data-theme="light"] .mega-dropdown-menu {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12) !important;
+}
+
+[data-theme="light"] .dropdown-link strong {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .dropdown-link span {
+  color: #64748B !important;
+}
+
+[data-theme="light"] .dropdown-link:hover {
+  background: #F1F5F9 !important;
+}
+
+[data-theme="light"] .dropdown-link:hover strong {
+  color: var(--primary-blue, #0062FF) !important;
+}
+
+/* 3. Universal High-Visibility Form Inputs, Textarea & Select */
+input, textarea, select,
+.form-input, .form-textarea, .form-select {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+/* Dark Mode Inputs */
+.form-input, .form-textarea, .form-select,
+input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+  background: rgba(15, 23, 42, 0.85) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+.form-input:focus, .form-textarea:focus, .form-select:focus,
+input:focus, textarea:focus, select:focus {
+  background: rgba(15, 23, 42, 0.98) !important;
+  border-color: var(--accent-main, #38BDF8) !important;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25) !important;
+}
+
+.form-input::placeholder, .form-textarea::placeholder,
+input::placeholder, textarea::placeholder {
+  color: #94A3B8 !important;
+  -webkit-text-fill-color: #94A3B8 !important;
+  opacity: 1 !important;
+}
+
+/* Light Mode Inputs - Crystal Clear Pure Charcoal/Black Typed Text */
+[data-theme="light"] .form-input,
+[data-theme="light"] .form-textarea,
+[data-theme="light"] .form-select,
+[data-theme="light"] input[type="text"],
+[data-theme="light"] input[type="email"],
+[data-theme="light"] input[type="tel"],
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  background: #FFFFFF !important;
+  border: 1.5px solid #CBD5E1 !important;
+  color: #0F172A !important;
+  -webkit-text-fill-color: #0F172A !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .form-input:focus,
+[data-theme="light"] .form-textarea:focus,
+[data-theme="light"] .form-select:focus,
+[data-theme="light"] input:focus,
+[data-theme="light"] textarea:focus,
+[data-theme="light"] select:focus {
+  background: #FFFFFF !important;
+  border-color: var(--primary-blue, #0062FF) !important;
+  color: #0F172A !important;
+  -webkit-text-fill-color: #0F172A !important;
+  box-shadow: 0 0 0 3px rgba(0, 98, 255, 0.2) !important;
+}
+
+[data-theme="light"] .form-input::placeholder,
+[data-theme="light"] .form-textarea::placeholder,
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+  color: #64748B !important;
+  -webkit-text-fill-color: #64748B !important;
+  opacity: 1 !important;
+}
+
+/* Select Dropdown & Options in Both Themes */
+select, .form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  padding-right: 42px !important;
+}
+
+select option, .form-select option {
+  background-color: #0B1120 !important;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  padding: 12px;
+}
+
+[data-theme="light"] select,
+[data-theme="light"] .form-select {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  -webkit-text-fill-color: #0F172A !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+}
+
+[data-theme="light"] select option,
+[data-theme="light"] .form-select option {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  -webkit-text-fill-color: #0F172A !important;
+  padding: 12px;
+}
+
+/* 4. Location & Contact Details High Contrast */
+.contact-detail-text {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text-white, #FFFFFF);
+  line-height: 1.6;
+}
+
+[data-theme="light"] .contact-detail-title {
+  color: #334155 !important;
+  font-weight: 800 !important;
+}
+
+[data-theme="light"] .contact-detail-text {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .contact-detail-text span {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .contact-detail-text a {
+  color: #0F172A !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="light"] .contact-info-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] .contact-info-card h3 {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .contact-info-card p {
+  color: #475569 !important;
+}
+
+/* 5. Footer High Contrast & Typography in Light Mode */
+[data-theme="light"] .footer p,
+[data-theme="light"] .footer em,
+[data-theme="light"] .footer span {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .footer strong {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .footer a {
+  color: #0062FF !important;
+}
+
+[data-theme="light"] .footer-col-title {
+  color: #0F172A !important;
+  font-weight: 800 !important;
+}
+
+/* 6. Clean Service Card Media & 3D Imagery */
+.service-box-img {
+  width: 100%;
+  height: 175px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--glass-border);
+  position: relative;
+}
+
+.service-box-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.service-box:hover .service-box-img img {
+  transform: scale(1.06);
+}
+
+[data-theme="light"] .service-box-img {
+  background: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* 7. Zero Stars Rule (Permanent Guarantee) */
+.testimonial-stars, .stars, [class*="star"], .rating-stars {
+  display: none !important;
+}
+
+/* 8. Full Section Transitions Across Entire Site */
+section,
+.navbar,
+.service-box,
+.who-cap-card,
+.skill-bar-item,
+.case-study-hero,
+.metric-box,
+.blog-card,
+.testimonial-card,
+.pricing-card,
+.contact-form-wrap,
+.contact-info-card,
+.spec-block {
+  transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.4s ease,
+              box-shadow 0.4s ease,
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Light Theme Pure Surface Baseline */
+[data-theme="light"] body {
+  background-color: #F8FAFC !important;
+}
+
+[data-theme="light"] section {
+  background: transparent !important;
+}

@@ -375,6 +375,7 @@ function initCatSlider() {
 function initAccentSwitcher() {
   const pills = document.querySelectorAll('.accent-pill-btn');
   const savedAccent = localStorage.getItem('giga-accent') || 'blue';
+  updateThemeImages(savedAccent);
 
   document.documentElement.setAttribute('data-accent', savedAccent);
   pills.forEach(p => {
@@ -393,6 +394,7 @@ function initAccentSwitcher() {
       p.classList.add('active');
 
       showToast(`Atmosphere switched to ${color.toUpperCase()}`);
+      updateThemeImages(color);
     });
   });
 }
@@ -913,4 +915,85 @@ function showToast(message) {
   setTimeout(() => {
     toast.classList.remove('show');
   }, 3500);
+}
+
+
+/* 12. Theme Atmosphere Image Switcher */
+const themeImageMap = {
+  blue: {
+    who: "images/resource/about-one-img-1.jpg",
+    services: [
+      "images/services/services-1-1.jpg",
+      "images/services/services-1-2.jpg",
+      "images/services/services-1-3.jpg",
+      "images/services/services-1-4.jpg",
+      "images/services/services-1-5.jpg",
+      "images/services/services-1-6.jpg"
+    ]
+  },
+  orange: {
+    who: "images/resource/why-choose-one-img.jpg",
+    services: [
+      "images/services/services-3-1.jpg",
+      "images/services/services-3-2.jpg",
+      "images/services/services-3-3.jpg",
+      "images/services/services-3-4.jpg",
+      "images/resource/about-one-img-2.jpg",
+      "images/resource/why-choose-one-img-2.jpg"
+    ]
+  },
+  purple: {
+    who: "images/blog/blog-2-3.jpg",
+    services: [
+      "images/service-sliders/cat-design-1.jpg",
+      "images/service-sliders/cat-design-2.jpg",
+      "images/service-sliders/cat-design-3.jpg",
+      "images/service-sliders/cat-design-4.jpg",
+      "images/blog/blog-3-1.jpg",
+      "images/blog/blog-3-2.jpg"
+    ]
+  },
+  emerald: {
+    who: "images/resource/about-one-standard-img.jpg",
+    services: [
+      "images/service-sliders/cat-cloud-1.jpg",
+      "images/service-sliders/cat-cloud-2.jpg",
+      "images/service-sliders/cat-cloud-3.jpg",
+      "images/service-sliders/cat-cloud-4.jpg",
+      "images/blog/blog-3-3.jpg",
+      "images/services/services-1-8.jpg"
+    ]
+  }
+};
+
+function updateThemeImages(accent) {
+  const map = themeImageMap[accent] || themeImageMap['blue'];
+  
+  // 1. Who We Are Image with crossfade
+  const whoImg = document.getElementById('whoWeAreImg');
+  if (whoImg && map.who) {
+    whoImg.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+    whoImg.style.opacity = '0';
+    whoImg.style.transform = 'scale(0.96)';
+    setTimeout(() => {
+      whoImg.src = map.who;
+      whoImg.style.opacity = '1';
+      whoImg.style.transform = 'scale(1)';
+    }, 180);
+  }
+
+  // 2. Service Cards Images with staggered crossfade
+  const serviceImgs = document.querySelectorAll('.service-box-img img');
+  serviceImgs.forEach((img, idx) => {
+    if (map.services && map.services[idx]) {
+      img.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+      img.style.opacity = '0';
+      img.style.transform = 'scale(0.96)';
+      setTimeout(() => {
+        img.src = map.services[idx];
+        img.style.opacity = '1';
+        img.style.transform = 'scale(1)';
+      }, 120 + idx * 30);
+    }
+  });
 }
