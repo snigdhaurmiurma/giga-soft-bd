@@ -712,7 +712,24 @@ function initContactForm() {
 
     const leadId = 'GSL-' + Date.now().toString().slice(-6);
 
-    // 1. Primary Dispatch: FormSubmit AJAX endpoint to info@gigadigitalagency.com
+    // 1. PHP Backend Dispatch (cPanel / Apache / LiteSpeed / PHP 8+)
+    try {
+      await fetch('api/contact.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name,
+          phone: phone,
+          email: email,
+          service: service,
+          message: msg
+        })
+      });
+    } catch (err) {
+      // Background catch
+    }
+
+    // 2. Primary Email Dispatch: FormSubmit AJAX endpoint to info@gigadigitalagency.com
     try {
       await fetch('https://formsubmit.co/ajax/info@gigadigitalagency.com', {
         method: 'POST',
