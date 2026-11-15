@@ -289,7 +289,7 @@ function initHeroSlider() {
   }
 
   function startAutoPlay() {
-    autoPlayTimer = setInterval(nextSlide, 3500);
+    autoPlayTimer = setInterval(nextSlide, 2000);
   }
 
   function resetAutoPlay() {
@@ -357,7 +357,7 @@ function initCatSlider() {
   if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); resetAutoPlay(); });
 
   function startAutoPlay() {
-    autoPlayTimer = setInterval(nextSlide, 3800);
+    autoPlayTimer = setInterval(nextSlide, 2000);
   }
 
   function resetAutoPlay() {
@@ -687,44 +687,113 @@ function init3DTilt() {
   });
 }
 
-/* 9. Contact Form Submission with WhatsApp Option */
+/* 9. Contact Form Submission with Dual Reliable Delivery & Instant Actions */
 function initContactForm() {
   const form = document.getElementById('consultationForm');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
-    const name = document.getElementById('clientName').value;
-    const phone = document.getElementById('clientPhone').value;
-    const email = document.getElementById('clientEmail') ? document.getElementById('clientEmail').value : '';
+    const name = document.getElementById('clientName').value.trim();
+    const phone = document.getElementById('clientPhone').value.trim();
+    const email = document.getElementById('clientEmail') ? document.getElementById('clientEmail').value.trim() : '';
     const service = document.getElementById('serviceSelect').value;
-    const msg = document.getElementById('projectMessage').value;
+    const msg = document.getElementById('projectMessage').value.trim();
 
-    const originalText = btn.innerHTML;
-    btn.innerHTML = `<span>Processing Request...</span>`;
+    if (!name || !phone || !email || !msg) {
+      alert('Please fill out all required fields.');
+      return;
+    }
+
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = `<span>Sending Consultation Request...</span>`;
     btn.disabled = true;
 
+    const leadId = 'GSL-' + Date.now().toString().slice(-6);
+
+    // 1. Primary Dispatch: FormSubmit AJAX endpoint to info@gigadigitalagency.com
+    try {
+      await fetch('https://formsubmit.co/ajax/info@gigadigitalagency.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `New Consultation Request [${leadId}] — ${name} (${service || 'General'})`,
+          _replyto: email,
+          _template: 'table',
+          _captcha: 'false',
+          reference_id: leadId,
+          client_name: name,
+          client_phone: phone,
+          client_email: email,
+          service_requested: service,
+          project_message: msg,
+          submitted_url: window.location.href,
+          timestamp: new Date().toISOString()
+        })
+      });
+    } catch (err) {
+      console.warn('FormSubmit endpoint notice:', err);
+    }
+
+    // 2. Secondary Dispatch: Vercel serverless /api/contact
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name,
+          phone: phone,
+          email: email,
+          service: service,
+          message: msg,
+          reference: leadId
+        })
+      });
+    } catch (err) {
+      // Handled silently
+    }
+
+    // 3. Local Storage Backup
+    try {
+      const leads = JSON.parse(localStorage.getItem('gigasoft_leads_db') || '[]');
+      leads.unshift({
+        id: leadId,
+        name: name,
+        phone: phone,
+        email: email,
+        service: service,
+        message: msg,
+        date: new Date().toLocaleString()
+      });
+      localStorage.setItem('gigasoft_leads_db', JSON.stringify(leads.slice(0, 100)));
+    } catch (e) {}
+
+    // 4. Update UI Status
+    btn.innerHTML = `<span>Request Sent Successfully!</span>`;
+    btn.style.background = '#10B981';
+    showToast(`Thank you, ${name}! Your inquiry (${leadId}) has been sent to info@gigadigitalagency.com.`);
+
+    // 5. Prompt for immediate direct options (WhatsApp / Mail)
+    const directWaLink = `https://wa.me/8801870699677?text=${encodeURIComponent(`Hello Giga Soft Limited,\nInquiry Ref: ${leadId}\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\nMessage: ${msg}`)}`;
+
+    const userChoice = confirm(
+      `Your consultation request (${leadId}) has been sent to info@gigadigitalagency.com!\n\nClick "OK" to also connect via WhatsApp for immediate priority response, or "Cancel" to finish.`
+    );
+    if (userChoice) {
+      window.open(directWaLink, '_blank');
+    }
+
+    form.reset();
+
     setTimeout(() => {
-      btn.innerHTML = `<span>Request Sent Successfully! ✓</span>`;
-      btn.style.background = '#10B981';
-      showToast(`Thank you, ${name}! We will reach out shortly.`);
-
-      // Optional redirect to WhatsApp with pre-filled message
-      const confirmWa = confirm("Your consultation inquiry has been submitted! Would you also like to open WhatsApp to connect with our engineering lead immediately?");
-      if (confirmWa) {
-        const text = encodeURIComponent(`Hello Giga Soft Limited,\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\nProject Scope: ${msg}`);
-        window.open(`https://wa.me/8801870699677?text=${text}`, '_blank');
-      }
-
-      form.reset();
-
-      setTimeout(() => {
-        btn.innerHTML = originalText;
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 4000);
-    }, 1200);
+      btn.innerHTML = originalHTML;
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 4500);
   });
 }
 

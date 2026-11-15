@@ -1,12 +1,12 @@
 ﻿/* =============================================================================
-   GIGA SOFT LIMITED â€” THE SOUL OF TECHNOLOGY
+   GIGA SOFT LIMITED - THE SOUL OF TECHNOLOGY
    Vibrant, Creative & Futuristic Ultra-Modern Web Experience
    ============================================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
-  /* Color Palette â€” Brand Primary: Tech Blue & Radiant Orange */
+  /* Color Palette - Brand Primary: Tech Blue & Radiant Orange */
   --primary-blue: #0062FF;
   --primary-blue-glow: rgba(0, 98, 255, 0.45);
   --primary-orange: #FF6600;
@@ -72,7 +72,7 @@
   --blob-3: #6366f1;
 }
 
-/* Radiant Orange Atmosphere â€” NOTICEABLY WARM & DRAMATIC AMBER/EMBER CANVAS */
+/* Radiant Orange Atmosphere - NOTICEABLY WARM & DRAMATIC AMBER/EMBER CANVAS */
 [data-accent="orange"] {
   --accent-main: #FF6600;
   --accent-secondary: #0062FF;
@@ -89,7 +89,7 @@
   --blob-3: #ef4444;
 }
 
-/* Cyber Purple Atmosphere â€” ELECTRIC NEON VIOLET NOIR CANVAS */
+/* Cyber Purple Atmosphere - ELECTRIC NEON VIOLET NOIR CANVAS */
 [data-accent="purple"] {
   --accent-main: #A855F7;
   --accent-secondary: #06B6D4;
@@ -106,7 +106,7 @@
   --blob-3: #06b6d4;
 }
 
-/* Emerald Matrix Atmosphere â€” VIBRANT DEEP JADE & OBSIDIAN CANVAS */
+/* Emerald Matrix Atmosphere - VIBRANT DEEP JADE & OBSIDIAN CANVAS */
 [data-accent="emerald"] {
   --accent-main: #10B981;
   --accent-secondary: #0062FF;
@@ -2403,9 +2403,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .spec-list li::before {
-  content: 'âœ“';
-  color: #10B981;
-  font-weight: 900;
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 11px;
+  border: solid #10B981;
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+  margin-right: 10px;
+  margin-bottom: 2px;
+  flex-shrink: 0;
 }
 
 .spec-tags {
@@ -2816,6 +2823,10 @@ h1, h2, h3, h4, h5, h6 {
 [data-theme="light"] .service-card h3,
 [data-theme="light"] .section-title,
 [data-theme="light"] .hero-title,
+[data-theme="light"] .stat-number,
+[data-theme="light"] .pricing-card:not(.featured) .package-name,
+[data-theme="light"] .pricing-card:not(.featured) .price-currency,
+[data-theme="light"] .pricing-card:not(.featured) .price-val,
 [data-theme="light"] .pricing-card-title,
 [data-theme="light"] .pillar-title,
 [data-theme="light"] .about-title,
@@ -2831,6 +2842,9 @@ h1, h2, h3, h4, h5, h6 {
 [data-theme="light"] .service-card-desc,
 [data-theme="light"] .section-subtitle,
 [data-theme="light"] .hero-description,
+[data-theme="light"] .stat-label,
+[data-theme="light"] .pricing-card:not(.featured) .package-desc,
+[data-theme="light"] .pricing-card:not(.featured) .price-period,
 [data-theme="light"] .about-description,
 [data-theme="light"] .footer-brand-wrap p,
 [data-theme="light"] .footer-link,
@@ -2841,15 +2855,52 @@ h1, h2, h3, h4, h5, h6 {
 
 [data-theme="light"] .service-features li,
 [data-theme="light"] .pricing-features li,
+[data-theme="light"] .pricing-features-list li,
 [data-theme="light"] .about-check-list li {
   color: #1E293B !important;
 }
 
 [data-theme="light"] .service-card,
-[data-theme="light"] .team-card {
+[data-theme="light"] .team-card,
+[data-theme="light"] .pricing-card:not(.featured) {
   background: #FFFFFF !important;
   border: 1px solid rgba(0, 0, 0, 0.08) !important;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Featured Pricing Card: High contrast in both dark & light modes */
+.pricing-card.featured,
+[data-theme="light"] .pricing-card.featured {
+  background: linear-gradient(145deg, #13203c 0%, #0d1629 100%) !important;
+  border: 2px solid var(--primary-blue) !important;
+  box-shadow: 0 20px 45px -10px rgba(0, 98, 255, 0.35) !important;
+  transform: scale(1.04);
+}
+
+.pricing-card.featured .package-name,
+[data-theme="light"] .pricing-card.featured .package-name,
+.pricing-card.featured .price-currency,
+[data-theme="light"] .pricing-card.featured .price-currency,
+.pricing-card.featured .price-val,
+[data-theme="light"] .pricing-card.featured .price-val {
+  color: #FFFFFF !important;
+}
+
+.pricing-card.featured .package-desc,
+[data-theme="light"] .pricing-card.featured .package-desc,
+.pricing-card.featured .price-period,
+[data-theme="light"] .pricing-card.featured .price-period {
+  color: #94A3B8 !important;
+}
+
+.pricing-card.featured .pricing-features-list li,
+[data-theme="light"] .pricing-card.featured .pricing-features-list li {
+  color: #F8FAFC !important;
+}
+
+.pricing-card.featured .pricing-features-list li svg,
+[data-theme="light"] .pricing-card.featured .pricing-features-list li svg {
+  color: #34D399 !important;
 }
 
 [data-theme="light"] .service-card:hover,
