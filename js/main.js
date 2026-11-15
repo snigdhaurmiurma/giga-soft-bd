@@ -753,7 +753,29 @@ function initContactForm() {
 
       const leadId = 'GSL-' + Date.now().toString().slice(-6);
 
-      // 1. PHP Backend Dispatch (cPanel / Apache / LiteSpeed / PHP 8+)
+      // 1. Primary Dispatch: Vercel Serverless Function (/api/contact)
+      try {
+        const vercelRes = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: name,
+            phone: phone,
+            email: email,
+            service: service,
+            message: msg,
+            reference: leadId
+          })
+        });
+        if (vercelRes.ok) {
+          const resData = await vercelRes.json();
+          console.log('[API] Consultation successfully sent via /api/contact:', resData);
+        }
+      } catch (err) {
+        console.warn('/api/contact dispatch note:', err);
+      }
+
+      // 2. Secondary Dispatch: Direct PHP Handler (if hosted on Apache / LiteSpeed)
       try {
         await fetch('api/contact.php', {
           method: 'POST',
@@ -770,7 +792,7 @@ function initContactForm() {
         // Handled silently
       }
 
-      // 2. Primary Email Dispatch: FormSubmit AJAX endpoint to info@gigadigitalagency.com
+      // 3. Fallback Dispatch: FormSubmit AJAX endpoint to info@gigadigitalagency.com
       try {
         await fetch('https://formsubmit.co/ajax/info@gigadigitalagency.com', {
           method: 'POST',
@@ -795,24 +817,6 @@ function initContactForm() {
         });
       } catch (err) {
         console.warn('FormSubmit endpoint notice:', err);
-      }
-
-      // 3. Secondary Dispatch: Vercel serverless /api/contact
-      try {
-        await fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name: name,
-            phone: phone,
-            email: email,
-            service: service,
-            message: msg,
-            reference: leadId
-          })
-        });
-      } catch (err) {
-        // Handled silently
       }
 
       // 4. Local Storage Backup

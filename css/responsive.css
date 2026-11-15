@@ -120,6 +120,7 @@
 
   [data-theme="light"] .nav-link {
     color: #0F172A !important;
+    -webkit-text-fill-color: #0F172A !important;
   }
 
   [data-theme="light"] .mobile-menu-toggle span {

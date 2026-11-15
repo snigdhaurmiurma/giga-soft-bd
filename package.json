@@ -1,0 +1,12 @@
+{
+  "name": "giga-soft-bd",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Giga Soft Limited — The Soul of Technology",
+  "engines": {
+    "node": ">=18.x"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}

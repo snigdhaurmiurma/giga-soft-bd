@@ -2820,14 +2820,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 6. High-Contrast Text in Light Mode (Zero Invisible Text & Pure Crisp Surfaces) */
 [data-theme="light"] {
-  --bg-deep: #F8FAFC !important;
+  --bg-deep: #EDF4FF !important;
   --bg-surface: #FFFFFF !important;
   --bg-surface-elevated: #F1F5F9 !important;
   --bg-card: #FFFFFF !important;
   --bg-card-hover: #F8FAFC !important;
-  --text-main: #1E293B !important;
-  --text-muted: #475569 !important;
-  --text-dim: #64748B !important;
+  --text-main: #0F172A !important;
+  --text-muted: #334155 !important;
+  --text-dim: #475569 !important;
   --text-white: #0F172A !important;
   --glass-border: rgba(0, 0, 0, 0.08) !important;
   --shadow-glow: none !important;
@@ -4032,11 +4032,14 @@ h1, h2, h3, h4, h5, h6 {
 
 [data-theme="light"] .nav-link {
   color: #334155 !important;
+  -webkit-text-fill-color: #334155 !important;
 }
 
 [data-theme="light"] .nav-link:hover,
-[data-theme="light"] .nav-link.active {
+[data-theme="light"] .nav-link.active,
+[data-theme="light"] a.nav-link.active {
   color: #0F172A !important;
+  -webkit-text-fill-color: #0F172A !important;
   font-weight: 700 !important;
 }
 
@@ -4361,9 +4364,10 @@ section,
               transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-/* Light Theme Pure Surface Baseline */
-[data-theme="light"] body {
-  background-color: #F8FAFC !important;
+/* Global Canvas Background Tied to Theme & Accent Variables */
+html, body {
+  background-color: var(--bg-deep) !important;
+  transition: background-color 0.4s ease, color 0.4s ease !important;
 }
 
 [data-theme="light"] section {
