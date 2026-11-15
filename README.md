@@ -1,0 +1,31 @@
+# Giga Soft Limited — The Soul of Technology
+
+**Innovating Software. Empowering Businesses.**
+
+Official website repository for **Giga Soft Limited** (`giga-soft-bd`), an enterprise software development, mobile application engineering, UI/UX design, and digital solutions powerhouse based in Lalmatia, Dhaka, Bangladesh.
+
+---
+
+## 🌟 10 Core Digital Disciplines
+1. **UI/UX Design** — User research, Figma wireframing, design systems & high-fidelity interactive prototypes.
+2. **Web Development** — High-speed, responsive, modern web applications built with React/Next.js and semantic architecture.
+3. **Software Development** — Custom ERPs, enterprise portals, CRM systems, and scalable SaaS platforms.
+4. **App Development** — Native & cross-platform iOS/Android mobile apps with Flutter & React Native.
+5. **Digital Marketing** — Multi-channel performance marketing, Facebook boosting, Google search & YouTube campaigns.
+6. **Marketing & Communication** — Strategic corporate PR, brand messaging, media placement & reputation management.
+7. **Creative Branding** — Complete visual identity, logo design, corporate brand guidelines & marketing collateral.
+8. **Event Management & Activation** — Corporate product launches, experiential brand activations & BTL marketing.
+9. **E-Commerce Solutions** — High-converting online storefronts with local Bangladeshi payment gateway integrations (bKash, Nagad, Rocket).
+10. **Domain & Hosting** — High-speed NVMe cloud servers, corporate domain management, and 99.9% uptime SLA.
+
+---
+
+## 🏢 Headquarters & Contact
+- **Address:** House # 6/14, Hasina De Palace, Block # A, Lalmatia, Dhaka-1207, Bangladesh.
+- **Operations:** Mirpur / Shewrapara, Dhaka, Bangladesh.
+- **Hotlines:** +88-01860-422185 &bull; +880 1870-699677
+- **Official Inquiries:** info@gigasoftbd.com
+
+---
+
+© 2020-2026 Giga Soft Limited. All Rights Reserved.
