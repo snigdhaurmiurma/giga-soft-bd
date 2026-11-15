@@ -1,5 +1,5 @@
 /* =============================================================================
-   GIGA SOFT LIMITED — RESPONSIVE STYLESHEET
+   GIGA SOFT LIMITED &mdash; RESPONSIVE STYLESHEET
    Mobile, Tablet, and Desktop Adaptive Layouts
    ============================================================================= */
 
@@ -350,3 +350,79 @@
   }
 }
 
+
+/* Agency Full-Bleed Hero & Service Showcase Responsive Rules */
+@media (max-width: 900px) {
+  .full-bleed-hero-section {
+    min-height: auto;
+  }
+  .hero-full-slider-container {
+    min-height: auto;
+  }
+  .hero-full-slides-track {
+    min-height: 580px;
+  }
+  .agency-slide-content {
+    padding-top: calc(var(--nav-height) + 20px);
+    padding-bottom: 40px;
+  }
+  .showcase-panels-viewport {
+    min-height: auto;
+  }
+  .showcase-panel {
+    padding: 36px 24px;
+    position: relative;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .agency-hero-title {
+    font-size: 2.1rem;
+    line-height: 1.15;
+  }
+  .agency-hero-desc {
+    font-size: 0.98rem;
+  }
+  .agency-pills-row,
+  .showcase-pills-row {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .agency-pill {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
+  .agency-cta-row,
+  .showcase-cta-row {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  .btn-agency-pill {
+    width: 100%;
+    justify-content: center;
+  }
+  .showcase-tabs-nav {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .showcase-tab-btn {
+    flex-shrink: 0;
+    padding: 10px 18px;
+    font-size: 0.85rem;
+  }
+  .showcase-headline {
+    font-size: 1.5rem;
+  }
+  .showcase-desc {
+    font-size: 0.92rem;
+  }
+  .agency-slider-nav {
+    right: 20px;
+    bottom: 20px;
+  }
+}

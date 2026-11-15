@@ -1,5 +1,5 @@
 /**
- * GIGA SOFT LIMITED — PRODUCTION SERVERLESS INQUIRY & EMAIL HANDLER
+ * GIGA SOFT LIMITED &mdash; PRODUCTION SERVERLESS INQUIRY & EMAIL HANDLER
  * Vercel Serverless Function (Node.js) with Direct SMTP & Nodemailer
  * 
  * Target Destination: info@gigadigitalagency.com / gigadigitalagency@gmail.com
@@ -95,7 +95,7 @@ Sent via Giga Soft Limited (gigasoftbd.com)
   <div class="card">
     <div class="header">
       <h1>GIGA SOFT LIMITED</h1>
-      <p>New Client Consultation Request • ${referenceId}</p>
+      <p>New Client Consultation Request &bull; ${referenceId}</p>
     </div>
     <div class="content">
       <div class="meta-box">
@@ -156,7 +156,7 @@ Sent via Giga Soft Limited (gigasoftbd.com)
           to: destinationEmail,
           bcc: bccEmail,
           replyTo: `"${name}" <${email}>`,
-          subject: `[${referenceId}] New Consultation Request — ${name} (${service})`,
+          subject: `[${referenceId}] New Consultation Request &mdash; ${name} (${service})`,
           text: textContent,
           html: htmlContent
         });
@@ -182,7 +182,7 @@ Sent via Giga Soft Limited (gigasoftbd.com)
             to: [destinationEmail],
             bcc: [bccEmail],
             reply_to: email,
-            subject: `[${referenceId}] New Consultation Request — ${name} (${service})`,
+            subject: `[${referenceId}] New Consultation Request &mdash; ${name} (${service})`,
             html: htmlContent,
             text: textContent
           })
@@ -234,7 +234,7 @@ Sent via Giga Soft Limited (gigasoftbd.com)
       delivered_via: deliveredVia,
       message: `Thank you, ${name}! Your consultation request (Ref #${referenceId}) has been successfully submitted to ${destinationEmail}. Our engineers will contact you shortly.`,
       whatsapp_url: `https://wa.me/8801870699677?text=${encodeURIComponent(`Hello Giga Soft Limited, I just submitted consultation request #${referenceId} for ${service}: ${name} (${phone})`)}`,
-      mailto_url: `mailto:${destinationEmail}?subject=${encodeURIComponent(`[${referenceId}] New Consultation Request — ${name} (${service})`)}&body=${encodeURIComponent(textContent)}`
+      mailto_url: `mailto:${destinationEmail}?subject=${encodeURIComponent(`[${referenceId}] New Consultation Request &mdash; ${name} (${service})`)}&body=${encodeURIComponent(textContent)}`
     });
 
   } catch (error) {

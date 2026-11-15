@@ -2,7 +2,7 @@
   "name": "giga-soft-bd",
   "version": "1.0.0",
   "private": true,
-  "description": "Giga Soft Limited — The Soul of Technology",
+  "description": "Giga Soft Limited &mdash; The Soul of Technology",
   "engines": {
     "node": ">=18.x"
   },

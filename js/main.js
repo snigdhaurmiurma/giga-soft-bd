@@ -1,5 +1,5 @@
 /**
- * GIGA SOFT LIMITED — THE SOUL OF TECHNOLOGY
+ * GIGA SOFT LIMITED &mdash; THE SOUL OF TECHNOLOGY
  * Core Interactive Scripts & Micro-Animations
  */
 
@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initThemeModeToggle();
   initAccentSwitcher();
   initHeroSlider();
+  initServiceShowcase();
   initCatSlider();
   initServiceFilters();
   initFaqAccordion();
@@ -223,18 +224,15 @@ function initThemeModeToggle() {
   }
 }
 
-/* 3. Hero 10-Picture Interactive Carousel */
+/* 3. Full-Bleed Agency Hero Slider & Interactive Service Showcase */
 function initHeroSlider() {
-  const slider = document.getElementById('heroSlider');
-  if (!slider) return;
+  const track = document.getElementById('agencyHeroTrack');
+  const slides = track ? track.querySelectorAll('.agency-hero-slide') : document.querySelectorAll('.hero-slide');
+  const prevBtn = document.getElementById('agencyHeroPrev') || document.getElementById('heroPrevBtn');
+  const nextBtn = document.getElementById('agencyHeroNext') || document.getElementById('heroNextBtn');
+  const dotsContainer = document.getElementById('agencyHeroDots') || document.getElementById('heroSliderDots');
 
-  const slides = slider.querySelectorAll('.hero-slide');
-  const prevBtn = document.getElementById('heroPrevBtn');
-  const nextBtn = document.getElementById('heroNextBtn');
-  const dotsContainer = document.getElementById('heroSliderDots');
-  const counter = document.getElementById('heroSlideCounter');
-
-  if (!slides.length) return;
+  if (!slides || !slides.length) return;
 
   let currentIndex = 0;
   let autoPlayTimer = null;
@@ -244,7 +242,7 @@ function initHeroSlider() {
     dotsContainer.innerHTML = '';
     slides.forEach((_, i) => {
       const dot = document.createElement('button');
-      dot.className = `slider-dot ${i === 0 ? 'active' : ''}`;
+      dot.className = `agency-dot ${i === 0 ? 'active' : ''}`;
       dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
       dot.addEventListener('click', () => {
         goToSlide(i);
@@ -256,14 +254,13 @@ function initHeroSlider() {
 
   function goToSlide(index) {
     slides[currentIndex].classList.remove('active');
-    const dots = dotsContainer ? dotsContainer.querySelectorAll('.slider-dot') : [];
+    const dots = dotsContainer ? dotsContainer.querySelectorAll('.agency-dot, .slider-dot') : [];
     if (dots[currentIndex]) dots[currentIndex].classList.remove('active');
 
     currentIndex = (index + slides.length) % slides.length;
 
     slides[currentIndex].classList.add('active');
     if (dots[currentIndex]) dots[currentIndex].classList.add('active');
-    if (counter) counter.innerText = currentIndex + 1;
   }
 
   function nextSlide() {
@@ -289,7 +286,7 @@ function initHeroSlider() {
   }
 
   function startAutoPlay() {
-    autoPlayTimer = setInterval(nextSlide, 2000);
+    autoPlayTimer = setInterval(nextSlide, 2500); // 2.5s smooth transition
   }
 
   function resetAutoPlay() {
@@ -297,10 +294,40 @@ function initHeroSlider() {
     startAutoPlay();
   }
 
-  slider.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
-  slider.addEventListener('mouseleave', startAutoPlay);
+  const container = document.getElementById('home') || track;
+  if (container) {
+    container.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
+    container.addEventListener('mouseleave', startAutoPlay);
+  }
 
   startAutoPlay();
+}
+
+/* 3.1 Interactive Agency Service Showcase Tabs */
+function initServiceShowcase() {
+  const tabsNav = document.getElementById('showcaseTabsNav');
+  if (!tabsNav) return;
+
+  const tabBtns = tabsNav.querySelectorAll('.showcase-tab-btn');
+  const panels = document.querySelectorAll('.showcase-panel');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const service = btn.getAttribute('data-service');
+      
+      // Update active tab button
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Update active panel
+      panels.forEach(p => {
+        p.classList.remove('active');
+        if (p.id === `showcase-${service}`) {
+          p.classList.add('active');
+        }
+      });
+    });
+  });
 }
 
 /* 4. Category Pages 4-Picture Slider */
