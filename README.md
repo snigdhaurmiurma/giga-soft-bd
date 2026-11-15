@@ -2,7 +2,7 @@
 
 **Innovating Software. Empowering Businesses.**
 
-Official website repository for **Giga Soft Limited** (`giga-soft-bd`), an enterprise software development, mobile application engineering, UI/UX design, and digital solutions powerhouse based in Uttar Badda, Dhaka, Bangladesh.
+Official website repository for **Giga Soft Limited** (`giga-soft-bd`), an enterprise software development, mobile application engineering, UI/UX design, and digital solutions powerhouse based in Lalmatia, Dhaka, Bangladesh.
 
 ---
 
@@ -21,7 +21,7 @@ Official website repository for **Giga Soft Limited** (`giga-soft-bd`), an enter
 ---
 
 ## 🏢 Direct Contact
-- **Location:** Cha-75/A, Progoti Shoroni, Uttar Badda, Dhaka-1212
+- **Location:** House-6/14, Hasina De Palace, Block-A, Lalmatia, Dhaka-1207
 - **Hotline:** +880 1870-699677
 - **Email:** info@gigadigitalagency.com
 
