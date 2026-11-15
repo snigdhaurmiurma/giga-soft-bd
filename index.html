@@ -647,18 +647,27 @@
           <p class="section-subtitle">
             Predictable, flexible pricing tiers engineered to support startups, growing SMEs, and enterprise operations.
           </p>
+
+          <!-- Billing Cycle Toggle Switch -->
+          <div class="pricing-toggle-wrap">
+            <span class="billing-label monthly active">Monthly Billing</span>
+            <button class="billing-toggle-btn" id="billingToggle" aria-label="Toggle Billing Cycle">
+              <span class="toggle-thumb"></span>
+            </button>
+            <span class="billing-label yearly">Yearly Billing <span class="discount-pill">Save 20%</span></span>
+          </div>
         </div>
 
         <div class="pricing-grid">
           
           <!-- Starter Package -->
-          <div class="pricing-card">
+          <div class="pricing-card" data-tilt>
             <div class="pricing-header">
               <div class="package-name">Starter Growth</div>
               <p class="package-desc">Essential digital presence for early-stage companies and specialized professional services.</p>
               <div class="pricing-price-wrap">
                 <span class="price-currency">$</span>
-                <span class="price-val">29.00</span>
+                <span class="price-val" data-monthly="29.00" data-yearly="23.00">29.00</span>
                 <span class="price-period">/ month</span>
               </div>
             </div>
@@ -673,14 +682,14 @@
           </div>
 
           <!-- Professional Package (Featured) -->
-          <div class="pricing-card featured">
+          <div class="pricing-card featured" data-tilt>
             <span class="popular-badge">Most Popular</span>
             <div class="pricing-header">
               <div class="package-name">Business Pro</div>
               <p class="package-desc">Comprehensive web &amp; software capabilities for established brands seeking aggressive market growth.</p>
               <div class="pricing-price-wrap">
                 <span class="price-currency">$</span>
-                <span class="price-val">49.00</span>
+                <span class="price-val" data-monthly="49.00" data-yearly="39.00">49.00</span>
                 <span class="price-period">/ month</span>
               </div>
             </div>
@@ -695,13 +704,13 @@
           </div>
 
           <!-- Enterprise Package -->
-          <div class="pricing-card">
+          <div class="pricing-card" data-tilt>
             <div class="pricing-header">
               <div class="package-name">Enterprise Custom</div>
               <p class="package-desc">Full custom software engineering, dedicated cloud cluster, and specialized account lead.</p>
               <div class="pricing-price-wrap">
                 <span class="price-currency">$</span>
-                <span class="price-val">99.00</span>
+                <span class="price-val" data-monthly="99.00" data-yearly="79.00">99.00</span>
                 <span class="price-period">/ month</span>
               </div>
             </div>
@@ -885,7 +894,7 @@
                 </div>
                 <div>
                   <div class="contact-detail-title">Our Location</div>
-                  <div class="contact-detail-text">House # 6/14, Hasina De Palace, Block # A, Lalmatia, Dhaka-1207, Bangladesh.</div>
+                  <div class="contact-detail-text">House # 6/14, Block # A, Lalmatia, Dhaka-1207, Bangladesh.<br><span style="font-size:0.84rem; color:var(--text-muted); font-weight:normal;">Operations: Mirpur / Shewrapara, Dhaka.</span></div>
                 </div>
               </div>
 
@@ -895,7 +904,7 @@
                 </div>
                 <div>
                   <div class="contact-detail-title">Direct Hotlines</div>
-                  <div class="contact-detail-text">+88-01860-422185 &bull; +880 1870-699677</div>
+                  <div class="contact-detail-text"><a href="tel:+8801870699677" style="color:var(--text-white);">+880 1870-699677</a> (Direct Hotline &amp; WhatsApp)<br><a href="tel:+8801860422185" style="color:var(--text-muted); font-size:0.88rem;">+880 1860-422185</a> (Commercial Operations)</div>
                 </div>
               </div>
 
@@ -905,7 +914,7 @@
                 </div>
                 <div>
                   <div class="contact-detail-title">Official Inquiries</div>
-                  <div class="contact-detail-text">info@gigasoftbd.com</div>
+                  <div class="contact-detail-text"><a href="mailto:info@gigadigitalagency.com" style="color:var(--text-white);">info@gigadigitalagency.com</a><br><a href="mailto:gigadigitalagency@gmail.com" style="color:var(--text-muted); font-size:0.88rem;">gigadigitalagency@gmail.com</a></div>
                 </div>
               </div>
 
@@ -1028,15 +1037,15 @@
 
           <!-- Location & Headquarters -->
           <div>
-            <h4 class="footer-col-title">Headquarters</h4>
+            <h4 class="footer-col-title">Our Location</h4>
             <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px;">
-              House # 6/14, Hasina De Palace, Block # A, Lalmatia, Dhaka-1207, Bangladesh.<br>
+              House # 6/14, Block # A, Lalmatia, Dhaka-1207, Bangladesh.<br>
               <em>Operations: Mirpur / Shewrapara, Dhaka.</em>
             </p>
             <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
-              <strong>Hotlines:</strong> +88-01860-422185<br>
-              <strong>Direct:</strong> +880 1870-699677<br>
-              <strong>Email:</strong> info@gigasoftbd.com
+              <strong>Direct Hotline:</strong> <a href="tel:+8801870699677" style="color:#FFFFFF;">+880 1870-699677</a><br>
+              <strong>Corporate:</strong> <a href="tel:+8801860422185" style="color:var(--text-muted);">+880 1860-422185</a><br>
+              <strong>Email:</strong> <a href="mailto:info@gigadigitalagency.com" style="color:#38BDF8;">info@gigadigitalagency.com</a>
             </p>
           </div>
 
@@ -1060,6 +1069,49 @@
       <button class="float-btn float-top" aria-label="Back to top">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
       </button>
+    </div>
+
+    <!-- Interactive Service Deep-Dive Modal -->
+    <div class="service-modal-overlay" id="serviceModal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="service-modal-card">
+        <button class="modal-close-btn" id="closeServiceModal" aria-label="Close dialog">&times;</button>
+        
+        <div class="modal-header-area">
+          <div class="modal-icon-wrap" id="modalIcon"></div>
+          <div>
+            <span class="modal-badge-tag" id="modalCategory">Category</span>
+            <h3 class="modal-service-title" id="modalTitle">Service Title</h3>
+          </div>
+        </div>
+
+        <p class="modal-service-desc" id="modalDesc">Detailed description</p>
+
+        <div class="modal-specs-grid">
+          <div class="spec-card">
+            <span class="spec-label">Key Deliverables</span>
+            <ul class="spec-list" id="modalDeliverables"></ul>
+          </div>
+          <div class="spec-card">
+            <span class="spec-label">Tech &amp; Tools</span>
+            <div class="spec-tags" id="modalTechTags"></div>
+          </div>
+        </div>
+
+        <div class="modal-footer-area">
+          <button class="btn btn-primary" id="modalBookBtn">
+            <span>Book This Service &rarr;</span>
+          </button>
+          <a href="https://wa.me/8801870699677" target="_blank" rel="noopener noreferrer" class="btn btn-glass">
+            <span>Direct WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast-notification" id="toastNotice">
+      <span class="toast-icon">✓</span>
+      <span class="toast-message" id="toastMessage">Success</span>
     </div>
 
   </div>

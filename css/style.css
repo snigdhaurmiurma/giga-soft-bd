@@ -1735,3 +1735,290 @@ h1, h2, h3, h4, h5, h6 {
 .float-top.show {
   display: flex;
 }
+
+/* -----------------------------------------------------------------------------
+   PRICING BILLING SWITCHER
+   ----------------------------------------------------------------------------- */
+.pricing-toggle-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 10px;
+}
+
+.billing-label {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  transition: var(--transition);
+}
+
+.billing-label.active {
+  color: #FFFFFF;
+}
+
+.billing-toggle-btn {
+  width: 52px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.billing-toggle-btn.yearly-active {
+  background: var(--accent-gradient);
+  border-color: transparent;
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.billing-toggle-btn.yearly-active .toggle-thumb {
+  transform: translateX(24px);
+}
+
+.discount-pill {
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.2);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  margin-left: 6px;
+  text-transform: uppercase;
+}
+
+/* -----------------------------------------------------------------------------
+   3D CARD TILT & SPOTLIGHT GLOW
+   ----------------------------------------------------------------------------- */
+[data-tilt] {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.service-card {
+  cursor: pointer;
+}
+
+/* -----------------------------------------------------------------------------
+   INTERACTIVE SERVICE DETAILS MODAL
+   ----------------------------------------------------------------------------- */
+.service-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(4, 6, 14, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 20px;
+}
+
+.service-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.service-modal-card {
+  width: 100%;
+  max-width: 680px;
+  background: #0B1120;
+  border: 1px solid rgba(0, 98, 255, 0.35);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 98, 255, 0.25);
+  transform: translateY(30px) scale(0.96);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.service-modal-overlay.active .service-modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.modal-close-btn:hover {
+  background: rgba(239, 68, 68, 0.25);
+  color: #EF4444;
+}
+
+.modal-header-area {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.modal-icon-wrap {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: rgba(0, 98, 255, 0.15);
+  color: #38BDF8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-badge-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #38BDF8;
+  letter-spacing: 0.06em;
+}
+
+.modal-service-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.modal-service-desc {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 26px;
+}
+
+.modal-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.spec-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.spec-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #FB923C;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.spec-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.spec-list li {
+  font-size: 0.88rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spec-list li::before {
+  content: '✓';
+  color: #10B981;
+  font-weight: 900;
+}
+
+.spec-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.spec-tag-item {
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(0, 98, 255, 0.12);
+  color: #38BDF8;
+  border: 1px solid rgba(0, 98, 255, 0.25);
+}
+
+.modal-footer-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* -----------------------------------------------------------------------------
+   TOAST NOTIFICATION
+   ----------------------------------------------------------------------------- */
+.toast-notification {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: rgba(16, 185, 129, 0.95);
+  backdrop-filter: blur(14px);
+  color: #FFFFFF;
+  padding: 14px 28px;
+  border-radius: 999px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  z-index: 10001;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.toast-notification.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
