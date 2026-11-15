@@ -1049,9 +1049,9 @@ h1, h2, h3, h4, h5, h6 {
 .ticker-section {
   position: relative;
   padding: 30px 0;
-  background: rgba(11, 17, 32, 0.7);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg-surface);
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
   overflow: hidden;
 }
 
@@ -1348,7 +1348,7 @@ h1, h2, h3, h4, h5, h6 {
 .about-section {
   position: relative;
   padding: 100px 0;
-  background: rgba(11, 17, 32, 0.5);
+  background: transparent;
 }
 
 .about-grid {
@@ -1664,7 +1664,7 @@ h1, h2, h3, h4, h5, h6 {
 .pricing-section {
   position: relative;
   padding: 100px 0;
-  background: rgba(11, 17, 32, 0.6);
+  background: transparent;
 }
 
 .pricing-grid {
@@ -1885,7 +1885,7 @@ h1, h2, h3, h4, h5, h6 {
 .faq-section {
   position: relative;
   padding: 100px 0;
-  background: rgba(11, 17, 32, 0.5);
+  background: transparent;
 }
 
 .faq-wrap {
@@ -3352,4 +3352,668 @@ h1, h2, h3, h4, h5, h6 {
 [data-theme="light"] .btn-alert-dismiss:hover {
   background: rgba(0, 0, 0, 0.05);
   color: #0F172A;
+}
+
+/* =============================================================================
+   NEW CORE SECTIONS: SERVICES, WHO WE ARE, WHY CHOOSE US, CASE STUDIES & BLOG
+   ============================================================================= */
+
+/* -----------------------------------------------------------------------------
+   1. GIGA DIGITAL AGENCY STYLE SERVICES CARDS GRID
+   ----------------------------------------------------------------------------- */
+.services-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 35px;
+}
+
+.service-box {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: 34px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--accent-gradient);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-main);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.service-box:hover::before {
+  opacity: 1;
+}
+
+.service-cat-pill {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+
+.service-icon-wrap {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  transition: transform 0.3s ease;
+}
+
+.service-box:hover .service-icon-wrap {
+  transform: scale(1.08);
+}
+
+.service-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.service-desc {
+  font-size: 0.94rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.service-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.service-features-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: #E2E8F0;
+  line-height: 1.5;
+}
+
+.service-features-list li svg {
+  flex-shrink: 0;
+  color: #10B981;
+}
+
+.service-box-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.service-box-actions .btn {
+  flex: 1;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 0.88rem;
+  justify-content: center;
+}
+
+/* Light mode for Services */
+[data-theme="light"] .service-box {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .service-box:hover {
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08) !important;
+  border-color: var(--accent-main) !important;
+}
+
+[data-theme="light"] .service-title {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .service-desc {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .service-features-list li {
+  color: #1E293B !important;
+}
+
+[data-theme="light"] .service-box-actions {
+  border-top-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* -----------------------------------------------------------------------------
+   2. WHO WE ARE SECTION
+   ----------------------------------------------------------------------------- */
+.who-we-are-section {
+  position: relative;
+  padding: 100px 0;
+}
+
+.who-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.who-lead-text {
+  font-size: 1.12rem;
+  line-height: 1.8;
+  color: #E2E8F0;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.who-sub-text {
+  font-size: 0.96rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+.who-capabilities-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.who-cap-card {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  transition: var(--transition);
+}
+
+.who-cap-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-main);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.who-cap-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.who-cap-icon.blue { background: rgba(0, 98, 255, 0.15); color: #38BDF8; }
+.who-cap-icon.orange { background: rgba(255, 102, 0, 0.15); color: #FB923C; }
+
+.who-cap-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+}
+
+.who-cap-desc {
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.who-visual-wrap {
+  position: relative;
+}
+
+.who-visual-frame {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+.who-visual-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.who-exp-badge {
+  position: absolute;
+  bottom: -20px;
+  left: 30px;
+  background: linear-gradient(135deg, #0062FF 0%, #0045B5 100%);
+  color: #FFFFFF;
+  padding: 16px 24px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 14px 30px rgba(0, 98, 255, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.who-exp-number {
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.who-exp-text {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+}
+
+/* Light mode for Who We Are */
+[data-theme="light"] .who-we-are-section {
+  background: transparent !important;
+}
+
+[data-theme="light"] .who-lead-text {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .who-sub-text {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .who-cap-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .who-cap-title {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .who-cap-desc {
+  color: #334155 !important;
+}
+
+/* -----------------------------------------------------------------------------
+   3. WHY CHOOSE US SECTION & SKILL PROGRESS BARS
+   ----------------------------------------------------------------------------- */
+.why-choose-section {
+  position: relative;
+  padding: 100px 0;
+}
+
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.why-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 35px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.why-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #F8FAFC;
+}
+
+.why-checklist .check-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.18);
+  color: #10B981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.skills-progress-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.skill-bar-item {
+  width: 100%;
+}
+
+.skill-bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.skill-bar-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.skill-bar-percentage {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--accent-main);
+}
+
+.skill-progress-track {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--accent-gradient);
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 10px var(--primary-blue-glow);
+}
+
+/* Light mode for Why Choose Us */
+[data-theme="light"] .why-choose-section {
+  background: transparent !important;
+}
+
+[data-theme="light"] .why-checklist li {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .skill-bar-title {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .skill-progress-track {
+  background: #E2E8F0 !important;
+}
+
+/* -----------------------------------------------------------------------------
+   4. SEE WHAT WE HAVE DONE (CASE STUDY / PORTFOLIO) SECTION
+   ----------------------------------------------------------------------------- */
+.case-study-section {
+  position: relative;
+  padding: 100px 0;
+}
+
+.case-study-hero {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: 44px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  margin-top: 35px;
+}
+
+.case-study-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.case-study-badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(244, 63, 94, 0.14);
+  color: #FB7185;
+  border: 1px solid rgba(244, 63, 94, 0.3);
+  margin-bottom: 14px;
+}
+
+.case-study-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.case-study-desc {
+  font-size: 0.94rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.case-study-desc strong {
+  color: #FFFFFF;
+}
+
+.metric-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.metric-box {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 24px 20px;
+  text-align: center;
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.metric-box:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-main);
+}
+
+.metric-val {
+  font-size: 2.3rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 6px;
+  font-family: var(--font-heading);
+}
+
+.metric-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* Light mode for Case Study */
+[data-theme="light"] .case-study-section {
+  background: transparent !important;
+}
+
+[data-theme="light"] .case-study-hero {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-theme="light"] .case-study-title {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .case-study-desc {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .case-study-desc strong {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .metric-box {
+  background: #F8FAFC !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .metric-label {
+  color: #64748B !important;
+}
+
+/* -----------------------------------------------------------------------------
+   5. BLOG & TECH PERSPECTIVES SECTION
+   ----------------------------------------------------------------------------- */
+.blog-section {
+  position: relative;
+  padding: 100px 0;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 35px;
+}
+
+.blog-card {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-main);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.25);
+}
+
+.blog-img-wrap {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.blog-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.blog-card:hover .blog-img-wrap img {
+  transform: scale(1.06);
+}
+
+.blog-content {
+  padding: 26px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blog-meta-tag {
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+
+.blog-title {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.blog-excerpt {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.blog-read-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent-main);
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.blog-read-btn:hover {
+  transform: translateX(4px);
+}
+
+/* Light mode for Blog */
+[data-theme="light"] .blog-section {
+  background: transparent !important;
+}
+
+[data-theme="light"] .blog-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .blog-card:hover {
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08) !important;
+  border-color: var(--accent-main) !important;
+}
+
+[data-theme="light"] .blog-title {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .blog-excerpt {
+  color: #334155 !important;
 }

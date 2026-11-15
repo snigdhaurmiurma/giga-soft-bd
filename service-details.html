@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-accent="blue">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Details — Giga Soft Limited</title>
+  <meta name="description" content="Explore in-depth technical specifications and enterprise execution for IT Solutions, Cyber Security, Cloud Services, UI/UX Design, Digital Marketing, and Data Analytics by Giga Soft Limited.">
+  <link rel="icon" type="image/png" href="images/giga-soft-logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .service-detail-tabs-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 45px;
+    }
+    .detail-tab-btn {
+      padding: 12px 24px;
+      border-radius: 999px;
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .detail-tab-btn:hover {
+      color: #FFFFFF;
+      border-color: var(--accent-main);
+      transform: translateY(-2px);
+    }
+    .detail-tab-btn.active {
+      background: var(--accent-gradient);
+      color: #FFFFFF !important;
+      border-color: transparent;
+      box-shadow: 0 6px 20px -3px var(--primary-blue-glow);
+    }
+    [data-theme="light"] .detail-tab-btn {
+      background: #FFFFFF !important;
+      border-color: rgba(0,0,0,0.12) !important;
+      color: #475569 !important;
+    }
+    [data-theme="light"] .detail-tab-btn.active {
+      color: #FFFFFF !important;
+    }
+    .service-panel {
+      display: none;
+      animation: fadeIn 0.4s ease-out;
+    }
+    .service-panel.active {
+      display: block;
+    }
+    .detail-layout-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 40px;
+    }
+    @media (max-width: 900px) {
+      .detail-layout-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .spec-block {
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      margin-bottom: 28px;
+    }
+    [data-theme="light"] .spec-block {
+      background: #FFFFFF !important;
+      border-color: rgba(0,0,0,0.08) !important;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04) !important;
+    }
+    .tech-pill-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #E2E8F0;
+      margin: 4px;
+    }
+    [data-theme="light"] .tech-pill-tag {
+      background: #F1F5F9 !important;
+      border-color: #CBD5E1 !important;
+      color: #0F172A !important;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="ambientCanvas" style="position:fixed; top:0; left:0; width:100vw; height:100vh; pointer-events:none; z-index:-1;"></canvas>
+
+  <div class="site-wrapper">
+    
+    <!-- Header / Navigation -->
+    <header class="navbar" id="navbar">
+      <div class="container nav-container">
+        
+        <a href="index.html" class="logo-link" aria-label="Giga Soft Limited Homepage">
+          <img src="images/giga-soft-logo.png" alt="Giga Soft Limited Logo" class="brand-logo-img">
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html#home" class="nav-link">Home</a></li>
+          <li><a href="index.html#services" class="nav-link active">Our Services</a></li>
+          <li><a href="index.html#who-we-are" class="nav-link">Who We Are</a></li>
+          <li><a href="index.html#why-us" class="nav-link">Why Us</a></li>
+          <li><a href="index.html#case-study" class="nav-link">Portfolio</a></li>
+          <li><a href="index.html#blog" class="nav-link">Blog</a></li>
+          <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <div class="theme-accent-pills">
+            <button class="accent-pill-btn accent-pill-blue active" data-color="blue" aria-label="Blue Atmosphere"></button>
+            <button class="accent-pill-btn accent-pill-orange" data-color="orange" aria-label="Orange Atmosphere"></button>
+            <button class="accent-pill-btn accent-pill-purple" data-color="purple" aria-label="Purple Atmosphere"></button>
+            <button class="accent-pill-btn accent-pill-emerald" data-color="emerald" aria-label="Emerald Atmosphere"></button>
+          </div>
+
+          <button id="themeModeToggle" class="mode-toggle-btn" aria-label="Toggle Light/Dark Theme">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+
+          <a href="index.html#contact" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.88rem;">
+            Get Free Quote
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Header Banner -->
+    <section class="section" style="padding: calc(var(--nav-height) + 40px) 0 40px; text-align: center;">
+      <div class="container">
+        <span class="section-tag tag-blue">Enterprise Capabilities</span>
+        <h1 class="section-title" style="margin-top: 14px;">
+          Detailed Service <span class="gradient-text">Specifications</span>
+        </h1>
+        <p class="section-subtitle" style="max-width: 760px; margin: 0 auto;">
+          Bring to the table win-win survival strategies to ensure proactive domination. Explore technical architectures, deliverables, and SLAs engineered by Giga Soft Limited.
+        </p>
+      </div>
+    </section>
+
+    <!-- Service Switcher Nav -->
+    <div class="container">
+      <div class="service-detail-tabs-nav" id="serviceTabsNav">
+        <button class="detail-tab-btn active" data-service="it-solutions">IT Solutions</button>
+        <button class="detail-tab-btn" data-service="cyber-security">Cyber Security</button>
+        <button class="detail-tab-btn" data-service="cloud-services">Cloud Services</button>
+        <button class="detail-tab-btn" data-service="ui-ux">UI/UX Design</button>
+        <button class="detail-tab-btn" data-service="digital-marketing">Digital Marketing</button>
+        <button class="detail-tab-btn" data-service="data-analytics">Data Analytics</button>
+      </div>
+    </div>
+
+    <!-- Main Detail Panels -->
+    <main class="container" style="margin-bottom: 80px;">
+
+      <!-- 1. IT Solutions -->
+      <section class="service-panel active" id="panel-it-solutions">
+        <div class="detail-layout-grid">
+          <div>
+            <div class="spec-block">
+              <span class="section-tag tag-blue" style="margin-bottom: 12px;">Enterprise Infrastructure</span>
+              <h2 style="font-size: 2rem; font-weight: 800; color: #FFFFFF; margin-bottom: 16px;">
+                IT Solutions &amp; Infrastructure Engineering
+              </h2>
+              <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px;">
+                Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, a new normal that has evolved from operational X is on the runway. We deliver end-to-end enterprise IT architecture, internal network automation, and bespoke software solutions tailored to scaling corporate environments.
+              </p>
+              
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: #FFFFFF; margin-bottom: 14px;">Core Capabilities &amp; Architecture</h3>
+              <ul class="service-features-list" style="margin-bottom: 26px;">
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> High-availability internal networking &amp; multi-office WAN routing</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Custom ERP, CRM &amp; automated accounting system implementations</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> 24/7 dedicated engineering support &amp; proactive hardware monitoring</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Disaster recovery protocols with automated off-site cloud backups</li>
+              </ul>
+
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF; text-transform: uppercase; margin-bottom: 10px;">Primary Technologies</h4>
+              <div>
+                <span class="tech-pill-tag">Cisco LAN/WAN</span>
+                <span class="tech-pill-tag">Linux Enterprise</span>
+                <span class="tech-pill-tag">PostgreSQL / MySQL</span>
+                <span class="tech-pill-tag">Docker &amp; K8s</span>
+                <span class="tech-pill-tag">Microservices</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar Consultation Card -->
+          <div>
+            <div class="spec-block" style="position: sticky; top: 100px;">
+              <h3 style="font-size: 1.3rem; font-weight: 800; color: #FFFFFF; margin-bottom: 10px;">Request Consultation</h3>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+                Speak directly with our senior technology director to evaluate your architecture requirements.
+              </p>
+              
+              <div class="form-status-alert" id="itAlert" style="display: none;" role="alert"></div>
+
+              <form class="contact-form" id="itSolutionsForm">
+                <input type="hidden" name="service" value="IT Solutions">
+                <div class="form-group" style="margin-bottom: 14px;">
+                  <label class="form-label">Full Name *</label>
+                  <input type="text" class="form-input" id="itName" placeholder="Your Name" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 14px;">
+                  <label class="form-label">Phone / WhatsApp *</label>
+                  <input type="tel" class="form-input" id="itPhone" placeholder="+880 18XX-XXXXXX" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 14px;">
+                  <label class="form-label">Email Address *</label>
+                  <input type="email" class="form-input" id="itEmail" placeholder="name@company.com" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 18px;">
+                  <label class="form-label">Requirements *</label>
+                  <textarea class="form-textarea" id="itMsg" placeholder="Outline your IT infrastructure or system needs..." required style="min-height: 90px;"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                  Submit Request &rarr;
+                </button>
+              </form>
+
+              <div style="margin-top: 18px; text-align: center;">
+                <a href="https://wa.me/8801870699677" target="_blank" rel="noopener noreferrer" style="font-size: 0.88rem; color: #25D366; font-weight: 700; text-decoration: none;">
+                  Instant Chat on WhatsApp &bull; +880 1870-699677
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Cyber Security -->
+      <section class="service-panel" id="panel-cyber-security">
+        <div class="detail-layout-grid">
+          <div>
+            <div class="spec-block">
+              <span class="section-tag tag-orange" style="margin-bottom: 12px;">Defense &amp; Hardening</span>
+              <h2 style="font-size: 2rem; font-weight: 800; color: #FFFFFF; margin-bottom: 16px;">
+                Cyber Security &amp; Zero-Trust Shield
+              </h2>
+              <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px;">
+                Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, securing mission-critical enterprise assets against unauthorized intrusions, data leaks, and ransomware is essential. We implement robust defense-in-depth solutions.
+              </p>
+              
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: #FFFFFF; margin-bottom: 14px;">Security Services &amp; Compliance</h3>
+              <ul class="service-features-list" style="margin-bottom: 26px;">
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Comprehensive Penetration Testing &amp; Vulnerability Auditing</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero-Trust network access control &amp; endpoint hardening</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> DDoS mitigation, WAF (Web Application Firewall) &amp; SSL/TLS encryption</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Regulatory compliance alignment (ISO 27001, GDPR, PCI-DSS)</li>
+              </ul>
+
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF; text-transform: uppercase; margin-bottom: 10px;">Security Stack</h4>
+              <div>
+                <span class="tech-pill-tag">Cloudflare WAF</span>
+                <span class="tech-pill-tag">Suricata IDS/IPS</span>
+                <span class="tech-pill-tag">OpenSSL AES-256</span>
+                <span class="tech-pill-tag">OWASP Top 10 Hardening</span>
+                <span class="tech-pill-tag">SIEM Monitoring</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="spec-block" style="position: sticky; top: 100px;">
+              <h3 style="font-size: 1.3rem; font-weight: 800; color: #FFFFFF; margin-bottom: 10px;">Security Audit Request</h3>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+                Request a comprehensive vulnerability assessment and security consultation.
+              </p>
+              
+              <div class="form-status-alert" id="secAlert" style="display: none;" role="alert"></div>
+
+              <form class="contact-form" id="cyberSecurityForm">
+                <input type="hidden" name="service" value="Cyber Security">
+                <div class="form-group" style="margin-bottom: 14px;">
+                  <label class="form-label">Full Name *</label>
+                  <input type="text" class="form-input" id="secName" placeholder="Your Name" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 14px;">
+                  <label class="form-label">Phone / WhatsApp *</label>
+                  <input type="tel" class="form-input" id="secPhone" placeholder="+880 18XX-XXXXXX" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 14px;">
+                  <label class="form-label">Email Address *</label>
+                  <input type="email" class="form-input" id="secEmail" placeholder="name@company.com" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 18px;">
+                  <label class="form-label">System Environment *</label>
+                  <textarea class="form-textarea" id="secMsg" placeholder="Outline your servers, applications, or active compliance needs..." required style="min-height: 90px;"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                  Request Security Audit &rarr;
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Cloud Services -->
+      <section class="service-panel" id="panel-cloud-services">
+        <div class="detail-layout-grid">
+          <div>
+            <div class="spec-block">
+              <span class="section-tag tag-blue" style="margin-bottom: 12px;">Cloud Architecture</span>
+              <h2 style="font-size: 2rem; font-weight: 800; color: #FFFFFF; margin-bottom: 16px;">
+                Cloud Services &amp; Server Infrastructure
+              </h2>
+              <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px;">
+                Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, scalable NVMe cloud server architecture guarantees lightning-fast loading speeds, effortless auto-scaling, and 99.99% uptime for mission-critical software.
+              </p>
+              
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: #FFFFFF; margin-bottom: 14px;">Cloud Offerings</h3>
+              <ul class="service-features-list" style="margin-bottom: 26px;">
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> AWS, Google Cloud &amp; Azure hybrid infrastructure orchestration</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Ultra-fast NVMe cPanel cloud web hosting with LiteSpeed Web Server</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Automated CI/CD pipelines &amp; Kubernetes container clustering</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero-downtime server migrations from legacy on-premise setups</li>
+              </ul>
+
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF; text-transform: uppercase; margin-bottom: 10px;">Cloud Ecosystem</h4>
+              <div>
+                <span class="tech-pill-tag">AWS EC2 / S3</span>
+                <span class="tech-pill-tag">Google Cloud Engine</span>
+                <span class="tech-pill-tag">Kubernetes</span>
+                <span class="tech-pill-tag">Docker</span>
+                <span class="tech-pill-tag">LiteSpeed Enterprise</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="spec-block" style="position: sticky; top: 100px;">
+              <h3 style="font-size: 1.3rem; font-weight: 800; color: #FFFFFF; margin-bottom: 10px;">Deploy Cloud Instance</h3>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+                Consult with cloud architects for sizing, migration, and dedicated instance options.
+              </p>
+              
+              <div class="form-status-alert" id="cloudAlert" style="display: none;" role="alert"></div>
+
+              <form class="contact-form" id="cloudServicesForm">
+                <input type="hidden" name="service" value="Cloud Services">
+                <div class="form-group" style="margin-bottom: 14px;">
+                  <label class="form-label">Full Name *</label>
+                  <input type="text" class="form-input" id="cloudName" placeholder="Your Name" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 14px;">
+                  <label class="form-label">Phone / WhatsApp *</label>
+                  <input type="tel" class="form-input" id="cloudPhone" placeholder="+880 18XX-XXXXXX" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 14px;">
+                  <label class="form-label">Email Address *</label>
+                  <input type="email" class="form-input" id="cloudEmail" placeholder="name@company.com" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 18px;">
+                  <label class="form-label">Server / Capacity Needs *</label>
+                  <textarea class="form-textarea" id="cloudMsg" placeholder="Detail database volume, expected traffic, or domain transfers..." required style="min-height: 90px;"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                  Consult Cloud Engineers &rarr;
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. UI/UX Design -->
+      <section class="service-panel" id="panel-ui-ux">
+        <div class="detail-layout-grid">
+          <div>
+            <div class="spec-block">
+              <span class="section-tag tag-blue" style="margin-bottom: 12px;">Product Experience</span>
+              <h2 style="font-size: 2rem; font-weight: 800; color: #FFFFFF; margin-bottom: 16px;">
+                UI/UX Design Systems &amp; Product Prototyping
+              </h2>
+              <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px;">
+                Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, engaging user interfaces combined with intuitive user journeys drastically cut churn and multiply sales conversions. We build world-class digital experiences.
+              </p>
+              
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: #FFFFFF; margin-bottom: 14px;">Design Capabilities</h3>
+              <ul class="service-features-list" style="margin-bottom: 26px;">
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Complete Figma Design Systems &amp; component libraries</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> User journey mapping, wireframing &amp; interactive prototype testing</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Mobile app interfaces (iOS Human Interface &amp; Android Material 3)</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Conversion rate optimization (CRO) &amp; frictionless checkout flows</li>
+              </ul>
+
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF; text-transform: uppercase; margin-bottom: 10px;">Design Tools</h4>
+              <div>
+                <span class="tech-pill-tag">Figma Pro</span>
+                <span class="tech-pill-tag">Adobe Illustrator</span>
+                <span class="tech-pill-tag">Adobe After Effects</span>
+                <span class="tech-pill-tag">Design Tokens</span>
+                <span class="tech-pill-tag">WCAG 2.1 AA Compliance</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="spec-block" style="position: sticky; top: 100px;">
+              <h3 style="font-size: 1.3rem; font-weight: 800; color: #FFFFFF; margin-bottom: 10px;">Start Design Project</h3>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+                Share your mobile or web app concept with our design directors for a visual scope proposal.
+              </p>
+              
+              <div class="form-status-alert" id="uiAlert" style="display: none;" role="alert"></div>
+
+              <form class="contact-form" id="uiUxForm">
+                <input type="hidden" name="service" value="UI/UX Design">
+                <div class="form-group" style="margin-bottom: 14px;">
+                  <label class="form-label">Full Name *</label>
+                  <input type="text" class="form-input" id="uiName" placeholder="Your Name" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 14px;">
+                  <label class="form-label">Phone / WhatsApp *</label>
+                  <input type="tel" class="form-input" id="uiPhone" placeholder="+880 18XX-XXXXXX" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 14px;">
+                  <label class="form-label">Email Address *</label>
+                  <input type="email" class="form-input" id="uiEmail" placeholder="name@company.com" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 18px;">
+                  <label class="form-label">Project Scope *</label>
+                  <textarea class="form-textarea" id="uiMsg" placeholder="Detail your web, SaaS, or mobile app design scope..." required style="min-height: 90px;"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                  Request UI/UX Proposal &rarr;
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Digital Marketing -->
+      <section class="service-panel" id="panel-digital-marketing">
+        <div class="detail-layout-grid">
+          <div>
+            <div class="spec-block">
+              <span class="section-tag tag-orange" style="margin-bottom: 12px;">Growth &amp; Acquisition</span>
+              <h2 style="font-size: 2rem; font-weight: 800; color: #FFFFFF; margin-bottom: 16px;">
+                Digital Marketing &amp; Performance Advertising
+              </h2>
+              <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px;">
+                Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, precision audience targeting and high-converting performance funnels turn marketing expenditure into quantifiable revenue acceleration.
+              </p>
+              
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: #FFFFFF; margin-bottom: 14px;">Strategic Growth Campaigns</h3>
+              <ul class="service-features-list" style="margin-bottom: 26px;">
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> High-ROI Meta advertising (Facebook &amp; Instagram Conversions API)</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Google Search, Display, Shopping &amp; YouTube Ad boosting</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Full-spectrum SEO (Search Engine Optimization) &amp; local 3-pack dominance</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Multi-channel retargeting funnels with live conversion tracking</li>
+              </ul>
+
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF; text-transform: uppercase; margin-bottom: 10px;">Ad &amp; Analytics Tools</h4>
+              <div>
+                <span class="tech-pill-tag">Meta Ads Manager</span>
+                <span class="tech-pill-tag">Google Ads &amp; GA4</span>
+                <span class="tech-pill-tag">SEMrush</span>
+                <span class="tech-pill-tag">Google Search Console</span>
+                <span class="tech-pill-tag">Ahrefs Pro</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="spec-block" style="position: sticky; top: 100px;">
+              <h3 style="font-size: 1.3rem; font-weight: 800; color: #FFFFFF; margin-bottom: 10px;">Request Marketing Audit</h3>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+                Get a customized digital campaign audit and ROAS scaling plan from our media buyers.
+              </p>
+              
+              <div class="form-status-alert" id="mktAlert" style="display: none;" role="alert"></div>
+
+              <form class="contact-form" id="digitalMarketingForm">
+                <input type="hidden" name="service" value="Digital Marketing">
+                <div class="form-group" style="margin-bottom: 14px;">
+                  <label class="form-label">Full Name *</label>
+                  <input type="text" class="form-input" id="mktName" placeholder="Your Name" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 14px;">
+                  <label class="form-label">Phone / WhatsApp *</label>
+                  <input type="tel" class="form-input" id="mktPhone" placeholder="+880 18XX-XXXXXX" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 14px;">
+                  <label class="form-label">Email Address *</label>
+                  <input type="email" class="form-input" id="mktEmail" placeholder="name@company.com" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 18px;">
+                  <label class="form-label">Monthly Ad Budget &amp; Target *</label>
+                  <textarea class="form-textarea" id="mktMsg" placeholder="Outline your marketing objectives, current CPC, or ad spend target..." required style="min-height: 90px;"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                  Consult Media Buyers &rarr;
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Data Analytics -->
+      <section class="service-panel" id="panel-data-analytics">
+        <div class="detail-layout-grid">
+          <div>
+            <div class="spec-block">
+              <span class="section-tag tag-blue" style="margin-bottom: 12px;">Intelligence &amp; Big Data</span>
+              <h2 style="font-size: 2rem; font-weight: 800; color: #FFFFFF; margin-bottom: 16px;">
+                Data Analytics &amp; Business Intelligence
+              </h2>
+              <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px;">
+                Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day going forward, converting raw transactional and behavioral data into actionable commercial insights empowers executives to predict trends and maximize operational margins.
+              </p>
+              
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: #FFFFFF; margin-bottom: 14px;">Analytics Capabilities</h3>
+              <ul class="service-features-list" style="margin-bottom: 26px;">
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Real-time Business Intelligence (BI) dashboard design in Power BI &amp; Tableau</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Automated ETL data pipelines &amp; Cloud Data Warehouse warehousing</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Predictive sales forecasting, customer retention &amp; churn modeling</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> E-commerce checkout funnel tracking &amp; attribution modeling</li>
+              </ul>
+
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF; text-transform: uppercase; margin-bottom: 10px;">Analytics Technologies</h4>
+              <div>
+                <span class="tech-pill-tag">Power BI</span>
+                <span class="tech-pill-tag">Google BigQuery</span>
+                <span class="tech-pill-tag">Python (Pandas / SciPy)</span>
+                <span class="tech-pill-tag">PostgreSQL / ClickHouse</span>
+                <span class="tech-pill-tag">Looker Studio</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="spec-block" style="position: sticky; top: 100px;">
+              <h3 style="font-size: 1.3rem; font-weight: 800; color: #FFFFFF; margin-bottom: 10px;">Request Analytics Consultation</h3>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+                Consult with our senior data engineers to structure your reporting architecture.
+              </p>
+              
+              <div class="form-status-alert" id="dataAlert" style="display: none;" role="alert"></div>
+
+              <form class="contact-form" id="dataAnalyticsForm">
+                <input type="hidden" name="service" value="Data Analytics">
+                <div class="form-group" style="margin-bottom: 14px;">
+                  <label class="form-label">Full Name *</label>
+                  <input type="text" class="form-input" id="dataName" placeholder="Your Name" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 14px;">
+                  <label class="form-label">Phone / WhatsApp *</label>
+                  <input type="tel" class="form-input" id="dataPhone" placeholder="+880 18XX-XXXXXX" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 14px;">
+                  <label class="form-label">Email Address *</label>
+                  <input type="email" class="form-input" id="dataEmail" placeholder="name@company.com" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 18px;">
+                  <label class="form-label">Data Architecture Needs *</label>
+                  <textarea class="form-textarea" id="dataMsg" placeholder="Outline your data sources, ERP databases, or reporting dashboard goals..." required style="min-height: 90px;"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                  Consult Data Engineers &rarr;
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand-wrap">
+          <img src="images/giga-soft-logo.png" alt="Giga Soft Limited Logo" class="footer-logo">
+          <p>
+            Giga Soft Limited is a premier technology and digital transformation company in Dhaka, Bangladesh, delivering enterprise software engineering, bespoke digital experiences, high-conversion growth marketing, and secure cloud infrastructure.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Core Services</div>
+          <ul class="footer-links">
+            <li><a href="service-details.html?service=it-solutions" class="footer-link">IT Solutions</a></li>
+            <li><a href="service-details.html?service=cyber-security" class="footer-link">Cyber Security</a></li>
+            <li><a href="service-details.html?service=cloud-services" class="footer-link">Cloud Services</a></li>
+            <li><a href="service-details.html?service=ui-ux" class="footer-link">UI/UX Design</a></li>
+            <li><a href="service-details.html?service=digital-marketing" class="footer-link">Digital Marketing</a></li>
+            <li><a href="service-details.html?service=data-analytics" class="footer-link">Data Analytics</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Direct Contact</div>
+          <div style="font-size: 0.92rem; line-height: 1.8; color: var(--text-muted);">
+            <div><strong>Location:</strong> Cha-75/A, Progoti Shoroni, Uttar Badda, Dhaka-1212</div>
+            <div><strong>Hotline:</strong> +880 1870-699677</div>
+            <div><strong>Email:</strong> info@gigadigitalagency.com</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>&copy; 2026 Giga Soft Limited. All Rights Reserved. Engineered for Enterprise Excellence.</p>
+        <p>Dhaka, Bangladesh</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script>
+    // Tab Switcher by URL query parameter or click
+    function switchServiceTab(serviceKey) {
+      const tabBtns = document.querySelectorAll('.detail-tab-btn');
+      const panels = document.querySelectorAll('.service-panel');
+
+      let targetBtn = document.querySelector(`.detail-tab-btn[data-service="${serviceKey}"]`);
+      let targetPanel = document.getElementById(`panel-${serviceKey}`);
+
+      if (!targetPanel) {
+        serviceKey = 'it-solutions';
+        targetBtn = document.querySelector(`.detail-tab-btn[data-service="it-solutions"]`);
+        targetPanel = document.getElementById('panel-it-solutions');
+      }
+
+      tabBtns.forEach(btn => btn.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+
+      if (targetBtn) targetBtn.classList.add('active');
+      if (targetPanel) targetPanel.classList.add('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const serviceParam = urlParams.get('service');
+      if (serviceParam) {
+        switchServiceTab(serviceParam);
+      }
+
+      document.querySelectorAll('.detail-tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.getAttribute('data-service');
+          switchServiceTab(key);
+          window.history.replaceState(null, '', `service-details.html?service=${key}`);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
