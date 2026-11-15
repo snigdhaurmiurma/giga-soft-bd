@@ -5,7 +5,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
+  initThemeModeToggle();
   initAccentSwitcher();
+  initHeroSlider();
+  initCatSlider();
   initServiceFilters();
   initFaqAccordion();
   initCounterAnimation();
@@ -72,7 +75,175 @@ function updateActiveNavLink() {
   });
 }
 
-/* 2. Theme Accent Switcher */
+/* 2. Light / Dark Mode Toggle */
+function initThemeModeToggle() {
+  const toggleBtn = document.getElementById('themeModeToggle');
+  const savedTheme = localStorage.getItem('giga-theme') || 'dark';
+
+  document.documentElement.setAttribute('data-theme', savedTheme);
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('giga-theme', newTheme);
+
+      showToast(`Switched to ${newTheme.toUpperCase()} mode`);
+    });
+  }
+}
+
+/* 3. Hero 10-Picture Interactive Carousel */
+function initHeroSlider() {
+  const slider = document.getElementById('heroSlider');
+  if (!slider) return;
+
+  const slides = slider.querySelectorAll('.hero-slide');
+  const prevBtn = document.getElementById('heroPrevBtn');
+  const nextBtn = document.getElementById('heroNextBtn');
+  const dotsContainer = document.getElementById('heroSliderDots');
+  const counter = document.getElementById('heroSlideCounter');
+
+  if (!slides.length) return;
+
+  let currentIndex = 0;
+  let autoPlayTimer = null;
+
+  // Create dot indicators
+  if (dotsContainer) {
+    dotsContainer.innerHTML = '';
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = `slider-dot ${i === 0 ? 'active' : ''}`;
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.addEventListener('click', () => {
+        goToSlide(i);
+        resetAutoPlay();
+      });
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  function goToSlide(index) {
+    slides[currentIndex].classList.remove('active');
+    const dots = dotsContainer ? dotsContainer.querySelectorAll('.slider-dot') : [];
+    if (dots[currentIndex]) dots[currentIndex].classList.remove('active');
+
+    currentIndex = (index + slides.length) % slides.length;
+
+    slides[currentIndex].classList.add('active');
+    if (dots[currentIndex]) dots[currentIndex].classList.add('active');
+    if (counter) counter.innerText = currentIndex + 1;
+  }
+
+  function nextSlide() {
+    goToSlide(currentIndex + 1);
+  }
+
+  function prevSlide() {
+    goToSlide(currentIndex - 1);
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      resetAutoPlay();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      resetAutoPlay();
+    });
+  }
+
+  function startAutoPlay() {
+    autoPlayTimer = setInterval(nextSlide, 3500);
+  }
+
+  function resetAutoPlay() {
+    clearInterval(autoPlayTimer);
+    startAutoPlay();
+  }
+
+  slider.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
+  slider.addEventListener('mouseleave', startAutoPlay);
+
+  startAutoPlay();
+}
+
+/* 4. Category Pages 4-Picture Slider */
+function initCatSlider() {
+  const catSlider = document.getElementById('catSlider');
+  if (!catSlider) return;
+
+  const slides = catSlider.querySelectorAll('.cat-slide');
+  const prevBtn = document.getElementById('catPrevBtn');
+  const nextBtn = document.getElementById('catNextBtn');
+  const dotsContainer = document.getElementById('catDots');
+  const counter = document.getElementById('catCounter');
+
+  if (!slides.length) return;
+
+  let currentIndex = 0;
+  let autoPlayTimer = null;
+
+  if (dotsContainer) {
+    dotsContainer.innerHTML = '';
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = `slider-dot ${i === 0 ? 'active' : ''}`;
+      dot.setAttribute('aria-label', `Slide ${i + 1}`);
+      dot.addEventListener('click', () => {
+        goToSlide(i);
+        resetAutoPlay();
+      });
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  function goToSlide(index) {
+    slides[currentIndex].classList.remove('active');
+    const dots = dotsContainer ? dotsContainer.querySelectorAll('.slider-dot') : [];
+    if (dots[currentIndex]) dots[currentIndex].classList.remove('active');
+
+    currentIndex = (index + slides.length) % slides.length;
+
+    slides[currentIndex].classList.add('active');
+    if (dots[currentIndex]) dots[currentIndex].classList.add('active');
+    if (counter) counter.innerText = currentIndex + 1;
+  }
+
+  function nextSlide() {
+    goToSlide(currentIndex + 1);
+  }
+
+  function prevSlide() {
+    goToSlide(currentIndex - 1);
+  }
+
+  if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); resetAutoPlay(); });
+  if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); resetAutoPlay(); });
+
+  function startAutoPlay() {
+    autoPlayTimer = setInterval(nextSlide, 3800);
+  }
+
+  function resetAutoPlay() {
+    clearInterval(autoPlayTimer);
+    startAutoPlay();
+  }
+
+  catSlider.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
+  catSlider.addEventListener('mouseleave', startAutoPlay);
+
+  startAutoPlay();
+}
+
+/* 5. Theme Accent Switcher */
 function initAccentSwitcher() {
   const pills = document.querySelectorAll('.accent-pill-btn');
   const savedAccent = localStorage.getItem('giga-accent') || 'blue';
@@ -398,6 +569,7 @@ function initContactForm() {
     const btn = form.querySelector('button[type="submit"]');
     const name = document.getElementById('clientName').value;
     const phone = document.getElementById('clientPhone').value;
+    const email = document.getElementById('clientEmail') ? document.getElementById('clientEmail').value : '';
     const service = document.getElementById('serviceSelect').value;
     const msg = document.getElementById('projectMessage').value;
 
@@ -413,7 +585,7 @@ function initContactForm() {
       // Optional redirect to WhatsApp with pre-filled message
       const confirmWa = confirm("Your consultation inquiry has been submitted! Would you also like to open WhatsApp to connect with our engineering lead immediately?");
       if (confirmWa) {
-        const text = encodeURIComponent(`Hello Giga Soft Limited,\nMy name is ${name} (${phone}).\nI am inquiring about: ${service}.\nProject details: ${msg}`);
+        const text = encodeURIComponent(`Hello Giga Soft Limited,\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\nProject Scope: ${msg}`);
         window.open(`https://wa.me/8801870699677?text=${text}`, '_blank');
       }
 

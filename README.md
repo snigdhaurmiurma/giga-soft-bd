@@ -23,8 +23,8 @@ Official website repository for **Giga Soft Limited** (`giga-soft-bd`), an enter
 ## 🏢 Headquarters & Contact
 - **Address:** House # 6/14, Hasina De Palace, Block # A, Lalmatia, Dhaka-1207, Bangladesh.
 - **Operations:** Mirpur / Shewrapara, Dhaka, Bangladesh.
-- **Hotlines:** +88-01860-422185 &bull; +880 1870-699677
-- **Official Inquiries:** info@gigasoftbd.com
+- **Hotline & WhatsApp:** +880 1870-699677
+- **Official Inquiries:** info@gigadigitalagency.com / gigadigitalagency@gmail.com
 
 ---
 

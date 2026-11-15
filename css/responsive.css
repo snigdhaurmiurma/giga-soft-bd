@@ -38,6 +38,11 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
   .about-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -104,6 +109,44 @@
   .nav-links.active {
     transform: translateY(0);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Mega Dropdown on Mobile */
+  .nav-dropdown-wrap {
+    width: 100%;
+    text-align: center;
+  }
+
+  .mega-dropdown-menu {
+    position: static;
+    transform: none !important;
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    padding: 12px 0;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+
+  .mega-dropdown-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .dropdown-category-card {
+    padding: 10px 14px;
+  }
+
+  .hero-slider-viewport {
+    height: 250px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    margin: 0 auto;
   }
 
   .mobile-menu-toggle {

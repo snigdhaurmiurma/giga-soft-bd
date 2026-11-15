@@ -45,16 +45,73 @@
     <header class="navbar">
       <div class="container nav-wrap">
         <a href="#home" class="brand-logo-wrap" title="Giga Soft Limited">
-          <img src="images/giga-soft-logo.jpg" alt="Giga Soft Logo" class="brand-logo-img">
-          <span class="brand-logo-text">GIGA<span>SOFT</span></span>
+          <img src="images/giga-soft-logo.png" alt="Giga Soft Limited" class="brand-logo-img">
         </a>
 
         <!-- Desktop Navigation Links -->
         <ul class="nav-links">
           <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#services" class="nav-link">10 Services</a></li>
+          <li class="nav-dropdown-wrap">
+            <a href="#services" class="nav-link nav-dropdown-trigger">
+              <span>Our Services</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+            <!-- Mega Dropdown Categorized By Discipline -->
+            <div class="mega-dropdown-menu">
+              <div class="mega-dropdown-grid">
+                <!-- Category 1 -->
+                <a href="services/software-web-engineering.html" class="dropdown-category-card">
+                  <div class="cat-icon-box blue">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                  </div>
+                  <div class="cat-info">
+                    <h4>Software &amp; Web Engineering</h4>
+                    <p>Web Dev, Enterprise Software, Mobile Apps &amp; E-Commerce</p>
+                    <span class="cat-link-text">Explore Category &rarr;</span>
+                  </div>
+                </a>
+
+                <!-- Category 2 -->
+                <a href="services/creative-design-branding.html" class="dropdown-category-card">
+                  <div class="cat-icon-box orange">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                  </div>
+                  <div class="cat-info">
+                    <h4>Creative Design &amp; Branding</h4>
+                    <p>UI/UX Prototyping, Brand Identity &amp; Visual Design</p>
+                    <span class="cat-link-text">Explore Category &rarr;</span>
+                  </div>
+                </a>
+
+                <!-- Category 3 -->
+                <a href="services/growth-digital-marketing.html" class="dropdown-category-card">
+                  <div class="cat-icon-box purple">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                  </div>
+                  <div class="cat-info">
+                    <h4>Growth &amp; Digital Marketing</h4>
+                    <p>Performance Ads, SEO Optimization &amp; Event Activation</p>
+                    <span class="cat-link-text">Explore Category &rarr;</span>
+                  </div>
+                </a>
+
+                <!-- Category 4 -->
+                <a href="services/cloud-infrastructure-hosting.html" class="dropdown-category-card">
+                  <div class="cat-icon-box emerald">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                  </div>
+                  <div class="cat-info">
+                    <h4>Cloud &amp; Infrastructure</h4>
+                    <p>NVMe Cloud Hosting, Corporate Domains &amp; SSL Security</p>
+                    <span class="cat-link-text">Explore Category &rarr;</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
           <li><a href="#about" class="nav-link">About Us</a></li>
           <li><a href="#why-us" class="nav-link">Why Us</a></li>
+          <li><a href="#team" class="nav-link">Team</a></li>
           <li><a href="#pricing" class="nav-link">Pricing</a></li>
           <li><a href="#testimonials" class="nav-link">Feedback</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -69,6 +126,12 @@
             <button class="accent-pill-btn accent-pill-purple" data-color="purple" aria-label="Purple Atmosphere"></button>
             <button class="accent-pill-btn accent-pill-emerald" data-color="emerald" aria-label="Emerald Atmosphere"></button>
           </div>
+
+          <!-- Light / Dark Mode Toggle -->
+          <button id="themeModeToggle" class="mode-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Light/Dark Mode">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
 
           <a href="#contact" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.88rem;">
             Get Free Quote
@@ -132,57 +195,115 @@
           </div>
         </div>
 
-        <!-- Right: 3D Tech Glass Showcase -->
+        <!-- Right: 10-Picture Interactive Hero Slider -->
         <div class="hero-visual">
-          
-          <!-- Floating Orbiting Card 1 -->
-          <div class="orbit-badge orbit-badge-1">
-            <div class="orbit-icon blue">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-            </div>
-            <div>
-              <div class="orbit-title">Enterprise Tech</div>
-              <div class="orbit-value">Custom Built</div>
-            </div>
-          </div>
-
-          <!-- Main Center Glass Card -->
-          <div class="hero-glass-card">
-            <div class="card-topbar">
+          <div class="hero-slider-card">
+            <div class="slider-topbar">
               <div class="traffic-dots">
                 <span class="dot-red"></span>
                 <span class="dot-yellow"></span>
                 <span class="dot-green"></span>
               </div>
-              <span class="tech-badge-pill">Giga Soft Engine v4.2 • Online</span>
+              <span class="slider-status-pill">
+                <span class="live-dot"></span> Live Showcase: <span id="heroSlideCounter">1</span> / 10
+              </span>
             </div>
 
-            <div class="hero-showcase-visual">
-              <img src="images/services/hero-web-development-2.jpg" alt="Giga Soft Technology Suite" loading="lazy">
+            <div class="hero-slider-viewport" id="heroSlider">
+              <div class="hero-slides-track">
+                <div class="hero-slide active" data-index="1">
+                  <img src="images/hero-slider/slide-1.jpg" alt="Enterprise Web & Software Engineering" loading="eager">
+                  <div class="slide-caption">
+                    <span class="caption-tag">Slide 01</span>
+                    <h4>Full-Stack Enterprise Engineering</h4>
+                  </div>
+                </div>
+                <div class="hero-slide" data-index="2">
+                  <img src="images/hero-slider/slide-2.jpg" alt="Human-Centered UI/UX Design System" loading="lazy">
+                  <div class="slide-caption">
+                    <span class="caption-tag">Slide 02</span>
+                    <h4>Modern Design Systems &amp; Wireframing</h4>
+                  </div>
+                </div>
+                <div class="hero-slide" data-index="3">
+                  <img src="images/hero-slider/slide-3.jpg" alt="Cross-Platform iOS & Android Apps" loading="lazy">
+                  <div class="slide-caption">
+                    <span class="caption-tag">Slide 03</span>
+                    <h4>High-Performance Mobile Applications</h4>
+                  </div>
+                </div>
+                <div class="hero-slide" data-index="4">
+                  <img src="images/hero-slider/slide-4.jpg" alt="Omnichannel Digital Marketing Command" loading="lazy">
+                  <div class="slide-caption">
+                    <span class="caption-tag">Slide 04</span>
+                    <h4>Omnichannel Performance Marketing</h4>
+                  </div>
+                </div>
+                <div class="hero-slide" data-index="5">
+                  <img src="images/hero-slider/slide-5.jpg" alt="Corporate Branding & Motion Graphics" loading="lazy">
+                  <div class="slide-caption">
+                    <span class="caption-tag">Slide 05</span>
+                    <h4>Brand Identity &amp; Creative Strategy</h4>
+                  </div>
+                </div>
+                <div class="hero-slide" data-index="6">
+                  <img src="images/hero-slider/slide-6.jpg" alt="Enterprise E-Commerce & Payment Automation" loading="lazy">
+                  <div class="slide-caption">
+                    <span class="caption-tag">Slide 06</span>
+                    <h4>E-Commerce &amp; FinTech Integration</h4>
+                  </div>
+                </div>
+                <div class="hero-slide" data-index="7">
+                  <img src="images/hero-slider/slide-7.jpg" alt="NVMe Cloud Infrastructure & DevOps" loading="lazy">
+                  <div class="slide-caption">
+                    <span class="caption-tag">Slide 07</span>
+                    <h4>High-Availability Cloud &amp; Hosting</h4>
+                  </div>
+                </div>
+                <div class="hero-slide" data-index="8">
+                  <img src="images/hero-slider/slide-8.jpg" alt="Experiential Event Management" loading="lazy">
+                  <div class="slide-caption">
+                    <span class="caption-tag">Slide 08</span>
+                    <h4>Brand Activations &amp; Event Tech</h4>
+                  </div>
+                </div>
+                <div class="hero-slide" data-index="9">
+                  <img src="images/hero-slider/slide-9.jpg" alt="Strategic Communications & PR" loading="lazy">
+                  <div class="slide-caption">
+                    <span class="caption-tag">Slide 09</span>
+                    <h4>PR &amp; Corporate Communications</h4>
+                  </div>
+                </div>
+                <div class="hero-slide" data-index="10">
+                  <img src="images/hero-slider/slide-10.jpg" alt="Security Architecture & SSL Encryption" loading="lazy">
+                  <div class="slide-caption">
+                    <span class="caption-tag">Slide 10</span>
+                    <h4>Security Architecture &amp; 99.9% Uptime</h4>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slider Navigation Arrows -->
+              <button class="slider-btn slider-prev" id="heroPrevBtn" aria-label="Previous Slide">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <button class="slider-btn slider-next" id="heroNextBtn" aria-label="Next Slide">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+
+              <!-- Slider Dots -->
+              <div class="slider-controls-bar">
+                <div class="slider-dots" id="heroSliderDots"></div>
+              </div>
             </div>
 
-            <!-- Tech Pills -->
-            <div class="floating-tech-tags">
-              <span class="tech-tag">React / Next.js</span>
-              <span class="tech-tag">Flutter Mobile</span>
-              <span class="tech-tag">Python / Django</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">AWS Cloud</span>
-              <span class="tech-tag">Figma UI/UX</span>
+            <!-- Slide Quick-Tags -->
+            <div class="hero-slider-tags">
+              <span class="tag-item">10 Dynamic Visuals</span>
+              <span class="tag-item">Auto-Play 3.5s</span>
+              <span class="tag-item">Interactive Controls</span>
             </div>
           </div>
-
-          <!-- Floating Orbiting Card 2 -->
-          <div class="orbit-badge orbit-badge-2">
-            <div class="orbit-icon orange">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            </div>
-            <div>
-              <div class="orbit-title">Client Rating</div>
-              <div class="orbit-value">5.0 ★★★★★</div>
-            </div>
-          </div>
-
         </div>
 
       </div>
@@ -514,7 +635,7 @@
         <!-- Left Visual -->
         <div class="about-visual-wrap">
           <div class="about-main-img">
-            <img src="images/services/hero-company-profile-2.jpg" alt="About Giga Soft Limited" loading="lazy">
+            <img src="images/about/about-corporate.jpg" alt="About Giga Soft Limited — Corporate Innovation" loading="lazy">
           </div>
           <div class="about-experience-card">
             <div class="about-exp-number">05+</div>
@@ -634,7 +755,80 @@
     </section>
 
     <!-- =========================================================================
-         7. PRICING & FLEXIBLE ENGAGEMENT PACKAGES
+         7. ENGINEERING LEADERSHIP & EXPERT TEAM
+         ========================================================================= -->
+    <section class="team-section" id="team">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-tag tag-blue">Engineering Talent</div>
+          <h2 class="section-title">
+            The Minds Behind the <span class="gradient-text">Innovation</span>
+          </h2>
+          <p class="section-subtitle">
+            Our multi-disciplinary team of software architects, full-stack engineers, and product designers building tomorrow's tech.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <!-- Member 1: CTO -->
+          <div class="team-card">
+            <div class="team-img-wrap">
+              <img src="images/team/team-ashikur-rahman.jpg" alt="Engr. Abdullah Al Mamun — Chief Technology Officer" loading="lazy">
+              <span class="team-badge">Leadership</span>
+            </div>
+            <div class="team-info">
+              <div class="team-dept">Architecture &amp; Cloud</div>
+              <h3 class="team-name">Engr. Abdullah Al Mamun</h3>
+              <div class="team-role">Chief Technology Officer</div>
+            </div>
+          </div>
+
+          <!-- Member 2: Senior Software Engineer -->
+          <div class="team-card">
+            <div class="team-img-wrap">
+              <img src="images/team/team-kobir-hossen.jpg" alt="Md. Kobir Hossen — Senior Software Engineer" loading="lazy">
+              <span class="team-badge">Senior Engineer</span>
+            </div>
+            <div class="team-info">
+              <div class="team-dept">Web &amp; Technology</div>
+              <h3 class="team-name">Md. Kobir Hossen</h3>
+              <div class="team-role">Senior Software Engineer</div>
+            </div>
+          </div>
+
+          <!-- Member 3: Masud Ibn Oliullah -->
+          <div class="team-card">
+            <div class="team-img-wrap">
+              <img src="images/team/team-masud-ibn-oliullah.jpg" alt="Masud Ibn Oliullah — Software Engineer" loading="lazy">
+              <span class="team-badge">Software Engineer</span>
+            </div>
+            <div class="team-info">
+              <div class="team-dept">Web &amp; Technology</div>
+              <h3 class="team-name">Masud Ibn Oliullah</h3>
+              <div class="team-role">Software Engineer</div>
+            </div>
+          </div>
+
+          <!-- Member 4: Senior Creative -->
+          <div class="team-card">
+            <div class="team-img-wrap">
+              <img src="images/team/team-risul-islam.jpg" alt="Md. Risul Islam — Creative Director" loading="lazy">
+              <span class="team-badge">Creative Lead</span>
+            </div>
+            <div class="team-info">
+              <div class="team-dept">UI/UX &amp; Motion</div>
+              <h3 class="team-name">Md. Risul Islam</h3>
+              <div class="team-role">Creative &amp; Motion Lead</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         8. PRICING & FLEXIBLE ENGAGEMENT PACKAGES
          ========================================================================= -->
     <section class="pricing-section" id="pricing">
       <div class="container">
@@ -903,8 +1097,8 @@
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 </div>
                 <div>
-                  <div class="contact-detail-title">Direct Hotlines</div>
-                  <div class="contact-detail-text"><a href="tel:+8801870699677" style="color:var(--text-white);">+880 1870-699677</a> (Direct Hotline &amp; WhatsApp)<br><a href="tel:+8801860422185" style="color:var(--text-muted); font-size:0.88rem;">+880 1860-422185</a> (Commercial Operations)</div>
+                  <div class="contact-detail-title">Direct Hotline &amp; WhatsApp</div>
+                  <div class="contact-detail-text"><a href="tel:+8801870699677" style="color:var(--text-white);">+880 1870-699677</a> (24/7 Priority Support)</div>
                 </div>
               </div>
 
@@ -925,7 +1119,7 @@
             <a href="https://wa.me/8801870699677?text=Hello%20Giga%20Soft%20Limited,%20I%20would%20like%20to%20discuss%20a%20new%20project." target="_blank" rel="noopener noreferrer" class="btn btn-orange" style="flex: 1; text-align: center;">
               <span>WhatsApp 24/7</span>
             </a>
-            <a href="tel:+8801860422185" class="btn btn-glass" style="flex: 1; text-align: center;">
+            <a href="tel:+8801870699677" class="btn btn-glass" style="flex: 1; text-align: center;">
               <span>Call Direct</span>
             </a>
           </div>
@@ -1043,8 +1237,7 @@
               <em>Operations: Mirpur / Shewrapara, Dhaka.</em>
             </p>
             <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
-              <strong>Direct Hotline:</strong> <a href="tel:+8801870699677" style="color:#FFFFFF;">+880 1870-699677</a><br>
-              <strong>Corporate:</strong> <a href="tel:+8801860422185" style="color:var(--text-muted);">+880 1860-422185</a><br>
+              <strong>Direct Hotline &amp; WhatsApp:</strong> <a href="tel:+8801870699677" style="color:#FFFFFF;">+880 1870-699677</a><br>
               <strong>Email:</strong> <a href="mailto:info@gigadigitalagency.com" style="color:#38BDF8;">info@gigadigitalagency.com</a>
             </p>
           </div>
