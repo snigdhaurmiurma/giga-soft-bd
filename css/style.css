@@ -4512,6 +4512,26 @@ select option, .form-select option {
 }
 
 /* 4. Location & Contact Details High Contrast */
+.contact-link {
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: color var(--transition-fast, 0.2s ease);
+}
+
+.contact-link:hover {
+  color: var(--brand-accent, #38BDF8);
+  text-decoration: underline;
+}
+
+[data-theme="light"] .contact-link {
+  color: #0F172A !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="light"] .contact-link:hover {
+  color: #0062FF !important;
+}
+
 .contact-detail-text {
   font-size: 0.98rem;
   font-weight: 600;
