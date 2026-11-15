@@ -311,4 +311,40 @@
   .case-study-title {
     font-size: 1.45rem;
   }
+
+  .case-studies-subgrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .section-title {
+    white-space: normal !important;
+  }
+
+  .who-exp-badge {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    padding: 10px 16px;
+    gap: 10px;
+  }
+
+  .who-badge-val {
+    font-size: 1.6rem;
+  }
+
+  .who-badge-text {
+    font-size: 0.72rem;
+  }
 }
+
+@media (max-width: 480px) {
+  .who-exp-badge {
+    position: static !important;
+    margin-top: 14px;
+    width: 100%;
+    justify-content: center;
+    border-radius: 12px;
+  }
+}
+
