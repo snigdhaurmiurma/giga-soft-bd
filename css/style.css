@@ -1,12 +1,12 @@
-/* =============================================================================
-   GIGA SOFT LIMITED — THE SOUL OF TECHNOLOGY
+﻿/* =============================================================================
+   GIGA SOFT LIMITED â€” THE SOUL OF TECHNOLOGY
    Vibrant, Creative & Futuristic Ultra-Modern Web Experience
    ============================================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
-  /* Color Palette — Brand Primary: Tech Blue & Radiant Orange */
+  /* Color Palette â€” Brand Primary: Tech Blue & Radiant Orange */
   --primary-blue: #0062FF;
   --primary-blue-glow: rgba(0, 98, 255, 0.45);
   --primary-orange: #FF6600;
@@ -72,7 +72,7 @@
   --blob-3: #6366f1;
 }
 
-/* Radiant Orange Atmosphere — NOTICEABLY WARM & DRAMATIC AMBER/EMBER CANVAS */
+/* Radiant Orange Atmosphere â€” NOTICEABLY WARM & DRAMATIC AMBER/EMBER CANVAS */
 [data-accent="orange"] {
   --accent-main: #FF6600;
   --accent-secondary: #0062FF;
@@ -89,7 +89,7 @@
   --blob-3: #ef4444;
 }
 
-/* Cyber Purple Atmosphere — ELECTRIC NEON VIOLET NOIR CANVAS */
+/* Cyber Purple Atmosphere â€” ELECTRIC NEON VIOLET NOIR CANVAS */
 [data-accent="purple"] {
   --accent-main: #A855F7;
   --accent-secondary: #06B6D4;
@@ -106,7 +106,7 @@
   --blob-3: #06b6d4;
 }
 
-/* Emerald Matrix Atmosphere — VIBRANT DEEP JADE & OBSIDIAN CANVAS */
+/* Emerald Matrix Atmosphere â€” VIBRANT DEEP JADE & OBSIDIAN CANVAS */
 [data-accent="emerald"] {
   --accent-main: #10B981;
   --accent-secondary: #0062FF;
@@ -193,7 +193,7 @@ body {
   position: relative;
   overflow-x: hidden;
   background-color: var(--bg-deep);
-  background-image: radial-gradient(circle at 50% 0%, var(--bg-glow-top) 0%, transparent 60%);
+  background-image: none;
   color: var(--text-main);
   min-height: 100vh;
   transition: background-color 0.8s cubic-bezier(0.16, 1, 0.3, 1), background-image 0.8s ease, color 0.4s ease;
@@ -1271,7 +1271,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.45rem;
   font-weight: 800;
   margin-bottom: 12px;
-  color: #FFFFFF;
+  color: var(--text-white);
 }
 
 .service-card-desc {
@@ -2389,7 +2389,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .spec-list li::before {
-  content: '✓';
+  content: 'âœ“';
   color: #10B981;
   font-weight: 900;
 }
@@ -2666,4 +2666,247 @@ h1, h2, h3, h4, h5, h6 {
 .dropdown-link-item:hover, .dropdown-link-item.active {
   color: #FFFFFF;
   background: rgba(255, 255, 255, 0.06);
+}
+
+
+/* =============================================================================
+   CRITICAL OVERHAUL FIXES: NO AI GLOW, HIGH CONTRAST TEXT, AND ZERO CROPPING
+   ============================================================================= */
+
+/* 1. Eliminate Artificial AI Glows */
+.aurora-blob,
+.blob-1,
+.blob-2,
+.blob-3,
+#ambientCanvas {
+  display: none !important;
+}
+
+/* 2. Eliminate All Green Status Dots */
+.live-dot,
+.green-dot,
+.status-dot,
+.slider-status-pill .live-dot,
+.cat-slider-badge .live-dot {
+  display: none !important;
+}
+
+/* 3. Eliminate Topbars and Footers from Sliders */
+.slider-topbar,
+.hero-slider-footer,
+.cat-slider-header {
+  display: none !important;
+}
+
+/* 4. Frameless & Seamless Visual Slider Viewports */
+.hero-slider-card,
+.category-slider-card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-bottom: 30px !important;
+}
+
+.hero-slider-card::before,
+.category-slider-card::before {
+  display: none !important;
+}
+
+.hero-slider-viewport,
+.cat-slides-track {
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  height: auto !important;
+  min-height: 380px !important;
+  max-height: 540px !important;
+  border-radius: var(--radius-xl) !important;
+  overflow: hidden !important;
+  background: #020617 !important;
+  border: 1px solid var(--glass-border) !important;
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 5. Zero Image Cropping: 100% Full Aspect Display */
+.hero-slide img,
+.cat-slide img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  background: #020617 !important;
+  display: block !important;
+}
+
+.service-card-media {
+  width: 100% !important;
+  aspect-ratio: 16 / 10 !important;
+  height: auto !important;
+  overflow: hidden !important;
+  background: #020617 !important;
+}
+
+.service-card-media img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  background: #020617 !important;
+  transition: transform 0.4s ease !important;
+}
+
+.cat-slide-caption {
+  padding: 20px 24px !important;
+}
+
+.cat-slide-caption .caption-tag,
+.slide-caption .caption-tag {
+  display: none !important;
+}
+
+/* 6. High-Contrast Text in Light Mode (Zero Invisible Text) */
+[data-theme="light"] {
+  --bg-deep: #F8FAFC !important;
+  --bg-surface: #FFFFFF !important;
+  --bg-surface-elevated: #F1F5F9 !important;
+  --bg-card: #FFFFFF !important;
+  --bg-card-hover: #F8FAFC !important;
+  --text-main: #1E293B !important;
+  --text-muted: #64748B !important;
+  --text-dim: #94A3B8 !important;
+  --text-white: #0F172A !important;
+  --glass-border: rgba(0, 0, 0, 0.08) !important;
+  --shadow-glow: none !important;
+}
+
+[data-theme="light"][data-accent="orange"] {
+  --bg-deep: #FFF7ED !important;
+  --bg-surface: #FFFFFF !important;
+  --bg-surface-elevated: #FFEDD5 !important;
+  --bg-card: #FFFFFF !important;
+}
+
+[data-theme="light"][data-accent="purple"] {
+  --bg-deep: #FAF5FF !important;
+  --bg-surface: #FFFFFF !important;
+  --bg-surface-elevated: #F3E8FF !important;
+  --bg-card: #FFFFFF !important;
+}
+
+[data-theme="light"][data-accent="emerald"] {
+  --bg-deep: #F0FDF4 !important;
+  --bg-surface: #FFFFFF !important;
+  --bg-surface-elevated: #DCFCE7 !important;
+  --bg-card: #FFFFFF !important;
+}
+
+[data-theme="light"] .service-card-title,
+[data-theme="light"] .service-card h3,
+[data-theme="light"] .section-title,
+[data-theme="light"] .hero-title,
+[data-theme="light"] .pricing-card-title,
+[data-theme="light"] .pillar-title,
+[data-theme="light"] .about-title,
+[data-theme="light"] .team-name,
+[data-theme="light"] .team-card h3,
+[data-theme="light"] .faq-question,
+[data-theme="light"] .footer-col-title,
+[data-theme="light"] .counter-number,
+[data-theme="light"] .testimonial-author-info h4 {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .service-card-desc,
+[data-theme="light"] .section-subtitle,
+[data-theme="light"] .hero-description,
+[data-theme="light"] .about-description,
+[data-theme="light"] .footer-brand-wrap p,
+[data-theme="light"] .footer-link,
+[data-theme="light"] .faq-answer,
+[data-theme="light"] .testimonial-text {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .service-features li,
+[data-theme="light"] .pricing-features li,
+[data-theme="light"] .about-check-list li {
+  color: #1E293B !important;
+}
+
+[data-theme="light"] .service-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .service-card:hover {
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08) !important;
+  border-color: var(--accent-main) !important;
+}
+
+/* 7. Service Modal: Crystal-Clear Readability in Dark & Light Modes */
+.service-modal-card {
+  background: #0B1120 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #F8FAFC !important;
+}
+
+.service-modal-card .modal-service-title {
+  color: #FFFFFF !important;
+}
+
+.service-modal-card .modal-service-desc {
+  color: #94A3B8 !important;
+}
+
+.service-modal-card .spec-card {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.service-modal-card .spec-list li {
+  color: #E2E8F0 !important;
+  font-weight: 500;
+}
+
+.service-modal-card .btn-glass {
+  background: #25D366 !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  font-weight: 700 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.service-modal-card .btn-glass:hover {
+  background: #1EBE5D !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="light"] .service-modal-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18) !important;
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .service-modal-card .modal-service-title {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .service-modal-card .modal-service-desc {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .service-modal-card .spec-card {
+  background: #F8FAFC !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .service-modal-card .spec-list li {
+  color: #1E293B !important;
+}
+
+[data-theme="light"] .service-modal-card .modal-close-btn {
+  background: rgba(0, 0, 0, 0.06) !important;
+  color: #0F172A !important;
 }
