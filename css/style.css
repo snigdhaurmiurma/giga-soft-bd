@@ -4431,13 +4431,11 @@ input::placeholder, textarea::placeholder {
 /* Light Mode Inputs - Crystal Clear Pure Charcoal/Black Typed Text */
 [data-theme="light"] .form-input,
 [data-theme="light"] .form-textarea,
-[data-theme="light"] .form-select,
 [data-theme="light"] input[type="text"],
 [data-theme="light"] input[type="email"],
 [data-theme="light"] input[type="tel"],
-[data-theme="light"] textarea,
-[data-theme="light"] select {
-  background: #FFFFFF !important;
+[data-theme="light"] textarea {
+  background-color: #FFFFFF !important;
   border: 1.5px solid #CBD5E1 !important;
   color: #0F172A !important;
   -webkit-text-fill-color: #0F172A !important;
@@ -4446,11 +4444,9 @@ input::placeholder, textarea::placeholder {
 
 [data-theme="light"] .form-input:focus,
 [data-theme="light"] .form-textarea:focus,
-[data-theme="light"] .form-select:focus,
 [data-theme="light"] input:focus,
-[data-theme="light"] textarea:focus,
-[data-theme="light"] select:focus {
-  background: #FFFFFF !important;
+[data-theme="light"] textarea:focus {
+  background-color: #FFFFFF !important;
   border-color: var(--primary-blue, #0062FF) !important;
   color: #0F172A !important;
   -webkit-text-fill-color: #0F172A !important;
@@ -4468,14 +4464,16 @@ input::placeholder, textarea::placeholder {
 
 /* Select Dropdown & Options in Both Themes */
 select, .form-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-  background-size: 16px;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-color: rgba(15, 23, 42, 0.75) !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 16px center !important;
+  background-size: 16px 16px !important;
   padding-right: 42px !important;
+  cursor: pointer !important;
 }
 
 select option, .form-select option {
@@ -4490,7 +4488,19 @@ select option, .form-select option {
   background-color: #FFFFFF !important;
   color: #0F172A !important;
   -webkit-text-fill-color: #0F172A !important;
+  border: 1.5px solid #CBD5E1 !important;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 16px center !important;
+  background-size: 16px 16px !important;
+  padding-right: 42px !important;
+  cursor: pointer !important;
+}
+
+[data-theme="light"] select:focus,
+[data-theme="light"] .form-select:focus {
+  border-color: var(--primary-blue, #0062FF) !important;
+  box-shadow: 0 0 0 3px rgba(0, 98, 255, 0.2) !important;
 }
 
 [data-theme="light"] select option,
@@ -5169,11 +5179,10 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="url"],
-select,
 textarea,
-.form-control {
+.form-control:not(select) {
   width: 100%;
-  background: rgba(15, 23, 42, 0.75) !important;
+  background-color: rgba(15, 23, 42, 0.75) !important;
   color: #F8FAFC !important;
   border: 1.5px solid rgba(255, 255, 255, 0.22) !important;
   border-radius: 12px;
@@ -5189,7 +5198,6 @@ textarea::placeholder {
 }
 
 input:focus,
-select:focus,
 textarea:focus {
   border-color: var(--accent-main) !important;
   box-shadow: 0 0 0 3px rgba(0, 98, 255, 0.3) !important;
@@ -5199,10 +5207,9 @@ textarea:focus {
 [data-theme="light"] input[type="email"],
 [data-theme="light"] input[type="tel"],
 [data-theme="light"] input[type="url"],
-[data-theme="light"] select,
 [data-theme="light"] textarea,
-[data-theme="light"] .form-control {
-  background: #FFFFFF !important;
+[data-theme="light"] .form-control:not(select) {
+  background-color: #FFFFFF !important;
   color: #0F172A !important;
   border: 1.5px solid #94A3B8 !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04) !important;
@@ -5214,8 +5221,56 @@ textarea:focus {
 }
 
 [data-theme="light"] input:focus,
-[data-theme="light"] select:focus,
 [data-theme="light"] textarea:focus {
+  border-color: var(--accent-main) !important;
+  box-shadow: 0 0 0 3px rgba(0, 98, 255, 0.18) !important;
+}
+
+/* Explicit Single Down-Arrow for Select Element (NO REPEATING TILES) */
+select,
+select.form-control,
+.form-select {
+  width: 100%;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-color: rgba(15, 23, 42, 0.75) !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 18px center !important;
+  background-size: 16px 16px !important;
+  color: #F8FAFC !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.22) !important;
+  border-radius: 12px;
+  padding: 14px 46px 14px 18px !important;
+  font-size: 0.95rem;
+  outline: none;
+  cursor: pointer;
+}
+
+select:focus,
+select.form-control:focus,
+.form-select:focus {
+  border-color: var(--accent-main) !important;
+  box-shadow: 0 0 0 3px rgba(0, 98, 255, 0.3) !important;
+}
+
+[data-theme="light"] select,
+[data-theme="light"] select.form-control,
+[data-theme="light"] .form-select {
+  background-color: #FFFFFF !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 18px center !important;
+  background-size: 16px 16px !important;
+  color: #0F172A !important;
+  border: 1.5px solid #94A3B8 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] select:focus,
+[data-theme="light"] select.form-control:focus,
+[data-theme="light"] .form-select:focus {
   border-color: var(--accent-main) !important;
   box-shadow: 0 0 0 3px rgba(0, 98, 255, 0.18) !important;
 }
