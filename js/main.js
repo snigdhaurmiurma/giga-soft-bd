@@ -687,130 +687,199 @@ function init3DTilt() {
   });
 }
 
-/* 9. Contact Form Submission with Dual Reliable Delivery & Instant Actions */
+/* Helper to prevent XSS in dynamic alert DOM */
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/[&<>"']/g, function(m) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m];
+  });
+}
+
+/* 9. Contact Form Submission with Dual Reliable Delivery & Instant Actions (No Browser Popups) */
 function initContactForm() {
-  const form = document.getElementById('consultationForm');
-  if (!form) return;
+  const forms = document.querySelectorAll('#consultationForm, #consultForm, .contact-form');
+  if (!forms.length) return;
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    const name = document.getElementById('clientName').value.trim();
-    const phone = document.getElementById('clientPhone').value.trim();
-    const email = document.getElementById('clientEmail') ? document.getElementById('clientEmail').value.trim() : '';
-    const service = document.getElementById('serviceSelect').value;
-    const msg = document.getElementById('projectMessage').value.trim();
+  forms.forEach(form => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const nameInput = form.querySelector('#clientName') || form.querySelector('input[type="text"]');
+      const phoneInput = form.querySelector('#clientPhone') || form.querySelector('input[type="tel"]');
+      const emailInput = form.querySelector('#clientEmail') || form.querySelector('input[type="email"]');
+      const serviceInput = form.querySelector('#serviceSelect') || form.querySelector('select');
+      const msgInput = form.querySelector('#projectMessage') || form.querySelector('textarea');
 
-    if (!name || !phone || !email || !msg) {
-      alert('Please fill out all required fields.');
-      return;
-    }
+      const name = nameInput ? nameInput.value.trim() : '';
+      const phone = phoneInput ? phoneInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const service = serviceInput ? serviceInput.value : 'General Software Inquiry';
+      const msg = msgInput ? msgInput.value.trim() : '';
 
-    const originalHTML = btn.innerHTML;
-    btn.innerHTML = `<span>Sending Consultation Request...</span>`;
-    btn.disabled = true;
+      const statusAlert = form.parentElement.querySelector('.form-status-alert') || document.getElementById('formStatusAlert');
 
-    const leadId = 'GSL-' + Date.now().toString().slice(-6);
+      if (!name || !phone || !email || !msg) {
+        if (statusAlert) {
+          statusAlert.innerHTML = `
+            <div class="form-alert-content">
+              <div class="form-alert-header">
+                <div class="alert-icon-wrap" style="background: rgba(239, 68, 68, 0.15); color: #EF4444;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="form-alert-title" style="color: #EF4444;">Please Complete All Required Fields</h4>
+                  <p class="form-alert-text">Make sure to provide your name, phone number, email address, and project requirements.</p>
+                </div>
+              </div>
+            </div>
+          `;
+          statusAlert.style.display = 'block';
+          statusAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        return;
+      }
 
-    // 1. PHP Backend Dispatch (cPanel / Apache / LiteSpeed / PHP 8+)
-    try {
-      await fetch('api/contact.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: name,
-          phone: phone,
-          email: email,
-          service: service,
-          message: msg
-        })
-      });
-    } catch (err) {
-      // Background catch
-    }
+      const originalHTML = btn ? btn.innerHTML : 'Submit Request';
+      if (btn) {
+        btn.innerHTML = `<span>Sending Consultation Request...</span>`;
+        btn.disabled = true;
+      }
 
-    // 2. Primary Email Dispatch: FormSubmit AJAX endpoint to info@gigadigitalagency.com
-    try {
-      await fetch('https://formsubmit.co/ajax/info@gigadigitalagency.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          _subject: `New Consultation Request [${leadId}] — ${name} (${service || 'General'})`,
-          _replyto: email,
-          _template: 'table',
-          _captcha: 'false',
-          reference_id: leadId,
-          client_name: name,
-          client_phone: phone,
-          client_email: email,
-          service_requested: service,
-          project_message: msg,
-          submitted_url: window.location.href,
-          timestamp: new Date().toISOString()
-        })
-      });
-    } catch (err) {
-      console.warn('FormSubmit endpoint notice:', err);
-    }
+      const leadId = 'GSL-' + Date.now().toString().slice(-6);
 
-    // 2. Secondary Dispatch: Vercel serverless /api/contact
-    try {
-      await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
+      // 1. PHP Backend Dispatch (cPanel / Apache / LiteSpeed / PHP 8+)
+      try {
+        await fetch('api/contact.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: name,
+            phone: phone,
+            email: email,
+            service: service,
+            message: msg
+          })
+        });
+      } catch (err) {
+        // Handled silently
+      }
+
+      // 2. Primary Email Dispatch: FormSubmit AJAX endpoint to info@gigadigitalagency.com
+      try {
+        await fetch('https://formsubmit.co/ajax/info@gigadigitalagency.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            _subject: `New Consultation Request [${leadId}] - ${name} (${service || 'General'})`,
+            _replyto: email,
+            _template: 'table',
+            _captcha: 'false',
+            reference_id: leadId,
+            client_name: name,
+            client_phone: phone,
+            client_email: email,
+            service_requested: service,
+            project_message: msg,
+            submitted_url: window.location.href,
+            timestamp: new Date().toISOString()
+          })
+        });
+      } catch (err) {
+        console.warn('FormSubmit endpoint notice:', err);
+      }
+
+      // 3. Secondary Dispatch: Vercel serverless /api/contact
+      try {
+        await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: name,
+            phone: phone,
+            email: email,
+            service: service,
+            message: msg,
+            reference: leadId
+          })
+        });
+      } catch (err) {
+        // Handled silently
+      }
+
+      // 4. Local Storage Backup
+      try {
+        const leads = JSON.parse(localStorage.getItem('gigasoft_leads_db') || '[]');
+        leads.unshift({
+          id: leadId,
           name: name,
           phone: phone,
           email: email,
           service: service,
           message: msg,
-          reference: leadId
-        })
-      });
-    } catch (err) {
-      // Handled silently
-    }
+          date: new Date().toLocaleString()
+        });
+        localStorage.setItem('gigasoft_leads_db', JSON.stringify(leads.slice(0, 100)));
+      } catch (e) {}
 
-    // 3. Local Storage Backup
-    try {
-      const leads = JSON.parse(localStorage.getItem('gigasoft_leads_db') || '[]');
-      leads.unshift({
-        id: leadId,
-        name: name,
-        phone: phone,
-        email: email,
-        service: service,
-        message: msg,
-        date: new Date().toLocaleString()
-      });
-      localStorage.setItem('gigasoft_leads_db', JSON.stringify(leads.slice(0, 100)));
-    } catch (e) {}
+      // 5. Update UI Button Status & Toast
+      if (btn) {
+        btn.innerHTML = `<span>Request Sent Successfully!</span>`;
+        btn.style.background = '#10B981';
+      }
+      showToast(`Thank you, ${name}! Your inquiry (${leadId}) has been submitted.`);
 
-    // 4. Update UI Status
-    btn.innerHTML = `<span>Request Sent Successfully!</span>`;
-    btn.style.background = '#10B981';
-    showToast(`Thank you, ${name}! Your inquiry (${leadId}) has been sent to info@gigadigitalagency.com.`);
+      // 6. Inline Success Banner (Zero browser popups: No alert, no confirm!)
+      const directWaLink = `https://wa.me/8801870699677?text=${encodeURIComponent(`Hello Giga Soft Limited,\nInquiry Ref: ${leadId}\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\nMessage: ${msg}`)}`;
 
-    // 5. Prompt for immediate direct options (WhatsApp / Mail)
-    const directWaLink = `https://wa.me/8801870699677?text=${encodeURIComponent(`Hello Giga Soft Limited,\nInquiry Ref: ${leadId}\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\nMessage: ${msg}`)}`;
+      if (statusAlert) {
+        statusAlert.innerHTML = `
+          <div class="form-alert-content">
+            <div class="form-alert-header">
+              <div class="alert-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h4 class="form-alert-title">Submitted Successfully!</h4>
+                <p class="form-alert-text">
+                  Thank you, <strong>${escapeHtml(name)}</strong>. Your request (Ref: <code>${leadId}</code>) has been submitted. Our team will contact you soon!
+                </p>
+              </div>
+            </div>
+            <div class="form-alert-actions">
+              <a href="${directWaLink}" target="_blank" rel="noopener noreferrer" class="btn-alert-wa">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+                </svg>
+                <span>Instant Chat on WhatsApp</span>
+              </a>
+              <button type="button" class="btn-alert-dismiss" onclick="this.closest('.form-status-alert').style.display='none'">Dismiss</button>
+            </div>
+          </div>
+        `;
+        statusAlert.style.display = 'block';
+        statusAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
 
-    const userChoice = confirm(
-      `Your consultation request (${leadId}) has been sent to info@gigadigitalagency.com!\n\nClick "OK" to also connect via WhatsApp for immediate priority response, or "Cancel" to finish.`
-    );
-    if (userChoice) {
-      window.open(directWaLink, '_blank');
-    }
+      form.reset();
 
-    form.reset();
-
-    setTimeout(() => {
-      btn.innerHTML = originalHTML;
-      btn.style.background = '';
-      btn.disabled = false;
-    }, 4500);
+      if (btn) {
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 4500);
+      }
+    });
   });
 }
 
