@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark" data-accent="purple">
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-accent="emerald">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cloud Infrastructure &amp; Hosting — Giga Soft Limited | Dhaka, Bangladesh</title>
-  <meta name="description" content="High-Speed NVMe Cloud Hosting, Corporate Domains, SSL Certificates, and 99.9% Uptime SLA by Giga Soft Limited.">
+  <meta name="description" content="NVMe cloud hosting, corporate domain registration, SSL certificates, and enterprise DevOps engineered by Giga Soft Limited.">
   
   <link rel="icon" type="image/png" href="../images/giga-soft-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,22 +15,26 @@
 </head>
 <body>
 
-  <div class="aurora-bg" aria-hidden="true">
-    <div class="aurora-blob blob-1"></div>
-    <div class="aurora-blob blob-2"></div>
-    <div class="aurora-blob blob-3"></div>
+  <!-- Dynamic Aura Background & Interactive Ambient Canvas -->
+  <div class="aurora-bg">
+    <canvas id="ambientCanvas"></canvas>
+    <div class="blob-1"></div>
+    <div class="blob-2"></div>
+    <div class="blob-3"></div>
+    <div class="aurora-grid"></div>
   </div>
-  <div class="grid-mesh" aria-hidden="true"></div>
 
+  <!-- Main Content Layer -->
   <div class="content-wrapper">
 
-    <!-- Header Navbar -->
+    <!-- Floating Glass Navbar -->
     <header class="navbar">
       <div class="container nav-wrap">
         <a href="../index.html" class="brand-logo-wrap" title="Giga Soft Limited">
-          <img src="../images/giga-soft-logo.png" alt="Giga Soft Logo" class="brand-logo-img">
+          <img src="../images/giga-soft-logo.png" alt="Giga Soft Limited" class="brand-logo-img">
         </a>
 
+        <!-- Desktop Navigation Links -->
         <ul class="nav-links">
           <li><a href="../index.html#home" class="nav-link">Home</a></li>
           <li class="nav-dropdown-wrap">
@@ -38,42 +42,86 @@
               <span>Our Services</span>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </a>
+            <!-- Mega Dropdown Categorized By Discipline -->
             <div class="mega-dropdown-menu">
-              <div class="dropdown-category-col">
-                <div class="dropdown-cat-title">Software &amp; Web</div>
-                <a href="software-web-engineering.html" class="dropdown-link-item">Custom Software Development</a>
-                <a href="software-web-engineering.html" class="dropdown-link-item">Web App Development</a>
-                <a href="software-web-engineering.html" class="dropdown-link-item">Mobile App Development</a>
-                <a href="software-web-engineering.html" class="dropdown-link-item">E-Commerce Solutions</a>
-              </div>
-              <div class="dropdown-category-col">
-                <div class="dropdown-cat-title">Design &amp; Creative</div>
-                <a href="creative-design-branding.html" class="dropdown-link-item">UI/UX Design Systems</a>
-                <a href="creative-design-branding.html" class="dropdown-link-item">Creative Branding &amp; Identity</a>
-              </div>
-              <div class="dropdown-category-col">
-                <div class="dropdown-cat-title">Growth &amp; Marketing</div>
-                <a href="growth-digital-marketing.html" class="dropdown-link-item">Performance Digital Marketing</a>
-                <a href="growth-digital-marketing.html" class="dropdown-link-item">Marketing &amp; PR Communication</a>
-                <a href="growth-digital-marketing.html" class="dropdown-link-item">Event Management &amp; Activation</a>
-              </div>
-              <div class="dropdown-category-col">
-                <div class="dropdown-cat-title">Cloud &amp; Hosting</div>
-                <a href="cloud-infrastructure-hosting.html" class="dropdown-link-item active">Domain &amp; NVMe Cloud Hosting</a>
+              <div class="mega-dropdown-grid">
+                <!-- Category 1 -->
+                <a href="software-web-engineering.html" class="dropdown-category-card">
+                  <div class="cat-icon-box blue">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                  </div>
+                  <div class="cat-info">
+                    <h4>Software &amp; Web Engineering</h4>
+                    <p>Web Dev, Enterprise Software, Mobile Apps &amp; E-Commerce</p>
+                    <span class="cat-link-text">Explore Category &rarr;</span>
+                  </div>
+                </a>
+
+                <!-- Category 2 -->
+                <a href="creative-design-branding.html" class="dropdown-category-card">
+                  <div class="cat-icon-box orange">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                  </div>
+                  <div class="cat-info">
+                    <h4>Creative Design &amp; Branding</h4>
+                    <p>UI/UX Prototyping, Brand Identity &amp; Visual Design</p>
+                    <span class="cat-link-text">Explore Category &rarr;</span>
+                  </div>
+                </a>
+
+                <!-- Category 3 -->
+                <a href="growth-digital-marketing.html" class="dropdown-category-card">
+                  <div class="cat-icon-box purple">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                  </div>
+                  <div class="cat-info">
+                    <h4>Growth &amp; Digital Marketing</h4>
+                    <p>Performance Ads, SEO Optimization &amp; Event Activation</p>
+                    <span class="cat-link-text">Explore Category &rarr;</span>
+                  </div>
+                </a>
+
+                <!-- Category 4 -->
+                <a href="cloud-infrastructure-hosting.html" class="dropdown-category-card active">
+                  <div class="cat-icon-box emerald">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                  </div>
+                  <div class="cat-info">
+                    <h4>Cloud &amp; Infrastructure</h4>
+                    <p>NVMe Cloud Hosting, Corporate Domains &amp; SSL Security</p>
+                    <span class="cat-link-text">Explore Category &rarr;</span>
+                  </div>
+                </a>
               </div>
             </div>
           </li>
           <li><a href="../index.html#about" class="nav-link">About Us</a></li>
           <li><a href="../index.html#why-us" class="nav-link">Why Us</a></li>
+          <li><a href="../index.html#team" class="nav-link">Team</a></li>
           <li><a href="../index.html#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="../index.html#testimonials" class="nav-link">Feedback</a></li>
           <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
         </ul>
 
+        <!-- Right Side Nav Actions -->
         <div class="nav-actions">
-          <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Dark / Light Mode" title="Toggle Dark/Light Mode">
-            <span class="mode-icon">☀</span>
+          <!-- Dynamic Accent Color Picker -->
+          <div class="theme-accent-pills" title="Change Theme Atmosphere">
+            <button class="accent-pill-btn accent-pill-blue active" data-color="blue" aria-label="Blue Atmosphere"></button>
+            <button class="accent-pill-btn accent-pill-orange" data-color="orange" aria-label="Orange Atmosphere"></button>
+            <button class="accent-pill-btn accent-pill-purple" data-color="purple" aria-label="Purple Atmosphere"></button>
+            <button class="accent-pill-btn accent-pill-emerald" data-color="emerald" aria-label="Emerald Atmosphere"></button>
+          </div>
+
+          <!-- Light / Dark Mode Toggle -->
+          <button id="themeModeToggle" class="mode-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Light/Dark Mode">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
           </button>
-          <a href="#quoteSection" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.88rem;">Get Free Quote</a>
+
+          <a href="#quoteSection" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.88rem;">
+            Get Free Quote
+          </a>
           <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
         </div>
       </div>
@@ -81,77 +129,122 @@
 
     <!-- Category Hero Header -->
     <section class="service-hero-detail">
-      <div class="container text-center" style="max-width: 860px; margin: 0 auto 40px;">
-        <span class="section-tag">Infrastructure &amp; Uptime</span>
-        <h1 class="section-title">Cloud Infrastructure &amp; <span class="gradient-text">Hosting</span></h1>
+      <div class="container text-center" style="max-width: 880px; margin: 0 auto 40px;">
+        <span class="section-tag tag-emerald">Infrastructure Discipline</span>
+        <h1 class="section-title">Cloud Infrastructure &amp; <span class="gradient-text-emerald">Hosting</span></h1>
         <p class="section-subtitle">
-          Enterprise NVMe cloud servers, corporate domain management, and automated daily backups backed by a guaranteed 99.9% uptime Service Level Agreement (SLA).
+          Pure NVMe Gen4 SSD cloud servers, high-availability clusters, corporate domain portfolios, automated daily backups, and Tier-3 data center security delivering guaranteed 99.9% uptime.
         </p>
       </div>
 
       <!-- 4-Picture Category Slider -->
       <div class="container">
         <div class="category-slider-card">
+          <div class="cat-slider-header">
+            <span class="cat-slider-badge"><span class="live-dot"></span> Tier-3 Data Center Cluster</span>
+            <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Swipe or click to view infrastructure</span>
+          </div>
           <div class="cat-slides-track" id="catSlider">
-            <div class="cat-slide active"><img src="../images/service-sliders/cat-cloud-1.jpg" alt="NVMe Cloud SSD Server Architecture" loading="lazy"></div>
-            <div class="cat-slide"><img src="../images/service-sliders/cat-cloud-2.jpg" alt="99.9% Uptime SLA Monitoring" loading="lazy"></div>
-            <div class="cat-slide"><img src="../images/service-sliders/cat-cloud-3.jpg" alt="Enterprise SSL &amp; DDoS Shield" loading="lazy"></div>
-            <div class="cat-slide"><img src="../images/service-sliders/cat-cloud-4.jpg" alt="Corporate Email &amp; Cloud Backups" loading="lazy"></div>
+            <div class="cat-slide active">
+              <img src="../images/service-sliders/cat-cloud-1.jpg" alt="NVMe High-Speed Cloud Servers" loading="lazy">
+              <div class="cat-slide-caption">
+                <span class="caption-tag">Cloud Storage</span>
+                <h3>Pure NVMe Gen4 Storage Arrays</h3>
+                <p>Ultra-low latency I/O throughput, cPanel control environments, and instant auto-scaling for peak traffic.</p>
+              </div>
+            </div>
+            <div class="cat-slide">
+              <img src="../images/service-sliders/cat-cloud-2.jpg" alt="Enterprise Security & Firewalls" loading="lazy">
+              <div class="cat-slide-caption">
+                <span class="caption-tag">DDoS Protection</span>
+                <h3>Active Hardware DDoS &amp; WAF Protection</h3>
+                <p>Multi-layered firewalls, automated malware scanners, brute-force mitigation, and zero-trust perimeter safeguards.</p>
+              </div>
+            </div>
+            <div class="cat-slide">
+              <img src="../images/service-sliders/cat-cloud-3.jpg" alt="Corporate Domains & DNS" loading="lazy">
+              <div class="cat-slide-caption">
+                <span class="caption-tag">Domain Security</span>
+                <h3>Global Anycast DNS &amp; Domain Management</h3>
+                <p>Sub-millisecond DNS propagation, WHOIS privacy shielding, registry lock, and renewal protection.</p>
+              </div>
+            </div>
+            <div class="cat-slide">
+              <img src="../images/service-sliders/cat-cloud-4.jpg" alt="Automated Backups & Uptime" loading="lazy">
+              <div class="cat-slide-caption">
+                <span class="caption-tag">Resilience</span>
+                <h3>Guaranteed 99.9% Uptime &amp; Offsite Backups</h3>
+                <p>Automated daily incremental snapshots, geo-replicated archives, and instant single-click disaster recovery.</p>
+              </div>
+            </div>
           </div>
           <div class="cat-slider-nav">
-            <button class="slider-btn prev" id="sliderPrev">&#10094;</button>
+            <button class="slider-btn prev" id="sliderPrev" aria-label="Previous Slide">&#10094;</button>
             <div class="slider-dots" id="sliderDots">
               <span class="dot active"></span>
               <span class="dot"></span>
               <span class="dot"></span>
               <span class="dot"></span>
             </div>
-            <button class="slider-btn next" id="sliderNext">&#10095;</button>
+            <button class="slider-btn next" id="sliderNext" aria-label="Next Slide">&#10095;</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Disciplines Grid -->
+    <!-- Deep-Dive Disciplines Grid -->
     <section class="services-section">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">Cloud Architecture</div>
-          <h2 class="section-title">High-Reliability Hosting Services</h2>
+          <div class="section-tag tag-emerald">Infrastructure Services</div>
+          <h2 class="section-title">Cloud &amp; Security Disciplines</h2>
+          <p class="section-subtitle">Reliable compute power, managed cloud instances, and round-the-clock systems monitoring.</p>
         </div>
 
-        <div class="services-grid">
+        <div class="services-grid" style="grid-template-columns: repeat(2, 1fr);">
           
-          <div class="service-card card-theme-purple">
-            <div>
+          <!-- Card 1: Cloud Hosting -->
+          <div class="service-card card-theme-emerald">
+            <div class="service-card-media">
+              <img src="../images/services/domain-hosting.jpg" alt="NVMe Cloud Hosting" loading="lazy">
+              <span class="service-badge-pill">NVMe / cPanel</span>
+            </div>
+            <div class="service-card-body">
               <div class="service-card-top">
                 <div class="service-icon-box">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
                 </div>
-                <span class="service-num">01</span>
+                <span class="service-cat-badge">High Availability</span>
               </div>
-              <h3 class="service-card-title">Enterprise NVMe Cloud Hosting</h3>
-              <p class="service-card-desc">High-speed NVMe solid-state storage with LiteSpeed web servers and Cloudflare global CDN caching for instant page delivery.</p>
+              <h3 class="service-card-title">NVMe High-Speed Cloud Hosting</h3>
+              <p class="service-card-desc">Enterprise SSD cPanel hosting with LiteSpeed web servers, Redis object cache, HTTP/3, and daily offsite backups.</p>
               <ul class="service-features">
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> 99.9% Uptime Commitment</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Automated Daily Off-Site Backups</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> 20x Faster NVMe Gen4 Storage Speeds</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Free Lifetime Let's Encrypt SSL Certificates</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Automated Daily Offsite Backup Restoration</li>
               </ul>
             </div>
           </div>
 
+          <!-- Card 2: Domains & Security -->
           <div class="service-card card-theme-blue">
-            <div>
+            <div class="service-card-media">
+              <img src="../images/services/hero-company-profile.jpg" alt="Domain Registration & SSL Security" loading="lazy">
+              <span class="service-badge-pill">ICANN / DNS</span>
+            </div>
+            <div class="service-card-body">
               <div class="service-card-top">
                 <div class="service-icon-box">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
                 </div>
-                <span class="service-num">02</span>
+                <span class="service-cat-badge">Domain Protection</span>
               </div>
-              <h3 class="service-card-title">Domains, SSL &amp; Corporate Mail</h3>
-              <p class="service-card-desc">Full DNS zone management, institutional domain registration, Wildcard SSL certificates, and Google Workspace or Webmail configuration.</p>
+              <h3 class="service-card-title">Corporate Domains &amp; SSL Security</h3>
+              <p class="service-card-desc">ICANN-accredited domain registration (.com, .net, .org, .com.bd), Anycast premium DNS routing, and EV multi-domain SSL certificates.</p>
               <ul class="service-features">
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Free Let's Encrypt / Commercial SSL</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Anti-Spam Enterprise Email Inboxes</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Free WHOIS Privacy Guard Protection</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Anycast Cloudflare Geo-DNS Routing</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> 256-Bit Financial Grade SSL Encryption</li>
               </ul>
             </div>
           </div>
@@ -160,73 +253,43 @@
       </div>
     </section>
 
-    <!-- Consultation Form Section -->
-    <section class="contact-section" id="quoteSection">
-      <div class="container contact-grid">
-        <div class="contact-info-card">
-          <div>
-            <div class="section-tag tag-orange">Server Consultation</div>
-            <h3>Request Infrastructure Migration</h3>
-            <p>Moving from a slow shared server to high-speed dedicated cloud? Let our network engineers handle the migration with zero downtime.</p>
-
-            <div class="contact-details-list">
-              <div class="contact-detail-item">
-                <div class="contact-detail-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
-                <div>
-                  <div class="contact-detail-title">Our Location</div>
-                  <div class="contact-detail-text">House # 6/14, Block # A, Lalmatia, Dhaka-1207, Bangladesh.<br><span style="font-size:0.84rem; color:var(--text-muted); font-weight:normal;">Operations: Mirpur / Shewrapara, Dhaka.</span></div>
-                </div>
-              </div>
-              <div class="contact-detail-item">
-                <div class="contact-detail-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div>
-                <div>
-                  <div class="contact-detail-title">Direct Hotline</div>
-                  <div class="contact-detail-text"><a href="tel:+8801870699677" style="color:var(--text-white);">+880 1870-699677</a> (Direct Hotline &amp; WhatsApp)</div>
-                </div>
-              </div>
-              <div class="contact-detail-item">
-                <div class="contact-detail-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
-                <div>
-                  <div class="contact-detail-title">Official Inquiries</div>
-                  <div class="contact-detail-text"><a href="mailto:info@gigadigitalagency.com" style="color:var(--text-white);">info@gigadigitalagency.com</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div style="display:flex; gap:12px;">
-            <a href="https://wa.me/8801870699677?text=Hello%20Giga%20Soft%20Limited,%20I%20would%20like%20to%20discuss%20Cloud%20Hosting%20and%20Infrastructure." target="_blank" rel="noopener noreferrer" class="btn btn-orange" style="flex:1; text-align:center;">WhatsApp 24/7</a>
-          </div>
-        </div>
-
-        <div class="contact-form-wrap">
-          <form id="consultationForm">
+    <!-- Consultation & Quote Form -->
+    <section class="contact-section" id="quoteSection" style="padding-top: 40px;">
+      <div class="container">
+        <div class="contact-form-wrap" style="max-width: 820px; margin: 0 auto;">
+          <div class="section-tag tag-emerald">Infrastructure Setup</div>
+          <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 12px; color: #FFFFFF;">Deploy Your Enterprise Cloud Instance</h2>
+          <p style="color: var(--text-muted); margin-bottom: 30px;">Consult with our cloud engineers for server sizing, migration support, and custom hosting solutions.</p>
+          
+          <form class="contact-form" id="consultForm">
             <div class="form-grid">
               <div class="form-group">
-                <label class="form-label" for="clientName">Full Name *</label>
-                <input type="text" id="clientName" class="form-input" placeholder="e.g. Mohammad Rahman" required>
+                <label class="form-label" for="clientName">Your Full Name *</label>
+                <input type="text" id="clientName" class="form-input" placeholder="e.g. Masud Ibn Oliullah" required>
               </div>
               <div class="form-group">
-                <label class="form-label" for="clientPhone">Phone / WhatsApp *</label>
-                <input type="tel" id="clientPhone" class="form-input" placeholder="+880 18XX-XXXXXX" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="clientEmail">Email Address *</label>
+                <label class="form-label" for="clientEmail">Corporate Email *</label>
                 <input type="email" id="clientEmail" class="form-input" placeholder="name@company.com" required>
               </div>
               <div class="form-group">
-                <label class="form-label" for="serviceSelect">Discipline *</label>
-                <select id="serviceSelect" class="form-select" required>
-                  <option value="hosting" selected>Domain &amp; NVMe Cloud Hosting</option>
-                  <option value="vps">Dedicated Linux Cloud VPS</option>
-                  <option value="security">SSL &amp; Cyber Security Setup</option>
+                <label class="form-label" for="clientPhone">Phone / WhatsApp Number *</label>
+                <input type="tel" id="clientPhone" class="form-input" placeholder="+880 1870-699677" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="serviceSelect">Infrastructure Package</label>
+                <select id="serviceSelect" class="form-select">
+                  <option value="starter-cloud">Starter NVMe Cloud Hosting (20 GB)</option>
+                  <option value="business-cloud">Business Growth Cloud Hosting (50 GB)</option>
+                  <option value="enterprise-cloud">Enterprise Dedicated Cloud / VPS</option>
+                  <option value="domain-ssl">Corporate Domain Portfolio &amp; Wildcard SSL</option>
                 </select>
               </div>
               <div class="form-group full-width">
-                <label class="form-label" for="projectMessage">Server Requirements &amp; Current Bandwidth *</label>
-                <textarea id="projectMessage" class="form-textarea" placeholder="Detail your monthly visitor traffic, disk storage needs, or migration schedule..." required></textarea>
+                <label class="form-label" for="projectMessage">Migration or Capacity Requirements *</label>
+                <textarea id="projectMessage" class="form-textarea" placeholder="Detail your current server configuration, domain names to transfer, database size, or cPanel migration needs..." required></textarea>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px;">Submit Server Inquiry &rarr;</button>
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px;">Initialize Cloud Setup &rarr;</button>
           </form>
         </div>
       </div>
@@ -237,21 +300,24 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand-wrap">
-            <img src="../images/giga-soft-logo.png" alt="Giga Soft Logo" style="height: 44px; width: auto; margin-bottom: 16px;">
-            <p>Giga Soft Limited is a professional software development and IT solutions company providing end-to-end digital services to corporate, SME, and enterprise clients.</p>
+            <a href="../index.html" class="brand-logo-wrap" style="display:inline-block; margin-bottom:16px;">
+              <img src="../images/giga-soft-logo.png" alt="Giga Soft Limited" style="height: 44px; width: auto;">
+            </a>
+            <p>Giga Soft Limited is a premier technology and digital transformation company in Dhaka, Bangladesh, delivering enterprise software engineering, bespoke digital experiences, high-conversion growth marketing, and secure cloud infrastructure.</p>
           </div>
           <div>
             <h4 class="footer-col-title">Navigation</h4>
             <ul class="footer-links">
               <li><a href="../index.html#home" class="footer-link">Home</a></li>
               <li><a href="../index.html#about" class="footer-link">Corporate Profile</a></li>
-              <li><a href="../index.html#services" class="footer-link">Our Services</a></li>
+              <li><a href="../index.html#services" class="footer-link">Specialized Services</a></li>
+              <li><a href="../index.html#team" class="footer-link">Engineering Team</a></li>
               <li><a href="../index.html#pricing" class="footer-link">Pricing Packages</a></li>
               <li><a href="../index.html#contact" class="footer-link">Contact</a></li>
             </ul>
           </div>
           <div>
-            <h4 class="footer-col-title">Our Services</h4>
+            <h4 class="footer-col-title">Specialized Categories</h4>
             <ul class="footer-links">
               <li><a href="software-web-engineering.html" class="footer-link">Software &amp; Web Engineering</a></li>
               <li><a href="creative-design-branding.html" class="footer-link">Creative Design &amp; Branding</a></li>
@@ -260,10 +326,10 @@
             </ul>
           </div>
           <div>
-            <h4 class="footer-col-title">Our Location</h4>
+            <h4 class="footer-col-title">Office &amp; Contact</h4>
             <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px;">
               House # 6/14, Block # A, Lalmatia, Dhaka-1207, Bangladesh.<br>
-              <em>Operations: Mirpur / Shewrapara, Dhaka.</em>
+              <em>Operations Hub: Mirpur / Shewrapara, Dhaka.</em>
             </p>
             <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
               <strong>Direct Hotline:</strong> <a href="tel:+8801870699677" style="color:#FFFFFF;">+880 1870-699677</a><br>
