@@ -1559,8 +1559,22 @@ h1, h2, h3, h4, h5, h6 {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+@media (max-width: 992px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
 
 .team-card {
@@ -2831,15 +2845,27 @@ h1, h2, h3, h4, h5, h6 {
   color: #1E293B !important;
 }
 
-[data-theme="light"] .service-card {
+[data-theme="light"] .service-card,
+[data-theme="light"] .team-card {
   background: #FFFFFF !important;
   border: 1px solid rgba(0, 0, 0, 0.08) !important;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04) !important;
 }
 
-[data-theme="light"] .service-card:hover {
+[data-theme="light"] .service-card:hover,
+[data-theme="light"] .team-card:hover {
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08) !important;
   border-color: var(--accent-main) !important;
+}
+
+[data-theme="light"] .team-role {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .team-badge {
+  background: rgba(241, 245, 249, 0.95) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: #0284C7 !important;
 }
 
 /* 7. Service Modal: Crystal-Clear Readability in Dark & Light Modes */
