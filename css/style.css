@@ -2586,3 +2586,440 @@ button, input, textarea, select {
     scroll-behavior: auto !important;
   }
 }
+
+
+/* =============================================================================
+   VIBRANT & COLORFUL ENHANCEMENTS (Both Dark & Light Themes)
+   ============================================================================= */
+
+/* Brand Logo in Navbar & Footer */
+.brand-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 4px 0;
+  transition: transform 0.25s ease;
+}
+.brand-logo-wrap:hover {
+  transform: scale(1.04);
+}
+.brand-logo-img {
+  height: 48px;
+  width: auto;
+  max-height: 52px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Category Mega Dropdown Accents */
+.mega-col-blue .mega-col-header { color: #3B82F6; }
+.mega-col-purple .mega-col-header { color: #8B5CF6; }
+.mega-col-amber .mega-col-header { color: #F59E0B; }
+.mega-col-emerald .mega-col-header { color: #10B981; }
+
+/* Continuous News Marquee Ticker */
+.brand-ticker-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 24px 0 16px;
+  margin-top: 10px;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.brand-ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  width: max-content;
+  animation: newsMarqueeScroll 28s linear infinite;
+}
+.brand-ticker-track:hover {
+  animation-play-state: paused;
+}
+@keyframes newsMarqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.brand-ticker-item {
+  flex-shrink: 0;
+  width: 170px;
+  height: 84px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-theme="light"] .brand-ticker-item {
+  background: #FFFFFF;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  border-color: rgba(15, 23, 42, 0.08);
+}
+.brand-ticker-item:hover {
+  transform: translateY(-5px) scale(1.04);
+  border-color: #3B82F6;
+  box-shadow: 0 12px 28px rgba(59, 130, 246, 0.25);
+}
+.brand-ticker-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.brand-ticker-item:hover img {
+  transform: scale(1.06);
+}
+
+/* Ambient Radial Colorful Background Washes */
+.hero-editorial-section {
+  position: relative;
+  overflow: hidden;
+}
+.hero-editorial-section::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: 5%;
+  width: 580px;
+  height: 580px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.22) 0%, rgba(139, 92, 246, 0.12) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-editorial-section::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: 5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.18) 0%, rgba(6, 182, 212, 0.10) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+[data-theme="light"] .hero-editorial-section::before {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, rgba(139, 92, 246, 0.06) 40%, transparent 70%);
+}
+[data-theme="light"] .hero-editorial-section::after {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.10) 0%, rgba(6, 182, 212, 0.05) 40%, transparent 70%);
+}
+
+/* Gradient Text Highlighting */
+.gradient-text {
+  background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 50%, #EC4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 800;
+}
+[data-theme="light"] .gradient-text {
+  background: linear-gradient(135deg, #1D4ED8 0%, #7C3AED 50%, #DB2777 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Section Monospace Pills - Glowing & Colorful */
+.section-mono-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.14), rgba(139, 92, 246, 0.14));
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  color: #818CF8;
+  font-size: 0.80rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+[data-theme="light"] .section-mono-tag {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.10), rgba(124, 58, 237, 0.10));
+  border-color: rgba(124, 58, 237, 0.30);
+  color: #4338CA;
+}
+
+/* Primary Action Buttons - Multi-gradient Vibrant */
+.btn-swiss-primary, .btn-primary {
+  background: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.38) !important;
+  font-weight: 700 !important;
+  transition: all 0.28s ease !important;
+}
+.btn-swiss-primary:hover, .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(124, 58, 237, 0.48) !important;
+  background: linear-gradient(135deg, #1D4ED8 0%, #6D28D9 100%) !important;
+}
+
+/* Filter Buttons - Colorful Category Active States */
+.directory-filter-btn[data-filter="all"].active {
+  background: linear-gradient(135deg, #2563EB, #7C3AED);
+  color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+.directory-filter-btn[data-filter="software"].active {
+  background: linear-gradient(135deg, #2563EB, #06B6D4);
+  color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+.directory-filter-btn[data-filter="design"].active {
+  background: linear-gradient(135deg, #7C3AED, #EC4899);
+  color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+}
+.directory-filter-btn[data-filter="growth"].active {
+  background: linear-gradient(135deg, #D97706, #EA580C);
+  color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+}
+.directory-filter-btn[data-filter="cloud"].active {
+  background: linear-gradient(135deg, #059669, #0D9488);
+  color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35);
+}
+
+/* Category Service Cards Styling & Colorful Glowing Accents */
+.directory-service-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+.directory-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transition: height 0.25s ease;
+  z-index: 2;
+}
+.directory-service-card:hover::before {
+  height: 6px;
+}
+
+/* Category 1: Software & Web - Vibrant Blue & Cyan */
+.directory-service-card[data-category="software"]::before {
+  background: linear-gradient(90deg, #3B82F6, #06B6D4);
+}
+.directory-service-card[data-category="software"] .service-card-badge {
+  background: rgba(59, 130, 246, 0.16);
+  color: #60A5FA;
+  border: 1px solid rgba(59, 130, 246, 0.38);
+}
+[data-theme="light"] .directory-service-card[data-category="software"] .service-card-badge {
+  background: rgba(59, 130, 246, 0.12);
+  color: #1D4ED8;
+  border-color: rgba(59, 130, 246, 0.32);
+}
+.directory-service-card[data-category="software"]:hover {
+  border-color: #3B82F6;
+  box-shadow: 0 16px 36px rgba(59, 130, 246, 0.24);
+  transform: translateY(-6px);
+}
+.directory-service-card[data-category="software"] .service-card-index {
+  color: #3B82F6;
+}
+.directory-service-card[data-category="software"] .service-deliverables-list svg {
+  color: #3B82F6;
+}
+
+/* Category 2: Design & Creative - Vibrant Purple & Pink */
+.directory-service-card[data-category="design"]::before {
+  background: linear-gradient(90deg, #8B5CF6, #EC4899);
+}
+.directory-service-card[data-category="design"] .service-card-badge {
+  background: rgba(139, 92, 246, 0.16);
+  color: #C084FC;
+  border: 1px solid rgba(139, 92, 246, 0.38);
+}
+[data-theme="light"] .directory-service-card[data-category="design"] .service-card-badge {
+  background: rgba(139, 92, 246, 0.12);
+  color: #7E22CE;
+  border-color: rgba(139, 92, 246, 0.32);
+}
+.directory-service-card[data-category="design"]:hover {
+  border-color: #8B5CF6;
+  box-shadow: 0 16px 36px rgba(139, 92, 246, 0.24);
+  transform: translateY(-6px);
+}
+.directory-service-card[data-category="design"] .service-card-index {
+  color: #8B5CF6;
+}
+.directory-service-card[data-category="design"] .service-deliverables-list svg {
+  color: #8B5CF6;
+}
+
+/* Category 3: Growth & Marketing - Vibrant Amber & Orange */
+.directory-service-card[data-category="growth"]::before {
+  background: linear-gradient(90deg, #F59E0B, #F97316);
+}
+.directory-service-card[data-category="growth"] .service-card-badge {
+  background: rgba(245, 158, 11, 0.16);
+  color: #FBBF24;
+  border: 1px solid rgba(245, 158, 11, 0.38);
+}
+[data-theme="light"] .directory-service-card[data-category="growth"] .service-card-badge {
+  background: rgba(245, 158, 11, 0.12);
+  color: #B45309;
+  border-color: rgba(245, 158, 11, 0.32);
+}
+.directory-service-card[data-category="growth"]:hover {
+  border-color: #F59E0B;
+  box-shadow: 0 16px 36px rgba(245, 158, 11, 0.24);
+  transform: translateY(-6px);
+}
+.directory-service-card[data-category="growth"] .service-card-index {
+  color: #F59E0B;
+}
+.directory-service-card[data-category="growth"] .service-deliverables-list svg {
+  color: #F59E0B;
+}
+
+/* Category 4: Cloud & Security - Vibrant Emerald & Teal */
+.directory-service-card[data-category="cloud"]::before {
+  background: linear-gradient(90deg, #10B981, #14B8A6);
+}
+.directory-service-card[data-category="cloud"] .service-card-badge {
+  background: rgba(16, 185, 129, 0.16);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.38);
+}
+[data-theme="light"] .directory-service-card[data-category="cloud"] .service-card-badge {
+  background: rgba(16, 185, 129, 0.12);
+  color: #047857;
+  border-color: rgba(16, 185, 129, 0.32);
+}
+.directory-service-card[data-category="cloud"]:hover {
+  border-color: #10B981;
+  box-shadow: 0 16px 36px rgba(16, 185, 129, 0.24);
+  transform: translateY(-6px);
+}
+.directory-service-card[data-category="cloud"] .service-card-index {
+  color: #10B981;
+}
+.directory-service-card[data-category="cloud"] .service-deliverables-list svg {
+  color: #10B981;
+}
+
+/* Metrics Counters - Multi-Tone Saturated Gradients */
+.metric-swiss-block:nth-child(1) .metric-number {
+  background: linear-gradient(135deg, #3B82F6, #60A5FA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.metric-swiss-block:nth-child(2) .metric-number {
+  background: linear-gradient(135deg, #8B5CF6, #C084FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.metric-swiss-block:nth-child(3) .metric-number {
+  background: linear-gradient(135deg, #10B981, #34D399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.metric-swiss-block:nth-child(4) .metric-number {
+  background: linear-gradient(135deg, #F59E0B, #FBBF24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Interactive Topology Nodes in Hero Console */
+.topology-node:nth-child(1) {
+  border-left: 3px solid #06B6D4;
+}
+.topology-node:nth-child(1) .node-icon-box {
+  background: rgba(6, 182, 212, 0.16);
+  color: #06B6D4;
+}
+.topology-node:nth-child(2) {
+  border-left: 3px solid #8B5CF6;
+}
+.topology-node:nth-child(2) .node-icon-box {
+  background: rgba(139, 92, 246, 0.16);
+  color: #8B5CF6;
+}
+.topology-node:nth-child(3) {
+  border-left: 3px solid #10B981;
+}
+.topology-node:nth-child(3) .node-icon-box {
+  background: rgba(16, 185, 129, 0.16);
+  color: #10B981;
+}
+.topology-node:nth-child(4) {
+  border-left: 3px solid #F59E0B;
+}
+.topology-node:nth-child(4) .node-icon-box {
+  background: rgba(245, 158, 11, 0.16);
+  color: #F59E0B;
+}
+
+/* Case Study Cards Colorful Accents */
+.case-editorial-card:nth-child(1) {
+  border-top: 3px solid #3B82F6;
+}
+.case-editorial-card:nth-child(1):hover {
+  border-color: #3B82F6;
+  box-shadow: 0 16px 36px rgba(59, 130, 246, 0.22);
+}
+.case-editorial-card:nth-child(2) {
+  border-top: 3px solid #8B5CF6;
+}
+.case-editorial-card:nth-child(2):hover {
+  border-color: #8B5CF6;
+  box-shadow: 0 16px 36px rgba(139, 92, 246, 0.22);
+}
+.case-editorial-card:nth-child(3) {
+  border-top: 3px solid #10B981;
+}
+.case-editorial-card:nth-child(3):hover {
+  border-color: #10B981;
+  box-shadow: 0 16px 36px rgba(16, 185, 129, 0.22);
+}
+
+/* Pricing Popular Card High-Impact Radiant Border */
+.pricing-swiss-card.popular {
+  border: 2px solid #8B5CF6;
+  position: relative;
+  box-shadow: 0 16px 40px rgba(139, 92, 246, 0.25);
+}
+[data-theme="light"] .pricing-swiss-card.popular {
+  border-color: #7C3AED;
+  box-shadow: 0 16px 40px rgba(124, 58, 237, 0.18);
+}
+.pricing-swiss-card.popular .popular-badge {
+  background: linear-gradient(135deg, #2563EB, #7C3AED);
+  color: #FFFFFF;
+}
+
+/* Capability Meters Vibrant Gradient Fills */
+.meter-fill {
+  background: linear-gradient(90deg, #3B82F6, #8B5CF6, #06B6D4) !important;
+}
+
+/* Responsive News Marquee */
+@media (max-width: 768px) {
+  .brand-ticker-item {
+    width: 140px;
+    height: 72px;
+    padding: 10px 14px;
+  }
+  .brand-ticker-track {
+    gap: 20px;
+    animation-duration: 22s;
+  }
+}
