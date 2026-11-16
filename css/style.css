@@ -1704,7 +1704,10 @@ h1, h2, h3, h4, h5, h6 {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .team-dept {
@@ -1713,6 +1716,8 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--primary-orange);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  text-align: center;
+  width: 100%;
 }
 
 .team-name {
@@ -1720,11 +1725,16 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.12rem;
   font-weight: 700;
   color: var(--text-white);
+  text-align: center;
+  width: 100%;
+  margin-bottom: 2px;
 }
 
 .team-role {
   font-size: 0.86rem;
   color: var(--text-muted);
+  text-align: center;
+  width: 100%;
 }
 
 /* -----------------------------------------------------------------------------
