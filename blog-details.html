@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-accent="blue">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Perspectives &amp; Technical Insights | Giga Soft Limited</title>
+  <meta name="description" content="In-depth technical white papers and architectural insights from the engineering team at Giga Soft Limited. Covering distributed ERP systems, Zero-Trust cybersecurity, and Next-Gen headless commerce.">
+  <meta name="theme-color" content="#030712">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/giga-soft-logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    .article-hero {
+      padding: 130px 0 50px;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
+      align-items: start;
+      margin: 40px 0 80px;
+    }
+    @media (max-width: 992px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+    .article-sidebar {
+      position: sticky;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .article-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    [data-theme="light"] .article-card {
+      background: #FFFFFF;
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+      border-color: rgba(37, 99, 235, 0.12);
+    }
+    .toc-link {
+      display: block;
+      padding: 8px 12px;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      text-decoration: none;
+      border-radius: var(--radius-xs);
+      transition: all 0.2s ease;
+      margin-bottom: 4px;
+    }
+    .toc-link:hover, .toc-link.active {
+      color: #3B82F6;
+      background: rgba(59, 130, 246, 0.1);
+      font-weight: 600;
+    }
+    .article-nav-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+    .article-pill-btn {
+      padding: 10px 18px;
+      border-radius: 9999px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .article-pill-btn.active, .article-pill-btn:hover {
+      background: linear-gradient(135deg, #2563EB, #7C3AED);
+      color: #FFFFFF !important;
+      border-color: transparent;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+    }
+    .article-body {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 44px;
+      box-shadow: var(--shadow-sm);
+    }
+    [data-theme="light"] .article-body {
+      background: #FFFFFF;
+      border-color: rgba(37, 99, 235, 0.12);
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+    }
+    @media (max-width: 768px) {
+      .article-body {
+        padding: 24px;
+      }
+    }
+    .article-body h2 {
+      font-size: 1.6rem;
+      margin: 32px 0 16px;
+      color: var(--text-white);
+    }
+    .article-body h3 {
+      font-size: 1.25rem;
+      margin: 24px 0 12px;
+      color: var(--text-white);
+    }
+    .article-body p {
+      font-size: 1.02rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .article-quote {
+      border-left: 4px solid #3B82F6;
+      background: rgba(59, 130, 246, 0.08);
+      padding: 18px 24px;
+      margin: 28px 0;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-style: italic;
+      color: var(--text-main);
+    }
+    .code-diagram-box {
+      background: #070B14;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin: 24px 0;
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      color: #38BDF8;
+      overflow-x: auto;
+    }
+    [data-theme="light"] .code-diagram-box {
+      background: #0F172A;
+      color: #38BDF8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Particle Canvas -->
+  <canvas id="ambientCanvas" style="position: fixed; inset: 0; pointer-events: none; z-index: 0;"></canvas>
+
+  <div class="site-wrapper" style="position: relative; z-index: 1;">
+    
+    <!-- Top Navigation Bar -->
+    <header class="navbar" id="navbar">
+      <div class="container nav-container">
+        
+        <a href="index.html#home" class="brand-logo-wrap" title="Giga Soft Limited">
+          <img src="images/giga-soft-logo.png" alt="Giga Soft Limited" class="brand-logo-img">
+        </a>
+
+        <nav>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#home" class="nav-link">Home</a></li>
+            <li><a href="index.html#services" class="nav-link">Services</a></li>
+            <li><a href="index.html#who-we-are" class="nav-link">About</a></li>
+            <li><a href="index.html#why-us" class="nav-link">Why Us</a></li>
+            <li><a href="index.html#how-we-work" class="nav-link">How We Work</a></li>
+            <li><a href="index.html#case-study" class="nav-link">Case Studies</a></li>
+            <li><a href="index.html#team" class="nav-link">Team</a></li>
+            <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
+            <li><a href="index.html#blog" class="nav-link active">Blog</a></li>
+            <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button id="themeModeToggle" class="mode-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Light/Dark Mode">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+
+          <a href="index.html#contact" class="btn-swiss-primary" style="padding: 10px 20px; font-size: 0.86rem;">
+            Get Free Quote
+          </a>
+
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open Navigation">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- Article Hero Banner -->
+    <section class="article-hero">
+      <div class="container text-center">
+        <div class="section-mono-tag">ENGINEERING PERSPECTIVES &amp; ARCHITECTURAL WHITEPAPERS</div>
+        <h1 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin: 16px 0; line-height: 1.25;">
+          Technical Insights for <span class="gradient-text">Modern Enterprises</span>
+        </h1>
+        <p style="font-size: 1.05rem; color: var(--text-muted); max-width: 680px; margin: 0 auto 30px;">
+          Explore architectural analyses, security frameworks, and scalability paradigms developed by the senior engineering leads at Giga Soft Limited.
+        </p>
+
+        <!-- Article Quick Switcher Pills -->
+        <div class="article-nav-pills" style="justify-content: center;">
+          <a href="?post=erp-scaling" class="article-pill-btn" id="btn-erp-scaling">1. Distributed ERP Systems</a>
+          <a href="?post=zero-trust" class="article-pill-btn" id="btn-zero-trust">2. Zero-Trust Cybersecurity</a>
+          <a href="?post=headless-ecommerce" class="article-pill-btn" id="btn-headless-ecommerce">3. Headless E-Commerce at Scale</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content & Sidebar Layout -->
+    <main class="container">
+      <div class="article-layout">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="article-sidebar">
+          
+          <div class="article-card">
+            <h4 style="font-size: 0.92rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-dim); margin-bottom: 14px;">Table of Contents</h4>
+            <div id="articleToc">
+              <a href="#section-1" class="toc-link active">1. Overview &amp; Context</a>
+              <a href="#section-2" class="toc-link">2. Core Architectural Bottlenecks</a>
+              <a href="#section-3" class="toc-link">3. Giga Soft Engineering Framework</a>
+              <a href="#section-4" class="toc-link">4. Benchmark Metrics &amp; Telemetry</a>
+              <a href="#section-5" class="toc-link">5. Strategic Takeaways</a>
+            </div>
+          </div>
+
+          <div class="article-card">
+            <h4 style="font-size: 0.92rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-dim); margin-bottom: 12px;">Author Metadata</h4>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+              <img src="images/giga-soft-logo.png" alt="Giga Soft" style="height: 38px; width: auto; border-radius: 6px; background: rgba(255,255,255,0.06); padding: 4px;">
+              <div>
+                <strong style="display: block; font-size: 0.95rem; color: var(--text-main);" id="authorName">Senior Architecture Lead</strong>
+                <span style="font-size: 0.80rem; color: var(--text-dim);" id="authorDept">Giga Soft Enterprise Labs</span>
+              </div>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;" id="articleMeta">
+              Published by the Giga Soft Limited engineering team. Peer-reviewed for production reliability.
+            </p>
+          </div>
+
+          <div class="article-card" style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(124, 58, 237, 0.12)); border-color: rgba(59, 130, 246, 0.3);">
+            <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--text-main);">Need Technical Architecture Consulting?</h4>
+            <p style="font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
+              Discuss your enterprise ERP, cloud infrastructure, or custom web platform with our senior engineers in Dhaka.
+            </p>
+            <a href="index.html#contact" class="btn-swiss-primary" style="display: block; text-align: center; font-size: 0.85rem; padding: 10px 16px;">
+              Request Architecture Review
+            </a>
+          </div>
+
+        </aside>
+
+        <!-- Article Article Detail Body -->
+        <article class="article-body" id="articleContent">
+          <!-- Dynamically populated or rendered based on URL query parameter -->
+        </article>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <a href="index.html#home" class="brand-logo-wrap" title="Giga Soft Limited" style="margin-bottom: 16px;">
+            <img src="images/giga-soft-logo.png" alt="Giga Soft Limited" class="brand-logo-img" style="height: 48px; width: auto;">
+          </a>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; max-width: 320px;">
+            Giga Soft Limited is a professional enterprise software engineering company providing end-to-end digital solutions.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#home" class="footer-link">Home</a></li>
+            <li><a href="index.html#services" class="footer-link">Services</a></li>
+            <li><a href="index.html#who-we-are" class="footer-link">About</a></li>
+            <li><a href="index.html#why-us" class="footer-link">Why Us</a></li>
+            <li><a href="index.html#how-we-work" class="footer-link">How We Work</a></li>
+            <li><a href="index.html#case-study" class="footer-link">Case Studies</a></li>
+            <li><a href="index.html#pricing" class="footer-link">Pricing</a></li>
+            <li><a href="index.html#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Capabilities</h4>
+          <ul class="footer-links">
+            <li><a href="service-details.html?service=software-dev" class="footer-link">Software Development</a></li>
+            <li><a href="service-details.html?service=web-dev" class="footer-link">Web Development</a></li>
+            <li><a href="service-details.html?service=ui-ux" class="footer-link">UI/UX Design</a></li>
+            <li><a href="service-details.html?service=cyber-security" class="footer-link">Cyber Security</a></li>
+            <li><a href="service-details.html?service=cloud-services" class="footer-link">Cloud &amp; DevOps</a></li>
+            <li><a href="service-details.html" class="footer-link" style="color: #3B82F6; font-weight: 700;">View All Services &rarr;</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Corporate Office</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 12px;">
+            <strong>Headquarters:</strong><br>
+            House-6/14, Hasina De Palace, Block-A, Lalmatia, Dhaka-1207
+          </p>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+            <strong>Direct Hotline:</strong> <a href="tel:+8801778741894" style="color: #3B82F6;">01778741894</a><br>
+            <strong>Email:</strong> <a href="mailto:gigasoftbd@gmail.com" style="color: #3B82F6;">gigasoftbd@gmail.com</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <div>&copy; 2020-2026 Giga Soft Limited. All Rights Reserved.</div>
+        <div class="footer-legal-links">
+          <a href="contact.html?page=privacy" class="footer-legal-link">Privacy Policy</a>
+          <span>&bull;</span>
+          <a href="contact.html?page=terms" class="footer-legal-link">Terms of use</a>
+          <span>&bull;</span>
+          <a href="contact.html?page=sitemap" class="footer-legal-link">Sitemap</a>
+          <span>&bull;</span>
+          <a href="contact.html?page=career" class="footer-legal-link">Career</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Blog articles data registry
+    const blogArticles = {
+      'erp-scaling': {
+        tag: 'ENTERPRISE ARCHITECTURE',
+        title: 'Scaling Distributed ERP Systems on Cloud Infrastructure',
+        readTime: '5 min read',
+        author: 'Software Architecture Lead',
+        dept: 'Enterprise Core Systems',
+        content: `
+          <div class="section-mono-tag">ENTERPRISE ARCHITECTURE // DEEP DIVE</div>
+          <h1 style="font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 800; line-height: 1.3; margin: 12px 0 20px;">
+            Scaling Distributed ERP Systems on Cloud Infrastructure
+          </h1>
+          <div style="font-size: 0.88rem; color: var(--text-dim); margin-bottom: 30px; display: flex; gap: 16px; align-items: center;">
+            <span>By Software Architecture Lead</span>
+            <span>&bull;</span>
+            <span>5 min read</span>
+            <span>&bull;</span>
+            <span style="color: #10B981; font-weight: 600;">Production Verified</span>
+          </div>
+
+          <div style="border-radius: var(--radius-md); overflow: hidden; margin-bottom: 32px;">
+            <img src="images/blog/blog-2-1.jpg" alt="Scaling Distributed ERP Systems" style="width: 100%; height: auto; max-height: 420px; object-fit: cover;">
+          </div>
+
+          <h2 id="section-1">1. Overview &amp; Context</h2>
+          <p>
+            As traditional corporations expand across multi-location manufacturing facilities, retail networks, and multinational supply chains, monolithic ERP systems begin exhibiting severe performance degradations. When transaction concurrency surges past thousands of queries per second, legacy single-database architectures suffer from lock contention, serial queue bottlenecks, and high latency.
+          </p>
+          <p>
+            At Giga Soft Limited, our enterprise software engineering division architects next-generation, event-driven ERP platforms that decouple financial ledgers, inventory synchronization, and procurement workflows into horizontally scalable microservices.
+          </p>
+
+          <div class="article-quote">
+            "A modern ERP must guarantee financial atomicity without allowing analytical reporting queries or high-frequency inventory scans to block primary transaction ledgers."
+          </div>
+
+          <h2 id="section-2">2. Core Architectural Bottlenecks</h2>
+          <p>
+            Through rigorous benchmarks across enterprise client deployments in Bangladesh and abroad, we have identified three recurrent architectural failure points in conventional ERPs:
+          </p>
+          <ul>
+            <li><strong>Relational Lock Deadlocks:</strong> Shared table locks across accounting journals and real-time inventory ledger updates during peak operational hours.</li>
+            <li><strong>Cross-Region Replication Jitter:</strong> High network round-trip latency when syncing warehouse state across remote factory zones.</li>
+            <li><strong>Monolithic Release Dependencies:</strong> Inability to update the procurement module without taking down billing and compliance pipelines.</li>
+          </ul>
+
+          <h2 id="section-3">3. Giga Soft Engineering Framework</h2>
+          <p>
+            To address these structural issues, our architects deploy the <strong>Transactional Outbox Pattern</strong> coupled with event streaming via Apache Kafka or RabbitMQ. This pattern ensures that database state changes and outbound messaging events are stored in a single atomic transaction, preventing data inconsistency.
+          </p>
+
+          <div class="code-diagram-box">
+[Client ERP Gateway] &rarr; [Envoy Load Balancer]
+         &darr;
+[Order &amp; Inventory Service] &rarr; [Transactional Outbox] &rarr; [Kafka Message Stream]
+         &darr;                                               &darr;
+[Read Replica Cluster (PostgreSQL)]         [Financial Ledger &amp; Journal Engine]
+          </div>
+
+          <h2 id="section-4">4. Benchmark Metrics &amp; Telemetry</h2>
+          <p>
+            By migrating our clients from monolithic relational structures to this decoupled cloud-native topology, Giga Soft clients achieve:
+          </p>
+          <ul>
+            <li><strong>+340% Higher Concurrent Throughput:</strong> Scaling effortlessly from 800 req/sec to 3,800+ req/sec during month-end book closures.</li>
+            <li><strong>99.999% High Availability:</strong> Node failures in analytical reporting no longer propagate to invoice generation or point-of-sale terminals.</li>
+            <li><strong>Sub-15ms Query Response:</strong> Utilizing Redis in-memory caches for master item catalogs and price lists.</li>
+          </ul>
+
+          <h2 id="section-5">5. Strategic Takeaways</h2>
+          <p>
+            Transitioning to distributed ERP infrastructure requires deliberate data modeling, idempotent event consumers, and comprehensive automated integration testing. Giga Soft Limited delivers turnkey enterprise migration blueprints, from legacy database extraction to cloud container deployment on AWS and Google Cloud.
+          </p>
+        `
+      },
+      'zero-trust': {
+        tag: 'CYBERSECURITY',
+        title: 'Zero-Trust Network Access: Why Perimeter Firewalls Fail',
+        readTime: '7 min read',
+        author: 'Lead Security Analyst',
+        dept: 'Security & Compliance Engineering',
+        content: `
+          <div class="section-mono-tag">CYBERSECURITY // ARCHITECTURAL BRIEF</div>
+          <h1 style="font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 800; line-height: 1.3; margin: 12px 0 20px;">
+            Zero-Trust Network Access: Why Perimeter Firewalls Fail
+          </h1>
+          <div style="font-size: 0.88rem; color: var(--text-dim); margin-bottom: 30px; display: flex; gap: 16px; align-items: center;">
+            <span>By Lead Security Analyst</span>
+            <span>&bull;</span>
+            <span>7 min read</span>
+            <span>&bull;</span>
+            <span style="color: #10B981; font-weight: 600;">Security Certified</span>
+          </div>
+
+          <div style="border-radius: var(--radius-md); overflow: hidden; margin-bottom: 32px;">
+            <img src="images/blog/blog-2-2.jpg" alt="Zero-Trust Cybersecurity" style="width: 100%; height: auto; max-height: 420px; object-fit: cover;">
+          </div>
+
+          <h2 id="section-1">1. Overview &amp; Context</h2>
+          <p>
+            The historic corporate castle-and-moat security model &mdash; where everything outside the perimeter firewall is untrusted while everything inside the local area network is automatically trusted &mdash; has proven completely obsolete in modern distributed enterprise environments.
+          </p>
+          <p>
+            With hybrid cloud adoption, remote workforces, and mobile employee access, credential theft or a single compromised internal device exposes the entire organization to lateral threat movement, ransomware infection, and intellectual property exfiltration.
+          </p>
+
+          <div class="article-quote">
+            "Zero Trust operates under a non-negotiable principle: Never Trust, Always Verify. Every request &mdash; whether originated from inside the corporate LAN or from an external IP &mdash; must be cryptographically authenticated, authorized, and continuously monitored."
+          </div>
+
+          <h2 id="section-2">2. Core Architectural Bottlenecks</h2>
+          <p>
+            Traditional Virtual Private Networks (VPNs) and legacy border firewalls introduce severe structural liabilities:
+          </p>
+          <ul>
+            <li><strong>Broad Network Access:</strong> Once authenticated through a VPN gateway, users frequently receive broad network visibility across non-essential subnets.</li>
+            <li><strong>Static Session Tokens:</strong> Long-lived bearer tokens allow compromised sessions to persist unchecked for hours or days.</li>
+            <li><strong>Absence of Micro-Segmentation:</strong> Application services communicate without mutual TLS (mTLS), allowing attackers to sniff internal payloads.</li>
+          </ul>
+
+          <h2 id="section-3">3. Giga Soft Engineering Framework</h2>
+          <p>
+            Giga Soft Limited engineers enterprise Zero-Trust Network Access (ZTNA) architectures centered around three pillar technologies:
+          </p>
+          <div class="code-diagram-box">
+[User Request + Device State] 
+         &darr;
+[Identity &amp; Context Broker (OAuth 2.0 / SAML)] 
+         &darr; (Short-Lived Cryptographic Token)
+[Zero-Trust Policy Enforcement Gateway] 
+         &darr; (Mutual TLS 1.3 Micro-Segmentation)
+[Isolated Enterprise App / Microservice Pod]
+          </div>
+
+          <h2 id="section-4">4. Benchmark Metrics &amp; Telemetry</h2>
+          <p>
+            Deploying ZTNA with Giga Soft Limited provides measurable security resilience:
+          </p>
+          <ul>
+            <li><strong>100% Elimination of Unsegmented Lateral Movement:</strong> Each microservice accepts connections solely from verified upstream identities via mTLS.</li>
+            <li><strong>Near Zero Attack Surface:</strong> Ports are closed to external scans; services remain completely invisible behind identity-aware proxies.</li>
+            <li><strong>Automated Threat Remediation:</strong> Real-time device posture inspection instantly invalidates tokens upon detecting jailbreaks or malware signatures.</li>
+          </ul>
+
+          <h2 id="section-5">5. Strategic Takeaways</h2>
+          <p>
+            Zero-Trust is not a single product &mdash; it is an architectural discipline. Giga Soft Limited conducts complete VAPT vulnerability assessments and implements turnkey Zero-Trust IAM access controls for corporate and banking environments.
+          </p>
+        `
+      },
+      'headless-ecommerce': {
+        tag: 'E-COMMERCE',
+        title: 'Next-Gen Headless E-Commerce: Sub-Second Latency at Scale',
+        readTime: '4 min read',
+        author: 'Senior Frontend Architect',
+        dept: 'Digital Commerce Solutions',
+        content: `
+          <div class="section-mono-tag">E-COMMERCE // PERFORMANCE ARCHITECTURE</div>
+          <h1 style="font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 800; line-height: 1.3; margin: 12px 0 20px;">
+            Next-Gen Headless E-Commerce: Sub-Second Latency at Scale
+          </h1>
+          <div style="font-size: 0.88rem; color: var(--text-dim); margin-bottom: 30px; display: flex; gap: 16px; align-items: center;">
+            <span>By Senior Frontend Architect</span>
+            <span>&bull;</span>
+            <span>4 min read</span>
+            <span>&bull;</span>
+            <span style="color: #10B981; font-weight: 600;">Performance Benchmarked</span>
+          </div>
+
+          <div style="border-radius: var(--radius-md); overflow: hidden; margin-bottom: 32px;">
+            <img src="images/blog/blog-2-3.jpg" alt="Headless E-Commerce" style="width: 100%; height: auto; max-height: 420px; object-fit: cover;">
+          </div>
+
+          <h2 id="section-1">1. Overview &amp; Context</h2>
+          <p>
+            In the competitive world of consumer and B2B digital commerce, milliseconds directly correlate with conversion rates. Standard monolithic platforms &mdash; such as traditional monolithic Magento, WooCommerce, or stock Shopify frontends &mdash; frequently struggle under flash sale traffic spikes, resulting in sluggish page loads and high checkout abandonment rates.
+          </p>
+          <p>
+            By decoupling the frontend customer presentation layer from backend order management, inventory logic, and payment processing, <strong>Headless E-Commerce</strong> unlocks instant page transitions, bespoke UI animations, and sub-second catalog navigation.
+          </p>
+
+          <div class="article-quote">
+            "A 100ms improvement in site load speed can boost e-commerce conversion rates by 8.4%. Decoupling frontend rendering to global edge CDNs guarantees high velocity regardless of customer location."
+          </div>
+
+          <h2 id="section-2">2. Core Architectural Bottlenecks</h2>
+          <p>
+            Traditional e-commerce platforms struggle with three recurring architectural flaws:
+          </p>
+          <ul>
+            <li><strong>Server-Side Monolith Choke:</strong> Rendering heavy server-side templates for thousands of concurrent visitors during holiday sales surges CPU load.</li>
+            <li><strong>Bloated JavaScript Bundles:</strong> Plugin-heavy storefronts send megabytes of non-critical third-party scripts before the product image renders.</li>
+            <li><strong>Rigid Frontend Templates:</strong> Restrictive theme architectures prevent custom omni-channel checkout funnels or native mobile integrations.</li>
+          </ul>
+
+          <h2 id="section-3">3. Giga Soft Engineering Framework</h2>
+          <p>
+            Giga Soft Limited engineers headless commerce storefronts using <strong>Next.js App Router</strong>, React Server Components (RSC), and edge-cached GraphQL APIs:
+          </p>
+
+          <div class="code-diagram-box">
+[Mobile / Web Customers] &rarr; [Global Edge CDN (Cloudflare / Vercel)]
+                                         &darr;
+                          [Next.js Serverless Edge Nodes]
+                                         &darr;
+              [GraphQL Aggregator / BFF (Backend For Frontend)]
+               &darr;                     &darr;                 &darr;
+      [Product Catalog]         [Order &amp; Inventory]       [bKash / Nagad / SSLCommerz]
+          </div>
+
+          <h2 id="section-4">4. Benchmark Metrics &amp; Telemetry</h2>
+          <p>
+            E-commerce storefronts built on Giga Soft's headless architecture deliver market-leading metrics:
+          </p>
+          <ul>
+            <li><strong>98+ Google Lighthouse Performance Score:</strong> Perfect Core Web Vitals with LCP under 0.8 seconds.</li>
+            <li><strong>Zero Downtime During 10x Flash Sale Spikes:</strong> Static pre-rendering combined with Incremental Static Regeneration (ISR).</li>
+            <li><strong>+28% Average Checkout Conversion:</strong> Streamlined one-page checkouts integrated with local payment gateways (bKash, Nagad, Cards).</li>
+          </ul>
+
+          <h2 id="section-5">5. Strategic Takeaways</h2>
+          <p>
+            Headless commerce empowers forward-thinking retail brands to create ultra-fast, visually custom storefronts that outpace competitors. Connect with the digital commerce architects at Giga Soft Limited to modernize your online store.
+          </p>
+        `
+      }
+    };
+
+    // Read post parameter from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const postKey = urlParams.get('post') || 'erp-scaling';
+
+    function renderArticle(key) {
+      const article = blogArticles[key] || blogArticles['erp-scaling'];
+      const container = document.getElementById('articleContent');
+      if (container) {
+        container.innerHTML = article.content;
+      }
+      
+      const authorEl = document.getElementById('authorName');
+      const deptEl = document.getElementById('authorDept');
+      if (authorEl && article.author) authorEl.innerText = article.author;
+      if (deptEl && article.dept) deptEl.innerText = article.dept;
+
+      // Update active pill button
+      document.querySelectorAll('.article-pill-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById('btn-' + key);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      document.title = article.title + ' | Giga Soft Limited';
+    }
+
+    renderArticle(postKey);
+  </script>
+</body>
+</html>
