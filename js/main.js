@@ -62,13 +62,14 @@ function initAmbientCanvas() {
     
     switch (accent) {
       case 'orange':
-        return isLight ? 'rgba(255, 102, 0, ' : 'rgba(255, 120, 30, ';
+        return isLight ? 'rgba(234, 88, 12, ' : 'rgba(255, 120, 30, ';
       case 'purple':
-        return isLight ? 'rgba(168, 85, 247, ' : 'rgba(192, 132, 252, ';
+        return isLight ? 'rgba(124, 58, 237, ' : 'rgba(192, 132, 252, ';
       case 'emerald':
-        return isLight ? 'rgba(16, 185, 129, ' : 'rgba(52, 211, 153, ';
+        return isLight ? 'rgba(5, 150, 105, ' : 'rgba(52, 211, 153, ';
       default:
-        return isLight ? 'rgba(0, 98, 255, ' : 'rgba(56, 189, 248, ';
+        // Saturated, vibrant cobalt blue for light mode so particles and neural lines pop vividly
+        return isLight ? 'rgba(37, 99, 235, ' : 'rgba(56, 189, 248, ';
     }
   }
 
@@ -106,12 +107,14 @@ function initAmbientCanvas() {
       }
     }
 
-    draw(colorPrefix) {
+    draw(colorPrefix, isLight) {
       ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = colorPrefix + this.baseAlpha + ')';
-      ctx.shadowBlur = 8;
-      ctx.shadowColor = colorPrefix + '0.6)';
+      const dotSize = isLight ? this.size + 1.2 : this.size;
+      ctx.arc(this.x, this.y, dotSize, 0, Math.PI * 2);
+      const alphaVal = isLight ? Math.min(1, this.baseAlpha + 0.40) : this.baseAlpha;
+      ctx.fillStyle = colorPrefix + alphaVal + ')';
+      ctx.shadowBlur = isLight ? 12 : 8;
+      ctx.shadowColor = colorPrefix + (isLight ? '0.85)' : '0.6)');
       ctx.fill();
     }
   }
@@ -122,23 +125,25 @@ function initAmbientCanvas() {
 
   function animate() {
     ctx.clearRect(0, 0, width, height);
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
     const colorPrefix = getThemeColors();
 
-    // Connect close particles with neural line
+    // Connect close particles with neural constellation lines (clearly visible in both light & dark)
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x;
         const dy = particles[i].y - particles[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        const maxDist = 140;
+        const maxDist = isLight ? 150 : 140;
 
         if (dist < maxDist) {
-          const alpha = (1 - dist / maxDist) * 0.22;
+          const alphaFactor = isLight ? 0.60 : 0.28;
+          const alpha = (1 - dist / maxDist) * alphaFactor;
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
           ctx.strokeStyle = colorPrefix + alpha + ')';
-          ctx.lineWidth = 1;
+          ctx.lineWidth = isLight ? 1.6 : 1;
           ctx.stroke();
         }
       }
@@ -146,7 +151,7 @@ function initAmbientCanvas() {
 
     particles.forEach(p => {
       p.update();
-      p.draw(colorPrefix);
+      p.draw(colorPrefix, isLight);
     });
 
     requestAnimationFrame(animate);
