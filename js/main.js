@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPricingToggle();
   initServiceModal();
   init3DTilt();
+  initHeroTopology();
 });
 
 /* 0. Ambient Interactive Canvas Animation */
@@ -432,10 +433,10 @@ function initAccentSwitcher() {
   });
 }
 
-/* 3. 10 Core Services Category Filter */
+/* 3. 14 Technical Services Directory Category Filter */
 function initServiceFilters() {
-  const tabBtns = document.querySelectorAll('.service-filter-btn, .service-tab-btn');
-  const serviceCards = document.querySelectorAll('.services-cards-grid .service-box, .service-card');
+  const tabBtns = document.querySelectorAll('.service-filter-btn, .service-tab-btn, .directory-filter-btn');
+  const serviceCards = document.querySelectorAll('.services-cards-grid .service-box, .service-card, .directory-service-card');
 
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -449,12 +450,41 @@ function initServiceFilters() {
         if (category === 'all' || cardCat.includes(category)) {
           card.style.display = 'flex';
           card.style.opacity = '1';
-          card.style.animation = 'fadeInUp 0.35s ease forwards';
         } else {
           card.style.display = 'none';
           card.style.opacity = '0';
         }
       });
+    });
+  });
+}
+
+/* 3.1 Interactive Hero Architecture & Topology Live Telemetry */
+function initHeroTopology() {
+  const nodes = document.querySelectorAll('.topology-node');
+  const statLatency = document.querySelectorAll('.console-stat-val')[1];
+  const statThroughput = document.querySelectorAll('.console-stat-val')[2];
+
+  if (!nodes.length) return;
+
+  // Gentle live telemetry updates
+  setInterval(() => {
+    if (statLatency) {
+      const ms = Math.floor(10 + Math.random() * 5);
+      statLatency.textContent = `${ms}ms`;
+    }
+    if (statThroughput) {
+      const tp = (1.3 + Math.random() * 0.3).toFixed(1);
+      statThroughput.textContent = `${tp}M/s`;
+    }
+  }, 3500);
+
+  nodes.forEach(node => {
+    node.addEventListener('mouseenter', () => {
+      node.style.borderColor = 'var(--accent-cobalt-light)';
+    });
+    node.addEventListener('mouseleave', () => {
+      node.style.borderColor = '';
     });
   });
 }
