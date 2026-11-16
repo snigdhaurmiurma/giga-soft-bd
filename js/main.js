@@ -26,6 +26,12 @@ function initAmbientCanvas() {
   const canvas = document.getElementById('ambientCanvas');
   if (!canvas) return;
 
+  // Respect system reduced-motion accessibility preference
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    canvas.style.display = 'none';
+    return;
+  }
+
   const ctx = canvas.getContext('2d');
   let width, height;
   let particles = [];

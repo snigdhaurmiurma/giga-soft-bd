@@ -187,6 +187,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 body {
@@ -257,10 +258,10 @@ button {
 .blob-3 {
   position: absolute;
   border-radius: 50%;
-  filter: blur(110px);
-  opacity: 0.5;
+  filter: blur(140px);
+  opacity: 0.18;
   transition: background 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s ease;
-  animation: floatOrb 22s infinite alternate ease-in-out;
+  animation: floatOrb 26s infinite alternate ease-in-out;
 }
 
 .blob-1 {
@@ -1859,6 +1860,39 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 10px;
+}
+
+@media (max-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.testimonial-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+
+.testimonial-stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .testimonial-marquee-wrapper {
   overflow: hidden;
   position: relative;
@@ -1885,18 +1919,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .testimonial-card {
-  width: 400px;
-  max-width: 85vw;
-  flex-shrink: 0;
+  width: 100%;
   background: var(--bg-card);
   border: 1px solid var(--glass-border);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   padding: 32px 28px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
 }
 
 .testimonial-card:hover {
@@ -5578,5 +5610,28 @@ option {
   }
   .agency-slide-content {
     padding-top: calc(var(--nav-height) + 15px);
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   Accessibility: Respect Reduced Motion Preferences (Stripe / Vercel Standard)
+   ----------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .marquee-track,
+  .testimonial-marquee-track,
+  .aurora-blob,
+  .blob-1,
+  .blob-2,
+  .blob-3 {
+    animation: none !important;
+  }
+  [data-tilt] {
+    transform: none !important;
   }
 }
