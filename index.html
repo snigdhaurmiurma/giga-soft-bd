@@ -51,33 +51,104 @@
         <!-- Desktop Navigation Links (Single Line, Aligned with Footer) -->
         <ul class="nav-links">
           <li><a href="#home" class="nav-link active">Home</a></li>
-          <li class="nav-dropdown-item">
+          <li class="nav-dropdown-item mega-dropdown-item">
             <a href="#services" class="nav-link">Our Services <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline; vertical-align:middle; margin-left:4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-            <div class="nav-dropdown-menu">
-              <a href="service-details.html?service=it-solutions" class="dropdown-link">
-                <strong>IT Solutions</strong>
-                <span>Custom software, ERPs &amp; microservices</span>
-              </a>
-              <a href="service-details.html?service=cyber-security" class="dropdown-link">
-                <strong>Cyber Security</strong>
-                <span>Threat mitigation, VAPT &amp; zero-trust</span>
-              </a>
-              <a href="service-details.html?service=cloud-services" class="dropdown-link">
-                <strong>Cloud Services</strong>
-                <span>Cloud migration, DevOps &amp; hosting</span>
-              </a>
-              <a href="service-details.html?service=ui-ux" class="dropdown-link">
-                <strong>UI/UX Design</strong>
-                <span>Figma systems, prototyping &amp; UX</span>
-              </a>
-              <a href="service-details.html?service=digital-marketing" class="dropdown-link">
-                <strong>Digital Marketing</strong>
-                <span>Growth, SEO &amp; performance ads</span>
-              </a>
-              <a href="service-details.html?service=data-analytics" class="dropdown-link">
-                <strong>Data Analytics</strong>
-                <span>BI dashboards, data pipelines &amp; models</span>
-              </a>
+            <div class="mega-dropdown-menu">
+              <!-- Col 1: Software & Web -->
+              <div class="mega-col">
+                <div class="mega-col-header">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                  <span>Software &amp; Web</span>
+                </div>
+                <div class="mega-links-list">
+                  <a href="service-details.html?service=software-dev" class="mega-dropdown-link">
+                    <strong>Software Development</strong>
+                    <span>Enterprise ERPs &amp; microservices</span>
+                  </a>
+                  <a href="service-details.html?service=web-dev" class="mega-dropdown-link">
+                    <strong>Web Development</strong>
+                    <span>React, Next.js &amp; portals</span>
+                  </a>
+                  <a href="service-details.html?service=app-dev" class="mega-dropdown-link">
+                    <strong>App Development</strong>
+                    <span>iOS, Android &amp; Flutter apps</span>
+                  </a>
+                  <a href="service-details.html?service=it-solutions" class="mega-dropdown-link">
+                    <strong>IT Solutions</strong>
+                    <span>Infrastructure &amp; IT consulting</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Col 2: Design & Creative -->
+              <div class="mega-col">
+                <div class="mega-col-header">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                  <span>Design &amp; Creative</span>
+                </div>
+                <div class="mega-links-list">
+                  <a href="service-details.html?service=ui-ux" class="mega-dropdown-link">
+                    <strong>UI/UX Design</strong>
+                    <span>Figma, wireframes &amp; UX</span>
+                  </a>
+                  <a href="service-details.html?service=branding" class="mega-dropdown-link">
+                    <strong>Creative &amp; Branding</strong>
+                    <span>Identity systems &amp; guidelines</span>
+                  </a>
+                  <a href="service-details.html?service=event-activation" class="mega-dropdown-link">
+                    <strong>Event &amp; Activation</strong>
+                    <span>Corporate launches &amp; activation</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Col 3: Growth & Marketing -->
+              <div class="mega-col">
+                <div class="mega-col-header">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                  <span>Growth &amp; Marketing</span>
+                </div>
+                <div class="mega-links-list">
+                  <a href="service-details.html?service=digital-marketing" class="mega-dropdown-link">
+                    <strong>Digital Marketing</strong>
+                    <span>SEO, performance ads &amp; growth</span>
+                  </a>
+                  <a href="service-details.html?service=marketing-comm" class="mega-dropdown-link">
+                    <strong>Marketing &amp; Comm.</strong>
+                    <span>PR, content strategy &amp; copy</span>
+                  </a>
+                  <a href="service-details.html?service=ecommerce" class="mega-dropdown-link">
+                    <strong>Ecommerce Solutions</strong>
+                    <span>Shopify, WooCommerce &amp; headless</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Col 4: Cloud, Security & Hosting -->
+              <div class="mega-col">
+                <div class="mega-col-header">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  <span>Cloud &amp; Security</span>
+                </div>
+                <div class="mega-links-list">
+                  <a href="service-details.html?service=cloud-services" class="mega-dropdown-link">
+                    <strong>Cloud Services</strong>
+                    <span>DevOps, AWS, GCP &amp; Azure</span>
+                  </a>
+                  <a href="service-details.html?service=cyber-security" class="mega-dropdown-link">
+                    <strong>Cyber Security</strong>
+                    <span>VAPT, Zero-Trust &amp; compliance</span>
+                  </a>
+                  <a href="service-details.html?service=hosting" class="mega-dropdown-link">
+                    <strong>Domain &amp; Hosting</strong>
+                    <span>High-speed NVMe &amp; 99.9% uptime</span>
+                  </a>
+                  <a href="service-details.html?service=data-analytics" class="mega-dropdown-link">
+                    <strong>Data Analytics</strong>
+                    <span>BI dashboards &amp; ETL pipelines</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </li>
           <li><a href="#who-we-are" class="nav-link">About Us</a></li>
@@ -579,14 +650,167 @@
           </div>
         </div>
 
-        <!-- 6 Core Services Grid (Dribbble/Pinterest Modern Agency Architecture) -->
-        <div class="services-cards-grid">
+        <!-- Category Filter Pills Bar -->
+        <div class="services-filter-nav" id="servicesFilterNav">
+          <button class="service-filter-btn active" data-filter="all">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            <span>All Services (14)</span>
+          </button>
+          <button class="service-filter-btn" data-filter="software">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            <span>Software &amp; Web</span>
+          </button>
+          <button class="service-filter-btn" data-filter="design">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+            <span>Design &amp; Creative</span>
+          </button>
+          <button class="service-filter-btn" data-filter="marketing">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+            <span>Growth &amp; Marketing</span>
+          </button>
+          <button class="service-filter-btn" data-filter="cloud">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Cloud &amp; Security</span>
+          </button>
+        </div>
 
-          <!-- 1. IT Solutions -->
-          <div class="service-box" data-service="it-solutions">
+        <!-- 14 Comprehensive Services Grid (Categorized & Filterable) -->
+        <div class="services-cards-grid" id="servicesCardsGrid">
+
+          <!-- 1. Software Development -->
+          <div class="service-box" data-category="software" data-service="software-dev">
+            <div class="service-box-img-wrap">
+              <img src="images/services/software-development.jpg" alt="Software Development" loading="lazy">
+              <span class="service-cat-pill">Software &amp; Web</span>
+              <div class="service-box-overlay"></div>
+            </div>
+            <div class="service-box-body">
+              <div class="service-header-row">
+                <div class="service-icon-wrap blue">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <h3 class="service-title">Software Development</h3>
+              </div>
+              <p class="service-desc">
+                Architecting robust, scalable custom ERPs, CRM systems, and microservices engineered for high enterprise throughput.
+              </p>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Enterprise Architecture &amp; ERP Systems</span>
+                </li>
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Custom Business Process Automation</span>
+                </li>
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Microservices &amp; High-Throughput APIs</span>
+                </li>
+              </ul>
+              <div class="service-box-actions">
+                <a href="service-details.html?service=software-dev" class="service-read-btn">
+                  <span>Read More</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <button type="button" class="service-quick-btn" onclick="openServiceModalFromCard('software-dev')">
+                  Quick Specs
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Web Development -->
+          <div class="service-box" data-category="software" data-service="web-dev">
+            <div class="service-box-img-wrap">
+              <img src="images/services/web-development.jpg" alt="Web Development" loading="lazy">
+              <span class="service-cat-pill">Software &amp; Web</span>
+              <div class="service-box-overlay"></div>
+            </div>
+            <div class="service-box-body">
+              <div class="service-header-row">
+                <div class="service-icon-wrap emerald">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                </div>
+                <h3 class="service-title">Web Development</h3>
+              </div>
+              <p class="service-desc">
+                High-performance web applications, enterprise portals, and headless digital experiences built with modern stacks.
+              </p>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>React, Next.js &amp; Modern Frameworks</span>
+                </li>
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Progressive Web Apps (PWA) &amp; Portals</span>
+                </li>
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>SEO Architecture &amp; Ultra-Fast Core Web Vitals</span>
+                </li>
+              </ul>
+              <div class="service-box-actions">
+                <a href="service-details.html?service=web-dev" class="service-read-btn">
+                  <span>Read More</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <button type="button" class="service-quick-btn" onclick="openServiceModalFromCard('web-dev')">
+                  Quick Specs
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. App Development -->
+          <div class="service-box" data-category="software" data-service="app-dev">
+            <div class="service-box-img-wrap">
+              <img src="images/services/app-development.jpg" alt="App Development" loading="lazy">
+              <span class="service-cat-pill">Software &amp; Web</span>
+              <div class="service-box-overlay"></div>
+            </div>
+            <div class="service-box-body">
+              <div class="service-header-row">
+                <div class="service-icon-wrap purple">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                </div>
+                <h3 class="service-title">App Development</h3>
+              </div>
+              <p class="service-desc">
+                Native and cross-platform mobile apps for iOS and Android delivering fluid experiences, offline capability, and high retention.
+              </p>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Flutter &amp; React Native Cross-Platform</span>
+                </li>
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Native iOS (Swift) &amp; Android (Kotlin)</span>
+                </li>
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Real-Time Cloud Sync &amp; Push Notifications</span>
+                </li>
+              </ul>
+              <div class="service-box-actions">
+                <a href="service-details.html?service=app-dev" class="service-read-btn">
+                  <span>Read More</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <button type="button" class="service-quick-btn" onclick="openServiceModalFromCard('app-dev')">
+                  Quick Specs
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. IT Solutions -->
+          <div class="service-box" data-category="software" data-service="it-solutions">
             <div class="service-box-img-wrap">
               <img src="images/services/services-1-1.jpg" alt="IT Solutions" loading="lazy">
-              <span class="service-cat-pill">Enterprise Technology</span>
+              <span class="service-cat-pill">Software &amp; Web</span>
               <div class="service-box-overlay"></div>
             </div>
             <div class="service-box-body">
@@ -597,20 +821,20 @@
                 <h3 class="service-title">IT Solutions</h3>
               </div>
               <p class="service-desc">
-                Bring to the table win-win survival strategies to ensure proactive domination.
+                Comprehensive technology advisory, enterprise internal networking, high-availability setups, and 24/7 SLA engineering.
               </p>
               <ul class="service-features-list">
                 <li>
                   <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                  <span>Custom Enterprise Software &amp; ERP</span>
+                  <span>High-Availability Enterprise Networking</span>
                 </li>
                 <li>
                   <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                  <span>Microservices &amp; RESTful APIs</span>
+                  <span>Zero-Latency Routing &amp; Secure VPNs</span>
                 </li>
                 <li>
                   <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                  <span>Cloud Architecture &amp; Database Design</span>
+                  <span>Active Directory, IAM &amp; IT Consulting</span>
                 </li>
               </ul>
               <div class="service-box-actions">
@@ -618,106 +842,29 @@
                   <span>Read More</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
+                <button type="button" class="service-quick-btn" onclick="openServiceModalFromCard('it-solutions')">
+                  Quick Specs
+                </button>
               </div>
             </div>
           </div>
 
-          <!-- 2. Cyber Security -->
-          <div class="service-box" data-service="cyber-security">
+          <!-- 5. UI/UX Design -->
+          <div class="service-box" data-category="design" data-service="ui-ux">
             <div class="service-box-img-wrap">
-              <img src="images/services/services-1-2.jpg" alt="Cyber Security" loading="lazy">
-              <span class="service-cat-pill">Security &amp; Defense</span>
-              <div class="service-box-overlay"></div>
-            </div>
-            <div class="service-box-body">
-              <div class="service-header-row">
-                <div class="service-icon-wrap orange">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                </div>
-                <h3 class="service-title">Cyber Security</h3>
-              </div>
-              <p class="service-desc">
-                Bring to the table win-win survival strategies to ensure proactive domination.
-              </p>
-              <ul class="service-features-list">
-                <li>
-                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                  <span>Vulnerability Assessment &amp; Penetration Testing</span>
-                </li>
-                <li>
-                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                  <span>Zero-Trust IAM &amp; Cloud Security</span>
-                </li>
-                <li>
-                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                  <span>Automated Threat Detection &amp; Compliance</span>
-                </li>
-              </ul>
-              <div class="service-box-actions">
-                <a href="service-details.html?service=cyber-security" class="service-read-btn">
-                  <span>Read More</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 3. Cloud Services -->
-          <div class="service-box" data-service="cloud-services">
-            <div class="service-box-img-wrap">
-              <img src="images/services/services-1-3.jpg" alt="Cloud Services" loading="lazy">
-              <span class="service-cat-pill">Cloud &amp; DevOps</span>
-              <div class="service-box-overlay"></div>
-            </div>
-            <div class="service-box-body">
-              <div class="service-header-row">
-                <div class="service-icon-wrap purple">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
-                </div>
-                <h3 class="service-title">Cloud Services</h3>
-              </div>
-              <p class="service-desc">
-                Bring to the table win-win survival strategies to ensure proactive domination.
-              </p>
-              <ul class="service-features-list">
-                <li>
-                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                  <span>AWS, GCP &amp; Azure Infrastructure</span>
-                </li>
-                <li>
-                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                  <span>Kubernetes &amp; Docker Containerization</span>
-                </li>
-                <li>
-                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                  <span>99.99% High Availability &amp; CI/CD Pipelines</span>
-                </li>
-              </ul>
-              <div class="service-box-actions">
-                <a href="service-details.html?service=cloud-services" class="service-read-btn">
-                  <span>Read More</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 4. UI/UX Design -->
-          <div class="service-box" data-service="ui-ux">
-            <div class="service-box-img-wrap">
-              <img src="images/services/services-1-4.jpg" alt="UI/UX Design" loading="lazy">
-              <span class="service-cat-pill">Design &amp; Experience</span>
+              <img src="images/services/ui-ux-design.jpg" alt="UI/UX Design" loading="lazy">
+              <span class="service-cat-pill">Design &amp; Creative</span>
               <div class="service-box-overlay"></div>
             </div>
             <div class="service-box-body">
               <div class="service-header-row">
                 <div class="service-icon-wrap emerald">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
                 </div>
                 <h3 class="service-title">UI/UX Design</h3>
               </div>
               <p class="service-desc">
-                Bring to the table win-win survival strategies to ensure proactive domination.
+                Human-centered digital design, interactive clickable prototypes, and scalable Figma design systems crafted for high conversion.
               </p>
               <ul class="service-features-list">
                 <li>
@@ -738,14 +885,103 @@
                   <span>Read More</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
+                <button type="button" class="service-quick-btn" onclick="openServiceModalFromCard('ui-ux')">
+                  Quick Specs
+                </button>
               </div>
             </div>
           </div>
 
-          <!-- 5. Digital Marketing -->
-          <div class="service-box" data-service="digital-marketing">
+          <!-- 6. Creative & Branding -->
+          <div class="service-box" data-category="design" data-service="branding">
             <div class="service-box-img-wrap">
-              <img src="images/services/services-1-5.jpg" alt="Digital Marketing" loading="lazy">
+              <img src="images/services/creative-branding.jpg" alt="Creative & Branding" loading="lazy">
+              <span class="service-cat-pill">Design &amp; Creative</span>
+              <div class="service-box-overlay"></div>
+            </div>
+            <div class="service-box-body">
+              <div class="service-header-row">
+                <div class="service-icon-wrap orange">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                </div>
+                <h3 class="service-title">Creative &amp; Branding</h3>
+              </div>
+              <p class="service-desc">
+                Distinct brand identity systems, corporate typography, color palettes, and comprehensive brand guideline manuals.
+              </p>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Brand Strategy &amp; Identity Positioning</span>
+                </li>
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Visual Assets, Stationery &amp; Collateral</span>
+                </li>
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Corporate Brand Identity Guidelines</span>
+                </li>
+              </ul>
+              <div class="service-box-actions">
+                <a href="service-details.html?service=branding" class="service-read-btn">
+                  <span>Read More</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <button type="button" class="service-quick-btn" onclick="openServiceModalFromCard('branding')">
+                  Quick Specs
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Event Management & Activation -->
+          <div class="service-box" data-category="design" data-service="event-activation">
+            <div class="service-box-img-wrap">
+              <img src="images/services/event-activation.jpg" alt="Event Management & Activation" loading="lazy">
+              <span class="service-cat-pill">Design &amp; Creative</span>
+              <div class="service-box-overlay"></div>
+            </div>
+            <div class="service-box-body">
+              <div class="service-header-row">
+                <div class="service-icon-wrap purple">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+                <h3 class="service-title">Event &amp; Activation</h3>
+              </div>
+              <p class="service-desc">
+                End-to-end corporate event production, tech product launches, experiential brand activations, and interactive booth experiences.
+              </p>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Corporate Summits &amp; Product Launches</span>
+                </li>
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Experiential Booths &amp; Interactive Stages</span>
+                </li>
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>On-Ground Brand Activation &amp; Media</span>
+                </li>
+              </ul>
+              <div class="service-box-actions">
+                <a href="service-details.html?service=event-activation" class="service-read-btn">
+                  <span>Read More</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <button type="button" class="service-quick-btn" onclick="openServiceModalFromCard('event-activation')">
+                  Quick Specs
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8. Digital Marketing -->
+          <div class="service-box" data-category="marketing" data-service="digital-marketing">
+            <div class="service-box-img-wrap">
+              <img src="images/services/digital-marketing.jpg" alt="Digital Marketing" loading="lazy">
               <span class="service-cat-pill">Growth &amp; Marketing</span>
               <div class="service-box-overlay"></div>
             </div>
@@ -757,12 +993,12 @@
                 <h3 class="service-title">Digital Marketing</h3>
               </div>
               <p class="service-desc">
-                Bring to the table win-win survival strategies to ensure proactive domination.
+                Performance advertising, technical SEO dominance, data-driven lead generation, and multi-channel acquisition funnels.
               </p>
               <ul class="service-features-list">
                 <li>
                   <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                  <span>Performance Ads &amp; Conversion Campaigns</span>
+                  <span>Google Ads, Meta Ads &amp; LinkedIn B2B</span>
                 </li>
                 <li>
                   <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
@@ -770,7 +1006,7 @@
                 </li>
                 <li>
                   <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                  <span>Brand Strategy &amp; Social Retargeting</span>
+                  <span>Full-Funnel Conversion Optimization (CRO)</span>
                 </li>
               </ul>
               <div class="service-box-actions">
@@ -778,15 +1014,233 @@
                   <span>Read More</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
+                <button type="button" class="service-quick-btn" onclick="openServiceModalFromCard('digital-marketing')">
+                  Quick Specs
+                </button>
               </div>
             </div>
           </div>
 
-          <!-- 6. Data Analytics -->
-          <div class="service-box" data-service="data-analytics">
+          <!-- 9. Marketing & Communication -->
+          <div class="service-box" data-category="marketing" data-service="marketing-comm">
             <div class="service-box-img-wrap">
-              <img src="images/services/services-1-6.jpg" alt="Data Analytics" loading="lazy">
-              <span class="service-cat-pill">Intelligence &amp; Data</span>
+              <img src="images/services/marketing-communication.jpg" alt="Marketing & Communication" loading="lazy">
+              <span class="service-cat-pill">Growth &amp; Marketing</span>
+              <div class="service-box-overlay"></div>
+            </div>
+            <div class="service-box-body">
+              <div class="service-header-row">
+                <div class="service-icon-wrap blue">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+                <h3 class="service-title">Marketing &amp; Comm.</h3>
+              </div>
+              <p class="service-desc">
+                Strategic brand communications, PR press releases, corporate storytelling, content marketing, and media outreach.
+              </p>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Corporate Narrative &amp; Content Strategy</span>
+                </li>
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Press Release Distribution &amp; Media Outlets</span>
+                </li>
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Stakeholder &amp; Executive Messaging</span>
+                </li>
+              </ul>
+              <div class="service-box-actions">
+                <a href="service-details.html?service=marketing-comm" class="service-read-btn">
+                  <span>Read More</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <button type="button" class="service-quick-btn" onclick="openServiceModalFromCard('marketing-comm')">
+                  Quick Specs
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 10. Ecommerce Solutions -->
+          <div class="service-box" data-category="marketing" data-service="ecommerce">
+            <div class="service-box-img-wrap">
+              <img src="images/services/ecommerce-solutions.jpg" alt="Ecommerce Solutions" loading="lazy">
+              <span class="service-cat-pill">Growth &amp; Marketing</span>
+              <div class="service-box-overlay"></div>
+            </div>
+            <div class="service-box-body">
+              <div class="service-header-row">
+                <div class="service-icon-wrap emerald">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                </div>
+                <h3 class="service-title">Ecommerce Solutions</h3>
+              </div>
+              <p class="service-desc">
+                High-conversion online storefronts, Shopify Plus, headless Commerce, and multi-gateway payment integrations.
+              </p>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Custom Shopify &amp; Headless Commerce</span>
+                </li>
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Multi-Currency &amp; Local Gateway Support</span>
+                </li>
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Real-Time Inventory &amp; ERP Synchronization</span>
+                </li>
+              </ul>
+              <div class="service-box-actions">
+                <a href="service-details.html?service=ecommerce" class="service-read-btn">
+                  <span>Read More</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <button type="button" class="service-quick-btn" onclick="openServiceModalFromCard('ecommerce')">
+                  Quick Specs
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 11. Cloud Services -->
+          <div class="service-box" data-category="cloud" data-service="cloud-services">
+            <div class="service-box-img-wrap">
+              <img src="images/services/services-1-3.jpg" alt="Cloud Services" loading="lazy">
+              <span class="service-cat-pill">Cloud &amp; Security</span>
+              <div class="service-box-overlay"></div>
+            </div>
+            <div class="service-box-body">
+              <div class="service-header-row">
+                <div class="service-icon-wrap purple">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                </div>
+                <h3 class="service-title">Cloud Services</h3>
+              </div>
+              <p class="service-desc">
+                Enterprise cloud migration, automated CI/CD pipelines, container orchestration, and multi-cloud resilience across AWS, GCP &amp; Azure.
+              </p>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>AWS, GCP &amp; Azure Infrastructure</span>
+                </li>
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Kubernetes &amp; Docker Containerization</span>
+                </li>
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>99.99% High Availability &amp; CI/CD</span>
+                </li>
+              </ul>
+              <div class="service-box-actions">
+                <a href="service-details.html?service=cloud-services" class="service-read-btn">
+                  <span>Read More</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <button type="button" class="service-quick-btn" onclick="openServiceModalFromCard('cloud-services')">
+                  Quick Specs
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 12. Domain & Hosting -->
+          <div class="service-box" data-category="cloud" data-service="hosting">
+            <div class="service-box-img-wrap">
+              <img src="images/services/domain-hosting.jpg" alt="Domain & Hosting" loading="lazy">
+              <span class="service-cat-pill">Cloud &amp; Security</span>
+              <div class="service-box-overlay"></div>
+            </div>
+            <div class="service-box-body">
+              <div class="service-header-row">
+                <div class="service-icon-wrap blue">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                </div>
+                <h3 class="service-title">Domain &amp; Hosting</h3>
+              </div>
+              <p class="service-desc">
+                Ultra-fast NVMe cloud hosting, VPS servers, SSL security certificates, and corporate domain portfolio management.
+              </p>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>99.9% Guaranteed SLA Uptime</span>
+                </li>
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Enterprise NVMe SSD Storage &amp; Backups</span>
+                </li>
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Corporate Webmail &amp; Cloudflare CDN</span>
+                </li>
+              </ul>
+              <div class="service-box-actions">
+                <a href="service-details.html?service=hosting" class="service-read-btn">
+                  <span>Read More</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <button type="button" class="service-quick-btn" onclick="openServiceModalFromCard('hosting')">
+                  Quick Specs
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 13. Cyber Security -->
+          <div class="service-box" data-category="cloud" data-service="cyber-security">
+            <div class="service-box-img-wrap">
+              <img src="images/services/services-1-2.jpg" alt="Cyber Security" loading="lazy">
+              <span class="service-cat-pill">Cloud &amp; Security</span>
+              <div class="service-box-overlay"></div>
+            </div>
+            <div class="service-box-body">
+              <div class="service-header-row">
+                <div class="service-icon-wrap orange">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <h3 class="service-title">Cyber Security</h3>
+              </div>
+              <p class="service-desc">
+                Vulnerability assessment, ethical penetration testing (VAPT), Zero-Trust IAM access control, and encrypted multi-cloud defense.
+              </p>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Vulnerability Assessment &amp; Penetration Testing</span>
+                </li>
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Zero-Trust IAM &amp; Cloud Security</span>
+                </li>
+                <li>
+                  <span class="feat-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Automated Threat Detection &amp; Compliance</span>
+                </li>
+              </ul>
+              <div class="service-box-actions">
+                <a href="service-details.html?service=cyber-security" class="service-read-btn">
+                  <span>Read More</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <button type="button" class="service-quick-btn" onclick="openServiceModalFromCard('cyber-security')">
+                  Quick Specs
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 14. Data Analytics -->
+          <div class="service-box" data-category="cloud" data-service="data-analytics">
+            <div class="service-box-img-wrap">
+              <img src="images/services/services-3-4.jpg" alt="Data Analytics" loading="lazy">
+              <span class="service-cat-pill">Cloud &amp; Security</span>
               <div class="service-box-overlay"></div>
             </div>
             <div class="service-box-body">
@@ -797,7 +1251,7 @@
                 <h3 class="service-title">Data Analytics</h3>
               </div>
               <p class="service-desc">
-                Bring to the table win-win survival strategies to ensure proactive domination.
+                Unify fragmented data silos into real-time executive dashboards, automated ETL pipelines, and predictive business intelligence.
               </p>
               <ul class="service-features-list">
                 <li>
@@ -818,6 +1272,9 @@
                   <span>Read More</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
+                <button type="button" class="service-quick-btn" onclick="openServiceModalFromCard('data-analytics')">
+                  Quick Specs
+                </button>
               </div>
             </div>
           </div>
@@ -1757,16 +2214,28 @@
                 <label class="form-label" for="serviceSelect">Service of Interest *</label>
                 <select id="serviceSelect" class="form-select" required>
                   <option value="" disabled selected>Select a Service</option>
-                  <option value="ui-ux">UI/UX Design</option>
-                  <option value="web-dev">Web Development</option>
-                  <option value="software-dev">Custom Software Development</option>
-                  <option value="app-dev">Mobile App Development</option>
-                  <option value="digital-marketing">Digital Marketing &amp; Boosting</option>
-                  <option value="marketing-comm">Marketing &amp; Communication</option>
-                  <option value="branding">Creative Branding</option>
-                  <option value="event-activation">Event Management &amp; Activation</option>
-                  <option value="ecommerce">E-Commerce Solutions</option>
-                  <option value="hosting">Domain &amp; Cloud Hosting</option>
+                  <optgroup label="Software &amp; Web">
+                    <option value="software-dev">Software Development</option>
+                    <option value="web-dev">Web Development</option>
+                    <option value="app-dev">App Development</option>
+                    <option value="it-solutions">IT Solutions</option>
+                  </optgroup>
+                  <optgroup label="Design &amp; Creative">
+                    <option value="ui-ux">UI/UX Design</option>
+                    <option value="branding">Creative &amp; Branding</option>
+                    <option value="event-activation">Event Management &amp; Activation</option>
+                  </optgroup>
+                  <optgroup label="Growth &amp; Marketing">
+                    <option value="digital-marketing">Digital Marketing</option>
+                    <option value="marketing-comm">Marketing &amp; Communication</option>
+                    <option value="ecommerce">Ecommerce Solutions</option>
+                  </optgroup>
+                  <optgroup label="Cloud, Security &amp; Hosting">
+                    <option value="cloud-services">Cloud Services</option>
+                    <option value="hosting">Domain &amp; Hosting</option>
+                    <option value="cyber-security">Cyber Security</option>
+                    <option value="data-analytics">Data Analytics</option>
+                  </optgroup>
                 </select>
               </div>
 
@@ -1822,12 +2291,13 @@
           <div>
             <h4 class="footer-col-title">Our Services</h4>
             <ul class="footer-links">
-              <li><a href="service-details.html?service=it-solutions" class="footer-link">IT Solutions</a></li>
-              <li><a href="service-details.html?service=cyber-security" class="footer-link">Cyber Security</a></li>
-              <li><a href="service-details.html?service=cloud-services" class="footer-link">Cloud Services</a></li>
+              <li><a href="service-details.html?service=software-dev" class="footer-link">Software Development</a></li>
+              <li><a href="service-details.html?service=web-dev" class="footer-link">Web Development</a></li>
               <li><a href="service-details.html?service=ui-ux" class="footer-link">UI/UX Design</a></li>
               <li><a href="service-details.html?service=digital-marketing" class="footer-link">Digital Marketing</a></li>
-              <li><a href="service-details.html?service=data-analytics" class="footer-link">Data Analytics</a></li>
+              <li><a href="service-details.html?service=ecommerce" class="footer-link">Ecommerce Solutions</a></li>
+              <li><a href="service-details.html?service=cloud-services" class="footer-link">Cloud &amp; Security</a></li>
+              <li><a href="service-details.html" class="footer-link" style="color: var(--accent-main); font-weight: 700;">View All 14 Services &rarr;</a></li>
             </ul>
           </div>
 

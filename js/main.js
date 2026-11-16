@@ -428,23 +428,25 @@ function initAccentSwitcher() {
 
 /* 3. 10 Core Services Category Filter */
 function initServiceFilters() {
-  const tabBtns = document.querySelectorAll('.service-tab-btn');
-  const serviceCards = document.querySelectorAll('.service-card');
+  const tabBtns = document.querySelectorAll('.service-filter-btn, .service-tab-btn');
+  const serviceCards = document.querySelectorAll('.services-cards-grid .service-box, .service-card');
 
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const category = btn.getAttribute('data-category');
+      const category = btn.getAttribute('data-filter') || btn.getAttribute('data-category');
 
       tabBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
       serviceCards.forEach(card => {
-        const cardCat = card.getAttribute('data-category');
+        const cardCat = card.getAttribute('data-category') || '';
         if (category === 'all' || cardCat.includes(category)) {
           card.style.display = 'flex';
-          card.style.animation = 'fadeInUp 0.4s ease forwards';
+          card.style.opacity = '1';
+          card.style.animation = 'fadeInUp 0.35s ease forwards';
         } else {
           card.style.display = 'none';
+          card.style.opacity = '0';
         }
       });
     });
@@ -607,6 +609,34 @@ const serviceDetailsData = {
     desc: "Ultra-fast NVMe cloud hosting, VPS servers, SSL security certificates, and corporate domain management with a 99.9% uptime SLA.",
     deliverables: ["99.9% Guaranteed Uptime SLA", "Enterprise NVMe SSD Storage", "Automated Daily Cloud Backups", "Corporate Email (Webmail/Google Workspace)", "DDoS Protection & Free SSL"],
     tech: ["cPanel / WHM", "AWS Cloud", "Cloudflare CDN", "Linux VPS", "NGINX", "LiteSpeed"]
+  },
+  "it-solutions": {
+    title: "IT Solutions & Infrastructure Engineering",
+    cat: "Software & Web",
+    desc: "Comprehensive enterprise IT systems, high-availability internal networking, automated workflows, and corporate technology advisory.",
+    deliverables: ["High-Availability Mesh Networks", "Zero-Latency Routing & VPNs", "Internal Communication Protocols", "Enterprise Active Directory & IAM", "24/7 SLA Engineering Support"],
+    tech: ["Cisco", "Fortinet", "Windows Server", "Linux", "Kubernetes", "VMware"]
+  },
+  "cyber-security": {
+    title: "Cyber Security & Zero-Trust Defense",
+    cat: "Cloud, Security & Data",
+    desc: "Vulnerability assessment, ethical penetration testing (VAPT), Zero-Trust IAM access control, and encrypted multi-cloud infrastructure.",
+    deliverables: ["OWASP Top 10 Penetration Audit", "Zero-Trust IAM Enforcement", "Automated Threat Detection", "DDoS Mitigation Architecture", "Regulatory Compliance Certificate"],
+    tech: ["Burp Suite", "Kali Linux", "Wireshark", "Metasploit", "Cloudflare", "Sentinel"]
+  },
+  "cloud-services": {
+    title: "Cloud Infrastructure & Multi-Cloud DevOps",
+    cat: "Cloud, Security & Data",
+    desc: "Enterprise cloud migration, automated CI/CD deployment pipelines, container orchestration, and multi-region failover across AWS, GCP, and Azure.",
+    deliverables: ["Terraform Infrastructure as Code", "Docker & Kubernetes Clusters", "Zero-Downtime CI/CD Pipelines", "Auto-Scaling & Load Balancing", "Multi-Cloud Backup & DR Plan"],
+    tech: ["AWS", "Google Cloud", "Microsoft Azure", "Terraform", "Docker", "Kubernetes"]
+  },
+  "data-analytics": {
+    title: "Data Analytics & Business Intelligence",
+    cat: "Cloud, Security & Data",
+    desc: "Unify fragmented data silos into high-speed executive dashboards, automated ETL pipelines, predictive customer analytics, and data warehousing.",
+    deliverables: ["Real-Time Executive Dashboards", "BigQuery / Snowflake Warehouses", "Automated ETL/ELT Ingestion", "Predictive Machine Learning Models", "Multi-Touch Attribution Systems"],
+    tech: ["Power BI", "Tableau", "BigQuery", "Python / Pandas", "Apache Spark", "dbt"]
   }
 };
 
@@ -621,22 +651,33 @@ function initServiceModal() {
 
   const openModal = (key) => {
     const data = serviceDetailsData[key] || serviceDetailsData["web-dev"];
-    document.getElementById('modalTitle').innerText = data.title;
-    document.getElementById('modalCategory').innerText = data.cat;
-    document.getElementById('modalDesc').innerText = data.desc;
+    const modalTitle = document.getElementById('modalTitle');
+    const modalCat = document.getElementById('modalCategory');
+    const modalDesc = document.getElementById('modalDesc');
+    const delivList = document.getElementById('modalDeliverables');
+    const techBox = document.getElementById('modalTechTags');
+
+    if (modalTitle) modalTitle.innerText = data.title;
+    if (modalCat) modalCat.innerText = data.cat;
+    if (modalDesc) modalDesc.innerText = data.desc;
 
     // Deliverables
-    const delivList = document.getElementById('modalDeliverables');
-    delivList.innerHTML = data.deliverables.map(d => `<li>${d}</li>`).join('');
+    if (delivList && data.deliverables) {
+      delivList.innerHTML = data.deliverables.map(d => `<li>${d}</li>`).join('');
+    }
 
     // Tech Tags
-    const techBox = document.getElementById('modalTechTags');
-    techBox.innerHTML = data.tech.map(t => `<span class="spec-tag-item">${t}</span>`).join('');
+    if (techBox && data.tech) {
+      techBox.innerHTML = data.tech.map(t => `<span class="spec-tag-item">${t}</span>`).join('');
+    }
 
     modal.classList.add('active');
     modal.setAttribute('data-current-service', key);
     document.body.style.overflow = 'hidden';
   };
+
+  // Expose globally for onclick handlers
+  window.openServiceModalFromCard = openModal;
 
   const closeModal = () => {
     modal.classList.remove('active');

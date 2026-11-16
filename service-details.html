@@ -459,33 +459,104 @@
         <!-- Desktop Navigation Links (Single Line, Aligned with Footer) -->
         <ul class="nav-links">
           <li><a href="index.html#home" class="nav-link">Home</a></li>
-          <li class="nav-dropdown-item">
+          <li class="nav-dropdown-item mega-dropdown-item">
             <a href="service-details.html" class="nav-link active">Our Services <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline; vertical-align:middle; margin-left:4px;"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-            <div class="nav-dropdown-menu">
-              <a href="service-details.html?service=it-solutions" class="dropdown-link" onclick="switchServiceTab('it-solutions')">
-                <strong>IT Solutions</strong>
-                <span>Custom software, ERPs &amp; microservices</span>
-              </a>
-              <a href="service-details.html?service=cyber-security" class="dropdown-link" onclick="switchServiceTab('cyber-security')">
-                <strong>Cyber Security</strong>
-                <span>Threat mitigation, VAPT &amp; zero-trust</span>
-              </a>
-              <a href="service-details.html?service=cloud-services" class="dropdown-link" onclick="switchServiceTab('cloud-services')">
-                <strong>Cloud Services</strong>
-                <span>Cloud migration, DevOps &amp; hosting</span>
-              </a>
-              <a href="service-details.html?service=ui-ux" class="dropdown-link" onclick="switchServiceTab('ui-ux')">
-                <strong>UI/UX Design</strong>
-                <span>Figma systems, prototyping &amp; UX</span>
-              </a>
-              <a href="service-details.html?service=digital-marketing" class="dropdown-link" onclick="switchServiceTab('digital-marketing')">
-                <strong>Digital Marketing</strong>
-                <span>Growth, SEO &amp; performance ads</span>
-              </a>
-              <a href="service-details.html?service=data-analytics" class="dropdown-link" onclick="switchServiceTab('data-analytics')">
-                <strong>Data Analytics</strong>
-                <span>BI dashboards, data pipelines &amp; models</span>
-              </a>
+            <div class="mega-dropdown-menu">
+              <!-- Col 1: Software & Web -->
+              <div class="mega-col">
+                <div class="mega-col-header">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                  <span>Software &amp; Web</span>
+                </div>
+                <div class="mega-links-list">
+                  <a href="service-details.html?service=software-dev" class="mega-dropdown-link" onclick="switchServiceTab('software-dev')">
+                    <strong>Software Development</strong>
+                    <span>Enterprise ERPs &amp; microservices</span>
+                  </a>
+                  <a href="service-details.html?service=web-dev" class="mega-dropdown-link" onclick="switchServiceTab('web-dev')">
+                    <strong>Web Development</strong>
+                    <span>React, Next.js &amp; portals</span>
+                  </a>
+                  <a href="service-details.html?service=app-dev" class="mega-dropdown-link" onclick="switchServiceTab('app-dev')">
+                    <strong>App Development</strong>
+                    <span>iOS, Android &amp; Flutter apps</span>
+                  </a>
+                  <a href="service-details.html?service=it-solutions" class="mega-dropdown-link" onclick="switchServiceTab('it-solutions')">
+                    <strong>IT Solutions</strong>
+                    <span>Infrastructure &amp; IT consulting</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Col 2: Design & Creative -->
+              <div class="mega-col">
+                <div class="mega-col-header">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                  <span>Design &amp; Creative</span>
+                </div>
+                <div class="mega-links-list">
+                  <a href="service-details.html?service=ui-ux" class="mega-dropdown-link" onclick="switchServiceTab('ui-ux')">
+                    <strong>UI/UX Design</strong>
+                    <span>Figma, wireframes &amp; UX</span>
+                  </a>
+                  <a href="service-details.html?service=branding" class="mega-dropdown-link" onclick="switchServiceTab('branding')">
+                    <strong>Creative &amp; Branding</strong>
+                    <span>Identity systems &amp; guidelines</span>
+                  </a>
+                  <a href="service-details.html?service=event-activation" class="mega-dropdown-link" onclick="switchServiceTab('event-activation')">
+                    <strong>Event &amp; Activation</strong>
+                    <span>Corporate launches &amp; activation</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Col 3: Growth & Marketing -->
+              <div class="mega-col">
+                <div class="mega-col-header">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                  <span>Growth &amp; Marketing</span>
+                </div>
+                <div class="mega-links-list">
+                  <a href="service-details.html?service=digital-marketing" class="mega-dropdown-link" onclick="switchServiceTab('digital-marketing')">
+                    <strong>Digital Marketing</strong>
+                    <span>SEO, performance ads &amp; growth</span>
+                  </a>
+                  <a href="service-details.html?service=marketing-comm" class="mega-dropdown-link" onclick="switchServiceTab('marketing-comm')">
+                    <strong>Marketing &amp; Comm.</strong>
+                    <span>PR, content strategy &amp; copy</span>
+                  </a>
+                  <a href="service-details.html?service=ecommerce" class="mega-dropdown-link" onclick="switchServiceTab('ecommerce')">
+                    <strong>Ecommerce Solutions</strong>
+                    <span>Shopify, WooCommerce &amp; headless</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Col 4: Cloud, Security & Hosting -->
+              <div class="mega-col">
+                <div class="mega-col-header">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  <span>Cloud &amp; Security</span>
+                </div>
+                <div class="mega-links-list">
+                  <a href="service-details.html?service=cloud-services" class="mega-dropdown-link" onclick="switchServiceTab('cloud-services')">
+                    <strong>Cloud Services</strong>
+                    <span>DevOps, AWS, GCP &amp; Azure</span>
+                  </a>
+                  <a href="service-details.html?service=cyber-security" class="mega-dropdown-link" onclick="switchServiceTab('cyber-security')">
+                    <strong>Cyber Security</strong>
+                    <span>VAPT, Zero-Trust &amp; compliance</span>
+                  </a>
+                  <a href="service-details.html?service=hosting" class="mega-dropdown-link" onclick="switchServiceTab('hosting')">
+                    <strong>Domain &amp; Hosting</strong>
+                    <span>High-speed NVMe &amp; 99.9% uptime</span>
+                  </a>
+                  <a href="service-details.html?service=data-analytics" class="mega-dropdown-link" onclick="switchServiceTab('data-analytics')">
+                    <strong>Data Analytics</strong>
+                    <span>BI dashboards &amp; ETL pipelines</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </li>
           <li><a href="index.html#who-we-are" class="nav-link">About Us</a></li>
@@ -545,27 +616,59 @@
       <div class="service-tabs-nav-wrap">
         <div class="service-detail-tabs-nav" id="serviceTabsNav">
           <button class="detail-tab-btn active" data-service="it-solutions">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
             <span>IT Solutions</span>
           </button>
-          <button class="detail-tab-btn" data-service="cyber-security">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-            <span>Cyber Security</span>
+          <button class="detail-tab-btn" data-service="software-dev">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            <span>Software Dev</span>
           </button>
-          <button class="detail-tab-btn" data-service="cloud-services">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
-            <span>Cloud Services</span>
+          <button class="detail-tab-btn" data-service="web-dev">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            <span>Web Dev</span>
+          </button>
+          <button class="detail-tab-btn" data-service="app-dev">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            <span>App Dev</span>
           </button>
           <button class="detail-tab-btn" data-service="ui-ux">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
             <span>UI/UX Design</span>
           </button>
+          <button class="detail-tab-btn" data-service="branding">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <span>Branding</span>
+          </button>
+          <button class="detail-tab-btn" data-service="event-activation">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path></svg>
+            <span>Event &amp; Activation</span>
+          </button>
           <button class="detail-tab-btn" data-service="digital-marketing">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
             <span>Digital Marketing</span>
           </button>
+          <button class="detail-tab-btn" data-service="marketing-comm">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            <span>Marketing &amp; Comm</span>
+          </button>
+          <button class="detail-tab-btn" data-service="ecommerce">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            <span>Ecommerce</span>
+          </button>
+          <button class="detail-tab-btn" data-service="cloud-services">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+            <span>Cloud Services</span>
+          </button>
+          <button class="detail-tab-btn" data-service="hosting">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span>Domain &amp; Hosting</span>
+          </button>
+          <button class="detail-tab-btn" data-service="cyber-security">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Cyber Security</span>
+          </button>
           <button class="detail-tab-btn" data-service="data-analytics">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
             <span>Data Analytics</span>
           </button>
         </div>
@@ -989,6 +1092,553 @@
             </div>
           </section>
 
+          <!-- 7. Software Development Panel -->
+          <section class="service-panel" id="panel-software-dev">
+            <div class="spec-block">
+              <div class="service-detail-hero-media">
+                <img src="images/services/software-development.jpg" alt="Software Development & Enterprise Engineering" loading="lazy">
+              </div>
+
+              <span class="section-tag tag-blue" style="margin-bottom: 12px;">Software &amp; Web</span>
+              <h2>Software Development &amp; Enterprise Architecture</h2>
+              <p>
+                Architecting robust, scalable custom ERPs, CRM systems, automated workflows, and microservices engineered for high enterprise throughput. We build mission-critical backend ecosystems that integrate seamlessly with your core business operations.
+              </p>
+              
+              <h3>Core Capabilities &amp; Architecture</h3>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Custom enterprise ERP, CRM, and supply chain automation software.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Distributed microservices architecture, event streams &amp; high-speed RESTful/GraphQL APIs.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>High-concurrency database modeling (PostgreSQL, Redis, MongoDB) with strict ACID guarantees.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Automated CI/CD integration, unit testing suites &amp; 24/7 runtime monitoring.</span>
+                </li>
+              </ul>
+
+              <h3>Software Engineering Process</h3>
+              <div class="service-process-grid">
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 01</span>
+                  <div class="process-step-title">Domain Discovery</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 02</span>
+                  <div class="process-step-title">Schema Architecture</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 03</span>
+                  <div class="process-step-title">Agile Microservice Dev</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 04</span>
+                  <div class="process-step-title">Stress &amp; QA Testing</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 05</span>
+                  <div class="process-step-title">Production Handover</div>
+                </div>
+              </div>
+
+              <h4>Software Technology Stack</h4>
+              <div class="tech-stack-row">
+                <span class="tech-pill-tag">Node.js / TypeScript</span>
+                <span class="tech-pill-tag">Python / Django</span>
+                <span class="tech-pill-tag">PostgreSQL</span>
+                <span class="tech-pill-tag">Docker &amp; K8s</span>
+                <span class="tech-pill-tag">Redis Cache</span>
+                <span class="tech-pill-tag">Go Microservices</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 8. Web Development Panel -->
+          <section class="service-panel" id="panel-web-dev">
+            <div class="spec-block">
+              <div class="service-detail-hero-media">
+                <img src="images/services/web-development.jpg" alt="Web Development & Digital Portals" loading="lazy">
+              </div>
+
+              <span class="section-tag tag-emerald" style="margin-bottom: 12px;">Software &amp; Web</span>
+              <h2>Web Development &amp; Scalable Digital Portals</h2>
+              <p>
+                High-performance web applications, enterprise portals, customer dashboards, and headless digital experiences built with modern frontend frameworks, sub-second load times, and perfect Core Web Vitals.
+              </p>
+              
+              <h3>Web Capabilities &amp; System Deliverables</h3>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>React, Next.js, and TypeScript frontend development with Server-Side Rendering (SSR).</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Progressive Web Apps (PWA) with service worker caching &amp; offline accessibility.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Headless CMS integrations, custom portals &amp; multi-language internationalization.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>100/100 Google Lighthouse Core Web Vitals &amp; technical search engine optimization.</span>
+                </li>
+              </ul>
+
+              <h3>Web Development Lifecycle</h3>
+              <div class="service-process-grid">
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 01</span>
+                  <div class="process-step-title">Technical Scoping</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 02</span>
+                  <div class="process-step-title">Component Design</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 03</span>
+                  <div class="process-step-title">Full-Stack Coding</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 04</span>
+                  <div class="process-step-title">Lighthouse Audit</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 05</span>
+                  <div class="process-step-title">Edge Deployment</div>
+                </div>
+              </div>
+
+              <h4>Web Technology Stack</h4>
+              <div class="tech-stack-row">
+                <span class="tech-pill-tag">Next.js 14</span>
+                <span class="tech-pill-tag">React.js</span>
+                <span class="tech-pill-tag">TypeScript</span>
+                <span class="tech-pill-tag">Tailwind CSS</span>
+                <span class="tech-pill-tag">GraphQL</span>
+                <span class="tech-pill-tag">Vercel &amp; Cloudflare</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 9. App Development Panel -->
+          <section class="service-panel" id="panel-app-dev">
+            <div class="spec-block">
+              <div class="service-detail-hero-media">
+                <img src="images/services/app-development.jpg" alt="App Development & Mobile Solutions" loading="lazy">
+              </div>
+
+              <span class="section-tag tag-purple" style="margin-bottom: 12px;">Software &amp; Web</span>
+              <h2>App Development &amp; Cross-Platform Mobile Engineering</h2>
+              <p>
+                Native and cross-platform mobile apps for iOS and Android delivering fluid experiences, offline capability, background sync, biometric security, and high user retention across smartphones and tablets.
+              </p>
+              
+              <h3>Mobile Capabilities &amp; Deliverables</h3>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Cross-platform Flutter and React Native engineering from a single maintainable codebase.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Native iOS (Swift) &amp; Android (Kotlin) performance optimization and hardware sensor access.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Offline-first SQLite/Hive synchronization, Firebase notifications &amp; biometrics.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>End-to-end Apple App Store &amp; Google Play Store compliance, review &amp; publishing.</span>
+                </li>
+              </ul>
+
+              <h3>Mobile App Lifecycle</h3>
+              <div class="service-process-grid">
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 01</span>
+                  <div class="process-step-title">Mobile Architecture</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 02</span>
+                  <div class="process-step-title">Screen UX Flows</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 03</span>
+                  <div class="process-step-title">Cross-Platform Dev</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 04</span>
+                  <div class="process-step-title">Device Lab Testing</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 05</span>
+                  <div class="process-step-title">Store Launch</div>
+                </div>
+              </div>
+
+              <h4>Mobile Technology Stack</h4>
+              <div class="tech-stack-row">
+                <span class="tech-pill-tag">Flutter &amp; Dart</span>
+                <span class="tech-pill-tag">React Native</span>
+                <span class="tech-pill-tag">Swift (iOS)</span>
+                <span class="tech-pill-tag">Kotlin (Android)</span>
+                <span class="tech-pill-tag">Firebase SDK</span>
+                <span class="tech-pill-tag">REST &amp; WebSockets</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 10. Creative & Branding Panel -->
+          <section class="service-panel" id="panel-branding">
+            <div class="spec-block">
+              <div class="service-detail-hero-media">
+                <img src="images/services/creative-branding.jpg" alt="Creative & Branding Identity Systems" loading="lazy">
+              </div>
+
+              <span class="section-tag tag-orange" style="margin-bottom: 12px;">Design &amp; Creative</span>
+              <h2>Creative &amp; Branding Identity Systems</h2>
+              <p>
+                Distinct corporate brand identity systems, typographic hierarchies, color palettes, tone of voice, and comprehensive brand guideline manuals that make your business unforgettable across all analog and digital touchpoints.
+              </p>
+              
+              <h3>Branding Capabilities &amp; Deliverables</h3>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Brand strategy, brand voice, value propositions, and market positioning blueprint.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Bespoke logo marks, vector icon systems, color palette architecture &amp; font hierarchies.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Corporate stationery, pitch decks, sales collateral, uniforms &amp; packaging design.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Comprehensive 60+ page Brand Guidelines Manual for unified corporate communication.</span>
+                </li>
+              </ul>
+
+              <h3>Branding Creation Process</h3>
+              <div class="service-process-grid">
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 01</span>
+                  <div class="process-step-title">Brand Discovery</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 02</span>
+                  <div class="process-step-title">Moodboard Direction</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 03</span>
+                  <div class="process-step-title">Identity Design</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 04</span>
+                  <div class="process-step-title">Collateral Production</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 05</span>
+                  <div class="process-step-title">Brand Bible Book</div>
+                </div>
+              </div>
+
+              <h4>Creative Tooling Stack</h4>
+              <div class="tech-stack-row">
+                <span class="tech-pill-tag">Adobe Illustrator</span>
+                <span class="tech-pill-tag">Adobe Photoshop</span>
+                <span class="tech-pill-tag">InDesign</span>
+                <span class="tech-pill-tag">Figma</span>
+                <span class="tech-pill-tag">Typography Systems</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 11. Event Management & Activation Panel -->
+          <section class="service-panel" id="panel-event-activation">
+            <div class="spec-block">
+              <div class="service-detail-hero-media">
+                <img src="images/services/event-activation.jpg" alt="Event Management & Activation" loading="lazy">
+              </div>
+
+              <span class="section-tag tag-purple" style="margin-bottom: 12px;">Design &amp; Creative</span>
+              <h2>Event Management &amp; Experiential Activation</h2>
+              <p>
+                End-to-end corporate event production, tech product launches, experiential brand activations, and interactive booth experiences that spark genuine customer engagement and industry buzz.
+              </p>
+              
+              <h3>Event Capabilities &amp; Production Deliverables</h3>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Corporate summits, product launches, shareholder meetings &amp; executive press events.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>3D stage architecture, experiential booth fabrication, LED backdrops &amp; spatial lighting.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>On-ground consumer activation campaigns, trained brand ambassadors &amp; gamified kiosks.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Multi-camera 4K live streaming, AV engineering, and real-time social media broadcasting.</span>
+                </li>
+              </ul>
+
+              <h3>Event Execution Process</h3>
+              <div class="service-process-grid">
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 01</span>
+                  <div class="process-step-title">Concept &amp; Theme</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 02</span>
+                  <div class="process-step-title">3D Stage Design</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 03</span>
+                  <div class="process-step-title">Fabrication &amp; AV</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 04</span>
+                  <div class="process-step-title">Technical Rehearsal</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 05</span>
+                  <div class="process-step-title">Flawless Showrun</div>
+                </div>
+              </div>
+
+              <h4>Production Capabilities</h4>
+              <div class="tech-stack-row">
+                <span class="tech-pill-tag">3D Stage Modeling</span>
+                <span class="tech-pill-tag">LED Wall Staging</span>
+                <span class="tech-pill-tag">4K Multi-Cam AV</span>
+                <span class="tech-pill-tag">Brand Activation Teams</span>
+                <span class="tech-pill-tag">Live Broadcasting</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 12. Marketing & Communication Panel -->
+          <section class="service-panel" id="panel-marketing-comm">
+            <div class="spec-block">
+              <div class="service-detail-hero-media">
+                <img src="images/services/marketing-communication.jpg" alt="Marketing & Communication" loading="lazy">
+              </div>
+
+              <span class="section-tag tag-blue" style="margin-bottom: 12px;">Growth &amp; Marketing</span>
+              <h2>Marketing &amp; Communication Strategy</h2>
+              <p>
+                Strategic brand communications, PR press releases, corporate storytelling, content marketing, and media outreach that protect and elevate corporate reputation while winning stakeholder trust.
+              </p>
+              
+              <h3>Communications Capabilities &amp; Deliverables</h3>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Corporate narrative development, message framing &amp; executive thought-leadership articles.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>National and international press release writing, wire distribution &amp; media relations.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Crisis communication protocols, stakeholder messaging &amp; proactive brand defense.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Content marketing strategies, whitepapers, case studies &amp; internal employee comms.</span>
+                </li>
+              </ul>
+
+              <h3>Communications Strategy Process</h3>
+              <div class="service-process-grid">
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 01</span>
+                  <div class="process-step-title">Stakeholder Audit</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 02</span>
+                  <div class="process-step-title">Narrative Blueprint</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 03</span>
+                  <div class="process-step-title">Content Creation</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 04</span>
+                  <div class="process-step-title">Media Distribution</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 05</span>
+                  <div class="process-step-title">Impact Measurement</div>
+                </div>
+              </div>
+
+              <h4>Communications Tooling Stack</h4>
+              <div class="tech-stack-row">
+                <span class="tech-pill-tag">Press Distribution</span>
+                <span class="tech-pill-tag">Media Outreach</span>
+                <span class="tech-pill-tag">Copywriting</span>
+                <span class="tech-pill-tag">Crisis Management</span>
+                <span class="tech-pill-tag">Sentiment Tracking</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 13. Ecommerce Solutions Panel -->
+          <section class="service-panel" id="panel-ecommerce">
+            <div class="spec-block">
+              <div class="service-detail-hero-media">
+                <img src="images/services/ecommerce-solutions.jpg" alt="Ecommerce Solutions" loading="lazy">
+              </div>
+
+              <span class="section-tag tag-emerald" style="margin-bottom: 12px;">Growth &amp; Marketing</span>
+              <h2>Ecommerce Solutions &amp; Headless Storefronts</h2>
+              <p>
+                High-conversion online storefronts, Shopify Plus customizations, WooCommerce ecosystems, and headless commerce platforms with seamless payment gateway integrations and inventory synchronization.
+              </p>
+              
+              <h3>Ecommerce Capabilities &amp; Deliverables</h3>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Custom Shopify Plus, WooCommerce &amp; headless Next.js Commerce storefronts.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Payment gateway integration: bKash, Nagad, SSLCommerz, Stripe, PayPal &amp; cards.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Real-time multi-warehouse inventory sync, ERP connectors &amp; automated order tracking.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Checkout conversion rate optimization, automated abandoned-cart recovery &amp; upselling.</span>
+                </li>
+              </ul>
+
+              <h3>Ecommerce Engineering Process</h3>
+              <div class="service-process-grid">
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 01</span>
+                  <div class="process-step-title">Catalog Architecture</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 02</span>
+                  <div class="process-step-title">Storefront UX Design</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 03</span>
+                  <div class="process-step-title">Gateway &amp; ERP Sync</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 04</span>
+                  <div class="process-step-title">Security &amp; Load Test</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 05</span>
+                  <div class="process-step-title">Launch &amp; Scaling</div>
+                </div>
+              </div>
+
+              <h4>Ecommerce Technology Stack</h4>
+              <div class="tech-stack-row">
+                <span class="tech-pill-tag">Shopify Plus</span>
+                <span class="tech-pill-tag">WooCommerce</span>
+                <span class="tech-pill-tag">Stripe &amp; SSLCommerz</span>
+                <span class="tech-pill-tag">Next.js Commerce</span>
+                <span class="tech-pill-tag">Redis &amp; Postgres</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 14. Domain & Hosting Panel -->
+          <section class="service-panel" id="panel-hosting">
+            <div class="spec-block">
+              <div class="service-detail-hero-media">
+                <img src="images/services/domain-hosting.jpg" alt="Domain & Enterprise Hosting" loading="lazy">
+              </div>
+
+              <span class="section-tag tag-blue" style="margin-bottom: 12px;">Cloud &amp; Security</span>
+              <h2>Domain &amp; Enterprise NVMe Hosting</h2>
+              <p>
+                Ultra-fast NVMe cloud hosting, managed VPS servers, enterprise SSL certificates, and corporate domain portfolio management backed by a 99.9% uptime SLA and 24/7 proactive technical support.
+              </p>
+              
+              <h3>Hosting Capabilities &amp; Infrastructure</h3>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Pure NVMe SSD enterprise servers with LiteSpeed web server delivering 3x faster page loads.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Corporate domain registration (.com, .com.bd, .org), DNS clustering &amp; lock protection.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Automated daily off-site cloud backups with 1-click instantaneous restoration.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Enterprise Cloudflare DDoS mitigation, free wildcard SSL &amp; managed corporate webmail.</span>
+                </li>
+              </ul>
+
+              <h3>Hosting Provisioning Process</h3>
+              <div class="service-process-grid">
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 01</span>
+                  <div class="process-step-title">Resource Audit</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 02</span>
+                  <div class="process-step-title">NVMe Server Setup</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 03</span>
+                  <div class="process-step-title">Zero-Downtime Migration</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 04</span>
+                  <div class="process-step-title">SSL &amp; CDN Routing</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 05</span>
+                  <div class="process-step-title">24/7 SLA Guard</div>
+                </div>
+              </div>
+
+              <h4>Hosting Infrastructure Stack</h4>
+              <div class="tech-stack-row">
+                <span class="tech-pill-tag">cPanel / WHM</span>
+                <span class="tech-pill-tag">LiteSpeed Web Server</span>
+                <span class="tech-pill-tag">Cloudflare Enterprise</span>
+                <span class="tech-pill-tag">Linux VPS</span>
+                <span class="tech-pill-tag">Enterprise NVMe</span>
+              </div>
+            </div>
+          </section>
+
         </div>
 
         <!-- Right Column: Agency Sticky Sidebar -->
@@ -996,27 +1646,59 @@
 
           <!-- Widget 1: All Services Quick Navigation Menu -->
           <div class="sidebar-widget">
-            <h3 class="sidebar-widget-title">Core Services</h3>
+            <h3 class="sidebar-widget-title">All Services (14)</h3>
             <p class="sidebar-widget-desc">Click any service to view architectural specifications and delivery models.</p>
             <div class="sidebar-services-nav">
               <a class="sidebar-nav-item active" data-service="it-solutions" onclick="switchServiceTab('it-solutions')">
                 <span>IT Solutions</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </a>
-              <a class="sidebar-nav-item" data-service="cyber-security" onclick="switchServiceTab('cyber-security')">
-                <span>Cyber Security</span>
+              <a class="sidebar-nav-item" data-service="software-dev" onclick="switchServiceTab('software-dev')">
+                <span>Software Development</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </a>
-              <a class="sidebar-nav-item" data-service="cloud-services" onclick="switchServiceTab('cloud-services')">
-                <span>Cloud Services</span>
+              <a class="sidebar-nav-item" data-service="web-dev" onclick="switchServiceTab('web-dev')">
+                <span>Web Development</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+              <a class="sidebar-nav-item" data-service="app-dev" onclick="switchServiceTab('app-dev')">
+                <span>App Development</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </a>
               <a class="sidebar-nav-item" data-service="ui-ux" onclick="switchServiceTab('ui-ux')">
                 <span>UI/UX Design</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </a>
+              <a class="sidebar-nav-item" data-service="branding" onclick="switchServiceTab('branding')">
+                <span>Creative &amp; Branding</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+              <a class="sidebar-nav-item" data-service="event-activation" onclick="switchServiceTab('event-activation')">
+                <span>Event &amp; Activation</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
               <a class="sidebar-nav-item" data-service="digital-marketing" onclick="switchServiceTab('digital-marketing')">
                 <span>Digital Marketing</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+              <a class="sidebar-nav-item" data-service="marketing-comm" onclick="switchServiceTab('marketing-comm')">
+                <span>Marketing &amp; Comm.</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+              <a class="sidebar-nav-item" data-service="ecommerce" onclick="switchServiceTab('ecommerce')">
+                <span>Ecommerce Solutions</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+              <a class="sidebar-nav-item" data-service="cloud-services" onclick="switchServiceTab('cloud-services')">
+                <span>Cloud Services</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+              <a class="sidebar-nav-item" data-service="hosting" onclick="switchServiceTab('hosting')">
+                <span>Domain &amp; Hosting</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+              <a class="sidebar-nav-item" data-service="cyber-security" onclick="switchServiceTab('cyber-security')">
+                <span>Cyber Security</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </a>
               <a class="sidebar-nav-item" data-service="data-analytics" onclick="switchServiceTab('data-analytics')">
@@ -1102,12 +1784,13 @@
         <div>
           <h4 class="footer-col-title">Our Services</h4>
           <ul class="footer-links">
-            <li><a href="service-details.html?service=it-solutions" class="footer-link" onclick="switchServiceTab('it-solutions')">IT Solutions</a></li>
-            <li><a href="service-details.html?service=cyber-security" class="footer-link" onclick="switchServiceTab('cyber-security')">Cyber Security</a></li>
-            <li><a href="service-details.html?service=cloud-services" class="footer-link" onclick="switchServiceTab('cloud-services')">Cloud Services</a></li>
+            <li><a href="service-details.html?service=software-dev" class="footer-link" onclick="switchServiceTab('software-dev')">Software Development</a></li>
+            <li><a href="service-details.html?service=web-dev" class="footer-link" onclick="switchServiceTab('web-dev')">Web Development</a></li>
             <li><a href="service-details.html?service=ui-ux" class="footer-link" onclick="switchServiceTab('ui-ux')">UI/UX Design</a></li>
             <li><a href="service-details.html?service=digital-marketing" class="footer-link" onclick="switchServiceTab('digital-marketing')">Digital Marketing</a></li>
-            <li><a href="service-details.html?service=data-analytics" class="footer-link" onclick="switchServiceTab('data-analytics')">Data Analytics</a></li>
+            <li><a href="service-details.html?service=ecommerce" class="footer-link" onclick="switchServiceTab('ecommerce')">Ecommerce Solutions</a></li>
+            <li><a href="service-details.html?service=cloud-services" class="footer-link" onclick="switchServiceTab('cloud-services')">Cloud &amp; Security</a></li>
+            <li><a href="service-details.html?service=it-solutions" class="footer-link" onclick="switchServiceTab('it-solutions')" style="color: var(--accent-main); font-weight: 700;">View All 14 Services &rarr;</a></li>
           </ul>
         </div>
 
@@ -1173,10 +1856,18 @@
       if (activeInput) {
         const readableMap = {
           'it-solutions': 'IT Solutions',
-          'cyber-security': 'Cyber Security',
-          'cloud-services': 'Cloud Services',
+          'software-dev': 'Software Development',
+          'web-dev': 'Web Development',
+          'app-dev': 'App Development',
           'ui-ux': 'UI/UX Design',
+          'branding': 'Creative & Branding',
+          'event-activation': 'Event Management & Activation',
           'digital-marketing': 'Digital Marketing',
+          'marketing-comm': 'Marketing & Communication',
+          'ecommerce': 'Ecommerce Solutions',
+          'cloud-services': 'Cloud Services',
+          'hosting': 'Domain & Hosting',
+          'cyber-security': 'Cyber Security',
           'data-analytics': 'Data Analytics'
         };
         activeInput.value = readableMap[serviceKey] || serviceKey;
