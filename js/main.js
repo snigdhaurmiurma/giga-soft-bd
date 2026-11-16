@@ -1105,3 +1105,101 @@ function updateThemeImages(accent) {
     }
   });
 }
+
+
+/* Live Calculation Engine for Competency Matrix */
+function initLiveCalculationEngine() {
+  const container = document.getElementById('liveCalcContainer');
+  if (!container) return;
+
+  let calculated = false;
+
+  function runCalculations() {
+    if (calculated) return;
+    calculated = true;
+
+    const valElements = container.querySelectorAll('.live-calc-val');
+    const barElements = container.querySelectorAll('.live-calc-bar');
+
+    valElements.forEach((el, index) => {
+      const target = parseInt(el.getAttribute('data-target'), 10) || 80;
+      let current = 0;
+      const stepTime = Math.max(12, Math.floor(1200 / target));
+
+      const interval = setInterval(() => {
+        current += 1;
+        el.innerText = current + '%';
+        if (current >= target) {
+          el.innerText = target + '%';
+          clearInterval(interval);
+        }
+      }, stepTime + index * 4);
+    });
+
+    barElements.forEach(bar => {
+      const targetWidth = bar.getAttribute('data-width') || '80%';
+      bar.style.width = '0%';
+      setTimeout(() => {
+        bar.style.transition = 'width 1.4s cubic-bezier(0.16, 1, 0.3, 1)';
+        bar.style.width = targetWidth;
+      }, 100);
+    });
+  }
+
+  // IntersectionObserver to trigger on scroll
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          runCalculations();
+        }
+      });
+    }, { threshold: 0.25 });
+    observer.observe(container);
+  } else {
+    runCalculations();
+  }
+
+  // Periodic micro-jitter for live feel
+  setInterval(() => {
+    const latencyEl = document.getElementById('liveLatency');
+    if (latencyEl) {
+      const ms = Math.floor(Math.random() * 4) + 10;
+      latencyEl.innerText = ms + 'ms';
+    }
+  }, 3500);
+}
+
+// Sursum Mode Tabs Interactive Switcher
+function initSursumModeSwitcher() {
+  const tabBtns = document.querySelectorAll('.eco-tab-btn');
+  const satellites = document.querySelectorAll('.satellite-card');
+  if (!tabBtns.length) return;
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const mode = btn.getAttribute('data-tab');
+
+      satellites.forEach(sat => {
+        sat.style.transition = 'all 0.3s ease';
+        if (mode === 'all') {
+          sat.style.opacity = '1';
+          sat.style.transform = 'scale(1)';
+        } else if (sat.getAttribute('data-module') === mode || mode === 'infra') {
+          sat.style.opacity = '1';
+          sat.style.transform = 'scale(1.05)';
+        } else {
+          sat.style.opacity = '0.65';
+          sat.style.transform = 'scale(0.96)';
+        }
+      });
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initLiveCalculationEngine();
+  initSursumModeSwitcher();
+});

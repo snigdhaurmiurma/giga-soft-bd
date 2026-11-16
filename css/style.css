@@ -3554,3 +3554,528 @@ button, input, textarea, select {
     font-size: 0.95rem !important;
   }
 }
+
+
+/* =============================================================================
+   NEW SURSUM.IO-INSPIRED RIGHT SIDE HERO VISUALIZER & METHODOLOGY ANIMATIONS
+   ============================================================================= */
+
+/* Sursum-Style Hero Visualizer Container */
+.sursum-ecosystem-visual {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(16px);
+  transition: all 0.35s ease;
+}
+
+[data-theme="light"] .sursum-ecosystem-visual {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(37, 99, 235, 0.22);
+  box-shadow: 0 24px 60px rgba(37, 99, 235, 0.14);
+}
+
+.sursum-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(70px);
+  z-index: 0;
+}
+.orb-1 {
+  top: -40px;
+  right: -40px;
+  width: 220px;
+  height: 220px;
+  background: rgba(59, 130, 246, 0.35);
+}
+.orb-2 {
+  bottom: -40px;
+  left: -40px;
+  width: 220px;
+  height: 220px;
+  background: rgba(139, 92, 246, 0.30);
+}
+
+.ecosystem-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.ecosystem-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #10B981;
+  background: rgba(16, 185, 129, 0.12);
+  padding: 5px 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.live-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 10px #10B981;
+  animation: pulseDot 1.6s infinite;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 14px #10B981; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+.ecosystem-mode-tabs {
+  display: flex;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px;
+  border-radius: 9999px;
+  border: 1px solid var(--border-subtle);
+}
+[data-theme="light"] .ecosystem-mode-tabs {
+  background: rgba(37, 99, 235, 0.06);
+}
+
+.eco-tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.eco-tab-btn.active, .eco-tab-btn:hover {
+  background: linear-gradient(135deg, #2563EB, #7C3AED);
+  color: #FFFFFF;
+}
+
+/* Kinetic Core & Concentric Energy Rings */
+.kinetic-core-container {
+  position: relative;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 20px;
+  z-index: 1;
+}
+
+.orbital-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(59, 130, 246, 0.22);
+  pointer-events: none;
+}
+.ring-outer {
+  width: 270px;
+  height: 270px;
+  animation: rotateOrbital 32s linear infinite;
+  border-color: rgba(139, 92, 246, 0.25);
+}
+.ring-mid {
+  width: 190px;
+  height: 190px;
+  animation: rotateOrbitalReverse 24s linear infinite;
+  border-color: rgba(6, 182, 212, 0.25);
+}
+.ring-inner {
+  width: 110px;
+  height: 110px;
+  animation: rotateOrbital 16s linear infinite;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+@keyframes rotateOrbital {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes rotateOrbitalReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.central-core-node {
+  position: relative;
+  z-index: 3;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563EB, #7C3AED);
+  padding: 3px;
+  box-shadow: 0 0 35px rgba(124, 58, 237, 0.55);
+  animation: pulseCore 3s ease-in-out infinite;
+}
+
+@keyframes pulseCore {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(37, 99, 235, 0.5); }
+  50% { transform: scale(1.06); box-shadow: 0 0 45px rgba(124, 58, 237, 0.75); }
+}
+
+.core-node-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #0B0F19;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFFFFF;
+}
+[data-theme="light"] .core-node-inner {
+  background: #0F172A;
+}
+
+.core-title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #38BDF8;
+}
+.core-sub {
+  font-size: 0.58rem;
+  color: #94A3B8;
+}
+
+/* 4 Satellite Cards */
+.satellite-card {
+  position: absolute;
+  width: 165px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 2;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-theme="light"] .satellite-card {
+  background: #FFFFFF;
+  border-color: rgba(37, 99, 235, 0.16);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.10);
+}
+.satellite-card:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 14px 30px rgba(59, 130, 246, 0.3);
+}
+
+.sat-top-left { top: 0; left: 0; border-left: 3px solid #06B6D4; }
+.sat-top-right { top: 0; right: 0; border-left: 3px solid #8B5CF6; }
+.sat-bottom-left { bottom: 0; left: 0; border-left: 3px solid #10B981; }
+.sat-bottom-right { bottom: 0; right: 0; border-left: 3px solid #F59E0B; }
+
+.sat-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2px;
+}
+.sat-info strong {
+  display: block;
+  font-size: 0.80rem;
+  color: var(--text-white);
+  line-height: 1.2;
+}
+.sat-info span {
+  font-size: 0.70rem;
+  color: var(--text-muted);
+}
+.sat-status-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+.badge-cyan { color: #06B6D4; }
+.badge-purple { color: #8B5CF6; }
+.badge-emerald { color: #10B981; }
+.badge-amber { color: #F59E0B; }
+
+@media (max-width: 600px) {
+  .kinetic-core-container {
+    height: auto;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .orbital-ring {
+    display: none;
+  }
+  .satellite-card {
+    position: static;
+    width: 100%;
+  }
+}
+
+/* Equalizer Waveform & Telemetry Panel */
+.ecosystem-telemetry-panel {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.equalizer-waveform {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+  height: 26px;
+  margin-bottom: 14px;
+}
+.eq-bar {
+  width: 4px;
+  background: linear-gradient(to top, #2563EB, #06B6D4);
+  border-radius: 2px;
+  animation: eqPulse 1.2s ease-in-out infinite alternate;
+}
+.bar-1 { height: 35%; animation-delay: 0.1s; }
+.bar-2 { height: 75%; animation-delay: 0.3s; }
+.bar-3 { height: 45%; animation-delay: 0.2s; }
+.bar-4 { height: 90%; animation-delay: 0.5s; }
+.bar-5 { height: 60%; animation-delay: 0.4s; }
+.bar-6 { height: 100%; animation-delay: 0.6s; }
+.bar-7 { height: 80%; animation-delay: 0.3s; }
+.bar-8 { height: 50%; animation-delay: 0.7s; }
+.bar-9 { height: 95%; animation-delay: 0.2s; }
+.bar-10 { height: 40%; animation-delay: 0.5s; }
+.bar-11 { height: 70%; animation-delay: 0.1s; }
+.bar-12 { height: 30%; animation-delay: 0.4s; }
+
+@keyframes eqPulse {
+  0% { transform: scaleY(0.4); opacity: 0.6; }
+  100% { transform: scaleY(1); opacity: 1; }
+}
+
+.telemetry-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+@media (max-width: 500px) {
+  .telemetry-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.telemetry-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  text-align: center;
+}
+[data-theme="light"] .telemetry-pill {
+  background: #F8FAFC;
+  border-color: rgba(37, 99, 235, 0.14);
+}
+.t-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  margin-bottom: 2px;
+}
+.t-val {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+.color-emerald { color: #10B981; }
+.color-cyan { color: #06B6D4; }
+.color-purple { color: #8B5CF6; }
+.color-amber { color: #F59E0B; }
+
+/* CHECKPOINT FEATURE CARDS (Request: "use cards here otherwise it looks so plain") */
+.checkpoint-feature-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 18px;
+}
+.checkpoint-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  transition: all 0.28s ease;
+  box-shadow: var(--shadow-sm);
+}
+[data-theme="light"] .checkpoint-card {
+  background: #FFFFFF;
+  border-color: rgba(37, 99, 235, 0.14);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.05);
+}
+.checkpoint-card:hover {
+  transform: translateY(-3px);
+  border-color: #3B82F6;
+  box-shadow: 0 10px 24px rgba(59, 130, 246, 0.2);
+}
+.checkpoint-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.checkpoint-text strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-white);
+  margin-bottom: 3px;
+}
+.checkpoint-text p {
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* LIVE CALCULATION MATRIX (Request: "show these in live calculations way") */
+.live-calc-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+}
+[data-theme="light"] .live-calc-container {
+  background: #FFFFFF;
+  border-color: rgba(37, 99, 235, 0.18);
+  box-shadow: 0 12px 36px rgba(37, 99, 235, 0.09);
+}
+.calc-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 12px;
+}
+.calc-title-tag {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #38BDF8;
+}
+.calc-live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.70rem;
+  font-weight: 700;
+  color: #10B981;
+  background: rgba(16, 185, 129, 0.12);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+.calc-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 8px #10B981;
+  animation: pulseDot 1.4s infinite;
+}
+.meter-telemetry-note {
+  display: flex;
+  gap: 14px;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin-top: 5px;
+  font-family: var(--font-mono);
+}
+
+/* ANIMATIONS IN METHODOLOGY PART (Request: "if possible use animations in the methodology part ..") */
+.how-we-work-section {
+  position: relative;
+  overflow: hidden;
+}
+.how-we-work-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #2563EB, #8B5CF6, #06B6D4, transparent);
+  animation: beamTraverse 4s linear infinite;
+  opacity: 0.6;
+  z-index: 0;
+  pointer-events: none;
+}
+@keyframes beamTraverse {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.work-step-card {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.work-step-card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-lg);
+  padding: 1px;
+  background: linear-gradient(135deg, transparent, rgba(59, 130, 246, 0.4), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.work-step-card:hover::after {
+  opacity: 1;
+}
+.work-step-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 48px rgba(37, 99, 235, 0.25);
+}
+
+/* High-Tech Blueprint Background in Light Mode */
+[data-theme="light"] body {
+  background-color: #F8FAFC !important;
+  background-image: 
+    radial-gradient(circle at 10% 15%, rgba(59, 130, 246, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 90% 20%, rgba(139, 92, 246, 0.10) 0%, transparent 45%),
+    radial-gradient(circle at 15% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(245, 158, 11, 0.08) 0%, transparent 45%),
+    linear-gradient(rgba(37, 99, 235, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.035) 1px, transparent 1px) !important;
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px !important;
+}
