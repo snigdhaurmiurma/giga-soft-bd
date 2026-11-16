@@ -22,8 +22,8 @@ Official website repository for **Giga Soft Limited** (`giga-soft-bd`), an enter
 
 ## 🏢 Direct Contact
 - **Location:** House-6/14, Hasina De Palace, Block-A, Lalmatia, Dhaka-1207
-- **Hotline:** +880 1870-699677
-- **Email:** info@gigadigitalagency.com
+- **Hotline:** 01778741894 (+880 1778-741894)
+- **Email:** gigasoftbd@gmail.com
 
 ---
 

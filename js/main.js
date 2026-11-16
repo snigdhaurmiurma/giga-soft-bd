@@ -819,9 +819,9 @@ function initContactForm() {
         // Handled silently
       }
 
-      // 3. Fallback Dispatch: FormSubmit AJAX endpoint to info@gigadigitalagency.com
+      // 3. Fallback Dispatch: FormSubmit AJAX endpoint to gigasoftbd@gmail.com
       try {
-        await fetch('https://formsubmit.co/ajax/info@gigadigitalagency.com', {
+        await fetch('https://formsubmit.co/ajax/gigasoftbd@gmail.com', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -869,7 +869,7 @@ function initContactForm() {
       showToast(`Thank you, ${name}! Your inquiry (${leadId}) has been submitted.`);
 
       // 6. Inline Success Banner (Zero browser popups: No alert, no confirm!)
-      const directWaLink = `https://wa.me/8801870699677?text=${encodeURIComponent(`Hello Giga Soft Limited,\nInquiry Ref: ${leadId}\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\nMessage: ${msg}`)}`;
+      const directWaLink = `https://wa.me/8801778741894?text=${encodeURIComponent(`Hello Giga Soft Limited,\nInquiry Ref: ${leadId}\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\nMessage: ${msg}`)}`;
 
       if (statusAlert) {
         statusAlert.innerHTML = `

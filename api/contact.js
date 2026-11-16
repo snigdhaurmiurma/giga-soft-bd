@@ -2,7 +2,7 @@
  * GIGA SOFT LIMITED &mdash; PRODUCTION SERVERLESS INQUIRY & EMAIL HANDLER
  * Vercel Serverless Function (Node.js) with Direct SMTP & Nodemailer
  * 
- * Target Destination: info@gigadigitalagency.com / gigadigitalagency@gmail.com
+ * Target Destination: gigasoftbd@gmail.com
  */
 
 module.exports = async (req, res) => {
@@ -51,8 +51,8 @@ module.exports = async (req, res) => {
     }
 
     const referenceId = 'GSL-' + Date.now().toString().slice(-6);
-    const destinationEmail = process.env.CONTACT_RECEIVER_EMAIL || 'info@gigadigitalagency.com';
-    const bccEmail = process.env.CONTACT_BCC_EMAIL || 'gigadigitalagency@gmail.com';
+    const destinationEmail = process.env.CONTACT_RECEIVER_EMAIL || 'gigasoftbd@gmail.com';
+    const bccEmail = process.env.CONTACT_BCC_EMAIL || 'gigasoftbd@gmail.com';
     let submittedAt = new Date().toLocaleString('en-US', { timeZone: 'Asia/Dhaka' }) + ' (BST)';
 
     // Plain text and HTML templates
@@ -233,7 +233,7 @@ Sent via Giga Soft Limited (gigasoftbd.com)
       reference_id: referenceId,
       delivered_via: deliveredVia,
       message: `Thank you, ${name}! Your consultation request (Ref #${referenceId}) has been successfully submitted to ${destinationEmail}. Our engineers will contact you shortly.`,
-      whatsapp_url: `https://wa.me/8801870699677?text=${encodeURIComponent(`Hello Giga Soft Limited, I just submitted consultation request #${referenceId} for ${service}: ${name} (${phone})`)}`,
+      whatsapp_url: `https://wa.me/8801778741894?text=${encodeURIComponent(`Hello Giga Soft Limited, I just submitted consultation request #${referenceId} for ${service}: ${name} (${phone})`)}`,
       mailto_url: `mailto:${destinationEmail}?subject=${encodeURIComponent(`[${referenceId}] New Consultation Request &mdash; ${name} (${service})`)}&body=${encodeURIComponent(textContent)}`
     });
 
@@ -241,7 +241,7 @@ Sent via Giga Soft Limited (gigasoftbd.com)
     console.error('Server error in /api/contact:', error);
     return res.status(500).json({
       status: 'error',
-      message: 'Failed to process inquiry. Please contact us directly at info@gigadigitalagency.com or +880 1870-699677.'
+      message: 'Failed to process inquiry. Please contact us directly at gigasoftbd@gmail.com or 01778741894.'
     });
   }
 };
