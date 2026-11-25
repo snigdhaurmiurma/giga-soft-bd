@@ -86,7 +86,13 @@
 /* Navigation Breakpoint for Tablets, Small Laptops & Mobile (max-width: 1080px) */
 @media (max-width: 1080px) {
   :root {
-    --nav-height: 72px;
+    --nav-height: 74px;
+  }
+
+  .brand-logo-img,
+  .logo-img {
+    height: 50px;
+    max-width: 195px;
   }
 
   .nav-links {
@@ -228,6 +234,17 @@
 
 /* Small Phones (max-width: 480px) */
 @media (max-width: 480px) {
+  .brand-logo-img,
+  .logo-img {
+    height: 44px;
+    max-width: 165px;
+  }
+
+  .footer-brand-logo {
+    height: 78px;
+    max-width: 220px;
+  }
+
   .hero-title {
     font-size: 2.3rem;
   }
