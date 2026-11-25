@@ -438,30 +438,37 @@ function initAccentSwitcher() {
   });
 }
 
-/* 3. 14 Technical Services Directory Category Filter */
+/* 3. Services & AI Solutions Directory Category Filters */
 function initServiceFilters() {
-  const tabBtns = document.querySelectorAll('.service-filter-btn, .service-tab-btn, .directory-filter-btn');
-  const serviceCards = document.querySelectorAll('.services-cards-grid .service-box, .service-card, .directory-service-card');
+  const bindFilterGroup = (navSelector, cardsSelector) => {
+    const nav = document.querySelector(navSelector);
+    if (!nav) return;
+    const tabBtns = nav.querySelectorAll('.service-filter-btn, .service-tab-btn, .directory-filter-btn, .ai-filter-btn');
+    const cards = document.querySelectorAll(cardsSelector);
 
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const category = btn.getAttribute('data-filter') || btn.getAttribute('data-category');
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const category = btn.getAttribute('data-filter') || btn.getAttribute('data-category');
 
-      tabBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
 
-      serviceCards.forEach(card => {
-        const cardCat = card.getAttribute('data-category') || '';
-        if (category === 'all' || cardCat.includes(category)) {
-          card.style.display = 'flex';
-          card.style.opacity = '1';
-        } else {
-          card.style.display = 'none';
-          card.style.opacity = '0';
-        }
+        cards.forEach(card => {
+          const cardCat = card.getAttribute('data-category') || '';
+          if (category === 'all' || cardCat.includes(category)) {
+            card.style.display = 'flex';
+            card.style.opacity = '1';
+          } else {
+            card.style.display = 'none';
+            card.style.opacity = '0';
+          }
+        });
       });
     });
-  });
+  };
+
+  bindFilterGroup('#servicesFilterNav', '#servicesCardsGrid .directory-service-card');
+  bindFilterGroup('#aiSolutionsFilterNav', '#aiSolutionsCardsGrid .directory-service-card');
 }
 
 /* 3.1 Interactive Hero Architecture & Topology Live Telemetry */
@@ -685,6 +692,83 @@ const serviceDetailsData = {
     desc: "Production-grade generative AI, custom LLM & RAG enterprise assistants, autonomous workflow automation, computer vision OCR, and predictive machine learning models engineered for measurable ROI.",
     deliverables: ["Custom LLM & RAG Enterprise Chatbots", "AI Workflow & Business Process Automation", "Bangla & English Omnichannel AI Agents", "Document OCR & Computer Vision Pipelines", "Private VPC LLM Hosting & Zero-Trust Guardrails"],
     tech: ["Python", "PyTorch", "LangChain", "OpenAI / Gemini", "pgvector", "FastAPI", "Kubernetes GPU"]
+  },
+  "business-process-automation": {
+    title: "Business Process Automation (BPA)",
+    cat: "Business Automation",
+    desc: "Unified state-machine orchestration across SAP, Oracle, and custom enterprise ERPs to eliminate manual bottlenecks, synchronize approvals, and enforce audit-grade execution.",
+    deliverables: ["Cross-ERP State-Machine Orchestration", "Automated Finance & Procurement Approvals", "SAP, Oracle & Custom REST/SOAP Connectors", "Dead-Letter Recovery & Audit Trail Telemetry", "99.95% SLA High-Throughput Execution"],
+    tech: ["Temporal", "Python", "FastAPI", "Kafka", "SAP / Oracle APIs", "PostgreSQL"]
+  },
+  "ai-workflow-automation": {
+    title: "AI Workflow Automation",
+    cat: "Business Automation",
+    desc: "Multi-agent LLM reasoning pipelines built with LangGraph orchestration and deterministic API tool calling for autonomous multi-step execution across enterprise apps.",
+    deliverables: ["Multi-Agent LangGraph Orchestration", "Deterministic Tool Calling & Function Routing", "Human-in-the-Loop Escalation Guardrails", "CRM, Slack, Email & Database Tool Integrations", "Real-Time Agent Observability & Cost Controls"],
+    tech: ["LangGraph", "OpenAI / Gemini", "Python", "n8n", "Redis", "Vector DB"]
+  },
+  "intelligent-document-processing": {
+    title: "Intelligent Document Processing (IDP)",
+    cat: "Business Automation",
+    desc: "Multimodal layout-aware OCR and smart data ingestion engineered for Letters of Credit (LC), commercial invoices, NBR VAT/tax forms, NIDs, and shipping manifests.",
+    deliverables: ["Layout-Aware Multimodal OCR Extraction", "LC, Commercial Invoice & NBR Form Schemas", "Confidence Scoring & Exception Review Queue", "Automated ERP & Accounting JSON Ingestion", "Bangla & English Bilingual Extraction"],
+    tech: ["Document AI", "Vision LLMs", "PyTorch", "PaddleOCR", "FastAPI", "PostgreSQL"]
+  },
+  "ai-voice-agent": {
+    title: "AI Voice Agent",
+    cat: "Business Automation",
+    desc: "24/7 conversational AI voice bots featuring sub-500ms voice round-trip latency, natural dual-language fluency in English & Bengali, and direct PBX/SIP telephony integration.",
+    deliverables: ["Sub-500ms Full-Duplex Voice Pipeline", "Natural English & Bengali Speech Fluency", "Direct SIP Trunk & Corporate PBX Integration", "Live CRM Lookup, Booking & Ticket Creation", "Warm Call Transfer & Full Transcript Analytics"],
+    tech: ["LiveKit / WebRTC", "Asterisk / SIP", "Deepgram", "ElevenLabs", "OpenAI Realtime", "Node.js"]
+  },
+  "ecommerce-customer-service": {
+    title: "Ecommerce Customer Service",
+    cat: "Business Automation",
+    desc: "Autonomous omnichannel support across WhatsApp, Facebook Messenger, Instagram, and web chat with live Steadfast/Pathao/RedX courier tracking and automated order resolution.",
+    deliverables: ["Autonomous WhatsApp, Messenger & Web Chat AI", "Live Courier Tracking & Order Status Sync", "Automated Return, Refund & Exchange Flows", "bKash / Nagad / SSLCommerz Payment Verification", "Bangla, Banglish & English Customer Fluency"],
+    tech: ["WhatsApp Cloud API", "Meta Graph API", "LangChain", "Shopify / WooCommerce", "Redis", "Node.js"]
+  },
+  "ai-scribe-clinical-documentation": {
+    title: "AI Scribe for Clinical Notes",
+    cat: "Healthcare & Regulated",
+    desc: "Ambient clinical listening that converts physician-patient consultations into structured SOAP notes, accurate ICD-10/CPT medical coding, and direct EHR drafts in real time.",
+    deliverables: ["Ambient Multi-Speaker Clinical Transcription", "Structured SOAP & Discharge Summary Generation", "Automated ICD-10 & CPT Coding Suggestions", "HL7 FHIR / Epic / Cerner EHR Integration", "HIPAA-Aligned Zero-Retention Privacy Controls"],
+    tech: ["Whisper Medical", "HL7 FHIR", "SNOMED-CT", "Python", "Zero-Trust VPC", "AES-256"]
+  },
+  "prior-authorization-automation": {
+    title: "Prior Authorization Automation",
+    cat: "Healthcare & Regulated",
+    desc: "Accelerate insurance approvals through automated clinical chart parsing, real-time payer policy matching, medical necessity evidence assembly, and EDI 278 / FHIR ePA submissions.",
+    deliverables: ["Automated Clinical Chart & Lab Parsing", "Real-Time Payer Coverage Policy Matching", "EDI 278 & HL7 FHIR ePA Submission Engine", "Denial-Risk Detection & Appeal Packet Drafting", "End-to-End Status Tracking & Audit Logs"],
+    tech: ["HL7 FHIR", "EDI X12 278", "RAG Policy Engine", "Python", "PostgreSQL", "HIPAA Cloud"]
+  },
+  "ai-regulatory-document-generation": {
+    title: "AI Regulatory Documents",
+    cat: "Healthcare & Regulated",
+    desc: "Automated authoring of Clinical Study Reports (CSR), CMC modules, and pharma compliance filings with grounded primary-source citation verification and 21 CFR Part 11 auditability.",
+    deliverables: ["Automated ICH E3 CSR & eCTD CMC Authoring", "Strict Primary-Source Grounded Citations", "Traceable Claim-to-Table Verification Matrix", "21 CFR Part 11 Compliant Version & Audit Trails", "Private Air-Gapped / VPC Model Deployment"],
+    tech: ["Private LLMs", "Citation RAG", "eCTD XML", "Python", "SharePoint / Veeva API", "Zero-Trust IAM"]
+  },
+  "healthcare-ai-solutions": {
+    title: "Healthcare AI Solutions",
+    cat: "Healthcare & Regulated",
+    desc: "Secure clinical intelligence encompassing predictive inpatient triage, real-time ICU risk telemetry, sepsis early-warning scoring, and DICOM radiology worklist prioritization.",
+    deliverables: ["Predictive Inpatient Triage & Deterioration Alerts", "Real-Time ICU Vitals Risk Telemetry Models", "DICOM Radiology PACS Worklist Routing", "Federated & On-Premise Clinical Model Hosting", "HIPAA & ISO 27001 Encrypted Architecture"],
+    tech: ["MONAI / PyTorch", "DICOM / PACS", "HL7 FHIR", "Kubernetes GPU", "TimescaleDB", "Vault"]
+  },
+  "ai-recruitment-automation": {
+    title: "AI Recruitment Automation",
+    cat: "HR & Hiring",
+    desc: "High-volume talent intelligence delivering deep semantic resume parsing, objective role-competency scoring, automated ATS enrichment, and bias-free candidate shortlisting.",
+    deliverables: ["Deep Semantic CV & Portfolio Parsing", "Objective Role-Competency Scoring Matrix", "Bias-Mitigated Blind Candidate Ranking", "Two-Way ATS & LinkedIn / HRIS Sync", "Automated Candidate Outreach & Scheduling"],
+    tech: ["Embeddings / pgvector", "Python", "FastAPI", "Greenhouse / Lever / ERP API", "React"]
+  },
+  "ai-interview-automation": {
+    title: "AI Interview Automation",
+    cat: "HR & Hiring",
+    desc: "Adaptive conversational candidate screening featuring dynamic technical and behavioral question branching, anti-cheating signals, and structured executive hiring dossiers.",
+    deliverables: ["Adaptive Voice & Video Screening Interviews", "Dynamic Competency-Based Question Branching", "Structured Hiring Scorecards & Transcripts", "Technical Coding & Scenario Evaluation Rubrics", "Instant Recruiter Calibration Dashboards"],
+    tech: ["WebRTC", "LLM Evaluators", "Speech AI", "Node.js", "PostgreSQL", "ATS Webhooks"]
   }
 };
 
