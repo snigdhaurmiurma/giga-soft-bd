@@ -1169,6 +1169,223 @@ button, input, textarea, select {
 }
 
 /* -----------------------------------------------------------------------------
+   04B // ENTERPRISE AI SOLUTIONS & INTELLIGENT AUTOMATION
+   ----------------------------------------------------------------------------- */
+.ai-solutions-section {
+  padding: 100px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  background: radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.08), transparent 45%),
+              radial-gradient(circle at 85% 95%, rgba(6, 182, 212, 0.08), transparent 45%),
+              var(--bg-deep);
+  position: relative;
+}
+
+[data-theme="light"] .ai-solutions-section {
+  background: radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.05), transparent 45%),
+              radial-gradient(circle at 85% 95%, rgba(6, 182, 212, 0.05), transparent 45%),
+              #F8FAFC;
+}
+
+.ai-solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.ai-solution-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.ai-solution-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(6, 182, 212, 0.45);
+  box-shadow: 0 16px 36px -10px rgba(6, 182, 212, 0.16);
+}
+
+[data-theme="light"] .ai-solution-card {
+  background: #FFFFFF;
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .ai-solution-card:hover {
+  border-color: rgba(37, 99, 235, 0.35);
+  box-shadow: 0 16px 32px -10px rgba(37, 99, 235, 0.14);
+}
+
+.ai-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ai-icon-badge {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(37, 99, 235, 0.14);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: var(--accent-cyan);
+  flex-shrink: 0;
+}
+
+[data-theme="light"] .ai-icon-badge {
+  background: rgba(37, 99, 235, 0.08);
+  border-color: rgba(37, 99, 235, 0.2);
+  color: var(--accent-cobalt);
+}
+
+.ai-card-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-cyan);
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+[data-theme="light"] .ai-card-tag {
+  color: #0E7490;
+  background: rgba(6, 182, 212, 0.1);
+  border-color: rgba(8, 145, 178, 0.25);
+}
+
+.ai-card-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-white);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.ai-card-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.ai-card-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.ai-card-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.45;
+}
+
+.ai-card-points li svg {
+  color: var(--accent-cyan);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+[data-theme="light"] .ai-card-points li svg {
+  color: var(--accent-cobalt);
+}
+
+.ai-card-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.ai-stack-pill {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  padding: 3px 9px;
+  border-radius: var(--radius-xs);
+}
+
+[data-theme="light"] .ai-stack-pill {
+  background: #F1F5F9;
+  color: #334155;
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+.ai-cta-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+  padding: 32px 36px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.14) 0%, rgba(6, 182, 212, 0.1) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+[data-theme="light"] .ai-cta-banner {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(6, 182, 212, 0.08) 100%);
+  border-color: rgba(37, 99, 235, 0.24);
+}
+
+.ai-cta-copy h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-white);
+  margin-bottom: 6px;
+}
+
+.ai-cta-copy p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.ai-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .ai-solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .ai-solutions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-cta-banner {
+    padding: 24px 20px;
+  }
+}
+
+/* -----------------------------------------------------------------------------
    05 // ARCHITECTURAL FOUNDATION (Who We Are & Why Choose Us)
    ----------------------------------------------------------------------------- */
 .about-architectural-section {

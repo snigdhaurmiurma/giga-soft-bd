@@ -678,6 +678,13 @@ const serviceDetailsData = {
     desc: "Unify fragmented data silos into high-speed executive dashboards, automated ETL pipelines, predictive customer analytics, and data warehousing.",
     deliverables: ["Real-Time Executive Dashboards", "BigQuery / Snowflake Warehouses", "Automated ETL/ELT Ingestion", "Predictive Machine Learning Models", "Multi-Touch Attribution Systems"],
     tech: ["Power BI", "Tableau", "BigQuery", "Python / Pandas", "Apache Spark", "dbt"]
+  },
+  "ai-solutions": {
+    title: "Enterprise AI Solutions & Intelligent Automation",
+    cat: "AI & Automation",
+    desc: "Production-grade generative AI, custom LLM & RAG enterprise assistants, autonomous workflow automation, computer vision OCR, and predictive machine learning models engineered for measurable ROI.",
+    deliverables: ["Custom LLM & RAG Enterprise Chatbots", "AI Workflow & Business Process Automation", "Bangla & English Omnichannel AI Agents", "Document OCR & Computer Vision Pipelines", "Private VPC LLM Hosting & Zero-Trust Guardrails"],
+    tech: ["Python", "PyTorch", "LangChain", "OpenAI / Gemini", "pgvector", "FastAPI", "Kubernetes GPU"]
   }
 };
 

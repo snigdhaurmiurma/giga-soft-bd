@@ -555,10 +555,15 @@
                     <strong>Data Analytics</strong>
                     <span>BI dashboards &amp; ETL pipelines</span>
                   </a>
+                  <a href="service-details.html?service=ai-solutions" class="mega-dropdown-link" onclick="switchServiceTab('ai-solutions')">
+                    <strong>AI Solutions &amp; Automation</strong>
+                    <span>LLMs, RAG chatbots &amp; ML workflows</span>
+                  </a>
                 </div>
               </div>
             </div>
           </li>
+          <li><a href="index.html#ai-solutions" class="nav-link">AI Solutions</a></li>
           <li><a href="index.html#who-we-are" class="nav-link">About</a></li>
           <li><a href="index.html#why-us" class="nav-link">Why Us</a></li>
           <li><a href="index.html#how-we-work" class="nav-link">How We Work</a></li>
@@ -661,6 +666,10 @@
           <button class="detail-tab-btn" data-service="data-analytics">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
             <span>Data Analytics</span>
+          </button>
+          <button class="detail-tab-btn" data-service="ai-solutions">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line></svg>
+            <span>AI Solutions</span>
           </button>
         </div>
       </div>
@@ -1630,6 +1639,75 @@
             </div>
           </section>
 
+          <!-- 15. AI Solutions & Intelligent Automation Panel -->
+          <section class="service-panel" id="panel-ai-solutions">
+            <div class="spec-block">
+              <div class="service-detail-hero-media">
+                <img src="images/services/ai-solutions.jpg" alt="Enterprise AI Solutions and Intelligent Automation" loading="lazy">
+              </div>
+
+              <span class="section-tag tag-blue" style="margin-bottom: 12px;">AI &amp; Automation</span>
+              <h2>Enterprise AI Solutions &amp; Intelligent Automation</h2>
+              <p>
+                We architect and deploy production-grade artificial intelligence systems tailored for enterprises, financial institutions, healthcare groups, and high-growth commerce brands. From Bangla &amp; English custom LLM chatbots to autonomous ERP workflows, document OCR, and private GPU clusters, our AI systems are built for security, accuracy, and measurable ROI.
+              </p>
+
+              <h3>Core AI Capabilities &amp; Architecture</h3>
+              <ul class="service-features-list">
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Custom LLM &amp; RAG knowledge assistants connected securely to internal SOPs, ERP databases, and WhatsApp/Web channels.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Autonomous AI workflow agents automating invoice reconciliation, HR screening, CRM lead qualification, and reporting.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Computer Vision &amp; Document Intelligence for high-accuracy NID, passport, and multi-format invoice OCR extraction.</span>
+                </li>
+                <li>
+                  <span class="feat-check-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                  <span>Private VPC / on-premise LLM hosting with Zero-Trust RBAC, PII redaction, and full enterprise data sovereignty.</span>
+                </li>
+              </ul>
+
+              <h3>AI Engineering &amp; Deployment Lifecycle</h3>
+              <div class="service-process-grid">
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 01</span>
+                  <div class="process-step-title">AI Use-Case Audit</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 02</span>
+                  <div class="process-step-title">Data &amp; RAG Pipeline</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 03</span>
+                  <div class="process-step-title">Model &amp; Agent Build</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 04</span>
+                  <div class="process-step-title">Eval &amp; Guardrails</div>
+                </div>
+                <div class="process-step-box">
+                  <span class="process-step-num">Step 05</span>
+                  <div class="process-step-title">Cloud / VPC Scale</div>
+                </div>
+              </div>
+
+              <h4>AI &amp; Machine Learning Technology Stack</h4>
+              <div class="tech-stack-row">
+                <span class="tech-pill-tag">Python / FastAPI</span>
+                <span class="tech-pill-tag">PyTorch</span>
+                <span class="tech-pill-tag">OpenAI / Gemini</span>
+                <span class="tech-pill-tag">LangChain</span>
+                <span class="tech-pill-tag">PostgreSQL pgvector</span>
+                <span class="tech-pill-tag">vLLM / Kubernetes GPU</span>
+              </div>
+            </div>
+          </section>
+
         </div>
 
         <!-- Right Column: Agency Sticky Sidebar -->
@@ -1637,9 +1715,13 @@
 
           <!-- Widget 1: All Services Quick Navigation Menu -->
           <div class="sidebar-widget">
-            <h3 class="sidebar-widget-title">All Services (14)</h3>
+            <h3 class="sidebar-widget-title">All Services (15)</h3>
             <p class="sidebar-widget-desc">Click any service to view architectural specifications and delivery models.</p>
             <div class="sidebar-services-nav">
+              <a class="sidebar-nav-item" data-service="ai-solutions" onclick="switchServiceTab('ai-solutions')">
+                <span>AI Solutions &amp; Automation</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
               <a class="sidebar-nav-item active" data-service="it-solutions" onclick="switchServiceTab('it-solutions')">
                 <span>IT Solutions</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
@@ -1785,8 +1867,9 @@
             <h4 class="footer-col-title">Quick Links</h4>
             <ul class="footer-links">
               <li><a href="index.html#home" class="footer-link">Home</a></li>
-              <li><a href="index.html#who-we-are" class="footer-link">About Us</a></li>
               <li><a href="index.html#services" class="footer-link">Services</a></li>
+              <li><a href="index.html#ai-solutions" class="footer-link">AI Solutions</a></li>
+              <li><a href="index.html#who-we-are" class="footer-link">About Us</a></li>
               <li><a href="index.html#why-us" class="footer-link">Why Us</a></li>
               <li><a href="index.html#how-we-work" class="footer-link">How We Work</a></li>
               <li><a href="index.html#case-study" class="footer-link">Case Studies</a></li>
@@ -1801,6 +1884,7 @@
           <div>
             <h4 class="footer-col-title">Our Services</h4>
             <ul class="footer-links">
+              <li><a href="service-details.html?service=ai-solutions" class="footer-link" onclick="switchServiceTab('ai-solutions')">AI Solutions &amp; Automation</a></li>
               <li><a href="service-details.html?service=software-dev" class="footer-link" onclick="switchServiceTab('software-dev')">Software Development</a></li>
               <li><a href="service-details.html?service=web-dev" class="footer-link" onclick="switchServiceTab('web-dev')">Web Development</a></li>
               <li><a href="service-details.html?service=app-dev" class="footer-link" onclick="switchServiceTab('app-dev')">App Development</a></li>
