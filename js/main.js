@@ -1295,7 +1295,365 @@ function initSursumModeSwitcher() {
   });
 }
 
+// Interactive SEO Blog Hub Controller
+function initInteractiveBlog() {
+  const grid = document.getElementById('blogCardsGrid');
+  if (!grid) return;
+
+  const cards = Array.from(grid.querySelectorAll('.blog-card'));
+  const filterPills = Array.from(document.querySelectorAll('#blogFilterPills .blog-filter-pill'));
+  const searchInput = document.getElementById('blogSearchInput');
+  const searchClear = document.getElementById('blogSearchClear');
+  const statusEl = document.getElementById('blogResultsStatus');
+  const emptyState = document.getElementById('blogEmptyState');
+  const emptyText = document.getElementById('blogEmptyText');
+  const resetBtn = document.getElementById('blogResetFiltersBtn');
+  const savedCountEl = document.getElementById('savedBlogCount');
+  const toastEl = document.getElementById('blogToast');
+
+  // Quick-Reader Modal elements
+  const modal = document.getElementById('blogPreviewModal');
+  const closeModalBtn = document.getElementById('closeBlogPreviewModal');
+  const modalImg = document.getElementById('blogModalImg');
+  const modalBadge = document.getElementById('blogModalBadge');
+  const modalMeta = document.getElementById('blogModalMeta');
+  const modalTitle = document.getElementById('blogModalTitle');
+  const modalSummary = document.getElementById('blogModalSummary');
+  const modalTakeaways = document.getElementById('blogModalTakeaways');
+  const modalFullLink = document.getElementById('blogModalFullLink');
+  const modalShareBtn = document.getElementById('blogModalShareBtn');
+
+  const previewData = {
+    'ai-enterprise-automation': {
+      badge: 'AI & Automation',
+      badgeClass: 'blog-badge-violet',
+      img: 'images/blog/ai-enterprise-automation.jpg',
+      alt: 'Enterprise AI workflow automation, bilingual voice agents, and intelligent document processing',
+      meta: 'Nov 20, 2026 • AI Engineering Lab • 6 min read',
+      title: 'Enterprise AI Workflow & Voice Automation: Practical ROI Blueprint for 2026',
+      summary: 'Enterprise leaders across banking, healthcare, RMG, and e-commerce are moving past experimental chatbots toward deterministic AI agents. By combining LangGraph multi-step orchestration, sub-500ms bilingual Bengali & English AI voice agents, and multimodal OCR document processing, companies eliminate repetitive bottlenecks while preserving full human-in-the-loop governance.',
+      takeaways: [
+        'Sub-500ms full-duplex AI Voice Agents resolve up to 74% of tier-1 Bangla & English support calls over existing SIP/PBX lines.',
+        'Layout-aware Intelligent Document Processing (IDP) extracts Letters of Credit, NBR VAT forms, and invoices directly into ERP ledgers with >99.2% field accuracy.',
+        'Private VPC deployment with zero-retention guardrails ensures sensitive corporate and clinical records never train public models.'
+      ]
+    },
+    'it-exports': {
+      badge: 'Global Trade & Software',
+      badgeClass: 'blog-badge-blue',
+      img: 'images/blog/it-exports-global.jpg',
+      alt: 'Bangladesh IT exports and global enterprise software engineering studio in Dhaka',
+      meta: 'Nov 18, 2026 • Software Architecture Lead • 5 min read',
+      title: 'IT Exports Shoot Up 52%: Scaling Enterprise Software from Bangladesh Globally',
+      summary: 'Information technology exports from Bangladesh are accelerating rapidly as global enterprises look beyond basic staff augmentation toward full-lifecycle architecture partners. Senior engineering hubs in Dhaka now architect multi-tenant cloud ERPs, PCI-compliant payment bridges, and containerized microservices for North America, Europe, and GCC clients.',
+      takeaways: [
+        'Full IP handover, SOC 2 / ISO 27001 controls, and automated CI/CD pipelines drive long-term international enterprise trust.',
+        'Event-driven Go, Node.js, and Python microservices deliver tier-1 throughput at highly competitive enterprise delivery economics.',
+        'AI-augmented QA and observability tooling cut release cycles by 40% across cross-timezone engineering sprints.'
+      ]
+    },
+    'software-slowdown': {
+      badge: 'Cloud & Resilience',
+      badgeClass: 'blog-badge-emerald',
+      img: 'images/blog/cloud-resilience.jpg',
+      alt: 'High-availability Kubernetes cloud server clusters and fiber-optic failover architecture',
+      meta: 'Nov 12, 2026 • Cloud Infrastructure Lead • 7 min read',
+      title: 'Preventing Critical Software Slowdowns in Mission-Critical Cloud Infrastructure',
+      summary: 'When mission-critical logistics, customs, or enterprise ERP databases suffer unexpected memory leaks or traffic spikes, operational losses cascade in minutes. Retrofitting monolithic deployments with asynchronous message queues, Horizontal Pod Autoscaling, and distributed Redis caches prevents bottlenecks from taking core transactions offline.',
+      takeaways: [
+        'Decouple heavy analytical reporting from primary transactional databases using Kafka/RabbitMQ queues and read replicas.',
+        'Multi-region Redis in-memory caching offloads 85%+ of repetitive read traffic during peak billing and checkout surges.',
+        'Automated Kubernetes HPA and proactive VAPT load testing maintain 99.99% SLA availability under sudden traffic bursts.'
+      ]
+    },
+    'erp-scaling': {
+      badge: 'Enterprise Architecture',
+      badgeClass: 'blog-badge-blue',
+      img: 'images/blog/distributed-erp.jpg',
+      alt: 'Distributed enterprise ERP event-driven microservices architecture',
+      meta: 'Nov 05, 2026 • Enterprise Core Systems • 5 min read',
+      title: 'Scaling Distributed ERP Systems: Event-Driven Microservices Blueprint',
+      summary: 'Multi-branch manufacturing plants, warehouses, and retail chains quickly outgrow single-database monolithic ERPs. By applying the Transactional Outbox Pattern with event-driven microservices, Giga Soft decouples accounting journals, procurement, and real-time inventory synchronization without sacrificing strict financial atomicity.',
+      takeaways: [
+        'Transactional Outbox + Kafka guarantees zero lost accounting or stock-ledger events during network partitions.',
+        'Independent domain deployments allow procurement and HR upgrades with zero downtime to POS and invoicing terminals.',
+        'Benchmarked production deployments achieve +340% higher concurrency and sub-15ms master catalog queries.'
+      ]
+    },
+    'zero-trust': {
+      badge: 'Cybersecurity',
+      badgeClass: 'blog-badge-emerald',
+      img: 'images/blog/zero-trust-security.jpg',
+      alt: 'Zero-Trust Network Access ZTNA cryptographic shield and micro-segmentation architecture',
+      meta: 'Oct 28, 2026 • Lead Security Analyst • 7 min read',
+      title: 'Zero-Trust Network Access (ZTNA): Why Legacy Perimeter Firewalls Fail',
+      summary: 'The legacy castle-and-moat network model assumes everything inside the corporate LAN or VPN is safe. In hybrid cloud and remote-work environments, a single phished credential enables rapid lateral movement. Zero-Trust Network Access enforces continuous cryptographic verification on every identity, device, and API call.',
+      takeaways: [
+        'Mutual TLS 1.3 micro-segmentation isolates critical ERP and database workloads even inside internal VPC subnets.',
+        'Identity-aware proxies enforce least-privilege RBAC and real-time device posture checks on every session.',
+        'Quarterly VAPT penetration testing and SIEM anomaly detection close OWASP Top-10 and API vulnerabilities early.'
+      ]
+    },
+    'headless-ecommerce': {
+      badge: 'E-Commerce & SEO',
+      badgeClass: 'blog-badge-amber',
+      img: 'images/blog/headless-ecommerce.jpg',
+      alt: 'Headless e-commerce storefront architecture with edge CDN and technical SEO optimization',
+      meta: 'Oct 19, 2026 • Digital Commerce Architect • 5 min read',
+      title: 'Headless E-Commerce & Technical SEO: Achieving Sub-Second Storefront Speed',
+      summary: 'Every 100ms of storefront latency directly erodes organic search rankings and checkout conversions. Decoupling a Next.js/React presentation layer from backend inventory and local payment gateways unlocks edge-cached page loads, rich JSON-LD Product schema, and higher Google Core Web Vitals scores.',
+      takeaways: [
+        'Server-Side Rendering (SSR) + Edge CDN caching delivers sub-second LCP and 95+ Lighthouse SEO & Performance scores.',
+        'Structured Product, BreadcrumbList, and FAQ JSON-LD schema increases organic click-through rates in Google Search.',
+        'Seamless API orchestration with bKash, Nagad, SSLCommerz, and live Steadfast/Pathao courier APIs lifts checkout completion.'
+      ]
+    }
+  };
+
+  let activeCategory = 'all';
+  let searchQuery = '';
+  let activeModalSlug = null;
+  let toastTimer = null;
+
+  const STORAGE_KEY = 'giga-blog-bookmarks';
+  let bookmarks = [];
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) bookmarks = JSON.parse(raw);
+    if (!Array.isArray(bookmarks)) bookmarks = [];
+  } catch (e) {
+    bookmarks = [];
+  }
+
+  function showToast(msg) {
+    if (!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2400);
+  }
+
+  function syncBookmarkUI() {
+    if (savedCountEl) savedCountEl.textContent = String(bookmarks.length);
+    document.querySelectorAll('.blog-bookmark-btn').forEach(btn => {
+      const slug = btn.getAttribute('data-bookmark');
+      const saved = bookmarks.includes(slug);
+      btn.classList.toggle('is-saved', saved);
+      btn.setAttribute('aria-pressed', saved ? 'true' : 'false');
+      btn.title = saved ? 'Remove from saved articles' : 'Save article for later';
+    });
+  }
+
+  function applyFilters() {
+    const q = searchQuery.trim().toLowerCase();
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const slug = card.getAttribute('data-post') || '';
+      const cat = card.getAttribute('data-category') || '';
+      const tags = (card.getAttribute('data-tags') || '').toLowerCase();
+      const text = card.textContent.toLowerCase();
+
+      const matchesCategory =
+        activeCategory === 'all' ||
+        (activeCategory === 'saved' ? bookmarks.includes(slug) : cat === activeCategory);
+
+      const matchesSearch = !q || text.includes(q) || tags.includes(q);
+      const show = matchesCategory && matchesSearch;
+
+      card.hidden = !show;
+      if (show) visibleCount++;
+    });
+
+    if (statusEl) {
+      if (q) {
+        statusEl.innerHTML = `Showing <strong>${visibleCount}</strong> result${visibleCount === 1 ? '' : 's'} for &ldquo;${q.replace(/[<>&"]/g, '')}&rdquo;`;
+      } else if (activeCategory === 'saved') {
+        statusEl.innerHTML = `Showing <strong>${visibleCount}</strong> saved article${visibleCount === 1 ? '' : 's'}`;
+      } else {
+        statusEl.innerHTML = `Showing <strong>${visibleCount}</strong> engineering perspective${visibleCount === 1 ? '' : 's'}`;
+      }
+    }
+
+    if (emptyState) {
+      emptyState.hidden = visibleCount > 0;
+      if (emptyText) {
+        emptyText.textContent = activeCategory === 'saved' && bookmarks.length === 0
+          ? 'You have not bookmarked any articles yet. Click the bookmark icon on any article to save it for later.'
+          : 'No articles matched your current filter or search term.';
+      }
+    }
+  }
+
+  function copyArticleUrl(slug) {
+    const base = window.location.origin && window.location.origin.startsWith('http')
+      ? window.location.origin
+      : 'https://giga-soft-bd.vercel.app';
+    const url = `${base}/blog-details.html?post=${encodeURIComponent(slug)}`;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(() => {
+        showToast('Article link copied to clipboard!');
+      }).catch(() => {
+        showToast('Link ready: ' + url);
+      });
+    } else {
+      showToast('Link ready: ' + url);
+    }
+  }
+
+  function openPreviewModal(slug) {
+    const data = previewData[slug];
+    if (!modal || !data) return;
+    activeModalSlug = slug;
+    if (modalImg) {
+      modalImg.src = data.img;
+      modalImg.alt = data.alt;
+    }
+    if (modalBadge) {
+      modalBadge.textContent = data.badge;
+      modalBadge.className = 'blog-meta-badge ' + data.badgeClass;
+    }
+    if (modalMeta) modalMeta.textContent = data.meta;
+    if (modalTitle) modalTitle.textContent = data.title;
+    if (modalSummary) modalSummary.textContent = data.summary;
+    if (modalTakeaways) {
+      modalTakeaways.innerHTML = data.takeaways.map(t => `<li>${t}</li>`).join('');
+    }
+    if (modalFullLink) modalFullLink.href = `blog-details.html?post=${encodeURIComponent(slug)}`;
+
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePreviewModal() {
+    if (!modal || modal.hidden) return;
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  // Category pill click handlers
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      activeCategory = pill.getAttribute('data-blog-filter') || 'all';
+      filterPills.forEach(p => {
+        const isActive = p === pill;
+        p.classList.toggle('active', isActive);
+        p.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+      applyFilters();
+    });
+  });
+
+  // Live search input
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      searchQuery = searchInput.value;
+      if (searchClear) searchClear.hidden = !searchQuery;
+      applyFilters();
+    });
+  }
+
+  if (searchClear && searchInput) {
+    searchClear.addEventListener('click', () => {
+      searchInput.value = '';
+      searchQuery = '';
+      searchClear.hidden = true;
+      applyFilters();
+      searchInput.focus();
+    });
+  }
+
+  // Reset button
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      activeCategory = 'all';
+      searchQuery = '';
+      if (searchInput) searchInput.value = '';
+      if (searchClear) searchClear.hidden = true;
+      filterPills.forEach(p => {
+        const isAll = p.getAttribute('data-blog-filter') === 'all';
+        p.classList.toggle('active', isAll);
+        p.setAttribute('aria-selected', isAll ? 'true' : 'false');
+      });
+      applyFilters();
+    });
+  }
+
+  // Clickable topic tags
+  grid.querySelectorAll('.blog-topic-tag').forEach(tagBtn => {
+    tagBtn.addEventListener('click', () => {
+      const q = tagBtn.getAttribute('data-tag-query') || '';
+      activeCategory = 'all';
+      filterPills.forEach(p => {
+        const isAll = p.getAttribute('data-blog-filter') === 'all';
+        p.classList.toggle('active', isAll);
+        p.setAttribute('aria-selected', isAll ? 'true' : 'false');
+      });
+      searchQuery = q;
+      if (searchInput) searchInput.value = q;
+      if (searchClear) searchClear.hidden = !q;
+      applyFilters();
+    });
+  });
+
+  // Bookmark toggles
+  grid.querySelectorAll('.blog-bookmark-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const slug = btn.getAttribute('data-bookmark');
+      if (!slug) return;
+      if (bookmarks.includes(slug)) {
+        bookmarks = bookmarks.filter(item => item !== slug);
+        showToast('Removed from saved articles');
+      } else {
+        bookmarks.push(slug);
+        showToast('Article saved to bookmarks');
+      }
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(bookmarks));
+      } catch (err) {}
+      syncBookmarkUI();
+      if (activeCategory === 'saved') applyFilters();
+    });
+  });
+
+  // Share buttons
+  grid.querySelectorAll('.blog-share-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const slug = btn.getAttribute('data-share');
+      if (slug) copyArticleUrl(slug);
+    });
+  });
+
+  // Quick-Reader modal triggers
+  grid.querySelectorAll('.blog-preview-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const slug = btn.getAttribute('data-preview');
+      if (slug) openPreviewModal(slug);
+    });
+  });
+
+  if (closeModalBtn) closeModalBtn.addEventListener('click', closePreviewModal);
+  if (modal) {
+    modal.querySelectorAll('[data-close-blog-modal]').forEach(el => {
+      el.addEventListener('click', closePreviewModal);
+    });
+  }
+  if (modalShareBtn) {
+    modalShareBtn.addEventListener('click', () => {
+      if (activeModalSlug) copyArticleUrl(activeModalSlug);
+    });
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closePreviewModal();
+  });
+
+  syncBookmarkUI();
+  applyFilters();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initLiveCalculationEngine();
   initSursumModeSwitcher();
+  initInteractiveBlog();
 });
