@@ -435,16 +435,26 @@ button, input, textarea, select {
 .nav-dropdown-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   cursor: pointer;
 }
 
-.nav-dropdown-trigger svg {
-  transition: transform var(--transition-fast);
+.nav-dropdown-trigger svg,
+.nav-dropdown-item > .nav-link svg {
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  max-width: none;
+  flex-shrink: 0;
+  opacity: 0.9;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 
-.nav-dropdown-wrap:hover .nav-dropdown-trigger svg {
+.nav-dropdown-wrap:hover .nav-dropdown-trigger svg,
+.nav-dropdown-wrap.open .nav-dropdown-trigger svg,
+.nav-dropdown-item:hover > .nav-link svg {
   transform: rotate(180deg);
+  opacity: 1;
 }
 
 .mega-dropdown-menu {
@@ -3715,7 +3725,7 @@ button, input, textarea, select {
 .nav-links {
   display: flex !important;
   align-items: center !important;
-  gap: 14px !important;
+  gap: 6px !important;
   list-style: none !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -3724,7 +3734,7 @@ button, input, textarea, select {
 .nav-link {
   font-size: 0.86rem !important;
   font-weight: 600 !important;
-  padding: 6px 10px !important;
+  padding: 6px 9px !important;
   white-space: nowrap !important;
   border-radius: var(--radius-xs);
   transition: all 0.22s ease !important;
@@ -4171,7 +4181,7 @@ button, input, textarea, select {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 6px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -4180,7 +4190,7 @@ button, input, textarea, select {
 .nav-link {
   font-size: 0.86rem;
   font-weight: 600;
-  padding: 6px 10px;
+  padding: 6px 9px;
   white-space: nowrap;
   border-radius: var(--radius-xs);
   transition: all 0.22s ease;
