@@ -4759,3 +4759,39 @@ button, input, textarea, select {
   opacity: 0.95 !important;
   filter: contrast(110%);
 }
+
+/* =============================================================================
+   GLOBAL PARAGRAPH JUSTIFICATION (Bullet Points & Lists Strictly Untouched)
+   ============================================================================= */
+.hero-editorial-desc,
+.section-header:not(.text-center) .section-subtitle,
+.metric-desc,
+.service-card-desc,
+.ai-cta-copy p,
+.who-lead-paragraph,
+.cap-swiss-desc,
+.checkpoint-text p,
+.why-card-desc,
+.work-step-desc,
+.case-editorial-desc,
+.case-spec-text,
+.package-desc,
+.testimonial-quote,
+.blog-summary,
+.faq-answer p,
+.modal-service-desc,
+.spec-block p,
+.sidebar-widget-desc,
+.hotline-card p,
+.article-body p,
+.article-card p,
+.contact-info-desc,
+.legal-doc-card p,
+.job-card p,
+.cat-slide-caption p,
+.contact-form-wrap > p,
+.footer-about p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
