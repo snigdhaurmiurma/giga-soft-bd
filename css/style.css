@@ -1766,6 +1766,185 @@ button, input, textarea, select {
   border-radius: var(--radius-md);
 }
 
+.about-assurance-card {
+  margin-top: 18px;
+  padding: 20px 24px;
+  background: var(--bg-deep);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+[data-theme="light"] .about-assurance-card {
+  background: #FFFFFF;
+  border-color: rgba(37, 99, 235, 0.14);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+
+.assurance-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.assurance-verified-pill {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: #10B981;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+[data-theme="light"] .assurance-verified-pill {
+  color: #047857;
+  background: rgba(16, 185, 129, 0.12);
+}
+
+.assurance-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.assurance-kpi-box {
+  padding: 10px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  text-align: center;
+}
+
+[data-theme="light"] .assurance-kpi-box {
+  background: #F8FAFC;
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+.assurance-kpi-box strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--accent-cobalt-light);
+  line-height: 1.2;
+}
+
+[data-theme="light"] .assurance-kpi-box strong {
+  color: #1D4ED8;
+}
+
+.assurance-kpi-box span {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  margin-top: 3px;
+}
+
+.assurance-group-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-dim);
+  margin-bottom: 7px;
+}
+
+.assurance-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.assurance-chip {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.24);
+  color: #BFDBFE;
+}
+
+[data-theme="light"] .assurance-chip {
+  background: rgba(37, 99, 235, 0.08);
+  border-color: rgba(37, 99, 235, 0.2);
+  color: #1E40AF;
+}
+
+.assurance-chip-sector {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.26);
+  color: #DDD6FE;
+}
+
+[data-theme="light"] .assurance-chip-sector {
+  background: rgba(124, 58, 237, 0.08);
+  border-color: rgba(124, 58, 237, 0.2);
+  color: #5B21B6;
+}
+
+.assurance-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.assurance-cta-btn {
+  flex: 1 1 180px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px 14px !important;
+  font-size: 0.83rem !important;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  transition: all 0.22s ease;
+}
+
+.assurance-cta-secondary {
+  color: #93C5FD;
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+}
+
+.assurance-cta-secondary:hover {
+  color: #FFFFFF;
+  background: rgba(59, 130, 246, 0.22);
+  border-color: #60A5FA;
+  transform: translateY(-2px);
+}
+
+[data-theme="light"] .assurance-cta-secondary {
+  color: #1D4ED8;
+  background: rgba(37, 99, 235, 0.06);
+  border-color: rgba(37, 99, 235, 0.32);
+}
+
+[data-theme="light"] .assurance-cta-secondary:hover {
+  color: #FFFFFF;
+  background: #2563EB;
+  border-color: #2563EB;
+}
+
+@media (max-width: 640px) {
+  .assurance-kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-assurance-card {
+    padding: 18px;
+  }
+}
+
 .meter-row {
   display: flex;
   flex-direction: column;
