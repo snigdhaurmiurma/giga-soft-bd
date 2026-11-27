@@ -5496,7 +5496,14 @@ button, input, textarea, select {
    GLOBAL PARAGRAPH JUSTIFICATION (Bullet Points & Lists Strictly Untouched)
    ============================================================================= */
 .hero-editorial-desc,
-.section-header:not(.text-center) .section-subtitle,
+.section-subtitle,
+.section-header p,
+.client-portfolio-header p,
+.service-header-banner p,
+.contact-page-hero p,
+.article-hero p,
+.contact-info-card p,
+.ai-mega-sub,
 .metric-desc,
 .service-card-desc,
 .ai-cta-copy p,
@@ -5524,7 +5531,13 @@ button, input, textarea, select {
 .cat-slide-caption p,
 .contact-form-wrap > p,
 .footer-about p {
-  text-align: justify;
+  text-align: justify !important;
   text-justify: inter-word;
 }
+
+/* Keep all bullet points and lists strictly untouched */
+ul, ol, li {
+  text-align: left;
+}
+
 
