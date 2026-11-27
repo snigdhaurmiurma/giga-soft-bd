@@ -1901,7 +1901,7 @@
     </section>
 
     <!-- =========================================================================
-         06 // PRODUCTION CASE STUDIES (Large Editorial Format)
+         06 // PRODUCTION CASE STUDIES (Universal 3-Column Grid)
          ========================================================================= -->
     <section class="case-studies-section" id="case-study">
       <div class="container">
@@ -1910,146 +1910,269 @@
           <div class="section-mono-tag">PRODUCTION DEPLOYMENTS</div>
           <h2 class="section-title">Featured Production <span class="gradient-text">Case Studies</span></h2>
           <p class="section-subtitle">
-            See what we have done. Real enterprise transformations delivering quantifiable performance improvements.
+            Real enterprise transformations across ERP, cloud security, AI automation, healthcare, and high-volume commerce delivering measurable business growth.
           </p>
         </div>
 
-        <div class="case-studies-editorial-list">
+        <!-- Clean Category Filter Bar -->
+        <div class="case-filter-bar" id="caseFilterBar" role="tablist" aria-label="Filter case studies by domain">
+          <button type="button" class="case-filter-pill active" data-case-filter="all" role="tab" aria-selected="true">All Projects</button>
+          <button type="button" class="case-filter-pill" data-case-filter="erp-cloud" role="tab" aria-selected="false">ERP &amp; Cloud</button>
+          <button type="button" class="case-filter-pill" data-case-filter="ai" role="tab" aria-selected="false">AI &amp; Automation</button>
+          <button type="button" class="case-filter-pill" data-case-filter="commerce" role="tab" aria-selected="false">Commerce &amp; FinTech</button>
+          <button type="button" class="case-filter-pill" data-case-filter="regulated" role="tab" aria-selected="false">Healthcare &amp; Trade</button>
+        </div>
+
+        <div class="case-studies-editorial-list" id="caseStudiesGrid">
           
           <!-- Case 1: ERP Supply Chain -->
-          <div class="case-editorial-card">
+          <article class="case-editorial-card" data-case-id="erp-supply-chain" data-case-cat="erp-cloud">
             <div class="case-editorial-media">
-              <img src="images/project/portfolio-item-1.jpg" alt="Enterprise ERP &amp; Supply Chain Modernization — Giga Soft Case Study" loading="lazy">
+              <img src="images/project/case-erp-supply-chain.jpg" alt="Enterprise ERP and Supply Chain Modernization — Giga Soft Case Study" width="1280" height="714" loading="lazy">
+              <span class="case-media-badge case-badge-blue">Supply Chain &amp; ERP</span>
             </div>
             <div class="case-editorial-body">
               <div>
-                <span class="case-editorial-category">Supply Chain &amp; Logistics</span>
                 <h3 class="case-editorial-title">Enterprise ERP &amp; Supply Chain Modernization</h3>
                 <p class="case-editorial-desc">
-                  Re-architected a legacy manufacturing inventory and logistics pipeline into a multi-tenant cloud-native ERP with live warehouse tracking and automated procurement.
+                  Re-architected a legacy manufacturing inventory and logistics pipeline into a multi-tenant cloud ERP with real-time barcode tracking and automated procurement.
                 </p>
-                <div class="case-specs-block">
-                  <div class="case-spec-row">
-                    <span class="case-spec-label">Challenge:</span>
-                    <span class="case-spec-text">Fragmented paper-based warehousing causing 18% inventory mismatch and slow order processing.</span>
-                  </div>
-                  <div class="case-spec-row">
-                    <span class="case-spec-label">Solution:</span>
-                    <span class="case-spec-text">Custom Go/PostgreSQL microservices engine with real-time barcode scanning and predictive restocking.</span>
-                  </div>
-                </div>
                 <div class="case-tech-badges">
                   <span class="case-tech-tag">React</span>
                   <span class="case-tech-tag">Node.js</span>
                   <span class="case-tech-tag">PostgreSQL</span>
-                  <span class="case-tech-tag">Docker</span>
                   <span class="case-tech-tag">AWS</span>
                 </div>
               </div>
-              <div class="case-metrics-callout">
-                <div>
-                  <div class="case-kpi-val">+340%</div>
-                  <div class="case-kpi-lbl">Order Processing Speed</div>
+              <div class="case-card-bottom">
+                <div class="case-metrics-callout">
+                  <div>
+                    <div class="case-kpi-val">+340%</div>
+                    <div class="case-kpi-lbl">Order Speed</div>
+                  </div>
+                  <div>
+                    <div class="case-kpi-val">99.98%</div>
+                    <div class="case-kpi-lbl">Stock Accuracy</div>
+                  </div>
                 </div>
-                <div>
-                  <div class="case-kpi-val">99.98%</div>
-                  <div class="case-kpi-lbl">Inventory Accuracy</div>
-                </div>
-                <a href="#contact" class="btn-swiss-primary" style="padding: 8px 18px; font-size: 0.82rem;">Explore Case</a>
+                <button type="button" class="case-explore-btn" data-open-case="erp-supply-chain">Explore Case Study &rarr;</button>
               </div>
             </div>
-          </div>
+          </article>
 
           <!-- Case 2: Multi-Cloud Zero-Trust -->
-          <div class="case-editorial-card">
+          <article class="case-editorial-card" data-case-id="fintech-zerotrust" data-case-cat="commerce">
             <div class="case-editorial-media">
-              <img src="images/project/portfolio-item-2.jpg" alt="Multi-Cloud Migration &amp; Zero-Trust Architecture — Giga Soft Case Study" loading="lazy">
+              <img src="images/project/case-fintech-zerotrust.jpg" alt="Multi-Cloud Migration and Zero-Trust Banking Core — Giga Soft Case Study" width="1280" height="714" loading="lazy">
+              <span class="case-media-badge case-badge-violet">FinTech &amp; Security</span>
             </div>
             <div class="case-editorial-body">
               <div>
-                <span class="case-editorial-category">FinTech &amp; Enterprise Security</span>
-                <h3 class="case-editorial-title">Multi-Cloud Migration &amp; Zero-Trust Architecture</h3>
+                <h3 class="case-editorial-title">Multi-Cloud Migration &amp; Zero-Trust Banking Core</h3>
                 <p class="case-editorial-desc">
-                  Migrated sensitive on-premise core banking infrastructure into a zero-trust multi-cloud cluster with encrypted service mesh and continuous compliance verification.
+                  Migrated mission-critical financial infrastructure into a Zero-Trust Kubernetes cluster with mutual TLS 1.3 micro-segmentation and automated failover.
                 </p>
-                <div class="case-specs-block">
-                  <div class="case-spec-row">
-                    <span class="case-spec-label">Challenge:</span>
-                    <span class="case-spec-text">Legacy on-premise hardware bottlenecks with high downtime risk during traffic spikes.</span>
-                  </div>
-                  <div class="case-spec-row">
-                    <span class="case-spec-label">Solution:</span>
-                    <span class="case-spec-text">Kubernetes multi-region deployment with automated failover, TLS 1.3 encryption, and strict IAM.</span>
-                  </div>
-                </div>
                 <div class="case-tech-badges">
                   <span class="case-tech-tag">Kubernetes</span>
                   <span class="case-tech-tag">Terraform</span>
                   <span class="case-tech-tag">Vault</span>
                   <span class="case-tech-tag">GCP</span>
-                  <span class="case-tech-tag">Istio</span>
                 </div>
               </div>
-              <div class="case-metrics-callout">
-                <div>
-                  <div class="case-kpi-val">99.999%</div>
-                  <div class="case-kpi-lbl">High-Availability Uptime</div>
+              <div class="case-card-bottom">
+                <div class="case-metrics-callout">
+                  <div>
+                    <div class="case-kpi-val">99.999%</div>
+                    <div class="case-kpi-lbl">Uptime SLA</div>
+                  </div>
+                  <div>
+                    <div class="case-kpi-val">-42%</div>
+                    <div class="case-kpi-lbl">Infra Cost</div>
+                  </div>
                 </div>
-                <div>
-                  <div class="case-kpi-val">-42%</div>
-                  <div class="case-kpi-lbl">Server Infrastructure Cost</div>
-                </div>
-                <a href="#contact" class="btn-swiss-primary" style="padding: 8px 18px; font-size: 0.82rem;">Explore Case</a>
+                <button type="button" class="case-explore-btn" data-open-case="fintech-zerotrust">Explore Case Study &rarr;</button>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Case 3: High-Scale E-Commerce -->
-          <div class="case-editorial-card">
+          <!-- Case 3: High-Scale Headless E-Commerce -->
+          <article class="case-editorial-card" data-case-id="headless-commerce" data-case-cat="commerce">
             <div class="case-editorial-media">
-              <img src="images/project/portfolio-item-3.jpg" alt="High-Scale Headless E-Commerce &amp; Analytics Engine — Giga Soft Case Study" loading="lazy">
+              <img src="images/project/case-headless-commerce.jpg" alt="High-Scale Headless E-Commerce and bKash Engine — Giga Soft Case Study" width="1280" height="714" loading="lazy">
+              <span class="case-media-badge case-badge-emerald">Retail &amp; Commerce</span>
             </div>
             <div class="case-editorial-body">
               <div>
-                <span class="case-editorial-category">Retail &amp; High-Volume Commerce</span>
-                <h3 class="case-editorial-title">High-Scale Headless E-Commerce &amp; Analytics Engine</h3>
+                <h3 class="case-editorial-title">High-Scale Headless E-Commerce &amp; bKash Engine</h3>
                 <p class="case-editorial-desc">
-                  Built a headless e-commerce store with integrated bKash/Nagad checkout APIs, sub-second product search, and automated real-time customer data pipelines.
+                  Engineered a decoupled Next.js edge storefront with integrated bKash/Nagad checkout queues, sub-second product search, and real-time analytics pipelines.
                 </p>
-                <div class="case-specs-block">
-                  <div class="case-spec-row">
-                    <span class="case-spec-label">Challenge:</span>
-                    <span class="case-spec-text">Monolithic web store crashed during flash sale events with high cart abandonment rate.</span>
-                  </div>
-                  <div class="case-spec-row">
-                    <span class="case-spec-label">Solution:</span>
-                    <span class="case-spec-text">Decoupled Next.js edge storefront with Redis caching and distributed payment queue management.</span>
-                  </div>
-                </div>
                 <div class="case-tech-badges">
                   <span class="case-tech-tag">Next.js</span>
                   <span class="case-tech-tag">GraphQL</span>
                   <span class="case-tech-tag">Redis</span>
-                  <span class="case-tech-tag">Kafka</span>
                   <span class="case-tech-tag">bKash API</span>
                 </div>
               </div>
-              <div class="case-metrics-callout">
-                <div>
-                  <div class="case-kpi-val">+210%</div>
-                  <div class="case-kpi-lbl">Gross Merchant Volume</div>
+              <div class="case-card-bottom">
+                <div class="case-metrics-callout">
+                  <div>
+                    <div class="case-kpi-val">+210%</div>
+                    <div class="case-kpi-lbl">Merchant GMV</div>
+                  </div>
+                  <div>
+                    <div class="case-kpi-val">0.48s</div>
+                    <div class="case-kpi-lbl">Page Load</div>
+                  </div>
                 </div>
-                <div>
-                  <div class="case-kpi-val">0.48s</div>
-                  <div class="case-kpi-lbl">Average Page Load Time</div>
-                </div>
-                <a href="#contact" class="btn-swiss-primary" style="padding: 8px 18px; font-size: 0.82rem;">Explore Case</a>
+                <button type="button" class="case-explore-btn" data-open-case="headless-commerce">Explore Case Study &rarr;</button>
               </div>
             </div>
-          </div>
+          </article>
+
+          <!-- Case 4: Bilingual AI Voice & WhatsApp Support -->
+          <article class="case-editorial-card" data-case-id="ai-voice-support" data-case-cat="ai">
+            <div class="case-editorial-media">
+              <img src="images/project/case-ai-voice-support.jpg" alt="Bilingual AI Voice Agent and WhatsApp Automation Hub — Giga Soft Case Study" width="1280" height="714" loading="lazy">
+              <span class="case-media-badge case-badge-violet">AI &amp; Automation</span>
+            </div>
+            <div class="case-editorial-body">
+              <div>
+                <h3 class="case-editorial-title">Bilingual AI Voice &amp; WhatsApp Automation Hub</h3>
+                <p class="case-editorial-desc">
+                  Deployed 24/7 Bengali &amp; English AI voice agents over corporate SIP/PBX lines paired with WhatsApp order tracking and automated Steadfast/Pathao resolution.
+                </p>
+                <div class="case-tech-badges">
+                  <span class="case-tech-tag">LangGraph</span>
+                  <span class="case-tech-tag">SIP / PBX</span>
+                  <span class="case-tech-tag">WhatsApp API</span>
+                  <span class="case-tech-tag">Python</span>
+                </div>
+              </div>
+              <div class="case-card-bottom">
+                <div class="case-metrics-callout">
+                  <div>
+                    <div class="case-kpi-val">74%</div>
+                    <div class="case-kpi-lbl">Auto-Resolved</div>
+                  </div>
+                  <div>
+                    <div class="case-kpi-val">&lt;480ms</div>
+                    <div class="case-kpi-lbl">Voice Latency</div>
+                  </div>
+                </div>
+                <button type="button" class="case-explore-btn" data-open-case="ai-voice-support">Explore Case Study &rarr;</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case 5: Hospital AI Clinical Scribe & FHIR -->
+          <article class="case-editorial-card" data-case-id="healthcare-scribe" data-case-cat="regulated">
+            <div class="case-editorial-media">
+              <img src="images/project/case-healthcare-scribe.jpg" alt="Hospital AI Clinical Scribe and FHIR Integration — Giga Soft Case Study" width="1280" height="714" loading="lazy">
+              <span class="case-media-badge case-badge-emerald">Healthcare AI</span>
+            </div>
+            <div class="case-editorial-body">
+              <div>
+                <h3 class="case-editorial-title">Hospital AI Clinical Scribe &amp; FHIR Integration</h3>
+                <p class="case-editorial-desc">
+                  Built an ambient clinical listening platform that converts consultations into structured SOAP notes and ICD-10 codes directly inside private-VPC hospital EHRs.
+                </p>
+                <div class="case-tech-badges">
+                  <span class="case-tech-tag">Whisper Med</span>
+                  <span class="case-tech-tag">HL7 FHIR</span>
+                  <span class="case-tech-tag">Zero-Trust VPC</span>
+                  <span class="case-tech-tag">PyTorch</span>
+                </div>
+              </div>
+              <div class="case-card-bottom">
+                <div class="case-metrics-callout">
+                  <div>
+                    <div class="case-kpi-val">-62%</div>
+                    <div class="case-kpi-lbl">Charting Time</div>
+                  </div>
+                  <div>
+                    <div class="case-kpi-val">99.4%</div>
+                    <div class="case-kpi-lbl">ICD-10 Accuracy</div>
+                  </div>
+                </div>
+                <button type="button" class="case-explore-btn" data-open-case="healthcare-scribe">Explore Case Study &rarr;</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case 6: RMG & Commercial LC Intelligent Document OCR -->
+          <article class="case-editorial-card" data-case-id="rmg-idp-ocr" data-case-cat="regulated">
+            <div class="case-editorial-media">
+              <img src="images/project/case-rmg-idp-ocr.jpg" alt="RMG and Commercial LC Intelligent Document Processing OCR — Giga Soft Case Study" width="1280" height="714" loading="lazy">
+              <span class="case-media-badge case-badge-amber">Manufacturing &amp; Trade</span>
+            </div>
+            <div class="case-editorial-body">
+              <div>
+                <h3 class="case-editorial-title">RMG &amp; Commercial LC Intelligent Document OCR</h3>
+                <p class="case-editorial-desc">
+                  Automated multimodal OCR extraction for Letters of Credit, commercial invoices, packing lists, and NBR VAT filings with direct SAP/ERP ledger reconciliation.
+                </p>
+                <div class="case-tech-badges">
+                  <span class="case-tech-tag">Document AI</span>
+                  <span class="case-tech-tag">Vision LLM</span>
+                  <span class="case-tech-tag">FastAPI</span>
+                  <span class="case-tech-tag">SAP ERP</span>
+                </div>
+              </div>
+              <div class="case-card-bottom">
+                <div class="case-metrics-callout">
+                  <div>
+                    <div class="case-kpi-val">12x</div>
+                    <div class="case-kpi-lbl">Faster LC Audit</div>
+                  </div>
+                  <div>
+                    <div class="case-kpi-val">99.2%</div>
+                    <div class="case-kpi-lbl">Field Accuracy</div>
+                  </div>
+                </div>
+                <button type="button" class="case-explore-btn" data-open-case="rmg-idp-ocr">Explore Case Study &rarr;</button>
+              </div>
+            </div>
+          </article>
 
         </div>
 
+      </div>
+
+      <!-- Interactive Case Study Detail Modal -->
+      <div class="case-detail-modal" id="caseStudyModal" role="dialog" aria-modal="true" aria-labelledby="caseModalTitle" hidden>
+        <div class="case-modal-backdrop" data-close-case-modal></div>
+        <div class="case-modal-dialog">
+          <button type="button" class="case-modal-close" id="closeCaseStudyModal" aria-label="Close case study">&times;</button>
+          <div class="case-modal-media">
+            <img id="caseModalImg" src="" alt="" width="1280" height="714">
+            <span class="case-media-badge" id="caseModalBadge"></span>
+          </div>
+          <div class="case-modal-body">
+            <h3 class="case-modal-title" id="caseModalTitle"></h3>
+            <p class="case-modal-desc" id="caseModalDesc"></p>
+
+            <div class="case-modal-kpis" id="caseModalKpis"></div>
+
+            <div class="case-specs-block" style="margin-bottom: 18px;">
+              <div class="case-spec-row">
+                <span class="case-spec-label">Challenge:</span>
+                <span class="case-spec-text" id="caseModalChallenge"></span>
+              </div>
+              <div class="case-spec-row">
+                <span class="case-spec-label">Solution:</span>
+                <span class="case-spec-text" id="caseModalSolution"></span>
+              </div>
+            </div>
+
+            <div class="case-tech-badges" id="caseModalTech" style="margin-bottom: 20px;"></div>
+
+            <div class="case-modal-footer">
+              <a href="#contact" id="caseModalCta" class="btn-swiss-primary">Build a Similar Solution &rarr;</a>
+              <button type="button" class="assurance-cta-secondary" style="padding: 10px 18px; border-radius: var(--radius-sm); font-weight: 700; cursor: pointer;" data-close-case-modal>Close</button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

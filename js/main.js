@@ -1652,8 +1652,214 @@ function initInteractiveBlog() {
   applyFilters();
 }
 
+// Interactive Case Studies Filter & Detail Modal Controller
+function initCaseStudies() {
+  const grid = document.getElementById('caseStudiesGrid');
+  if (!grid) return;
+
+  const cards = Array.from(grid.querySelectorAll('.case-editorial-card'));
+  const pills = Array.from(document.querySelectorAll('#caseFilterBar .case-filter-pill'));
+  const modal = document.getElementById('caseStudyModal');
+  const closeBtn = document.getElementById('closeCaseStudyModal');
+  const modalImg = document.getElementById('caseModalImg');
+  const modalBadge = document.getElementById('caseModalBadge');
+  const modalTitle = document.getElementById('caseModalTitle');
+  const modalDesc = document.getElementById('caseModalDesc');
+  const modalKpis = document.getElementById('caseModalKpis');
+  const modalChallenge = document.getElementById('caseModalChallenge');
+  const modalSolution = document.getElementById('caseModalSolution');
+  const modalTech = document.getElementById('caseModalTech');
+  const modalCta = document.getElementById('caseModalCta');
+  const serviceSelect = document.getElementById('serviceSelect');
+
+  const caseData = {
+    'erp-supply-chain': {
+      badge: 'Supply Chain & ERP',
+      badgeClass: 'case-badge-blue',
+      img: 'images/project/case-erp-supply-chain.jpg',
+      alt: 'Enterprise ERP and Supply Chain Modernization',
+      title: 'Enterprise ERP & Supply Chain Modernization',
+      desc: 'Re-architected a legacy multi-plant manufacturing inventory and logistics system into a multi-tenant cloud ERP featuring live warehouse barcode tracking, automated procurement approvals, and financial ledger synchronization.',
+      challenge: 'Fragmented paper-based warehousing across 14 depots caused 18% inventory mismatch, relational lock deadlocks at month-end, and slow fulfillment.',
+      solution: 'Engineered an event-driven Go/Node.js & PostgreSQL microservices ERP with the Transactional Outbox Pattern, live barcode scanning, and automated reorder forecasting.',
+      kpis: [
+        { val: '+340%', lbl: 'Order Speed' },
+        { val: '99.98%', lbl: 'Stock Accuracy' },
+        { val: '14 Depots', lbl: 'Live Synced' }
+      ],
+      tech: ['React', 'Node.js', 'PostgreSQL', 'Kafka', 'Docker', 'AWS'],
+      serviceKey: 'software-dev'
+    },
+    'fintech-zerotrust': {
+      badge: 'FinTech & Security',
+      badgeClass: 'case-badge-violet',
+      img: 'images/project/case-fintech-zerotrust.jpg',
+      alt: 'Multi-Cloud Migration and Zero-Trust Banking Core',
+      title: 'Multi-Cloud Migration & Zero-Trust Banking Core',
+      desc: 'Migrated mission-critical financial workloads off aging on-premise hardware into a multi-region Zero-Trust Kubernetes cluster with encrypted service mesh, automated failover, and continuous compliance telemetry.',
+      challenge: 'Single-site on-premise servers suffered traffic spike outages, high capital upkeep, and broad internal network exposure.',
+      solution: 'Deployed multi-region Kubernetes via Terraform with Istio mutual TLS 1.3 micro-segmentation, HashiCorp Vault secrets rotation, and continuous VAPT pipelines.',
+      kpis: [
+        { val: '99.999%', lbl: 'Uptime SLA' },
+        { val: '-42%', lbl: 'Cloud Infra Cost' },
+        { val: 'Zero', lbl: 'Security Breaches' }
+      ],
+      tech: ['Kubernetes', 'Terraform', 'Vault', 'GCP', 'Istio', 'Zero-Trust'],
+      serviceKey: 'cyber-security'
+    },
+    'headless-commerce': {
+      badge: 'Retail & Commerce',
+      badgeClass: 'case-badge-emerald',
+      img: 'images/project/case-headless-commerce.jpg',
+      alt: 'High-Scale Headless E-Commerce and bKash Engine',
+      title: 'High-Scale Headless E-Commerce & bKash Engine',
+      desc: 'Architected a high-throughput decoupled Next.js storefront paired with edge CDN caching, sub-second catalog filtering, distributed bKash/Nagad/SSLCommerz payment queues, and real-time conversion telemetry.',
+      challenge: 'Monolithic e-commerce storefront crashed during Eid & flash-sale campaigns with 4.5s+ mobile loads and high checkout abandonment.',
+      solution: 'Decoupled Next.js SSR storefront with Redis in-memory catalog caching, GraphQL gateway, and asynchronous Kafka checkout processing.',
+      kpis: [
+        { val: '+210%', lbl: 'Merchant GMV' },
+        { val: '0.48s', lbl: 'Avg Page Load' },
+        { val: '98/100', lbl: 'SEO Score' }
+      ],
+      tech: ['Next.js', 'GraphQL', 'Redis', 'Kafka', 'bKash API', 'SSLCommerz'],
+      serviceKey: 'ecommerce'
+    },
+    'ai-voice-support': {
+      badge: 'AI & Automation',
+      badgeClass: 'case-badge-violet',
+      img: 'images/project/case-ai-voice-support.jpg',
+      alt: 'Bilingual AI Voice Agent and WhatsApp Automation Hub',
+      title: 'Bilingual AI Voice & WhatsApp Automation Hub',
+      desc: 'Built an autonomous 24/7 customer operations platform combining sub-500ms Bengali & English AI voice agents over corporate SIP/PBX trunks with omnichannel WhatsApp/Messenger order & courier resolution.',
+      challenge: 'High inbound call and WhatsApp message volume during peak retail promotions caused 20+ minute hold queues and lost repeat orders.',
+      solution: 'Deployed full-duplex WebRTC/SIP AI Voice Agents and LangGraph WhatsApp workflows integrated directly with CRM, Steadfast, Pathao, and RedX APIs.',
+      kpis: [
+        { val: '74%', lbl: 'Auto-Resolved' },
+        { val: '<480ms', lbl: 'Voice Latency' },
+        { val: '24/7', lbl: 'Bangla & English' }
+      ],
+      tech: ['LangGraph', 'SIP / PBX', 'WhatsApp Cloud API', 'Python', 'Redis'],
+      serviceKey: 'ai-voice-agent'
+    },
+    'healthcare-scribe': {
+      badge: 'Healthcare AI',
+      badgeClass: 'case-badge-emerald',
+      img: 'images/project/case-healthcare-scribe.jpg',
+      alt: 'Hospital AI Clinical Scribe and FHIR Integration',
+      title: 'Hospital AI Clinical Scribe & FHIR Integration',
+      desc: 'Engineered a HIPAA-aligned ambient clinical documentation engine hosted in a private Zero-Trust VPC that transcribes doctor-patient visits into structured SOAP notes, prescriptions, and ICD-10 coding drafts.',
+      challenge: 'Specialists spent over 2 hours per shift manually typing clinical notes and coding diagnoses, reducing daily outpatient capacity.',
+      solution: 'Fine-tuned medical speech transcription with grounded clinical RAG and direct HL7 FHIR EHR synchronization with zero external data retention.',
+      kpis: [
+        { val: '-62%', lbl: 'Charting Time' },
+        { val: '99.4%', lbl: 'ICD-10 Accuracy' },
+        { val: 'Private VPC', lbl: 'Zero Retention' }
+      ],
+      tech: ['Whisper Medical', 'HL7 FHIR', 'Zero-Trust VPC', 'PyTorch', 'AES-256'],
+      serviceKey: 'ai-scribe-clinical-documentation'
+    },
+    'rmg-idp-ocr': {
+      badge: 'Manufacturing & Trade',
+      badgeClass: 'case-badge-amber',
+      img: 'images/project/case-rmg-idp-ocr.jpg',
+      alt: 'RMG and Commercial LC Intelligent Document Processing OCR',
+      title: 'RMG & Commercial LC Intelligent Document OCR',
+      desc: 'Delivered a layout-aware multimodal document intelligence pipeline for export-oriented RMG groups that extracts, validates, and reconciles Letters of Credit, commercial invoices, packing lists, and NBR VAT forms.',
+      challenge: 'Commercial teams manually keyed thousands of multi-page LC amendments and supplier invoices each month, risking costly bank discrepancies.',
+      solution: 'Built a Vision LLM + PaddleOCR extraction engine with rule-based LC discrepancy checks, exception queues, and direct SAP/ERP JSON posting.',
+      kpis: [
+        { val: '12x', lbl: 'Faster LC Audit' },
+        { val: '99.2%', lbl: 'Field Accuracy' },
+        { val: '-78%', lbl: 'Manual Entry' }
+      ],
+      tech: ['Document AI', 'Vision LLM', 'FastAPI', 'PostgreSQL', 'SAP ERP'],
+      serviceKey: 'intelligent-document-processing'
+    }
+  };
+
+  let activeServiceKey = 'software-dev';
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const filter = pill.getAttribute('data-case-filter') || 'all';
+      pills.forEach(p => {
+        const isActive = p === pill;
+        p.classList.toggle('active', isActive);
+        p.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-case-cat') || '';
+        card.hidden = !(filter === 'all' || cat === filter);
+      });
+    });
+  });
+
+  function openCaseModal(id) {
+    const data = caseData[id];
+    if (!modal || !data) return;
+    activeServiceKey = data.serviceKey || 'software-dev';
+    if (modalImg) {
+      modalImg.src = data.img;
+      modalImg.alt = data.alt;
+    }
+    if (modalBadge) {
+      modalBadge.textContent = data.badge;
+      modalBadge.className = 'case-media-badge ' + data.badgeClass;
+    }
+    if (modalTitle) modalTitle.textContent = data.title;
+    if (modalDesc) modalDesc.textContent = data.desc;
+    if (modalChallenge) modalChallenge.textContent = data.challenge;
+    if (modalSolution) modalSolution.textContent = data.solution;
+    if (modalKpis) {
+      modalKpis.innerHTML = data.kpis.map(k => `
+        <div class="case-modal-kpi-card">
+          <div class="case-kpi-val">${k.val}</div>
+          <div class="case-kpi-lbl">${k.lbl}</div>
+        </div>
+      `).join('');
+    }
+    if (modalTech) {
+      modalTech.innerHTML = data.tech.map(t => `<span class="case-tech-tag">${t}</span>`).join('');
+    }
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCaseModal() {
+    if (!modal || modal.hidden) return;
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  grid.querySelectorAll('[data-open-case]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      openCaseModal(btn.getAttribute('data-open-case'));
+    });
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeCaseModal);
+  if (modal) {
+    modal.querySelectorAll('[data-close-case-modal]').forEach(el => {
+      el.addEventListener('click', closeCaseModal);
+    });
+  }
+  if (modalCta) {
+    modalCta.addEventListener('click', () => {
+      closeCaseModal();
+      if (serviceSelect && activeServiceKey) {
+        const opt = serviceSelect.querySelector(`option[value="${activeServiceKey}"]`);
+        if (opt) serviceSelect.value = activeServiceKey;
+      }
+    });
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeCaseModal();
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initLiveCalculationEngine();
   initSursumModeSwitcher();
   initInteractiveBlog();
+  initCaseStudies();
 });
