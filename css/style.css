@@ -1610,6 +1610,25 @@ button, input, textarea, select {
   border: 1px solid rgba(59, 130, 246, 0.28);
 }
 
+.detail-layout-grid > .ai-sla-assurance-card {
+  grid-column: 1 / -1;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 28px 34px;
+  display: grid;
+  grid-template-columns: 1.15fr 1.25fr auto;
+  align-items: center;
+  gap: 28px;
+}
+
+.ai-sla-header-col .sidebar-widget-title {
+  margin-bottom: 8px;
+}
+
+.ai-sla-header-col .sidebar-widget-desc {
+  margin-bottom: 0 !important;
+}
+
 [data-theme="light"] .ai-sla-assurance-card {
   background: linear-gradient(145deg, rgba(37, 99, 235, 0.06), rgba(16, 185, 129, 0.06));
   border-color: rgba(37, 99, 235, 0.2);
@@ -1622,11 +1641,38 @@ button, input, textarea, select {
   margin: 14px 0 18px;
 }
 
+.detail-layout-grid > .ai-sla-assurance-card .ai-sla-badges-row {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 0;
+}
+
+.ai-sla-footer-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.ai-sla-footer-bar .footer-contact-line {
+  margin: 0 !important;
+  text-align: right !important;
+  white-space: nowrap;
+}
+
+.ai-sla-footer-bar .btn-whatsapp-universal {
+  margin-top: 0 !important;
+  width: auto !important;
+  white-space: nowrap;
+}
+
 .ai-sla-mini {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-subtle);
   border-radius: 10px;
-  padding: 10px;
+  padding: 12px 10px;
   text-align: center;
 }
 
@@ -1656,8 +1702,32 @@ button, input, textarea, select {
   padding: 10px 6px 4px;
 }
 
+@media (max-width: 1120px) {
+  .detail-layout-grid > .ai-sla-assurance-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .ai-sla-footer-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-subtle);
+  }
+  .ai-sla-footer-bar .footer-contact-line {
+    text-align: left !important;
+  }
+}
+
 @media (max-width: 768px) {
   .ai-specs-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .detail-layout-grid > .ai-sla-assurance-card {
+    padding: 22px 20px;
+  }
+  .detail-layout-grid > .ai-sla-assurance-card .ai-sla-badges-row {
     grid-template-columns: repeat(2, 1fr);
   }
 }
