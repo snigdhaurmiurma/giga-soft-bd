@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise ERP &amp; Supply Chain Modernization Case Study | Giga Soft Limited Bangladesh</title>
+  <meta name="description" content="How Giga Soft Limited modernized a 14-depot manufacturing ERP into an event-driven cloud supply chain platform, delivering +340% order speed and 99.98% stock accuracy in Bangladesh.">
+  <meta name="keywords" content="enterprise ERP software Bangladesh, supply chain modernization Dhaka, custom ERP development company Bangladesh, cloud inventory management system, Kafka microservices ERP, PostgreSQL ERP architecture">
+  <meta name="author" content="Giga Soft Limited">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://giga-soft-bd.vercel.app/case-studies/erp-supply-chain.html">
+  <link rel="icon" type="image/png" href="../images/giga-soft-logo.png">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Giga Soft Limited">
+  <meta property="og:title" content="Enterprise ERP &amp; Supply Chain Modernization Case Study | Giga Soft Limited Bangladesh">
+  <meta property="og:description" content="How Giga Soft Limited modernized a 14-depot manufacturing ERP into an event-driven cloud supply chain platform, delivering +340% order speed and 99.98% stock accuracy in Bangladesh.">
+  <meta property="og:url" content="https://giga-soft-bd.vercel.app/case-studies/erp-supply-chain.html">
+  <meta property="og:image" content="https://giga-soft-bd.vercel.app/images/project/case-erp-supply-chain.jpg">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="714">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Enterprise ERP &amp; Supply Chain Modernization Case Study | Giga Soft Limited Bangladesh">
+  <meta name="twitter:description" content="How Giga Soft Limited modernized a 14-depot manufacturing ERP into an event-driven cloud supply chain platform, delivering +340% order speed and 99.98% stock accuracy in Bangladesh.">
+  <meta name="twitter:image" content="https://giga-soft-bd.vercel.app/images/project/case-erp-supply-chain.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <!-- Schema.org Structured Data: Article + BreadcrumbList + FAQPage -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Enterprise ERP & Supply Chain Modernization",
+      "description": "How Giga Soft Limited modernized a 14-depot manufacturing ERP into an event-driven cloud supply chain platform, delivering +340% order speed and 99.98% stock accuracy in Bangladesh.",
+      "image": "https://giga-soft-bd.vercel.app/images/project/case-erp-supply-chain.jpg",
+      "datePublished": "2026-11-27",
+      "dateModified": "2026-11-27",
+      "author": {
+        "@type": "Organization",
+        "name": "Giga Soft Limited",
+        "url": "https://giga-soft-bd.vercel.app/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Giga Soft Limited",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://giga-soft-bd.vercel.app/images/giga-soft-logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://giga-soft-bd.vercel.app/case-studies/erp-supply-chain.html"
+      },
+      "keywords": "enterprise ERP software Bangladesh, supply chain modernization Dhaka, custom ERP development company Bangladesh, cloud inventory management system, Kafka microservices ERP, PostgreSQL ERP architecture",
+      "articleSection": "Supply Chain & ERP"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://giga-soft-bd.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Case Studies",
+          "item": "https://giga-soft-bd.vercel.app/#case-study"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Enterprise ERP & Supply Chain Modernization",
+          "item": "https://giga-soft-bd.vercel.app/case-studies/erp-supply-chain.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does custom enterprise ERP modernization take in Bangladesh?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Focused multi-branch ERP deployments typically roll out in 10 to 16 weeks using phased agile sprints, allowing core warehousing and billing modules to go live first without halting daily factory operations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Giga Soft migrate legacy Excel or desktop ERP data without downtime?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We build automated ETL validation scripts, run parallel shadow-ledger verification before cutover, and schedule zero-downtime migration windows so historical invoices and stock balances remain 100% intact."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the client own the full ERP source code and database?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Upon milestone completion, 100% of the custom ERP source code, database schemas, infrastructure-as-code scripts, and documentation belong entirely to the client with zero per-seat vendor lock-in."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('gigaSoftTheme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+</head>
+<body>
+
+  <canvas id="ambientCanvas"></canvas>
+
+  <div class="site-wrapper">
+    <header class="navbar" id="navbar">
+      <div class="container nav-container">
+        
+        <a href="../index.html#home" class="brand-logo-wrap" title="Giga Soft Limited">
+          <img src="../images/giga-soft-logo.png" alt="Giga Soft Limited" class="brand-logo-img">
+        </a>
+
+        <nav>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html#home" class="nav-link">Home</a></li>
+
+            <li class="nav-dropdown-wrap">
+              <a href="../service-details.html" class="nav-link nav-dropdown-trigger">
+                <span>Services</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </a>
+              <div class="mega-dropdown-menu">
+                <div class="mega-dropdown-grid-4">
+                  <div class="mega-col mega-col-blue">
+                    <div class="mega-col-header">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                      <span>Software &amp; Web</span>
+                    </div>
+                    <div class="mega-links-list">
+                      <a href="../service-details.html?service=software-dev" class="mega-dropdown-link"><strong>Software Development</strong><span>Enterprise ERPs &amp; microservices</span></a>
+                      <a href="../service-details.html?service=web-dev" class="mega-dropdown-link"><strong>Web Development</strong><span>React, Next.js &amp; core portals</span></a>
+                      <a href="../service-details.html?service=app-dev" class="mega-dropdown-link"><strong>App Development</strong><span>Native iOS, Android &amp; Flutter</span></a>
+                      <a href="../service-details.html?service=it-solutions" class="mega-dropdown-link"><strong>IT Solutions</strong><span>Systems architecture &amp; consulting</span></a>
+                    </div>
+                  </div>
+                  <div class="mega-col mega-col-purple">
+                    <div class="mega-col-header">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94"></path></svg>
+                      <span>Design &amp; Creative</span>
+                    </div>
+                    <div class="mega-links-list">
+                      <a href="../service-details.html?service=ui-ux" class="mega-dropdown-link"><strong>UI/UX Design</strong><span>Enterprise design systems &amp; Figma</span></a>
+                      <a href="../service-details.html?service=branding" class="mega-dropdown-link"><strong>Creative &amp; Branding</strong><span>Corporate identity &amp; guidelines</span></a>
+                      <a href="../service-details.html?service=event-activation" class="mega-dropdown-link"><strong>Event &amp; Activation</strong><span>Corporate summits &amp; tech demos</span></a>
+                    </div>
+                  </div>
+                  <div class="mega-col mega-col-amber">
+                    <div class="mega-col-header">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                      <span>Growth &amp; Marketing</span>
+                    </div>
+                    <div class="mega-links-list">
+                      <a href="../service-details.html?service=digital-marketing" class="mega-dropdown-link"><strong>Digital Marketing</strong><span>Technical SEO &amp; performance ads</span></a>
+                      <a href="../service-details.html?service=marketing-comm" class="mega-dropdown-link"><strong>Marketing &amp; Comm.</strong><span>PR, B2B narratives &amp; copy</span></a>
+                      <a href="../service-details.html?service=ecommerce" class="mega-dropdown-link"><strong>Ecommerce Solutions</strong><span>Headless commerce &amp; gateways</span></a>
+                    </div>
+                  </div>
+                  <div class="mega-col mega-col-emerald">
+                    <div class="mega-col-header">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                      <span>Cloud &amp; Security</span>
+                    </div>
+                    <div class="mega-links-list">
+                      <a href="../service-details.html?service=cloud-services" class="mega-dropdown-link"><strong>Cloud Services</strong><span>AWS, GCP, Kubernetes &amp; DevOps</span></a>
+                      <a href="../service-details.html?service=cyber-security" class="mega-dropdown-link"><strong>Cyber Security</strong><span>Zero-Trust, VAPT &amp; audits</span></a>
+                      <a href="../service-details.html?service=hosting" class="mega-dropdown-link"><strong>Domain &amp; Hosting</strong><span>NVMe cloud servers &amp; 99.9% uptime</span></a>
+                      <a href="../service-details.html?service=data-analytics" class="mega-dropdown-link"><strong>Data Analytics</strong><span>BI pipelines &amp; BigQuery models</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-dropdown-wrap">
+              <a href="../ai-solutions.html" class="nav-link nav-dropdown-trigger">
+                <span>AI Solutions</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </a>
+              <div class="mega-dropdown-menu ai-mega-dropdown-menu">
+                <div class="ai-mega-top-bar">
+                  <div>
+                    <span class="ai-mega-eyebrow">AI AUTOMATION</span>
+                    <div class="ai-mega-heading">AI Solutions</div>
+                    <p class="ai-mega-sub">Ready to deploy AI automation for your business.</p>
+                  </div>
+                  <a href="../ai-solutions.html" class="ai-mega-view-all">
+                    <span>View all</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                  </a>
+                </div>
+                <div class="mega-dropdown-grid-3">
+                  <!-- Col 1: Business Automation -->
+                  <div class="mega-col mega-col-blue">
+                    <div class="mega-col-header">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                      <span>Business Automation</span>
+                    </div>
+                    <div class="mega-links-list">
+                      <a href="../ai-solutions.html?solution=business-process-automation" class="mega-dropdown-link">
+                        <strong>Business Process Automation</strong>
+                        <span>Streamlined enterprise workflows</span>
+                      </a>
+                      <a href="../ai-solutions.html?solution=ai-workflow-automation" class="mega-dropdown-link">
+                        <strong>AI Workflow Automation</strong>
+                        <span>Autonomous multi-step execution</span>
+                      </a>
+                      <a href="../ai-solutions.html?solution=intelligent-document-processing" class="mega-dropdown-link">
+                        <strong>Intelligent Document Processing</strong>
+                        <span>OCR & smart data ingestion</span>
+                      </a>
+                      <a href="../ai-solutions.html?solution=ai-voice-agent" class="mega-dropdown-link">
+                        <strong>AI Voice Agent</strong>
+                        <span>24/7 conversational voice bots</span>
+                      </a>
+                      <a href="../ai-solutions.html?solution=ecommerce-customer-service" class="mega-dropdown-link">
+                        <strong>Ecommerce Customer Service</strong>
+                        <span>Automated support & resolution</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Col 2: Healthcare and Regulated -->
+                  <div class="mega-col mega-col-emerald">
+                    <div class="mega-col-header">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                      <span>Healthcare and Regulated</span>
+                    </div>
+                    <div class="mega-links-list">
+                      <a href="../ai-solutions.html?solution=ai-scribe-clinical-documentation" class="mega-dropdown-link">
+                        <strong>AI Scribe for Clinical Notes</strong>
+                        <span>Ambient medical documentation</span>
+                      </a>
+                      <a href="../ai-solutions.html?solution=prior-authorization-automation" class="mega-dropdown-link">
+                        <strong>Prior Authorization Automation</strong>
+                        <span>Rapid insurance approvals</span>
+                      </a>
+                      <a href="../ai-solutions.html?solution=ai-regulatory-document-generation" class="mega-dropdown-link">
+                        <strong>AI Regulatory Documents</strong>
+                        <span>Automated compliance filings</span>
+                      </a>
+                      <a href="../ai-solutions.html?solution=healthcare-ai-solutions" class="mega-dropdown-link">
+                        <strong>Healthcare AI Solutions</strong>
+                        <span>Secure clinical intelligence</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Col 3: HR and Hiring -->
+                  <div class="mega-col mega-col-purple">
+                    <div class="mega-col-header">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                      <span>HR and Hiring</span>
+                    </div>
+                    <div class="mega-links-list">
+                      <a href="../ai-solutions.html?solution=ai-recruitment-automation" class="mega-dropdown-link">
+                        <strong>AI Recruitment Automation</strong>
+                        <span>Intelligent resume filtering</span>
+                      </a>
+                      <a href="../ai-solutions.html?solution=ai-interview-automation" class="mega-dropdown-link">
+                        <strong>AI Interview Automation</strong>
+                        <span>AI-driven candidate screening</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li><a href="../index.html#who-we-are" class="nav-link">About</a></li>
+            <li><a href="../index.html#why-us" class="nav-link">Why Us</a></li>
+            <li><a href="../index.html#how-we-work" class="nav-link">How We Work</a></li>
+            <li><a href="../index.html#case-study" class="nav-link active">Case Studies</a></li>
+            <li><a href="../index.html#team" class="nav-link">Team</a></li>
+            <li><a href="../index.html#pricing" class="nav-link">Pricing</a></li>
+            <li><a href="../index.html#blog" class="nav-link">Blog</a></li>
+            <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button id="themeModeToggle" class="mode-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Light/Dark Mode">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+
+          <a href="../index.html#contact" class="btn-swiss-primary" style="padding: 10px 18px; font-size: 0.86rem; white-space: nowrap;">
+            Get Free Quote
+          </a>
+
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+    <main class="cs-page-main">
+      <div class="container">
+
+        <!-- Semantic Breadcrumb Navigation -->
+        <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html#home">Home</a>
+          <span>/</span>
+          <a href="../index.html#case-study">Case Studies</a>
+          <span>/</span>
+          <span aria-current="page">Enterprise ERP &amp; Supply Chain Modernization</span>
+        </nav>
+
+        <div class="cs-detail-grid">
+
+          <!-- Left Column: Full Crawlable Case Study Article -->
+          <article class="cs-article-card">
+            <div class="cs-meta-row">
+              <span class="cs-meta-pill case-badge-blue">Supply Chain &amp; ERP</span>
+              <time class="cs-meta-date" datetime="2026-11-27">Published by Giga Soft Engineering &bull; Production Case Study</time>
+            </div>
+
+            <h1 class="cs-page-h1">Enterprise ERP &amp; Supply Chain Modernization</h1>
+            <p class="cs-lead">Re-architected a legacy multi-plant manufacturing inventory and logistics system across 14 distribution depots into an event-driven multi-tenant cloud ERP with real-time barcode tracking, automated procurement approvals, and financial ledger synchronization.</p>
+
+            <figure class="cs-hero-figure">
+              <img src="../images/project/case-erp-supply-chain.jpg" alt="Enterprise ERP and Supply Chain Modernization architecture dashboard built by Giga Soft Limited" width="1280" height="714">
+            </figure>
+
+            <!-- Verified Production Impact KPIs -->
+            <div class="cs-kpi-strip" aria-label="Verified production metrics">
+              <div class="cs-kpi-box">
+                <div class="cs-kpi-num">+340%</div>
+                <div class="cs-kpi-label">Order Processing Speed</div>
+              </div>
+              <div class="cs-kpi-box">
+                <div class="cs-kpi-num">99.98%</div>
+                <div class="cs-kpi-label">Live Stock Accuracy</div>
+              </div>
+              <div class="cs-kpi-box">
+                <div class="cs-kpi-num">14 Depots</div>
+                <div class="cs-kpi-label">Real-Time Synced</div>
+              </div>
+            </div>
+
+            <h2 class="cs-section-h2">Executive Overview &amp; Business Context</h2>
+            <p>A fast-growing multi-plant industrial manufacturer operating 14 regional warehouses across Dhaka, Chattogram, and Gazipur relied on disconnected desktop accounting tools and manual Excel sheets to coordinate raw material procurement, finished goods dispatch, and dealer invoicing. As order volume tripled, stock discrepancies and month-end reconciliation delays began blocking distributor deliveries and working-capital visibility.</p>
+
+            <h2 class="cs-section-h2">The Operational &amp; Technical Challenge</h2>
+            <p>The existing monolithic database experienced severe row-locking contention whenever warehouse supervisors scanned dispatches while finance teams generated monthly GST/VAT and ledger closing reports. Leadership lacked real-time stock visibility across branches, resulting in frequent stockouts on high-velocity SKUs alongside over-ordering of slow-moving raw materials.</p>
+            <ul class="cs-bullet-list">
+              <li>18% average inventory variance between physical depot shelves and central accounting records across 14 branches.</li>
+              <li>Database deadlocks during peak distributor billing windows and month-end financial closing runs.</li>
+              <li>Manual multi-signature procurement approvals taking 4 to 6 business days per purchase order.</li>
+              <li>No unified API bridge connecting barcode scanners, fleet dispatch logs, and executive BI dashboards.</li>
+            </ul>
+
+            <h2 class="cs-section-h2">Solution Architecture &amp; Engineering Execution</h2>
+            <p>Giga Soft Limited engineered a decoupled, event-driven cloud ERP using Node.js, TypeScript, Go microservices, PostgreSQL, and Apache Kafka. By implementing the Transactional Outbox Pattern, every warehouse barcode scan atomically records inventory state while asynchronously streaming updates to billing, procurement forecasting, and executive analytics with zero relational lock contention.</p>
+            <ul class="cs-bullet-list">
+              <li>Event-driven microservices separating Warehouse Management (WMS), Procurement, Dealer Portal, and General Ledger.</li>
+              <li>Mobile-ready barcode and QR scanning workflows with offline queue resilience for remote factory floors.</li>
+              <li>Automated reorder-point forecasting and role-based digital approval chains cutting PO turnaround from days to minutes.</li>
+              <li>Automated CI/CD pipelines, daily encrypted backups, and 24/7 Prometheus/Grafana runtime observability on AWS.</li>
+            </ul>
+
+            <h2 class="cs-section-h2">Measured Production Outcomes</h2>
+            <p>Within 90 days of nationwide rollout across all 14 depots, order fulfillment speed rose by 340%, live stock accuracy stabilized at 99.98%, and finance teams reduced month-end reconciliation from 9 days to under 4 hours. Management gained instant branch-level profitability and working-capital telemetry from a single executive portal.</p>
+
+            <h2 class="cs-section-h2">Core Technology Stack</h2>
+            <div class="case-tech-badges" style="margin-bottom: 24px;">
+              <span class="case-tech-tag">React</span>
+              <span class="case-tech-tag">Node.js</span>
+              <span class="case-tech-tag">TypeScript</span>
+              <span class="case-tech-tag">PostgreSQL</span>
+              <span class="case-tech-tag">Apache Kafka</span>
+              <span class="case-tech-tag">Docker</span>
+              <span class="case-tech-tag">AWS</span>
+            </div>
+
+            <h2 class="cs-section-h2">Frequently Asked Questions</h2>
+            <div class="cs-faq-list">
+              <div class="cs-faq-item">
+                <h3>How long does custom enterprise ERP modernization take in Bangladesh?</h3>
+                <p>Focused multi-branch ERP deployments typically roll out in 10 to 16 weeks using phased agile sprints, allowing core warehousing and billing modules to go live first without halting daily factory operations.</p>
+              </div>
+              <div class="cs-faq-item">
+                <h3>Can Giga Soft migrate legacy Excel or desktop ERP data without downtime?</h3>
+                <p>Yes. We build automated ETL validation scripts, run parallel shadow-ledger verification before cutover, and schedule zero-downtime migration windows so historical invoices and stock balances remain 100% intact.</p>
+              </div>
+              <div class="cs-faq-item">
+                <h3>Does the client own the full ERP source code and database?</h3>
+                <p>Yes. Upon milestone completion, 100% of the custom ERP source code, database schemas, infrastructure-as-code scripts, and documentation belong entirely to the client with zero per-seat vendor lock-in.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Right Column: Project Snapshot, Cross-Links & Direct Consultation CTA -->
+          <aside class="cs-sidebar">
+
+            <div class="cs-sidebar-card">
+              <h2 class="cs-sidebar-title">Project Snapshot</h2>
+              <div class="cs-snapshot-list">
+                <div class="cs-snapshot-row">
+                  <span class="cs-snapshot-k">Industry</span>
+                  <span class="cs-snapshot-v">Manufacturing &amp; Logistics</span>
+                </div>
+                <div class="cs-snapshot-row">
+                  <span class="cs-snapshot-k">Delivery Timeline</span>
+                  <span class="cs-snapshot-v">14 Weeks (Agile Sprints)</span>
+                </div>
+                <div class="cs-snapshot-row">
+                  <span class="cs-snapshot-k">Deployment</span>
+                  <span class="cs-snapshot-v">Multi-Tenant AWS Cloud</span>
+                </div>
+                <div class="cs-snapshot-row">
+                  <span class="cs-snapshot-k">Governance</span>
+                  <span class="cs-snapshot-v">ISO 27001 / Audit Trail</span>
+                </div>
+              </div>
+              <div class="cs-nav-links">
+                <a href="../service-details.html?service=software-dev" class="cs-nav-item">
+                  <span>Custom Software &amp; ERP Engineering</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <a href="../service-details.html?service=cloud-services" class="cs-nav-item">
+                  <span>Cloud Services &amp; DevOps</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="cs-sidebar-card">
+              <h2 class="cs-sidebar-title">All Case Studies</h2>
+              <div class="cs-nav-links">
+              <a href="erp-supply-chain.html" class="cs-nav-item active">
+                <span>Enterprise ERP &amp; Supply Chain</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+              <a href="fintech-zerotrust.html" class="cs-nav-item">
+                <span>Zero-Trust Banking &amp; Cloud</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+              <a href="headless-commerce.html" class="cs-nav-item">
+                <span>Headless E-Commerce &amp; bKash</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+              <a href="ai-voice-support.html" class="cs-nav-item">
+                <span>AI Voice &amp; WhatsApp Hub</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+              <a href="healthcare-scribe.html" class="cs-nav-item">
+                <span>Hospital AI Clinical Scribe</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+              <a href="rmg-idp-ocr.html" class="cs-nav-item">
+                <span>RMG &amp; Commercial LC OCR</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+              </div>
+            </div>
+
+            <div class="cs-sidebar-card cs-cta-card">
+              <h2 class="cs-sidebar-title">Build a Similar Solution</h2>
+              <p>Speak directly with our senior engineering architects in Dhaka to scope architecture, timeline, and ROI for your organization.</p>
+              <p class="footer-contact-line" style="margin-bottom: 14px; text-align: left !important;">
+                <strong class="footer-contact-strong">Contact:</strong> <a href="tel:+8801778741894" class="footer-contact-link">+88- 01778-741894</a>
+              </p>
+              <div class="cs-cta-actions">
+                <a href="../index.html#contact" class="btn-swiss-primary">Request Architecture Quote &rarr;</a>
+                <a href="https://wa.me/8801778741894?text=Hello%20Giga%20Soft%20Limited,%20I%20read%20your%20Enterprise%20ERP%20%26%20Supply%20Chain%20Modernization%20case%20study%20and%20would%20like%20to%20discuss%20a%20similar%20project." target="_blank" rel="noopener noreferrer" class="btn-whatsapp btn-whatsapp-universal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block; vertical-align:middle; flex-shrink:0;"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.044c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.154.57 4.175 1.564 5.918l-1.564 5.71 5.86-1.536c1.678.914 3.603 1.408 5.64 1.408 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
+                  <span>Chat on WhatsApp</span>
+                </a>
+              </div>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        
+        <div class="footer-grid">
+          
+          <!-- Col 1: Brand, Bio & Follow Us -->
+          <div class="footer-about">
+            <a href="../index.html#home" aria-label="Giga Soft Limited Home" style="display:inline-block;">
+              <img src="../images/giga-soft-logo.png" alt="Giga Soft Limited" class="footer-brand-logo">
+            </a>
+            <p>
+              Giga Soft Limited is a professional software development and IT solutions company providing end-to-end digital services to corporate, SME, and enterprise clients.
+            </p>
+            <div class="footer-social-wrap">
+              <div class="footer-social-label">Follow Us:</div>
+              <div class="social-icons-row">
+                <a href="https://www.facebook.com/gigasoftbd" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-fb" aria-label="Facebook" title="Facebook">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/company/gigasoftbd" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-li" aria-label="LinkedIn" title="LinkedIn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://x.com/gigasoftbd" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-tw" aria-label="X (Twitter)" title="X (Twitter)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/gigasoftbd" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-ig" aria-label="Instagram" title="Instagram">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 2: Quick Links -->
+          <div>
+            <h4 class="footer-col-title">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="../index.html#home" class="footer-link">Home</a></li>
+              <li><a href="../index.html#services" class="footer-link">Services</a></li>
+              <li><a href="../ai-solutions.html" class="footer-link">AI Solutions</a></li>
+              <li><a href="../index.html#who-we-are" class="footer-link">About Us</a></li>
+              <li><a href="../index.html#why-us" class="footer-link">Why Us</a></li>
+              <li><a href="../index.html#how-we-work" class="footer-link">How We Work</a></li>
+              <li><a href="../index.html#case-study" class="footer-link">Case Studies</a></li>
+              <li><a href="../index.html#team" class="footer-link">Team</a></li>
+              <li><a href="../index.html#pricing" class="footer-link">Pricing</a></li>
+              <li><a href="../index.html#blog" class="footer-link">Blog</a></li>
+              <li><a href="../index.html#contact" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Our Services -->
+          <div>
+            <h4 class="footer-col-title">Our Services</h4>
+            <ul class="footer-links">
+              <li><a href="../ai-solutions.html" class="footer-link">AI Solutions &amp; Automation</a></li>
+              <li><a href="../service-details.html?service=software-dev" class="footer-link">Software Development</a></li>
+              <li><a href="../service-details.html?service=web-dev" class="footer-link">Web Development</a></li>
+              <li><a href="../service-details.html?service=app-dev" class="footer-link">App Development</a></li>
+              <li><a href="../service-details.html?service=ui-ux" class="footer-link">UI/UX Design</a></li>
+              <li><a href="../service-details.html?service=branding" class="footer-link">Creative &amp; Branding</a></li>
+              <li><a href="../service-details.html?service=digital-marketing" class="footer-link">Digital Marketing</a></li>
+              <li><a href="../service-details.html?service=ecommerce" class="footer-link">Ecommerce Solutions</a></li>
+              <li><a href="../service-details.html?service=cloud-services" class="footer-link">Cloud Services</a></li>
+              <li><a href="../service-details.html?service=cyber-security" class="footer-link">Cyber Security</a></li>
+              <li><a href="../service-details.html" class="footer-link" style="color: var(--accent-cobalt-light); font-weight: 700;">View All Services &rarr;</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Contact Us -->
+          <div>
+            <h4 class="footer-col-title">Contact Us</h4>
+            <p class="footer-contact-address">
+              <strong class="footer-contact-strong">Address:</strong> House-6/14, Hasina De Palace,<br>
+              Block-A, Lalmatia, Dhaka-1207, Bangladesh
+            </p>
+            <p class="footer-contact-line">
+              <strong class="footer-contact-strong">Contact:</strong> <a href="tel:+8801778741894" class="footer-contact-link">+88- 01778-741894</a>
+            </p>
+            <p class="footer-contact-line is-last">
+              <strong class="footer-contact-strong">Email:</strong> <a href="mailto:gigasoftbd@gmail.com" class="footer-contact-link">gigasoftbd@gmail.com</a>
+            </p>
+            <a href="https://wa.me/8801778741894?text=Hello%20Giga%20Soft%20Limited,%20I%20would%20like%20to%20discuss%20an%20AI%20project." target="_blank" rel="noopener noreferrer" class="btn-whatsapp btn-whatsapp-universal">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block; vertical-align:middle; flex-shrink:0;"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.044c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.154.57 4.175 1.564 5.918l-1.564 5.71 5.86-1.536c1.678.914 3.603 1.408 5.64 1.408 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
+              WhatsApp: +88- 01778-741894
+            </a>
+          </div>
+
+        </div>
+
+        <div class="footer-bottom">
+          <div>&copy; 2020-2026 Giga Soft Limited. All Rights Reserved.</div>
+          <div class="footer-legal-links">
+            <a href="../contact.html?page=privacy" class="footer-legal-link">Privacy Policy</a>
+            <span>&bull;</span>
+            <a href="../contact.html?page=terms" class="footer-legal-link">Terms of use</a>
+            <span>&bull;</span>
+            <a href="../contact.html?page=sitemap" class="footer-legal-link">Sitemap</a>
+            <span>&bull;</span>
+            <a href="../contact.html?page=career" class="footer-legal-link">Career</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
