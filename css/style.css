@@ -4007,7 +4007,7 @@ button, input, textarea, select {
   align-items: center;
   gap: 24px;
   width: max-content;
-  animation: newsMarqueeScroll 34s linear infinite;
+  animation: newsMarqueeScroll 68s linear infinite;
 }
 .brand-ticker-track:hover {
   animation-play-state: paused;
@@ -4411,7 +4411,7 @@ button, input, textarea, select {
   }
   .brand-ticker-track {
     gap: 18px;
-    animation-duration: 26s;
+    animation-duration: 52s;
   }
 }
 
@@ -4426,7 +4426,7 @@ button, input, textarea, select {
   }
   .brand-ticker-track {
     gap: 14px;
-    animation-duration: 24s;
+    animation-duration: 48s;
   }
 }
 
